@@ -1,0 +1,840 @@
+{
+  "date": "2026-10-28",
+  "edition": "am",
+  "briefing_path": "briefings/2026-10-28-am.md",
+  "stats": {
+    "candidates": 139,
+    "security": 56,
+    "pr": 48,
+    "not_security": 35,
+    "events": 16
+  },
+  "events": [
+    {
+      "slug": "php2shell-rce",
+      "title": "PHP2Shell 취약점 실제 악용 확인…국정원 공공기관 긴급 권고",
+      "category": "취약점",
+      "summary": "국정원 긴급 권고·시스템 일시 중지 검토, 국내 보안패치율 3.9%에 그침",
+      "cves": []
+    },
+    {
+      "slug": "brotli-node2shell",
+      "title": "Brotli 취약점 Node2Shell, Node.js 넘어 파이썬·닷넷 확산",
+      "category": "취약점",
+      "summary": "Node.js·파이썬·.NET 영향, 티오리·엔키화이트햇 점검 도구 배포",
+      "cves": [
+        "CVE-2026-111497"
+      ]
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "백업 솔루션 Ahsay 제로데이 악용 가능성, 유출 여부·규모는 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "mirae-asset-life-breach",
+      "title": "미래에셋생명 사이버 침해사고로 고객 개인·신용정보 유출",
+      "category": "개인정보",
+      "summary": "보험업계 첫 해킹 유출 사례, 금감원 신고·유출 대상과 항목 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "kb-bank-leak",
+      "title": "KB국민은행 개인정보 유출 피해 119명→2,210명으로 확대",
+      "category": "개인정보",
+      "summary": "2일 공지한 사고와 동일 건, 초기 조사 때 누락됐던 피해가 드러남",
+      "cves": []
+    },
+    {
+      "slug": "ai-hacking-ring-arrest",
+      "title": "AI로 국내 90여 곳 해킹·개인정보 820만건 탈취 조직 검거",
+      "category": "침해사고",
+      "summary": "서울경찰청, 총책 구속 송치·공범 6명 불구속 수사",
+      "cves": []
+    },
+    {
+      "slug": "genesys-breach",
+      "title": "제네시스, 내부 CRM·LMS 무단 접근 침해사고 확인",
+      "category": "침해사고",
+      "summary": "16일 인지, CRM·LMS 저장 정보 일부 열람 및 외부 반출",
+      "cves": []
+    },
+    {
+      "slug": "broadcom-wps-flaw",
+      "title": "브로드컴 와이파이 칩 WPS 결함, 비밀번호 없이 공유기 장악",
+      "category": "취약점",
+      "summary": "패치는 아직 없고 오래된 칩은 수정할 방법 자체가 없음",
+      "cves": []
+    },
+    {
+      "slug": "hpe-arubaos-72",
+      "title": "HPE 아루바OS 취약점 72개 패치…8개는 최고 위험",
+      "category": "취약점",
+      "summary": "일부는 로그인 없이 원격에서 장비 장악 가능, 관리자 주의 필요",
+      "cves": []
+    },
+    {
+      "slug": "rakuten-travel-leak",
+      "title": "일본 라쿠텐트래블 예약사이트 로그인 정보 최대 346만건 유출 우려",
+      "category": "개인정보",
+      "summary": "국내 여행 플랫폼 개인정보 유출에 이어 확인, 국내 이용자 영향 관심",
+      "cves": []
+    },
+    {
+      "slug": "samsung-secret-leak-appeal",
+      "title": "삼성전자 기밀 유출 안승호 전 부사장, 2심도 징역 3년",
+      "category": "기타",
+      "summary": "보석 취소·법정구속, 함께 기소된 전 삼성디스플레이 직원은 징역 4년",
+      "cves": []
+    },
+    {
+      "slug": "japan-cyber-surge",
+      "title": "일본 사이버보안 사고 723건…정부 긴급 대책 착수",
+      "category": "기타",
+      "summary": "일본 정부 긴급 대책 착수, 기업들은 고객 피해보상 확대",
+      "cves": []
+    },
+    {
+      "slug": "ai-mythos5-malware-attempt",
+      "title": "앤트로픽 클로드 미토스 5, 보안 시험 중 인간 사칭해 악성코드 삽입 시도",
+      "category": "AI 보안",
+      "summary": "실제 사람을 사칭해 코드 변경 승인 요구, 자율형 AI 통제 문제 부각",
+      "cves": []
+    },
+    {
+      "slug": "ai-qwen38-exfil-attempt",
+      "title": "코히어 \"알리바바 큐원3.8, 보안 시험 중 베이징 서버로 전송 시도\"",
+      "category": "AI 보안",
+      "summary": "오픈웨이트 모델을 기업 내부에 도입할 때 보안 검증 강화 필요 지적",
+      "cves": []
+    },
+    {
+      "slug": "ai-openai-training-isolation",
+      "title": "오픈AI, 최상위 AI 모델 훈련 중 인터넷 접속 차단 원칙 유지",
+      "category": "AI 보안",
+      "summary": "격리된 다른 AI와 정보를 주고받을 수 있어 외부 접근 통제 강화",
+      "cves": []
+    },
+    {
+      "slug": "ai-cathedral-anthropic-intrusion",
+      "title": "캐서드럴, AI 에이전트로 12시간 만에 앤트로픽 내부망 침투 경로 발견",
+      "category": "AI 보안",
+      "summary": "외부 기업용 소프트웨어의 허점이 첨단 AI 기업 내부까지 위협",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 52413,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51716,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51765,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51735,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 52516,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51784,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51756,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51719,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 51724,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 51746,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 51783,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 51759,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 52524,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 51863,
+      "label": "security",
+      "event_slug": "brotli-node2shell"
+    },
+    {
+      "id": 51749,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 51776,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 51773,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 51730,
+      "label": "security",
+      "event_slug": "mirae-asset-life-breach"
+    },
+    {
+      "id": 51767,
+      "label": "security",
+      "event_slug": "mirae-asset-life-breach"
+    },
+    {
+      "id": 52530,
+      "label": "security",
+      "event_slug": "mirae-asset-life-breach"
+    },
+    {
+      "id": 52528,
+      "label": "security",
+      "event_slug": "mirae-asset-life-breach"
+    },
+    {
+      "id": 51720,
+      "label": "security",
+      "event_slug": "kb-bank-leak"
+    },
+    {
+      "id": 51766,
+      "label": "security",
+      "event_slug": "kb-bank-leak"
+    },
+    {
+      "id": 51764,
+      "label": "security",
+      "event_slug": "ai-hacking-ring-arrest"
+    },
+    {
+      "id": 51862,
+      "label": "security",
+      "event_slug": "ai-hacking-ring-arrest"
+    },
+    {
+      "id": 51763,
+      "label": "security",
+      "event_slug": "genesys-breach"
+    },
+    {
+      "id": 51739,
+      "label": "security",
+      "event_slug": "broadcom-wps-flaw"
+    },
+    {
+      "id": 51722,
+      "label": "security",
+      "event_slug": "hpe-arubaos-72"
+    },
+    {
+      "id": 52488,
+      "label": "security",
+      "event_slug": "rakuten-travel-leak"
+    },
+    {
+      "id": 52436,
+      "label": "security",
+      "event_slug": "samsung-secret-leak-appeal"
+    },
+    {
+      "id": 51761,
+      "label": "security",
+      "event_slug": "japan-cyber-surge"
+    },
+    {
+      "id": 51733,
+      "label": "security",
+      "event_slug": "ai-mythos5-malware-attempt"
+    },
+    {
+      "id": 52458,
+      "label": "security",
+      "event_slug": "ai-qwen38-exfil-attempt"
+    },
+    {
+      "id": 52364,
+      "label": "security",
+      "event_slug": "ai-qwen38-exfil-attempt"
+    },
+    {
+      "id": 51740,
+      "label": "security",
+      "event_slug": "ai-openai-training-isolation"
+    },
+    {
+      "id": 52371,
+      "label": "security",
+      "event_slug": "ai-cathedral-anthropic-intrusion"
+    },
+    {
+      "id": 51762,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52521,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51802,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52482,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51770,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51743,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51701,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51788,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51728,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51737,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52384,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52452,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51744,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51713,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51752,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52529,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51787,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51717,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51779,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 52525,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51750,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51782,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51758,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51785,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52527,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51727,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52526,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51754,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51718,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52442,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51745,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51777,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51775,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51769,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51741,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51781,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51778,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51774,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51876,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51742,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51721,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51757,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51705,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51753,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52418,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51703,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51751,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51807,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51771,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51747,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51731,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51715,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51734,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51780,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52481,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52450,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52518,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52517,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52519,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52520,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52522,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 52523,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51723,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51736,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51711,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51708,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51732,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 51712,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 51786,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51748,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51738,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51879,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51772,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51768,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51729,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51760,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51726,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51725,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51838,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52375,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51755,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51831,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51714,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52435,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52432,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51710,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51709,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51707,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51706,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52417,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51704,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52360,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 51702,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52503,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52480,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52414,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52326,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52406,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52464,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52462,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52307,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52304,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 52301,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "제10차 양자보안포럼",
+      "start_date": "2026-10-27",
+      "end_date": null,
+      "place": "서울 시청 인근",
+      "organizer": null,
+      "url": "https://www.boannews.com/news/articleView.html?idxno=146784",
+      "major": false,
+      "note": "PQC 표준 이후 보안 프로토콜 표준화와 응용 특허 발굴 논의",
+      "article_ids": [
+        51712
+      ]
+    }
+  ]
+}
