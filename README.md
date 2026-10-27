@@ -59,7 +59,7 @@ GitHub Actions 예약은 누락이 잦아, **Supabase pg_cron이 정시에 GitHu
 | `cleanup-logs` | `10 19 * * *` (04:10 KST) | 예약 실행 기록·검증 기록 30일, 백업·자동 조치 기록 90일 보관 |
 | `restore-test` | `10 22 1 * *` (매월 2일 07:10 KST) | 백업 복구 시험 (재구축 정의 적용·열 구성 대조 포함) |
 | `schema-sync` | `0 20 * * *` (05:00 KST) | 운영 DB 정의를 `supabase/generated/`에 저장 |
-- 신호 함수: `dispatch_github_workflow(workflow)` — GitHub 토큰은 Supabase Vault `github_dispatch_token` (Fine-grained, 이 저장소 Actions 쓰기 권한만, **1년마다 재발급**)
+- 신호 함수: `dispatch_github_workflow(workflow)` — GitHub 토큰은 Supabase Vault `github_dispatch_token` (Fine-grained, 이 저장소 Actions 쓰기 권한만. 기한은 사용자가 정함 — 정기 교체 알림 없음)
 - 그래도 준비 작업이 빠지면 Claude 브리핑 작업이 직접 실행 후 최대 10분 대기
 
 ## 이상 알림과 검증
@@ -125,7 +125,7 @@ GitHub Actions 예약은 누락이 잦아, **Supabase pg_cron이 정시에 GitHu
 | GitHub 실행 신호 토큰 | Supabase Vault `github_dispatch_token` | GitHub > Settings > Developer settings > Fine-grained tokens에서 새 토큰(이 저장소, Actions 읽기·쓰기) → SQL Editor: `select vault.update_secret((select id from vault.secrets where name='github_dispatch_token'), '<새 토큰>');` → 옛 토큰 삭제 |
 | Supabase 비밀 키 | GitHub Secrets `SUPABASE_SERVICE_KEY` | Supabase > Project Settings > API Keys에서 새 비밀 키 발급 → GitHub 저장소 Settings > Secrets 갱신 → Actions '매시간 수집' 수동 실행으로 확인 → 옛 키 삭제 |
 | Claude 예약 작업 토큰 | Vault `briefing_fire_token`, `alert_fire_token` | 예약 작업 편집 > API > Regenerate → `vault.update_secret(...)` (ops/ROUTINES.md) |
-교체를 마치면 SQL Editor에서 기한을 1년 뒤로: `update ops_reminders set due = current_date + 365 where key = '<키>';`
+정기 교체 일정은 두지 않는다(10/28 사용자 결정, `ops_reminders` 비움). 교체 알림을 다시 쓰려면 SQL Editor에서 `insert into ops_reminders (key, title, due, note) values (...)`.
 
 ## 비용·용량 (무료 한도 기준)
 - GitHub Actions: 월 약 1,350분 / 2,000분 (68%) — 2026-10-26 실행 기록으로 재계산. 작업마다 1분 단위 올림 과금이라 매시간 수집은 60초 안에 끝나도록 유지(평소 약 50초)
