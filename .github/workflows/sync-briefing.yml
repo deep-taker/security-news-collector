@@ -1,0 +1,61 @@
+name: 브리핑 결과 DB 반영
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/briefing-output/**"
+      - "briefings/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:   # 연달아 푸시될 때 먼저 시작한 반영이 늦게 끝나며 옛 결과로 덮어쓰지 않게 차례로 실행
+  group: sync-briefing
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 50
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 변경된 브리핑 결과 반영
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files=$(ls data/briefing-output/*.json 2>/dev/null | tail -n 3)
+          else
+            # 푸시에 포함된 모든 커밋 범위 (JSON과 md를 다른 커밋으로 올려도 반영)
+            before="${{ github.event.before }}"
+            if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ] || ! git cat-file -e "$before" 2>/dev/null; then
+              files=$(ls data/briefing-output/*.json 2>/dev/null | tail -n 3)
+            else
+              files=$(git diff --name-only "$before" HEAD -- data/briefing-output/ briefings/ | sed -E 's#^briefings/(.+)\.md$#data/briefing-output/\1.json#' | grep '\.json$' | sort -u | while read f; do [ -f "$f" ] && echo "$f"; done)
+            fi
+          fi
+          echo "$files" > /tmp/files.txt
+          if [ -n "$files" ]; then
+            python -m collector.sync_briefing $files   # 실패하면 단계 실패 (아래 검증은 계속 실행)
+          else
+            echo "반영할 파일 없음"
+          fi
+      - name: 반영 검증 (누락·사건 연결·DB·대시보드) — 실패 시 대시보드 '수집 상태'에 표시
+        if: always()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          files=$(cat /tmp/files.txt)
+          [ -z "$files" ] && exit 0
+          python -m collector.verify_briefing $files

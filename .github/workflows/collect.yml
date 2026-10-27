@@ -1,0 +1,113 @@
+name: 매시간 수집
+
+on:
+  # 정시 실행은 Supabase pg_cron(collect-hourly, 매시 17분)이 실행 신호를 보냄.
+  # GitHub 자체 예약은 누락이 잦고 중복 실행을 만들어 껐음 (2026-10-26).
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "특정 매체만 (예: boannews,dt_ict)"
+        required: false
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15   # 매체별로 바로 저장하므로 시간 초과 시에도 앞선 매체 결과는 남음
+    outputs:
+      retry: ${{ steps.collect.outputs.retry }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 수집
+        id: collect
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # AI 한 줄 요약 (없으면 요약 단계만 건너뜀)
+          ONLY: ${{ inputs.only }}
+        run: |
+          if [ -n "$ONLY" ]; then
+            python -m collector.collect --only "$ONLY"
+          else
+            python -m collector.collect
+          fi
+          # 403(접속 IP 차단)·접속 실패(시간 초과 등)로 실패한 매체 → 아래 '새 서버 재시도' 작업으로 넘김
+          echo "retry=$(cat output/retry-403.txt 2>/dev/null)" >> "$GITHUB_OUTPUT"
+      - name: 보고서 임시 보관 (7일 후 자동 삭제, 공개 저장소라 원문 HTML은 올리지 않음)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: raw-${{ github.run_id }}
+          path: |
+            output/report.json
+            output/articles.jsonl
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: 지시문 의심 원문·수집 0건 원문 보관
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain data/suspicious data/parse-fail 2>/dev/null)" ]; then
+            git config user.name "collector-bot"
+            git config user.email "collector-bot@users.noreply.github.com"
+            for d in data/suspicious data/parse-fail; do [ -d "$d" ] && git add "$d"; done
+            git commit -m "의심·수집 실패 원문 보관"
+            ok=""; for i in 1 2 3; do if git pull --rebase && git push; then ok=1; break; fi; git rebase --abort 2>/dev/null || true; sleep $((i * 10)); done   # 다른 작업과 동시 푸시 대비
+            [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 커밋이 올라가지 않았습니다"; exit 1; }
+          fi
+
+  # 403은 GitHub 실행 서버의 IP 단위 차단이라 같은 서버에서 다시 해도 막힌다(2026-10-26 기록: 같은 서버 3회 모두 403,
+  # 새 서버로 2~9분 뒤 재실행하면 성공). 별도 작업은 새 서버(대부분 다른 IP)에서 실행되므로 1~2분 안에 회복.
+  # 접속 시간 초과도 같은 성격이라 함께 넘긴다(2026-10-27 전자신문: 같은 서버 3회 모두 무응답, 새 서버는 대개 성공).
+  retry-403:
+    needs: collect
+    if: needs.collect.outputs.retry != ''
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 403·접속 실패 매체 새 서버에서 재수집
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RETRY: ${{ needs.collect.outputs.retry }}
+        run: |
+          case "$RETRY" in *[!a-z0-9_,]*) echo "잘못된 매체 목록"; exit 1;; esac
+          python -m collector.collect --only "$RETRY" --retry-mode
+      - name: 보고서 임시 보관 (7일 후 자동 삭제, 공개 저장소라 원문 HTML은 올리지 않음)
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: raw-retry-${{ github.run_id }}
+          path: |
+            output/report.json
+            output/articles.jsonl
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: 지시문 의심 원문·수집 0건 원문 보관
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain data/suspicious data/parse-fail 2>/dev/null)" ]; then
+            git config user.name "collector-bot"
+            git config user.email "collector-bot@users.noreply.github.com"
+            for d in data/suspicious data/parse-fail; do [ -d "$d" ] && git add "$d"; done
+            git commit -m "의심·수집 실패 원문 보관 (403 재수집)"
+            ok=""; for i in 1 2 3; do if git pull --rebase && git push; then ok=1; break; fi; git rebase --abort 2>/dev/null || true; sleep $((i * 10)); done
+            [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 커밋이 올라가지 않았습니다"; exit 1; }
+          fi

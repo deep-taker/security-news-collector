@@ -1,0 +1,64 @@
+name: 백업 복구 시험 (월 1회)
+
+# 매월 2일 07:10 KST에 Supabase pg_cron(restore-test)이 실행 신호를 보냄.
+# 주 백업(Storage)을 빈 시험 DB(이 작업 안의 PostgreSQL)에 복구하고 운영 DB와 대조. 운영 DB에는 쓰지 않음(결과 기록 1행만).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  restore-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: pw
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      PG: postgresql://postgres:pw@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt "psycopg[binary]==3.2.3"
+      - name: 시험 DB 준비 (재구축 정의 적용 — 실패하면 저장소만으로는 재구축 불가)
+        run: |
+          python - <<'PY'
+          import psycopg, pathlib
+          # 재구축 절차와 같은 순서: 표 → (Supabase 흉내) → 운영 DB에서 내보낸 정의
+          with psycopg.connect("${{ env.PG }}", autocommit=True) as c:
+              c.execute(pathlib.Path("tests/supabase_stubs.sql").read_text())
+              c.execute(pathlib.Path("supabase/schema.sql").read_text())
+              c.execute(pathlib.Path("supabase/generated/definitions.sql").read_text())
+          PY
+          python tests/mock_postgrest.py "$PG" 55432 &
+          sleep 2
+      - name: 주 백업(Storage)에서 복구
+        env:
+          BACKUP_URL: ${{ secrets.SUPABASE_URL }}
+          BACKUP_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SUPABASE_URL: http://127.0.0.1:55432
+          SUPABASE_SERVICE_KEY: test-service-key
+        run: python -m collector.restore --summary /tmp/restore.json
+      - name: 운영 DB와 대조 → backup_runs 기록
+        if: always()
+        env:
+          BACKUP_URL: ${{ secrets.SUPABASE_URL }}
+          BACKUP_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -f /tmp/restore.json ]; then
+            python tests/restore_check.py "$PG" /tmp/restore.json
+          else
+            curl -sS -X POST "$BACKUP_URL/rest/v1/backup_runs" -H "apikey: $BACKUP_KEY" -H "Authorization: Bearer $BACKUP_KEY" \
+              -H "Content-Type: application/json" -H "Prefer: return=minimal" \
+              -d '[{"target":"restore_test","kind":"restore_test","ok":false,"detail":"복구 단계 실패 (Actions 로그 확인)"}]'
+            exit 1
+          fi
