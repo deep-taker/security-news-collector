@@ -144,9 +144,6 @@ export default async function Status() {
       <BackupTable b={h.backup || {}} />
 
       <p className="muted" style={{ marginTop: 16 }}>
-        알림별 의미와 대응: <a href="https://github.com/deep-taker/security-news-collector/blob/main/ops/RUNBOOK.md" target="_blank" rel="noopener noreferrer">운영 지침서</a>
-      </p>
-      <p className="muted">
         알림 기준: 2시간 넘게 수집 없음 · 매체 연속 실패(디지털데일리·디지털투데이 2회, 나머지 3회, 그 미만은 주의) · 24시간 새 기사 0건 · 놓친 기사 가능 구간 · 브리핑 예정 1시간 후에도 없음(06시판 07시, 12시판 13시, 18시판 19시) · 브리핑 반영 검증 실패 · 실행 신호 오류 · 주 백업 26시간 없음 · 백업 용량 상한(900MB)의 90% · 복구 시험 실패 · DB 400MB 초과 · AI 요약 채움률 50% 미만 · 이번 달 AI 요약 비용 $20 초과 · 수집 원문 지시문 의심. 실패한 매체는 매시 27분에 다시 수집하고, 10분마다 자동 조치(수집·브리핑·반영·백업 재실행, 지속 오류 알림)를 점검합니다.
       </p>
     </>
