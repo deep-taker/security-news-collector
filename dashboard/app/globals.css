@@ -81,13 +81,14 @@ details.same-event li { margin: 2px 0; }
 }
 
 /* 브리핑 항목 간격 (2줄 요약 가독성) */
-.md li + li { margin-top: 6px; }
 .md h3 + p { margin-top: 2px; }
-/* 모든 절의 항목 제목·간격을 '주요 사건·사고'(h3 + 문단)와 같게 — 사용자 요청 2026-10-28.
-   다른 절은 목록(- **[제목](주소)** + 2줄)이라 제목이 본문 크기로 작게 보였음 */
-.md li > strong:first-child { display: block; font-size: 1.05rem; margin-bottom: 2px; }
+/* 모든 절의 항목 제목 크기·여백·간격을 '주요 사건·사고'(h3 + 문단)와 같게 — 사용자 요청 2026-10-28.
+   다른 절은 목록(- **[제목](주소)** + 2줄)이라 제목이 작고 간격이 좁았음. 브라우저 측정으로 맞춤:
+   제목→본문 12px, 항목 사이 23px, 탭 아래 첫 항목 15px (PC·휴대폰 모두) */
+.md li > strong:first-child { display: block; font-size: 1.05rem; margin-bottom: 4px; }
 .md li > strong:first-child + br { display: none; }
-.md h2 + ul > li + li, .md p + ul > li + li { margin-top: 1em; }
+.md ul > li + li { margin-top: 17px; }
+.md .panel > div > :first-child { margin-top: 4px; }
 
 /* 브리핑 항목 앞 점(목록 기호) 없음 — 사용자 요청 2026-10-27 */
 .md ul { list-style: none; padding-left: 0; }
