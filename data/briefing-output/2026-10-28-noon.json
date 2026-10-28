@@ -1,0 +1,676 @@
+{
+ "date": "2026-10-28",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-10-28-noon.md",
+ "stats": {
+  "candidates": 97,
+  "security": 45,
+  "pr": 28,
+  "not_security": 24,
+  "events": 23
+ },
+ "events": [
+  {
+   "slug": "daishin-securities-breach",
+   "title": "대신증권 계좌개설 서버 해킹, 고객 3만8490명 개인정보 유출",
+   "category": "개인정보",
+   "summary": "계좌개설 서버 해킹으로 고객 3만8490명 정보 유출, 8개 항목 노출",
+   "cves": []
+  },
+  {
+   "slug": "bithumb-groupware-breach",
+   "title": "빗썸 사내 모바일 그룹웨어 해킹, 임직원 개인정보 유출",
+   "category": "침해사고",
+   "summary": "사내 모바일 그룹웨어 외부 침입으로 임직원 정보 유출, 회원정보 포함 여부 조사",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-am-breach",
+   "title": "미래에셋자산운용 사내 웹시스템 침해, 정보 유출 확인",
+   "category": "침해사고",
+   "summary": "사내 웹시스템 외부 IP 비정상 접근, 서버·DB 직접 침투 흔적은 없다고 밝힘",
+   "cves": []
+  },
+  {
+   "slug": "cii-inspection-172",
+   "title": "정부, 통신·플랫폼·금융 민간 주요정보통신기반시설 172곳 보안 점검",
+   "category": "정책·제도",
+   "summary": "민간 주요정보통신기반시설 111개 기관 172곳 연말까지 보안점검",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인…국정원 공공기관 긴급 권고",
+   "category": "취약점",
+   "summary": "CISA 악용 확인, 이스트시큐리티 점검 도구·SGA솔루션즈 가상패치 지원",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "openpanel-cve-2026-116818",
+   "title": "오픈패널 고위험 취약점, 로그인 없이 타 고객 분석정보 조회",
+   "category": "취약점",
+   "summary": "CVE-2026-116818 로그인 없이 타 고객 분석정보 조회 가능",
+   "cves": [
+    "CVE-2026-116818"
+   ]
+  },
+  {
+   "slug": "yeswiki-ssrf",
+   "title": "예스위키 바자르 기능 SSRF 취약점",
+   "category": "취약점",
+   "summary": "CVE-2026-116827 내부망·클라우드 인증정보 노출 위험",
+   "cves": [
+    "CVE-2026-116827"
+   ]
+  },
+  {
+   "slug": "hashicorp-consul-cve-2026-105765",
+   "title": "하시코프 콘술 접근통제 우회 취약점",
+   "category": "취약점",
+   "summary": "CVE-2026-105765 서비스 인증서·개인키 노출 위험",
+   "cves": [
+    "CVE-2026-105765"
+   ]
+  },
+  {
+   "slug": "copenhagen-univ-rebreach",
+   "title": "덴마크 코펜하겐대, 개인정보 52만5천 명 유출 이어 또 해킹",
+   "category": "침해사고",
+   "summary": "개인정보 52만5천명 노출 조사 중 추가 해킹, 행정시스템 중단",
+   "cves": []
+  },
+  {
+   "slug": "converte-supply-chain",
+   "title": "브라질 결제 플랫폼 컨버트르 공급망 공격, 카드번호 탈취",
+   "category": "침해사고",
+   "summary": "전자상거래 결제 플랫폼 공급망 공격으로 카드번호·보안코드 탈취",
+   "cves": []
+  },
+  {
+   "slug": "cold-chain-ics-exposure",
+   "title": "99개국 냉장·냉동 제어시스템 1만3천 건 인터넷 노출",
+   "category": "취약점",
+   "summary": "99개국 냉장·냉동 제어시스템 1만2,976건 인터넷 노출",
+   "cves": []
+  },
+  {
+   "slug": "ucreator-android-malware",
+   "title": "텔레그램·위챗 위장 안드로이드 악성코드 유크리에이터",
+   "category": "악성코드·랜섬웨어",
+   "summary": "변조 앱으로 메신저 계정·2단계 인증정보 탈취",
+   "cves": []
+  },
+  {
+   "slug": "ms-emudhra-cert-revoke",
+   "title": "MS, 이머드라 인증서 7개 윈도우서 신뢰 철회",
+   "category": "기타",
+   "summary": "중간 인증서 비밀키 취약으로 윈도우·엣지 신뢰 목록서 제외",
+   "cves": []
+  },
+  {
+   "slug": "autocrypt-vehicle-hack-demo",
+   "title": "아우토크립트, 모빌리티 총회서 실제 차량 해킹 시연",
+   "category": "기타",
+   "summary": "차량 해킹 시연으로 사전 보안 검증 필요성 강조",
+   "cves": []
+  },
+  {
+   "slug": "openhands-cve-2026-112346",
+   "title": "AI 코딩 에이전트 오픈핸즈, 인증 없이 관리자 권한 명령 실행",
+   "category": "AI 보안",
+   "summary": "CVE-2026-112346 인증 없이 시스템 명령 실행, CVSS 9.8",
+   "cves": [
+    "CVE-2026-112346"
+   ]
+  },
+  {
+   "slug": "google-mcp-toolbox-cve-2026-93328",
+   "title": "구글 클라우드 AI 연결도구 MCP 툴박스 치명적 취약점",
+   "category": "AI 보안",
+   "summary": "CVE-2026-93328 서버 파일 탈취·변조 가능",
+   "cves": [
+    "CVE-2026-93328"
+   ]
+  },
+  {
+   "slug": "ai-qwen38-exfil-attempt",
+   "title": "코히어 \"알리바바 큐원3.8, 보안 시험 중 베이징 서버로 전송 시도\"",
+   "category": "AI 보안",
+   "summary": "코히어, 큐원3.8의 예상 외 외부 통신 가능성 제기",
+   "cves": []
+  },
+  {
+   "slug": "ai-agents-japan-attacks",
+   "title": "트렌드AI, 일본 겨냥 AI 공격 3건 분석",
+   "category": "AI 보안",
+   "summary": "AI 에이전트 44개가 정찰부터 보고서까지 분담한 공격 포함",
+   "cves": []
+  },
+  {
+   "slug": "shadow-ai-survey-fasoo",
+   "title": "파수AI 조사, AI 금지 조직도 77.3% 개인 계정으로 사용",
+   "category": "AI 보안",
+   "summary": "AI 사용 금지 조직에서도 77.3%가 개인 계정으로 생성형 AI 사용",
+   "cves": []
+  },
+  {
+   "slug": "us-banks-ai-agent-control",
+   "title": "美 주요 은행, AI 에이전트 계좌 접근 통제 강화",
+   "category": "AI 보안",
+   "summary": "JP모건·뱅크오브아메리카 등 AI 에이전트 계좌 접근 통제",
+   "cves": []
+  },
+  {
+   "slug": "oracle-openai-ai-security",
+   "title": "오라클, 오픈AI와 AI 보안 위협 공동 대응",
+   "category": "AI 보안",
+   "summary": "취약점 탐지부터 검증·수정까지 AI로 지원",
+   "cves": []
+  },
+  {
+   "slug": "fss-chief-it-security",
+   "title": "금감원장, 금융지주 이사회에 IT 보안 투자·내부통제 강화 주문",
+   "category": "정책·제도",
+   "summary": "금투업계 잇단 해킹에 해킹 상시화 대비 당부",
+   "cves": []
+  },
+  {
+   "slug": "na-science-audit-hacking",
+   "title": "과방위 국감, 해킹 책임 추궁과 AI 예산 검증",
+   "category": "정책·제도",
+   "summary": "해킹 책임 추궁과 AI 예산 검증 진행, 정치 공방으로 차질",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 55742,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 55233,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 55953,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 56783,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 57588,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 56083,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 56598,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 56940,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 57626,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 56066,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 56613,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 56785,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 57637,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 56850,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 56804,
+   "label": "security",
+   "event_slug": "mirae-asset-am-breach"
+  },
+  {
+   "id": 57456,
+   "label": "security",
+   "event_slug": "mirae-asset-am-breach"
+  },
+  {
+   "id": 55097,
+   "label": "security",
+   "event_slug": "cii-inspection-172"
+  },
+  {
+   "id": 56776,
+   "label": "security",
+   "event_slug": "cii-inspection-172"
+  },
+  {
+   "id": 56618,
+   "label": "security",
+   "event_slug": "cii-inspection-172"
+  },
+  {
+   "id": 56902,
+   "label": "security",
+   "event_slug": "cii-inspection-172"
+  },
+  {
+   "id": 55754,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 55929,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 55951,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 55950,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 56049,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 56048,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 55156,
+   "label": "security",
+   "event_slug": "openpanel-cve-2026-116818"
+  },
+  {
+   "id": 55148,
+   "label": "security",
+   "event_slug": "yeswiki-ssrf"
+  },
+  {
+   "id": 55147,
+   "label": "security",
+   "event_slug": "hashicorp-consul-cve-2026-105765"
+  },
+  {
+   "id": 55154,
+   "label": "security",
+   "event_slug": "copenhagen-univ-rebreach"
+  },
+  {
+   "id": 55153,
+   "label": "security",
+   "event_slug": "converte-supply-chain"
+  },
+  {
+   "id": 55152,
+   "label": "security",
+   "event_slug": "cold-chain-ics-exposure"
+  },
+  {
+   "id": 55149,
+   "label": "security",
+   "event_slug": "ucreator-android-malware"
+  },
+  {
+   "id": 56800,
+   "label": "security",
+   "event_slug": "ms-emudhra-cert-revoke"
+  },
+  {
+   "id": 56805,
+   "label": "security",
+   "event_slug": "autocrypt-vehicle-hack-demo"
+  },
+  {
+   "id": 55151,
+   "label": "security",
+   "event_slug": "openhands-cve-2026-112346"
+  },
+  {
+   "id": 55150,
+   "label": "security",
+   "event_slug": "google-mcp-toolbox-cve-2026-93328"
+  },
+  {
+   "id": 56734,
+   "label": "security",
+   "event_slug": "ai-qwen38-exfil-attempt"
+  },
+  {
+   "id": 56808,
+   "label": "security",
+   "event_slug": "ai-agents-japan-attacks"
+  },
+  {
+   "id": 57539,
+   "label": "security",
+   "event_slug": "shadow-ai-survey-fasoo"
+  },
+  {
+   "id": 57462,
+   "label": "security",
+   "event_slug": "us-banks-ai-agent-control"
+  },
+  {
+   "id": 53335,
+   "label": "security",
+   "event_slug": "oracle-openai-ai-security"
+  },
+  {
+   "id": 56614,
+   "label": "security",
+   "event_slug": "fss-chief-it-security"
+  },
+  {
+   "id": 56082,
+   "label": "security",
+   "event_slug": "fss-chief-it-security"
+  },
+  {
+   "id": 56758,
+   "label": "security",
+   "event_slug": "na-science-audit-hacking"
+  },
+  {
+   "id": 55948,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57636,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57469,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56901,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 53184,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56050,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56736,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 53186,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56759,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56796,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 55949,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57586,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57635,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56047,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56806,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57619,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56802,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56900,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57616,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56582,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 55234,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 55952,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 55947,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57441,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 55197,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 56766,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 54249,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 54248,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 54298,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55834,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55922,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55757,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55756,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55747,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55735,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56735,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56767,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56610,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56609,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56602,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56603,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56684,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56597,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56594,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56585,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56803,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 56801,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 55098,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 57461,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 57445,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 57444,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 57442,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": []
+}
