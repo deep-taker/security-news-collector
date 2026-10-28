@@ -54,3 +54,9 @@ test("대표 기사 제목 링크: 보도 매체 말풍선·휴대폰 표시, �
   assert.ok(!/<img/i.test(html));              // 설명 문구의 태그는 실행되지 않음
   assert.ok(html.includes('href="#"'));         // 허용되지 않은 주소는 막힘
 });
+
+test("목록 항목 제목 뒤 꼬리표는 제목 안으로 (주요 사건 h3와 같은 배치)", () => {
+  const html = renderMarkdown("- **[코히어 발표](https://www.aitimes.com/a)** [후속]\n  본문 첫 줄\n  본문 둘째 줄\n- **[다른 기사](https://www.aitimes.com/b)**\n  본문");
+  assert.match(html, /<li><strong><a [^>]*>코히어 발표<\/a> \[후속\]<\/strong><br>본문 첫 줄/);
+  assert.match(html, /<li><strong><a [^>]*>다른 기사<\/a><\/strong><br>본문/);
+});
