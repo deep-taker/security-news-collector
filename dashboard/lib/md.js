@@ -25,5 +25,8 @@ export function renderMarkdown(md) {
   // 대표 기사 제목 링크의 '보도: …' 설명 → PC는 마우스를 올리면 바로 뜨는 말풍선, 휴대폰(마우스 없음)은 제목 옆 작은 글씨
   html = html.replace(/<a href="([^"]*)" title="(보도:[^"]*)">([\s\S]*?)<\/a>/g, (m, href, t, text) =>
     `<a href="${href}" class="has-src" data-src="${t}">${text}</a><span class="src-m"> · ${t.replace(/^보도:\s*/, "")}</span>`);
+  // 목록 항목 제목 뒤의 꼬리표(예: " [후속]")를 제목(굵은 글씨) 안으로 — 주요 사건(h3)처럼 제목 줄에 붙어 보이게.
+  // 제목을 한 줄(블록)로 보이게 한 뒤 꼬리표가 본문 첫 줄 앞으로 내려가던 문제 (2026-10-28)
+  html = html.replace(/<li><strong>([\s\S]*?)<\/strong>([^<\n]+?)<br>/g, (m, title, tail) => `<li><strong>${title}${tail}</strong><br>`);
   return html.replace(/<a href=/g, '<a target="_blank" rel="noopener noreferrer" href=');
 }
