@@ -1,0 +1,729 @@
+{
+ "date": "2026-10-28",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-10-28-pm.md",
+ "stats": {
+  "candidates": 100,
+  "security": 40,
+  "pr": 36,
+  "not_security": 24,
+  "events": 30
+ },
+ "events": [
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "CISA KEV 등재, 국내 대학 5곳 노출 추정",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "shadow-ai-survey-fasoo",
+   "title": "shadow-ai-survey-fasoo",
+   "category": "AI 보안",
+   "summary": "shadow-ai-survey-fasoo",
+   "cves": []
+  },
+  {
+   "slug": "gowid-breach",
+   "title": "핀테크 고위드 해킹",
+   "category": "개인정보",
+   "summary": "고객사 담당자 개인정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "lodging-reservation-breach",
+   "title": "숙박 예약관리 시스템 침해",
+   "category": "개인정보",
+   "summary": "온다·호텔스토리 외부 비정상 접근",
+   "cves": []
+  },
+  {
+   "slug": "defense-it-workshop-2026",
+   "title": "defense-it-workshop-2026",
+   "category": "방산보안",
+   "summary": "defense-it-workshop-2026",
+   "cves": []
+  },
+  {
+   "slug": "skt-trust-recovery",
+   "title": "skt-trust-recovery",
+   "category": "침해사고",
+   "summary": "skt-trust-recovery",
+   "cves": []
+  },
+  {
+   "slug": "teams-it-impersonation",
+   "title": "teams-it-impersonation",
+   "category": "악성코드·랜섬웨어",
+   "summary": "teams-it-impersonation",
+   "cves": []
+  },
+  {
+   "slug": "ai-wallet-limit-self-approve",
+   "title": "ai-wallet-limit-self-approve",
+   "category": "AI 보안",
+   "summary": "ai-wallet-limit-self-approve",
+   "cves": []
+  },
+  {
+   "slug": "cisa-2030-strategy",
+   "title": "cisa-2030-strategy",
+   "category": "정책·제도",
+   "summary": "cisa-2030-strategy",
+   "cves": []
+  },
+  {
+   "slug": "oracle-openai-ai-security",
+   "title": "oracle-openai-ai-security",
+   "category": "AI 보안",
+   "summary": "oracle-openai-ai-security",
+   "cves": []
+  },
+  {
+   "slug": "autocrypt-vehicle-hack-demo",
+   "title": "autocrypt-vehicle-hack-demo",
+   "category": "기타",
+   "summary": "autocrypt-vehicle-hack-demo",
+   "cves": []
+  },
+  {
+   "slug": "engie-partner-breach",
+   "title": "engie-partner-breach",
+   "category": "개인정보",
+   "summary": "engie-partner-breach",
+   "cves": []
+  },
+  {
+   "slug": "mistral-vibe-cve-2026-116843",
+   "title": "mistral-vibe-cve-2026-116843",
+   "category": "AI 보안",
+   "summary": "mistral-vibe-cve-2026-116843",
+   "cves": [
+    "CVE-2026-116843"
+   ]
+  },
+  {
+   "slug": "redaxo-auth-bypass",
+   "title": "redaxo-auth-bypass",
+   "category": "취약점",
+   "summary": "redaxo-auth-bypass",
+   "cves": [
+    "CVE-2026-117532"
+   ]
+  },
+  {
+   "slug": "resident-record-stepfamily",
+   "title": "resident-record-stepfamily",
+   "category": "정책·제도",
+   "summary": "resident-record-stepfamily",
+   "cves": []
+  },
+  {
+   "slug": "llamacpp-cve-2026-116816",
+   "title": "llamacpp-cve-2026-116816",
+   "category": "AI 보안",
+   "summary": "llamacpp-cve-2026-116816",
+   "cves": [
+    "CVE-2026-116816"
+   ]
+  },
+  {
+   "slug": "voicephishing-intl-arrest",
+   "title": "보이스피싱 총책 국제공조 검거",
+   "category": "침해사고",
+   "summary": "피해자 270명, 피해액 약 25억원",
+   "cves": []
+  },
+  {
+   "slug": "eaton-easye4-vuln",
+   "title": "eaton-easye4-vuln",
+   "category": "취약점",
+   "summary": "eaton-easye4-vuln",
+   "cves": []
+  },
+  {
+   "slug": "qode-membership-cve-2026-92885",
+   "title": "qode-membership-cve-2026-92885",
+   "category": "취약점",
+   "summary": "qode-membership-cve-2026-92885",
+   "cves": [
+    "CVE-2026-92885"
+   ]
+  },
+  {
+   "slug": "ai-voice-biometric-risk",
+   "title": "ai-voice-biometric-risk",
+   "category": "AI 보안",
+   "summary": "ai-voice-biometric-risk",
+   "cves": []
+  },
+  {
+   "slug": "ai-qwen38-exfil-attempt",
+   "title": "ai-qwen38-exfil-attempt",
+   "category": "AI 보안",
+   "summary": "ai-qwen38-exfil-attempt",
+   "cves": []
+  },
+  {
+   "slug": "daishin-securities-breach",
+   "title": "대신증권·빗썸·미래에셋운용 해킹 후속 조사",
+   "category": "침해사고",
+   "summary": "경찰 입건 전 조사 착수, 청와대 긴급회의",
+   "cves": []
+  },
+  {
+   "slug": "coinbase-amplitude-leak",
+   "title": "coinbase-amplitude-leak",
+   "category": "개인정보",
+   "summary": "coinbase-amplitude-leak",
+   "cves": []
+  },
+  {
+   "slug": "nk-ip-finance-scan",
+   "title": "금융권 겨냥 북한 IP 접근 440만건 탐지",
+   "category": "침해사고",
+   "summary": "금융당국이 금융사에 접근 이력 확인 요청",
+   "cves": []
+  },
+  {
+   "slug": "starlink-adbid-surveillance",
+   "title": "starlink-adbid-surveillance",
+   "category": "기타",
+   "summary": "starlink-adbid-surveillance",
+   "cves": []
+  },
+  {
+   "slug": "pipa-72h-notice",
+   "title": "pipa-72h-notice",
+   "category": "정책·제도",
+   "summary": "pipa-72h-notice",
+   "cves": []
+  },
+  {
+   "slug": "cii-inspection-172",
+   "title": "cii-inspection-172",
+   "category": "정책·제도",
+   "summary": "cii-inspection-172",
+   "cves": []
+  },
+  {
+   "slug": "bithumb-groupware-breach",
+   "title": "빗썸 사내 모바일 그룹웨어 해킹",
+   "category": "침해사고",
+   "summary": "금융위 가상자산업계 긴급 점검",
+   "cves": []
+  },
+  {
+   "slug": "spigen-korea-breach",
+   "title": "슈피겐코리아 해외 고객관리 시스템 해킹",
+   "category": "개인정보",
+   "summary": "고객 최대 182명·임직원 264명 정보 조회",
+   "cves": []
+  },
+  {
+   "slug": "sbi-darkweb-leak",
+   "title": "sbi-darkweb-leak",
+   "category": "개인정보",
+   "summary": "sbi-darkweb-leak",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 58428,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 58426,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 58419,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 58417,
+   "label": "not_security"
+  },
+  {
+   "id": 57658,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57657,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57656,
+   "label": "security",
+   "event_slug": "shadow-ai-survey-fasoo"
+  },
+  {
+   "id": 58430,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57655,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 57654,
+   "label": "security",
+   "event_slug": "gowid-breach"
+  },
+  {
+   "id": 57653,
+   "label": "not_security"
+  },
+  {
+   "id": 58350,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 58263,
+   "label": "not_security"
+  },
+  {
+   "id": 57652,
+   "label": "not_security"
+  },
+  {
+   "id": 57651,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 57650,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60178,
+   "label": "security",
+   "event_slug": "lodging-reservation-breach"
+  },
+  {
+   "id": 58552,
+   "label": "security",
+   "event_slug": "shadow-ai-survey-fasoo"
+  },
+  {
+   "id": 58551,
+   "label": "security",
+   "event_slug": "defense-it-workshop-2026"
+  },
+  {
+   "id": 60146,
+   "label": "security",
+   "event_slug": "skt-trust-recovery"
+  },
+  {
+   "id": 58550,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60144,
+   "label": "not_security"
+  },
+  {
+   "id": 60139,
+   "label": "not_security"
+  },
+  {
+   "id": 59413,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59412,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 59411,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59410,
+   "label": "security",
+   "event_slug": "teams-it-impersonation"
+  },
+  {
+   "id": 60014,
+   "label": "security",
+   "event_slug": "ai-wallet-limit-self-approve"
+  },
+  {
+   "id": 60013,
+   "label": "not_security"
+  },
+  {
+   "id": 60012,
+   "label": "not_security"
+  },
+  {
+   "id": 60174,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59409,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59408,
+   "label": "security",
+   "event_slug": "cisa-2030-strategy"
+  },
+  {
+   "id": 59351,
+   "label": "not_security"
+  },
+  {
+   "id": 59350,
+   "label": "not_security"
+  },
+  {
+   "id": 59407,
+   "label": "security",
+   "event_slug": "oracle-openai-ai-security"
+  },
+  {
+   "id": 59406,
+   "label": "security",
+   "event_slug": "autocrypt-vehicle-hack-demo"
+  },
+  {
+   "id": 59995,
+   "label": "not_security"
+  },
+  {
+   "id": 59405,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59404,
+   "label": "security",
+   "event_slug": "engie-partner-breach"
+  },
+  {
+   "id": 59403,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 59402,
+   "label": "security",
+   "event_slug": "mistral-vibe-cve-2026-116843"
+  },
+  {
+   "id": 60202,
+   "label": "not_security"
+  },
+  {
+   "id": 59401,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60300,
+   "label": "security",
+   "event_slug": "shadow-ai-survey-fasoo"
+  },
+  {
+   "id": 59400,
+   "label": "security",
+   "event_slug": "redaxo-auth-bypass"
+  },
+  {
+   "id": 60258,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61873,
+   "label": "security",
+   "event_slug": "resident-record-stepfamily"
+  },
+  {
+   "id": 60257,
+   "label": "security",
+   "event_slug": "llamacpp-cve-2026-116816"
+  },
+  {
+   "id": 60256,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60201,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 62710,
+   "label": "security",
+   "event_slug": "voicephishing-intl-arrest"
+  },
+  {
+   "id": 62708,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60255,
+   "label": "security",
+   "event_slug": "eaton-easye4-vuln"
+  },
+  {
+   "id": 60865,
+   "label": "security",
+   "event_slug": "skt-trust-recovery"
+  },
+  {
+   "id": 62707,
+   "label": "not_security"
+  },
+  {
+   "id": 60254,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60938,
+   "label": "not_security"
+  },
+  {
+   "id": 60253,
+   "label": "security",
+   "event_slug": "qode-membership-cve-2026-92885"
+  },
+  {
+   "id": 61867,
+   "label": "security",
+   "event_slug": "skt-trust-recovery"
+  },
+  {
+   "id": 62705,
+   "label": "pr",
+   "event_slug": null,
+   "line": "디사일로, 동형암호 기반 기밀 AI 추론 엔진 개발…중기부 딥테크 팁스 선정"
+  },
+  {
+   "id": 60937,
+   "label": "not_security"
+  },
+  {
+   "id": 60252,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60200,
+   "label": "security",
+   "event_slug": "ai-voice-biometric-risk"
+  },
+  {
+   "id": 60854,
+   "label": "security",
+   "event_slug": "ai-qwen38-exfil-attempt"
+  },
+  {
+   "id": 60853,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 60850,
+   "label": "security",
+   "event_slug": "coinbase-amplitude-leak"
+  },
+  {
+   "id": 60848,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 60251,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 62702,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60250,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 60837,
+   "label": "not_security"
+  },
+  {
+   "id": 61707,
+   "label": "security",
+   "event_slug": "starlink-adbid-surveillance"
+  },
+  {
+   "id": 62697,
+   "label": "not_security"
+  },
+  {
+   "id": 61101,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61876,
+   "label": "not_security"
+  },
+  {
+   "id": 61151,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 61100,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61150,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61050,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 61049,
+   "label": "not_security"
+  },
+  {
+   "id": 61149,
+   "label": "security",
+   "event_slug": "pipa-72h-notice"
+  },
+  {
+   "id": 62722,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61185,
+   "label": "security",
+   "event_slug": "cii-inspection-172"
+  },
+  {
+   "id": 62686,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 62733,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 61099,
+   "label": "not_security"
+  },
+  {
+   "id": 61732,
+   "label": "not_security"
+  },
+  {
+   "id": 62684,
+   "label": "not_security"
+  },
+  {
+   "id": 62683,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 62723,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 61947,
+   "label": "security",
+   "event_slug": "spigen-korea-breach"
+  },
+  {
+   "id": 62724,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 62544,
+   "label": "not_security"
+  },
+  {
+   "id": 61999,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61898,
+   "label": "not_security"
+  },
+  {
+   "id": 61997,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61998,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 62582,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 61897,
+   "label": "security",
+   "event_slug": "sbi-darkweb-leak"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 국방정보기술 워크숍",
+   "start_date": "2026-10-22",
+   "end_date": "2026-10-24",
+   "place": "강원 강릉 세인트존스호텔",
+   "organizer": "한국인터넷정보학회 국방정보기술연구회",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209107",
+   "major": true,
+   "note": "국방 AI 정책과 핵심기술 방향 공유, 국방 사이버보안·민군 기술협력 논의",
+   "article_ids": [
+    58551
+   ]
+  }
+ ]
+}
