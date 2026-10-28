@@ -22,6 +22,7 @@ from . import store
 LABEL_NAME = {"am": "06시판", "noon": "12시판", "pm": "18시판", "week": "주간 요약"}
 VALID = {"security", "pr", "not_security"}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+HANGUL = re.compile(r"[가-힣]")
 DASHBOARD = os.environ.get("DASHBOARD_URL", "https://briefing-security.vercel.app").rstrip("/")
 
 
@@ -111,6 +112,14 @@ def check_files(out: dict, inp: dict | None, markdown: str) -> tuple[list, list,
     bad_slug = [e.get("slug") for e in events if not SLUG.match(str(e.get("slug", "")))]
     if bad_slug:
         errors.append(f"사건 slug 형식 오류: {', '.join(map(str, bad_slug[:3]))}")
+    # 사건 제목·요약은 대시보드에 그대로 보이므로 한글로 써야 한다 (slug를 그대로 넣은 판이 있었음, 2026-10-28)
+    def _korean(text, slug):
+        text = str(text or "").strip()
+        return bool(HANGUL.search(text)) and text != slug
+    bad_text = [e.get("slug") for e in events
+                if not (_korean(e.get("title"), e.get("slug")) and _korean(e.get("summary"), e.get("slug")))]
+    if bad_text:
+        errors.append(f"사건 제목·요약이 한글이 아님(비었거나 slug 그대로) {len(bad_text)}건: {', '.join(map(str, bad_text[:5]))}")
 
     known = {e.get("slug") for e in events}
     if inp:
