@@ -120,7 +120,7 @@ def test_verify_briefing_files():
            "recent_events": [{"slug": "old-case"}]}
     md = "# 정보보안 브리핑 2026-10-27 (화) 12시판\n\n## 🔴 주요 사건\n"
     out = {"date": "2026-10-27", "edition": "noon", "stats": {"candidates": 3},
-           "events": [{"slug": "php-cve-1"}],
+           "events": [{"slug": "php-cve-1", "title": "PHP 원격코드 실행 취약점", "summary": "KISA 임시 조치 권고"}],
            "labels": [{"id": 1, "label": "security", "event_slug": "php-cve-1"},
                       {"id": 2, "label": "security", "event_slug": "old-case"},
                       {"id": 3, "label": "not_security", "event_slug": None}]}
@@ -196,6 +196,21 @@ def test_feed_recovers_from_malformed_xml():
     assert parse_feed((FX / "zdnet.xml").read_bytes()).recovered is False
 
 
+def test_verify_event_text_korean():
+    from collector.verify_briefing import check_files
+    inp = {"date": "2026-10-28", "edition": "pm", "articles": [{"id": 1}], "recent_events": []}
+    md = "# 정보보안 브리핑 2026-10-28 (수) 18시판\n\n## 🔴 주요 사건\n"
+    base = {"date": "2026-10-28", "edition": "pm", "labels": [{"id": 1, "label": "security", "event_slug": "a"}]}
+    good = {"slug": "a", "title": "PHP2Shell 취약점 실제 악용 확인", "summary": "CISA KEV 등재"}
+    assert check_files({**base, "events": [good]}, inp, md)[0] == []
+    for bad in ({"slug": "a", "title": "a", "summary": "a"},                     # slug 그대로 (10/28 18시판)
+                {"slug": "a", "title": "Starlink ad tracking", "summary": "CISA KEV 등재"},   # 한글 없음
+                {"slug": "a", "title": "PHP 취약점"},                             # 요약 없음
+                {"slug": "a", "title": "PHP 취약점", "summary": "a"}):
+        err = check_files({**base, "events": [bad]}, inp, md)[0]
+        assert any("사건 제목·요약이 한글이 아님" in e for e in err), bad
+
+
 def test_verify_summary_lines():
     from collector.verify_briefing import check_files
     inp = {"date": "2026-10-27", "edition": "am", "articles": [{"id": 1}, {"id": 2}], "recent_events": []}
@@ -226,9 +241,11 @@ def test_fill_descriptions(monkeypatch):
 
 def test_ai_summary(monkeypatch):
     from collector import ai_summary, store
-    rows = [{"id": 1, "title": "KB국민은행 해킹 정보유출 2091명 추가 확인", "summary": "설명", "label": None, "collected_at": "2026-10-26T10:00:00+00:00"},
-            {"id": 2, "title": "제목2", "summary": "설명", "label": "security", "collected_at": "2026-10-26T10:00:00+00:00"},
-            {"id": 3, "title": "제목3", "summary": "설명", "label": "not_security", "collected_at": "2026-10-26T10:00:00+00:00"},
+    from datetime import timedelta, timezone
+    recent = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()   # 고정 날짜면 48시간 뒤 '포기'로 바뀌어 실패함
+    rows = [{"id": 1, "title": "KB국민은행 해킹 정보유출 2091명 추가 확인", "summary": "설명", "label": None, "collected_at": recent},
+            {"id": 2, "title": "제목2", "summary": "설명", "label": "security", "collected_at": recent},
+            {"id": 3, "title": "제목3", "summary": "설명", "label": "not_security", "collected_at": recent},
             {"id": 4, "title": "제목4", "summary": None, "label": None, "collected_at": "2099-01-01T00:00:00+00:00"},   # 설명 대기
             {"id": 5, "title": "제목5", "summary": "설명", "label": None, "collected_at": "2026-10-01T00:00:00+00:00"}]
     patched, sent = [], []
