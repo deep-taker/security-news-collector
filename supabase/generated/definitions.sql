@@ -608,7 +608,7 @@ begin
     if cov_all_ok and cov.n >= 5 and cov.filled < cov.n * 0.5 then
       alerts := alerts || jsonb_build_object('level','warn','code','source_summary_low','source_id',r.id,
         'title', r.name || ' 한 줄 요약 채움률 ' || round(100.0 * cov.filled / cov.n) || '% (24시간 ' || cov.n || '건)',
-        'detail', '기사 설명(요약 재료)을 못 읽고 있을 가능성 — 매체 원문 표본 저장 작업으로 목록 구조 확인');
+        'detail', '기사 설명(요약 재료)을 못 읽고 있을 가능성 — Claude 세션에서 매체 목록 페이지를 열어 구조 확인');
     end if;
     if r.gap is not null then
       alerts := alerts || jsonb_build_object('level','warn','code','source_gap','source_id',r.id,
@@ -620,7 +620,7 @@ begin
   for d in select generate_series(kst::date - 1, kst::date, interval '1 day')::date loop
     foreach e in array array['am','noon','pm'] loop
       continue when e = 'noon' and d < date '2026-10-27';
-      continue when d < date '2026-10-26';
+      continue when d < date '2026-10-28';   -- 2026-10-28 DB 기록을 지우고 새로 시작 (그 전 판은 없음)
       due := d + case e when 'am' then time '07:00' when 'noon' then time '13:00' else time '19:00' end;
       if due <= kst and due > kst - interval '36 hours'
          and not exists (select 1 from public.briefings b where b.date = d and b.edition = e) then
