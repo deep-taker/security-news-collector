@@ -22,9 +22,9 @@
   },
   {
    "slug": "shadow-ai-survey-fasoo",
-   "title": "shadow-ai-survey-fasoo",
+   "title": "파수AI 조사, AI 금지 조직도 77.3% 개인 계정으로 사용",
    "category": "AI 보안",
-   "summary": "shadow-ai-survey-fasoo",
+   "summary": "AI 사용 금지 조직에서도 77.3%가 개인 계정으로 생성형 AI 사용",
    "cves": []
   },
   {
@@ -43,90 +43,90 @@
   },
   {
    "slug": "defense-it-workshop-2026",
-   "title": "defense-it-workshop-2026",
+   "title": "2026 국방정보기술 워크숍 성료",
    "category": "방산보안",
-   "summary": "defense-it-workshop-2026",
+   "summary": "강릉에서 국방 AI 정책·핵심기술과 국방 사이버보안·민군 협력 논의",
    "cves": []
   },
   {
    "slug": "skt-trust-recovery",
-   "title": "skt-trust-recovery",
+   "title": "SKT 해킹 후 신뢰 회복 대응 돋보여…기업이 먼저 손실 감수",
    "category": "침해사고",
-   "summary": "skt-trust-recovery",
+   "summary": "세미나에서 신규 가입 중단·전 고객 보상 등 SKT의 신뢰 회복 대응 평가",
    "cves": []
   },
   {
    "slug": "teams-it-impersonation",
-   "title": "teams-it-impersonation",
+   "title": "마이크로소프트 팀즈 악용한 IT 관리자 사칭 공격 400건 이상 확인",
    "category": "악성코드·랜섬웨어",
-   "summary": "teams-it-impersonation",
+   "summary": "아크틱울프가 팀즈 채팅으로 IT 지원팀을 사칭해 랜섬웨어 침입 시도",
    "cves": []
   },
   {
    "slug": "ai-wallet-limit-self-approve",
-   "title": "ai-wallet-limit-self-approve",
+   "title": "AI에 지갑·이메일 맡겼더니…지출 한도까지 ‘셀프 승인’",
    "category": "AI 보안",
-   "summary": "ai-wallet-limit-self-approve",
+   "summary": "AI 모델 10개 중 9개가 승인 없이 지갑 지출 한도를 상향",
    "cves": []
   },
   {
    "slug": "cisa-2030-strategy",
-   "title": "cisa-2030-strategy",
+   "title": "미국 CISA, ‘2030 사이버안보 전략’ 발표",
    "category": "정책·제도",
-   "summary": "cisa-2030-strategy",
+   "summary": "‘방어·강화·복원력’ 전략으로 공격자 신속 제거와 필수 서비스 보호 강조",
    "cves": []
   },
   {
    "slug": "oracle-openai-ai-security",
-   "title": "oracle-openai-ai-security",
+   "title": "오라클, 오픈AI와 AI 보안 위협 공동 대응",
    "category": "AI 보안",
-   "summary": "oracle-openai-ai-security",
+   "summary": "취약점 탐지부터 검증·수정까지 AI로 지원",
    "cves": []
   },
   {
    "slug": "autocrypt-vehicle-hack-demo",
-   "title": "autocrypt-vehicle-hack-demo",
+   "title": "아우토크립트, 모빌리티 총회서 실제 차량 해킹 시연",
    "category": "기타",
-   "summary": "autocrypt-vehicle-hack-demo",
+   "summary": "차량 해킹 시연으로 사전 보안 검증 필요성 강조",
    "cves": []
   },
   {
    "slug": "engie-partner-breach",
-   "title": "engie-partner-breach",
+   "title": "프랑스 에너지 대기업 엔지, 협력사 시스템 해킹으로 고객정보 유출",
    "category": "개인정보",
-   "summary": "engie-partner-breach",
+   "summary": "외부 영업 협력사 침해로 프랑스 고객 연락처·계약정보 노출",
    "cves": []
   },
   {
    "slug": "mistral-vibe-cve-2026-116843",
-   "title": "mistral-vibe-cve-2026-116843",
+   "title": "미스트랄 AI 코딩도구 ‘바이브’서 고위험 취약점 발견",
    "category": "AI 보안",
-   "summary": "mistral-vibe-cve-2026-116843",
+   "summary": "CVE-2026-116843, 악성 저장소로 개발자 PC 장악 위험, 3.0.3에서 수정",
    "cves": [
     "CVE-2026-116843"
    ]
   },
   {
    "slug": "redaxo-auth-bypass",
-   "title": "redaxo-auth-bypass",
+   "title": "레닥소 웹사이트 관리도구에 치명적 인증 우회 취약점",
    "category": "취약점",
-   "summary": "redaxo-auth-bypass",
+   "summary": "CVE-2026-117532, 비밀번호 없이 관리자 권한 탈취 가능",
    "cves": [
     "CVE-2026-117532"
    ]
   },
   {
    "slug": "resident-record-stepfamily",
-   "title": "resident-record-stepfamily",
+   "title": "주민등록 등·초본에 재혼가정 가족관계 표기 사라진다",
    "category": "정책·제도",
-   "summary": "resident-record-stepfamily",
+   "summary": "‘계부’‘계모’ 대신 ‘세대원’ 표기로 재혼가정 사생활 노출 감소",
    "cves": []
   },
   {
    "slug": "llamacpp-cve-2026-116816",
-   "title": "llamacpp-cve-2026-116816",
+   "title": "오픈소스 AI 실행도구 llama.cpp서 고위험 취약점 발견",
    "category": "AI 보안",
-   "summary": "llamacpp-cve-2026-116816",
+   "summary": "CVE-2026-116816, 악성 AI 모델 파일로 시스템 공격 가능",
    "cves": [
     "CVE-2026-116816"
    ]
@@ -140,32 +140,32 @@
   },
   {
    "slug": "eaton-easye4-vuln",
-   "title": "eaton-easye4-vuln",
+   "title": "이튼 전력제어장치 easyE4 심각한 취약점 3건 발견",
    "category": "취약점",
-   "summary": "eaton-easye4-vuln",
+   "summary": "easyE4·easySoft의 인증 우회·무단 접근 취약점, 국내 유통 제품도 점검 필요",
    "cves": []
   },
   {
    "slug": "qode-membership-cve-2026-92885",
-   "title": "qode-membership-cve-2026-92885",
+   "title": "워드프레스 회원관리 플러그인에 치명적 취약점 발견",
    "category": "취약점",
-   "summary": "qode-membership-cve-2026-92885",
+   "summary": "Qode Membership CVE-2026-92885, 비밀번호 없이 기존 계정 로그인 가능(CVSS 9.8)",
    "cves": [
     "CVE-2026-92885"
    ]
   },
   {
    "slug": "ai-voice-biometric-risk",
-   "title": "ai-voice-biometric-risk",
+   "title": "“GPT와 음성 대화했을 뿐인데”…목소리 생체 데이터 유출 주의보",
    "category": "AI 보안",
-   "summary": "ai-voice-biometric-risk",
+   "summary": "AI 음성 대화의 목소리 데이터가 클라우드에 저장돼 딥페이크 악용 우려",
    "cves": []
   },
   {
    "slug": "ai-qwen38-exfil-attempt",
-   "title": "ai-qwen38-exfil-attempt",
+   "title": "코히어 \"알리바바 큐원3.8, 보안 시험 중 베이징 서버로 전송 시도\"",
    "category": "AI 보안",
-   "summary": "ai-qwen38-exfil-attempt",
+   "summary": "코히어, 큐원3.8의 예상 외 외부 통신 가능성 제기",
    "cves": []
   },
   {
@@ -177,9 +177,9 @@
   },
   {
    "slug": "coinbase-amplitude-leak",
-   "title": "coinbase-amplitude-leak",
+   "title": "코인베이스 “내부 해킹 아니다”…외부 분석업체서 고객 정보 노출",
    "category": "개인정보",
-   "summary": "coinbase-amplitude-leak",
+   "summary": "외부 분석업체 앰플리튜드 사고로 일부 고객 연락처 정보 영향",
    "cves": []
   },
   {
@@ -191,23 +191,23 @@
   },
   {
    "slug": "starlink-adbid-surveillance",
-   "title": "starlink-adbid-surveillance",
+   "title": "스타링크 이용자 감시?…이스라엘 광고업체에 제기된 의혹",
    "category": "기타",
-   "summary": "starlink-adbid-surveillance",
+   "summary": "이스라엘 광고기술 업체의 스타링크 이용자 대상 대규모 광고 입찰 정황",
    "cves": []
   },
   {
    "slug": "pipa-72h-notice",
-   "title": "pipa-72h-notice",
+   "title": "개인정보보호법 개정, 72시간 골든타임을 위한 보안 전략",
    "category": "정책·제도",
-   "summary": "pipa-72h-notice",
+   "summary": "위조·변조·훼손도 유출에 포함, 랜섬웨어 암호화만으로도 72시간 내 통지 대상",
    "cves": []
   },
   {
    "slug": "cii-inspection-172",
-   "title": "cii-inspection-172",
+   "title": "정부, 통신·플랫폼·금융 민간 주요정보통신기반시설 172곳 보안 점검",
    "category": "정책·제도",
-   "summary": "cii-inspection-172",
+   "summary": "민간 주요정보통신기반시설 111개 기관 172곳 연말까지 보안점검",
    "cves": []
   },
   {
@@ -226,9 +226,9 @@
   },
   {
    "slug": "sbi-darkweb-leak",
-   "title": "sbi-darkweb-leak",
+   "title": "인도 최대 국영은행 SBI, 고객정보 3897건 다크웹 유출",
    "category": "개인정보",
-   "summary": "sbi-darkweb-leak",
+   "summary": "다크웹 자료 약 37만5000건 중 고객 개인정보 3897건 확인",
    "cves": []
   }
  ],
