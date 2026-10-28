@@ -1,0 +1,24 @@
+# 버전 업데이트: 매월 첫 월요일 09시(KST) 확인 → PR 제안. 보안 업데이트는 저장소 설정 'Dependabot security updates'로 즉시 제안
+# 자동 병합: CI(단위·실제 원문 비교·브리핑 변환·빌드·취약점) 통과 시 패치·부 버전만 (Next.js는 패치만). 주 버전은 검토
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: monthly, day: monday, time: "09:00", timezone: Asia/Seoul }
+    commit-message: { prefix: "의존성(Actions)" }
+    groups:
+      actions: { patterns: ["*"] }
+  - package-ecosystem: pip
+    directory: /
+    schedule: { interval: monthly, day: monday, time: "09:00", timezone: Asia/Seoul }
+    commit-message: { prefix: "의존성(Python)" }
+    groups:
+      python: { patterns: ["*"] }
+  - package-ecosystem: npm
+    directory: /dashboard
+    schedule: { interval: monthly, day: monday, time: "09:00", timezone: Asia/Seoul }
+    commit-message: { prefix: "의존성(대시보드)" }
+    open-pull-requests-limit: 5
+    groups:
+      dashboard-minor:
+        update-types: [minor, patch]

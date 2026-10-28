@@ -1,0 +1,100 @@
+alert_state.key text not null
+alert_state.first_seen timestamp with time zone not null default now()
+alert_state.last_seen timestamp with time zone not null default now()
+alert_state.last_notified timestamp with time zone
+alert_state.title text
+articles.id bigint not null default nextval('public.articles_id_seq'::regclass)
+articles.url_hash text not null
+articles.url text not null
+articles.source_id text not null
+articles.title text not null
+articles.summary text
+articles.published_at timestamp with time zone
+articles.published_approx boolean not null default false
+articles.collected_at timestamp with time zone not null default now()
+articles.categories ARRAY default '{}'::text[]
+articles.keywords ARRAY default '{}'::text[]
+articles.candidate boolean not null default false
+articles.ai_related boolean not null default false
+articles.label text
+articles.event_id bigint
+articles.labeled_at timestamp with time zone
+articles.summary_line text
+articles.summary_source text
+backup_runs.id bigint not null default nextval('public.backup_runs_id_seq'::regclass)
+backup_runs.run_at timestamp with time zone not null default now()
+backup_runs.target text not null
+backup_runs.kind text not null
+backup_runs.ok boolean not null
+backup_runs.files integer not null default 0
+backup_runs.bytes bigint not null default 0
+backup_runs.rows_count integer not null default 0
+backup_runs.used_bytes bigint
+backup_runs.limit_bytes bigint
+backup_runs.detail text
+briefing_checks.id bigint not null default nextval('public.briefing_checks_id_seq'::regclass)
+briefing_checks.checked_at timestamp with time zone not null default now()
+briefing_checks.date date not null
+briefing_checks.edition text not null
+briefing_checks.ok boolean not null
+briefing_checks.problems jsonb not null default '[]'::jsonb
+briefing_checks.summary jsonb not null default '{}'::jsonb
+briefings.date date not null
+briefings.markdown text not null
+briefings.stats jsonb default '{}'::jsonb
+briefings.created_at timestamp with time zone not null default now()
+briefings.edition text not null default 'am'::text
+ci_runs.id bigint not null default nextval('public.ci_runs_id_seq'::regclass)
+ci_runs.run_at timestamp with time zone not null default now()
+ci_runs.sha text not null
+ci_runs.ok boolean not null
+ci_runs.detail text
+ci_runs.url text
+collection_runs.id bigint not null default nextval('public.collection_runs_id_seq'::regclass)
+collection_runs.run_at timestamp with time zone not null default now()
+collection_runs.source_id text
+collection_runs.ok boolean not null
+collection_runs.fetched integer not null default 0
+collection_runs.new_count integer
+collection_runs.error text
+collection_runs.flags ARRAY default '{}'::text[]
+events.id bigint not null default nextval('public.events_id_seq'::regclass)
+events.slug text not null
+events.title text not null
+events.category text
+events.summary text
+events.cves ARRAY default '{}'::text[]
+events.first_seen date not null default CURRENT_DATE
+events.last_seen date not null default CURRENT_DATE
+events.created_at timestamp with time zone not null default now()
+ops_reminders.key text not null
+ops_reminders.title text not null
+ops_reminders.due date not null
+ops_reminders.note text
+remediation_runs.id bigint not null default nextval('public.remediation_runs_id_seq'::regclass)
+remediation_runs.run_at timestamp with time zone not null default now()
+remediation_runs.kind text not null
+remediation_runs.target text not null default ''::text
+remediation_runs.ok boolean not null
+remediation_runs.request_id bigint
+remediation_runs.detail text
+security_events.id bigint not null default nextval('public.security_events_id_seq'::regclass)
+security_events.name text not null
+security_events.name_key text
+security_events.start_date date not null
+security_events.end_date date
+security_events.place text
+security_events.organizer text
+security_events.url text
+security_events.major boolean not null default false
+security_events.note text
+security_events.article_ids ARRAY not null default '{}'::bigint[]
+security_events.first_seen date not null default CURRENT_DATE
+security_events.updated_at timestamp with time zone not null default now()
+sources.id text not null
+sources.name text not null
+sources.grp text not null default 'domestic_press'::text
+sources.kind text not null
+sources.url text not null
+sources.active boolean not null default true
+sources.fail_alert_after integer not null default 3

@@ -1,0 +1,61 @@
+name: Dependabot 패치·부 버전 자동 반영
+
+# CI가 통과한 Dependabot 제안 중 패치(1.2.3→1.2.4)·부 버전(1.2→1.3)만 자동 병합. CI에 실제 원문 비교·브리핑 변환 시험이 있어 동작 변화를 잡음.
+# 주 버전, 그리고 Next.js의 부 버전은 사람(또는 Claude)이 미리보기까지 확인 후 병합.
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  merge:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: 패치 버전만 병합
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          BRANCH: ${{ github.event.workflow_run.head_branch }}
+          SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          pr=$(gh pr list -R "$REPO" --head "$BRANCH" --state open --json number,author,headRefOid,body,title \
+                 --jq '.[] | select(.author.login=="app/dependabot" or .author.login=="dependabot[bot]")')
+          [ -z "$pr" ] && { echo "열린 Dependabot PR 없음"; exit 0; }
+          num=$(jq -r .number <<<"$pr")
+          [ "$(jq -r .headRefOid <<<"$pr")" != "$SHA" ] && { echo "시험한 커밋과 PR 최신 커밋이 다름 — 건너뜀"; exit 0; }
+          # 본문의 'from X to Y'를 모두 찾아 주.부 버전이 같은지 확인
+          export TITLE=$(jq -r .title <<<"$pr")
+          verdict=$(jq -r .body <<<"$pr" | python3 -c '
+          import re, sys
+          body = sys.stdin.read()
+          ups = re.findall(r"(?:Updates `|Bumps \[)([^`\]]+)[`\]].*? from `?v?(\d+)\.(\d+)[.\d]*`? to `?v?(\d+)\.(\d+)[.\d]*", body)
+          def ok(name, a, b, c, d):
+              if a != c:
+                  return False                      # 주 버전
+              if name == "next" and b != d:
+                  return False                      # Next.js 부 버전은 검토
+              return True
+          # 본문이 잘려 일부 항목이 빠지면 자동 병합하지 않음: 제목의 'with N updates'와 찾은 항목 수가 같아야 함
+          import os
+          m = re.search(r"with (\d+) updates?", os.environ.get("TITLE", ""))
+          complete = (len({u[0] for u in ups}) == int(m.group(1))) if m else len({u[0] for u in ups}) == 1
+          print("auto" if ups and complete and all(ok(*u) for u in ups) else "review")')
+          echo "PR #$num 판정: $verdict"
+          if [ "$verdict" = "auto" ]; then
+            gh pr merge -R "$REPO" "$num" --squash --delete-branch
+            # GITHUB_TOKEN 병합은 main push 워크플로를 깨우지 않으므로 CI를 직접 실행(결과가 ci_runs에 기록되도록)
+            gh workflow run ci.yml -R "$REPO" --ref main
+          else
+            gh pr comment -R "$REPO" "$num" --body "주 버전(또는 Next.js 부 버전) 변경이라 자동 병합하지 않았습니다. CI는 통과했습니다. 미리보기 확인 후 병합하세요." || true
+          fi

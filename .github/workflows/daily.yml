@@ -1,0 +1,54 @@
+name: 브리핑 준비 (하루 3회)
+
+on:
+  # 05:35·11:35·17:35 KST 실행 신호는 Supabase pg_cron(prepare-am/noon/pm)이 보냄. 누락 시 Claude 브리핑 작업이 직접 실행.
+  # GitHub 자체 예약은 꺼 둠 (2026-10-26). 06시판 때 보관 정책·용량 점검 수행 (백업은 backup.yml).
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "기준 날짜 YYYY-MM-DD (비우면 오늘)"
+        required: false
+      edition:
+        description: "am(06시판)·noon(12시판)·pm(18시판)·week(주간 요약 입력만), 비우면 현재 시각 기준"
+        required: false
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 브리핑 입력·백업·정리
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          TARGET_DATE: ${{ inputs.date }}
+          TARGET_EDITION: ${{ inputs.edition }}
+        run: |
+          args=""
+          [ -n "$TARGET_DATE" ] && args="$args --date $TARGET_DATE"
+          [ -n "$TARGET_EDITION" ] && args="$args --edition $TARGET_EDITION"
+          python -m collector.daily $args
+      - name: 저장소에 반영
+        if: always()   # 06시판 정비 단계가 실패해도 이미 만든 브리핑 입력은 올린다 (작업은 실패로 남음)
+        run: |
+          git config user.name "collector-bot"
+          git config user.email "collector-bot@users.noreply.github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "브리핑 입력 $(TZ=Asia/Seoul date +%F-%H%M)"
+            ok=""; for i in 1 2 3; do if git pull --rebase && git push; then ok=1; break; fi; git rebase --abort 2>/dev/null || true; sleep $((i * 10)); done
+            [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 커밋이 올라가지 않았습니다"; exit 1; }
+          fi
