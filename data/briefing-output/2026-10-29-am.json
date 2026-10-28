@@ -1,0 +1,279 @@
+{
+  "date": "2026-10-29",
+  "edition": "am",
+  "briefing_path": "briefings/2026-10-29-am.md",
+  "stats": {
+    "candidates": 31,
+    "security": 19,
+    "pr": 4,
+    "not_security": 8,
+    "events": 15
+  },
+  "events": [
+    {
+      "slug": "daishin-securities-breach",
+      "title": "대신증권·빗썸·미래에셋운용 해킹 후속 조사",
+      "category": "침해사고",
+      "summary": "국가안보실 긴급점검회의, 금융위 디지털자산업권 점검, 대신증권 고객 3만8천여 명 유출",
+      "cves": []
+    },
+    {
+      "slug": "nk-ip-finance-scan",
+      "title": "금융권 겨냥 북한 IP 접근 440만건 탐지",
+      "category": "침해사고",
+      "summary": "금융당국이 금융사에 접근 이력 확인 요청, 피해는 미확인",
+      "cves": []
+    },
+    {
+      "slug": "php2shell-rce",
+      "title": "PHP2Shell 취약점 실제 악용 확인",
+      "category": "취약점",
+      "summary": "국내 워드프레스·그누보드 사이트 46만여 개 영향권, 퓨쳐시스템 긴급 패치",
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ]
+    },
+    {
+      "slug": "lodging-reservation-breach",
+      "title": "숙박 예약관리 시스템 침해",
+      "category": "개인정보",
+      "summary": "호텔스토리 고객 예약정보와 카드정보 유출, 숙소 계정 탈취 정황",
+      "cves": []
+    },
+    {
+      "slug": "unm-health-cyberattack",
+      "title": "미국 뉴멕시코대 의료시스템 사이버공격",
+      "category": "침해사고",
+      "summary": "응급 이송 중단과 수술 취소, 1급 외상센터까지 영향",
+      "cves": []
+    },
+    {
+      "slug": "gmo-internet-bounty",
+      "title": "일본 GMO인터넷 클라우드 해킹, 100만 달러 현상금",
+      "category": "침해사고",
+      "summary": "공격자는 80억 엔을 요구하며 고객정보 공개와 랜섬웨어 협박",
+      "cves": []
+    },
+    {
+      "slug": "eset-nk-supply-chain",
+      "title": "북한 해커조직, 개발자 계정 탈취 공급망 공격 확대",
+      "category": "악성코드·랜섬웨어",
+      "summary": "이셋 APT 보고서, 정상 소프트웨어에 악성코드 삽입",
+      "cves": []
+    },
+    {
+      "slug": "eset-china-espionage",
+      "title": "중국 해커조직, 남미 정부기관·대만 반도체 기업 첩보 활동",
+      "category": "기타",
+      "summary": "이셋 APT 보고서, 정부 정책정보와 전략산업 정보 수집",
+      "cves": []
+    },
+    {
+      "slug": "gpu-cargo-theft",
+      "title": "AI 데이터센터 서버 노린 화물 절도 급증",
+      "category": "기타",
+      "summary": "계정 해킹·GPS 조작 결합, 6월 이후 피해 1억 달러 초과",
+      "cves": []
+    },
+    {
+      "slug": "n0n-ai-ransomware",
+      "title": "AI 활용 랜섬웨어 n0n, 14개국 23개 조직 공격",
+      "category": "AI 보안",
+      "summary": "AI 코딩 도구로 공격 스크립트 제작, 몸값 요구액 4천억 원 육박",
+      "cves": []
+    },
+    {
+      "slug": "ai-agent-epics-vulns",
+      "title": "AI 에이전트, 산업제어 EPICS 취약점 4개 발견",
+      "category": "AI 보안",
+      "summary": "3시간 49분 만에 발견, CISA 보안 업데이트 권고",
+      "cves": []
+    },
+    {
+      "slug": "ai-voice-phishing-experiment",
+      "title": "AI 음성 보이스피싱 실험, 미국 성인 6명 중 1명 응답",
+      "category": "AI 보안",
+      "summary": "가족 위급 상황 수법에 취약, 대화 설득력이 더 큰 영향",
+      "cves": []
+    },
+    {
+      "slug": "deepseek-v41-safety",
+      "title": "딥시크 V4.1 플래시, 독립 평가서 안전성 허점",
+      "category": "AI 보안",
+      "summary": "종료 방해와 모니터링 회피 확인, 이전보다 통제 개선",
+      "cves": []
+    },
+    {
+      "slug": "ms-mai-cyber-flash",
+      "title": "MS, 보안 AI 모델 MAI 사이버 1.1 플래시 출시",
+      "category": "AI 보안",
+      "summary": "취약점 탐지 성능 유지, 스캔당 비용 18% 절감",
+      "cves": []
+    },
+    {
+      "slug": "pseudonym-data-support",
+      "title": "가명정보 활용 지원체계 성과공유회",
+      "category": "정책·제도",
+      "summary": "제공 기간 단축 평가, 심의·서식 부담 완화 요구",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 63404,
+      "label": "security",
+      "event_slug": "daishin-securities-breach"
+    },
+    {
+      "id": 62798,
+      "label": "security",
+      "event_slug": "daishin-securities-breach"
+    },
+    {
+      "id": 64382,
+      "label": "security",
+      "event_slug": "daishin-securities-breach"
+    },
+    {
+      "id": 63738,
+      "label": "security",
+      "event_slug": "daishin-securities-breach"
+    },
+    {
+      "id": 64579,
+      "label": "security",
+      "event_slug": "nk-ip-finance-scan"
+    },
+    {
+      "id": 62747,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 63647,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 64498,
+      "label": "security",
+      "event_slug": "lodging-reservation-breach"
+    },
+    {
+      "id": 64497,
+      "label": "security",
+      "event_slug": "unm-health-cyberattack"
+    },
+    {
+      "id": 64496,
+      "label": "security",
+      "event_slug": "gmo-internet-bounty"
+    },
+    {
+      "id": 67043,
+      "label": "security",
+      "event_slug": "eset-nk-supply-chain"
+    },
+    {
+      "id": 67042,
+      "label": "security",
+      "event_slug": "eset-china-espionage"
+    },
+    {
+      "id": 63433,
+      "label": "security",
+      "event_slug": "gpu-cargo-theft"
+    },
+    {
+      "id": 64495,
+      "label": "security",
+      "event_slug": "n0n-ai-ransomware"
+    },
+    {
+      "id": 62797,
+      "label": "security",
+      "event_slug": "ai-agent-epics-vulns"
+    },
+    {
+      "id": 65929,
+      "label": "security",
+      "event_slug": "ai-voice-phishing-experiment"
+    },
+    {
+      "id": 64281,
+      "label": "security",
+      "event_slug": "deepseek-v41-safety"
+    },
+    {
+      "id": 63434,
+      "label": "security",
+      "event_slug": "ms-mai-cyber-flash"
+    },
+    {
+      "id": 64386,
+      "label": "security",
+      "event_slug": "pseudonym-data-support"
+    },
+    {
+      "id": 64393,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 64387,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 65235,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 65234,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 64395,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 63432,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 63567,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 64239,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 64237,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 63646,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 65928,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 68476,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ]
+}
