@@ -42,7 +42,10 @@ export default async function Briefing({ date, edition, editions }) {
 
 // 제목·대상 줄은 위에, 절(주요 사건·사고, 기타 사건·사고, AI 보안 …)은 탭으로. 절이 하나 이하면 탭 없이 그대로.
 function Sections({ html }) {
-  const { head, tabs } = splitSections(html);
+  const { head, tabs: all } = splitSections(html);
+  // '보안 행사' 절은 대시보드 브리핑 화면에서 보이지 않게 — 상단 '행사 일정'(달력)에서 본다 (사용자 결정 2026-10-29)
+  const tabs = all.filter((t) => !t.id.startsWith("events"));
+  if (tabs.length !== all.length) html = (head || "") + tabs.map((t) => `<h2>${t.title}</h2>${t.html}`).join("");   // 절이 하나만 남을 때(탭 없이) 쓰는 본문
   if (tabs.length <= 1) return <div dangerouslySetInnerHTML={{ __html: html }} />;
   return (
     <>
