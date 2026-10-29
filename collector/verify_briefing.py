@@ -71,6 +71,10 @@ def check_format(markdown: str, edition: str) -> list:
     no_src, bad_lines = 0, 0
     for sec in sections:
         title, _, body = sec.partition("\n")
+        if "업계 동향" in title:   # 배치 기준: 보도 매체 수가 많은 순 (INSTRUCTIONS.md, 10/29 점검에서 3개 판이 어긋남)
+            counts = [len(m.split(",")) for m in re.findall(r'^- \*\*\[[^\]]+\]\([^)]*"보도:\s*([^"]+)"', body, re.M)]
+            if counts != sorted(counts, reverse=True):
+                warns.append("업계 동향 배치 순서가 다름 (보도 매체 수가 많은 순 → 최신순)")
         if "주요 사건" in title:
             for item in re.split(r"^###\s+", body, flags=re.M)[1:]:
                 head, _, rest = item.partition("\n")
