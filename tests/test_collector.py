@@ -74,9 +74,27 @@ def test_keywords_and_false_positive():
     assert "APT" not in sec
 
 
+def test_keywords_false_positive_1029():
+    # 10/29 운영 점검에서 오탐으로 확인된 표현
+    for title in ["비트코인 반등해도 매물 부담…암호화폐 시장 관망", "日 자민당, 암호 화폐 규제 검토", "디지털 암호화자산 ETF 출시",
+                  "현대모비스, 차량용 SW 임직원 해커톤 개최", "테슬라 사이버캡 배터리 설계 변경",
+                  "한화시스템, 3분기 영업익 992억…방산 수출로 60% 성장", "홍화씨 오일에는 불포화지방산이 풍부",
+                  "GM 최고제품책임자(CPO)는 인터뷰에서"]:
+        assert keywords.match(title) == ([], []), title
+    # 진짜 보안 기사는 그대로 후보
+    assert "암호화" in keywords.match("대신증권 해킹…계좌번호는 암호화된 상태")[0]
+    assert "해커" in keywords.match("북한 해커, 국내 방산업체 노려")[0]
+    # 행사 판정에서는 해커톤을 그대로 행사 단어로 본다
+    assert keywords.event_match("국방부, 사이버 보안 해커톤 개최") != []
+    # 놓친 기사 표본 근거로 추가한 단어
+    assert "패스키" in keywords.match("마이크로소프트, 엔트라 ID 문자·음성 인증 종료...패스키 전환 권고")[0]
+    assert "양자암호" in keywords.match("KT, 양자암호통신 테스트베드 전국 확대")[0]
+    assert "PQC" in keywords.match("국방 통신망 PQC 시범 전환")[0] and keywords.match("PQCD 지표")[0] == []
+
+
 def test_defense_keywords():
     sec, _ = keywords.match("방사청, LIG D&A 추가 제재 추진…방산업체 지정 취소 검토")
-    assert "방산" in sec
+    assert "방산업체" in sec and "방사청" in sec
 
 
 def test_etnews_sidebar_not_auto_candidate():
@@ -209,6 +227,16 @@ def test_verify_event_text_korean():
                 {"slug": "a", "title": "PHP 취약점", "summary": "a"}):
         err = check_files({**base, "events": [bad]}, inp, md)[0]
         assert any("사건 제목·요약이 한글이 아님" in e for e in err), bad
+
+
+def test_verify_industry_order():
+    from collector.verify_briefing import check_format
+    item = lambda t, src: f'- **[{t}](https://www.boannews.com/{t} "보도: {src}")**\n  줄1\n  줄2\n'
+    head = "# 정보보안 브리핑 2026-10-29 (목) 06시판\n\n## 🔴 주요 사건·사고\n\n## 🏢 업계 동향\n"
+    ok = head + item("a", "보안뉴스, 전자신문, 블로터") + item("b", "보안뉴스, 전자신문") + item("c", "보안뉴스")
+    bad = head + item("c", "보안뉴스") + item("a", "보안뉴스, 전자신문, 블로터")
+    assert not any("업계 동향 배치" in w for w in check_format(ok, "am"))
+    assert any("업계 동향 배치" in w for w in check_format(bad, "am"))
 
 
 def test_verify_summary_lines():

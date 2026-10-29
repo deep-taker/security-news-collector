@@ -260,6 +260,8 @@ def run(only=None, fixtures=None, retry_mode=False):
             if inj:
                 SUSPICIOUS.mkdir(parents=True, exist_ok=True)
                 (SUSPICIOUS / f'{src["id"]}-{stamp}.txt').write_bytes(raw)
+            if retry_mode:   # 새 서버 재수집 성공도 표시 → 재수집 성공률을 잴 수 있게 (10/29 점검: 성공 기록에는 표시가 없었음)
+                flags = flags + ["retried:ok"]
             entry.update(ok=True, fetched=len(items), candidates=sum(r["candidate"] for r in rows), flags=flags)
             if not items:
                 entry["error"] = "수집 0건 (사이트 구조 변경 가능성)"
