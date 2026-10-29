@@ -42,9 +42,10 @@ export function buildMonth(m, events, today) {
   return weeks;
 }
 
-// 그달에 걸친 행사 목록 (달력 아래 목록·휴대폰용), 시작일순
-export function monthEvents(m, events) {
-  const { first, last } = monthRange(m);
+// 그달(n개월이면 m부터 n달)에 걸친 행사 목록 (달력 아래 목록·휴대폰용), 시작일순
+export function monthEvents(m, events, n = 1) {
+  const { first } = monthRange(m);
+  const { last } = monthRange(shiftMonth(m, n - 1));
   return events.filter((e) => e.start_date <= last && (e.end_date || e.start_date) >= first)
     .sort((a, b) => (a.start_date < b.start_date ? -1 : a.start_date > b.start_date ? 1 : a.name < b.name ? -1 : 1));
 }

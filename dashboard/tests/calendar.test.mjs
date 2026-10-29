@@ -39,4 +39,6 @@ test("그달 행사 목록: 그달에 걸친 행사만, 시작일순", () => {
     { id: 3, name: "c", start_date: "2026-10-01" },
   ];
   assert.deepEqual(monthEvents("2026-11", evs).map((e) => e.id), [2, 1]);
+  assert.deepEqual(monthEvents("2026-10", evs, 2).map((e) => e.id), [3, 2, 1]);   // 이번 달 + 다음 달
+  assert.deepEqual(monthEvents("2026-09", evs, 2).map((e) => e.id), [3, 2]);
 });

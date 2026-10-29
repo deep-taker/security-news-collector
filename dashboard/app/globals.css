@@ -142,6 +142,8 @@ details.same-event li { margin: 2px 0; }
 .cal-nav { display: flex; align-items: center; gap: 16px; margin: 16px 0 10px; }
 .cal-nav a { color: var(--accent); text-decoration: none; } .cal-nav strong { font-size: 1.1rem; }
 .cal-nav .cal-today { margin-left: auto; font-size: 14px; }
+.cal-month + .cal-month { margin-top: 20px; }
+.cal-title { font-size: 1.05rem; margin: 12px 0 8px; }
 table.cal { table-layout: fixed; border: 1px solid var(--line); background: var(--card); }
 table.cal th { text-align: center; padding: 6px 0; } table.cal th.sun, table.cal td.sun .d { color: #d93025; }
 table.cal th.sat, table.cal td.sat .d { color: #1a73e8; }
