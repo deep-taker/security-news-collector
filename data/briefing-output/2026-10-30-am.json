@@ -1,0 +1,224 @@
+{
+ "date": "2026-10-30",
+ "edition": "am",
+ "briefing_path": "briefings/2026-10-30-am.md",
+ "stats": {
+  "candidates": 26,
+  "security": 16,
+  "pr": 1,
+  "not_security": 9,
+  "events": 11
+ },
+ "events": [
+  {
+   "slug": "bithumb-groupware-breach",
+   "title": "빗썸 사내 모바일 그룹웨어 해킹",
+   "category": "침해사고",
+   "summary": "사내 그룹웨어 해킹으로 이용자·임직원 7159명 정보 유출, 일부 주민번호·신분증 노출",
+   "cves": []
+  },
+  {
+   "slug": "pukyong-univ-breach",
+   "title": "부경대 캠퍼스e모아시스템 해킹",
+   "category": "개인정보",
+   "summary": "학생 5106명·직원 2명 정보 유출, 해커 금전 요구 뒤 인지",
+   "cves": []
+  },
+  {
+   "slug": "jinair-api-breach",
+   "title": "진에어 회원정보 조회 API 공격",
+   "category": "개인정보",
+   "summary": "외부 공격으로 회원 1454명 개인정보 유출, 공격 IP 차단",
+   "cves": []
+  },
+  {
+   "slug": "skplanet-gifticon-breach",
+   "title": "SK플래닛 기프티콘 개인정보 유출",
+   "category": "개인정보",
+   "summary": "이름·전화번호·환급계좌 등 유출 정황, 비정상 접근 차단 후 정밀 조사",
+   "cves": []
+  },
+  {
+   "slug": "nk-ip-finance-scan",
+   "title": "금융권 겨냥 북한 IP 접근 440만건 탐지",
+   "category": "침해사고",
+   "summary": "금융보안원, IP만으로 북한 공격 단정 어려워 해명",
+   "cves": []
+  },
+  {
+   "slug": "meetri-breach",
+   "title": "미트리 개인정보 유출",
+   "category": "개인정보",
+   "summary": "주민등록번호·계좌정보까지 유출 가능성 확인",
+   "cves": []
+  },
+  {
+   "slug": "kepco-additional-leak",
+   "title": "한국전력공사 개인정보 추가 유출",
+   "category": "개인정보",
+   "summary": "퇴직자 65명 정보 추가 유출 확인, 경위는 관계기관 조사 중",
+   "cves": []
+  },
+  {
+   "slug": "polymarket-hack",
+   "title": "폴리마켓 265만달러 해킹",
+   "category": "침해사고",
+   "summary": "외부 협력업체 침해로 자금 유출, 거래 일시 중단",
+   "cves": []
+  },
+  {
+   "slug": "mistral-large4-open-weights",
+   "title": "미스트랄 라지 4 오픈웨이트 공개",
+   "category": "AI 보안",
+   "summary": "1조 파라미터 모델 가중치 공개, 기업·정부가 직접 운영 가능",
+   "cves": []
+  },
+  {
+   "slug": "mois-ai-pii-policy",
+   "title": "행안부 AI 시대 개인정보 활용 제도 정비",
+   "category": "정책·제도",
+   "summary": "개인정보 활용 제도 정비와 AI 재난 예방체계 강화 추진",
+   "cves": []
+  },
+  {
+   "slug": "eglue-air-agents",
+   "title": "이글루 AI 에이전트 에어 3종",
+   "category": "기타",
+   "summary": "자율 SOC 겨냥 AI 에이전트 라인업 확대",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 84758,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 84610,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 85556,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 85722,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 86458,
+   "label": "security",
+   "event_slug": "pukyong-univ-breach"
+  },
+  {
+   "id": 84022,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  },
+  {
+   "id": 84786,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  },
+  {
+   "id": 83971,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  },
+  {
+   "id": 88159,
+   "label": "security",
+   "event_slug": "skplanet-gifticon-breach"
+  },
+  {
+   "id": 86486,
+   "label": "security",
+   "event_slug": "skplanet-gifticon-breach"
+  },
+  {
+   "id": 85721,
+   "label": "security",
+   "event_slug": "skplanet-gifticon-breach"
+  },
+  {
+   "id": 87369,
+   "label": "security",
+   "event_slug": "skplanet-gifticon-breach"
+  },
+  {
+   "id": 88155,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 83171,
+   "label": "security",
+   "event_slug": "meetri-breach"
+  },
+  {
+   "id": 84021,
+   "label": "security",
+   "event_slug": "kepco-additional-leak"
+  },
+  {
+   "id": 93094,
+   "label": "security",
+   "event_slug": "polymarket-hack"
+  },
+  {
+   "id": 92244,
+   "label": "security",
+   "event_slug": "mistral-large4-open-weights"
+  },
+  {
+   "id": 84770,
+   "label": "security",
+   "event_slug": "mois-ai-pii-policy"
+  },
+  {
+   "id": 88154,
+   "label": "pr",
+   "event_slug": "eglue-air-agents"
+  },
+  {
+   "id": 83774,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 83121,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 84773,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 83721,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 84761,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 84606,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 93142,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": []
+}
