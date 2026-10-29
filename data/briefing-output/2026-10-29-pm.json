@@ -1,0 +1,592 @@
+{
+ "date": "2026-10-29",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-10-29-pm.md",
+ "stats": {
+  "candidates": 73,
+  "security": 37,
+  "pr": 15,
+  "not_security": 21,
+  "events": 23
+ },
+ "events": [
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "중국 연계 추정 해커가 PHP 취약점으로 4개국 서버 25대 장악, 미국 정부 관련 시스템 포함",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "bithumb-groupware-breach",
+   "title": "빗썸 사내 모바일 그룹웨어 해킹",
+   "category": "침해사고",
+   "summary": "금융위 가상자산업계 긴급 점검",
+   "cves": []
+  },
+  {
+   "slug": "nk-ip-finance-scan",
+   "title": "금융권 겨냥 북한 IP 접근 440만건 탐지",
+   "category": "침해사고",
+   "summary": "금융당국이 금융사에 접근 이력 확인 요청, 피해는 미확인",
+   "cves": []
+  },
+  {
+   "slug": "daekyo-pipc-fine",
+   "title": "대교 65만명 유출, 개인정보위 과징금 32.5억원",
+   "category": "개인정보",
+   "summary": "개인정보위, 대교·영훈의료재단에 과징금 총 38억8500만원 부과",
+   "cves": []
+  },
+  {
+   "slug": "myrealtrip-breach",
+   "title": "마이리얼트립 해킹, 여권번호·암호화 비밀번호 유출",
+   "category": "개인정보",
+   "summary": "외부 비인가 접근으로 이름·연락처·암호화 비밀번호와 일부 이용자 여권번호 유출",
+   "cves": []
+  },
+  {
+   "slug": "brotli-node2shell",
+   "title": "Brotli 취약점 Node2Shell, Node.js 넘어 파이썬·닷넷 확산",
+   "category": "취약점",
+   "summary": "Node.js·파이썬·.NET 영향, 티오리·엔키화이트햇 점검 도구 배포",
+   "cves": [
+    "CVE-2026-111497"
+   ]
+  },
+  {
+   "slug": "chrome-156-security-update",
+   "title": "크롬 156 보안 업데이트, 취약점 52건 수정",
+   "category": "취약점",
+   "summary": "구글 크롬 156에서 치명적 4건 포함 52건 수정, AI 모델이 발견한 결함 포함",
+   "cves": []
+  },
+  {
+   "slug": "juniper-session-smart-18",
+   "title": "주니퍼 세션 스마트 라우터 취약점 18건",
+   "category": "취약점",
+   "summary": "주니퍼 세션 스마트 라우터·컨덕터에서 인증 없이 관리자 권한 탈취 가능한 취약점 18건",
+   "cves": []
+  },
+  {
+   "slug": "prabang-exchange-hack",
+   "title": "가상자산 거래소 프라뱅 해킹, 핫월렛서 1억원 피해",
+   "category": "침해사고",
+   "summary": "프라뱅 핫월렛 외부 비인가 접근, 약 1억원 피해·서비스 잠정 중단",
+   "cves": []
+  },
+  {
+   "slug": "simpol-script-injection",
+   "title": "국내 식물 쇼핑몰 심폴 해킹, 악성 스크립트 삽입",
+   "category": "침해사고",
+   "summary": "심폴 사이트에 악성 스크립트가 삽입돼 접속자를 외부 사이트로 연결 시도",
+   "cves": []
+  },
+  {
+   "slug": "oracle-ebs-cve-2026-101767",
+   "title": "오라클 EBS 치명적 결함, 패치 일주일 만에 공격 움직임",
+   "category": "취약점",
+   "summary": "오라클 E-비즈니스 스위트 CVE-2026-101767을 찾는 공격자 움직임 포착",
+   "cves": [
+    "CVE-2026-101767"
+   ]
+  },
+  {
+   "slug": "volt-typhoon-zeroday",
+   "title": "볼트 타이푼, 제로데이 4건 악용해 미국 핵심 인프라 침투",
+   "category": "악성코드·랜섬웨어",
+   "summary": "중국 연계 볼트 타이푼이 제로데이 4건으로 미국 정부·통신·방산·에너지 인프라 장기 침투",
+   "cves": []
+  },
+  {
+   "slug": "hize-hacker-s2w",
+   "title": "국내 기업 노린 해커 하이즈_해커, 건라와 제휴 가능성",
+   "category": "악성코드·랜섬웨어",
+   "summary": "S2W, 병원·제약사·대부업체 데이터 탈취·판매 해커와 랜섬웨어 그룹 건라 연관 분석",
+   "cves": []
+  },
+  {
+   "slug": "sony-network-leak",
+   "title": "소니 네트워크 커뮤니케이션즈 해킹, 258만 고객정보 유출",
+   "category": "개인정보",
+   "summary": "So-net·plala 고객 258만여 명 회원정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "amazon-ad-malware",
+   "title": "구글 검색광고로 아마존 로그인 위장 악성코드 유포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "가짜 아마존 광고가 사람 확인 절차를 위장해 이용자가 악성 명령을 직접 실행하도록 유도",
+   "cves": []
+  },
+  {
+   "slug": "nhis-health-check-phishing",
+   "title": "건강검진 시즌 노린 건보공단 사칭 피싱",
+   "category": "기타",
+   "summary": "건강검진표 확인을 미끼로 한 국민건강보험공단 사칭 피싱 메일 기승",
+   "cves": []
+  },
+  {
+   "slug": "kaspersky-phishing-simulation",
+   "title": "카스퍼스키, 직장인 속이는 피싱 메일 유형 공개",
+   "category": "기타",
+   "summary": "위생 점검 안내 메일 클릭률 92%, 감정 자극·시의성 주제가 가장 효과적",
+   "cves": []
+  },
+  {
+   "slug": "gemini-4-carbon",
+   "title": "구글 제미나이 4 카본 출시, 사이버 보안 성능 강화",
+   "category": "AI 보안",
+   "summary": "취약점 탐지·검증·수정 성능 강화, 일부 사이버보안 방어 기업에 우선 제공",
+   "cves": []
+  },
+  {
+   "slug": "ai-election-abuse-monitoring",
+   "title": "오픈AI·앤트로픽, 미 중간선거 앞두고 AI 악용 감시 강화",
+   "category": "AI 보안",
+   "summary": "오픈AI 선거 상황실 가동, 앤트로픽 가짜 언론사·조직적 개입 탐지 개선",
+   "cves": []
+  },
+  {
+   "slug": "ai-safety-california-regulation",
+   "title": "오픈AI·앤트로픽, 캘리포니아에 AI 안전 규제 강화 촉구",
+   "category": "AI 보안",
+   "summary": "긴급 종료·독립 감사 의무화 제안, 킬 스위치 의무화엔 입장 엇갈려",
+   "cves": []
+  },
+  {
+   "slug": "kisa-director-dismissal",
+   "title": "이상중 KISA 원장 해임, 직무대행 체제",
+   "category": "정책·제도",
+   "summary": "경력 허위 기재·법인카드 부정 사용 의혹으로 해임, 류재철 교수 직무대행",
+   "cves": []
+  },
+  {
+   "slug": "pipc-callcenter-inspection",
+   "title": "개인정보위, 고객센터 점검 결과 쿠팡·CJ ENM 등 시정",
+   "category": "정책·제도",
+   "summary": "상담사 개인정보 과다 열람 방지, 상담 외 정보 마스킹 시정조치",
+   "cves": []
+  },
+  {
+   "slug": "insurance-third-party-it-risk",
+   "title": "생명보험협회, 제3자 IT 리스크관리 가이드라인 제정안 공고",
+   "category": "정책·제도",
+   "summary": "계약 전 위험평가부터 종료 후 정보 파기까지 관리, 이사회에 최종 책임 부여",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 79728,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 80675,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 82271,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 83090,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 82410,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 80627,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 80574,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 80546,
+   "label": "security",
+   "event_slug": "nk-ip-finance-scan"
+  },
+  {
+   "id": 81472,
+   "label": "security",
+   "event_slug": "daekyo-pipc-fine"
+  },
+  {
+   "id": 79726,
+   "label": "security",
+   "event_slug": "myrealtrip-breach"
+  },
+  {
+   "id": 78849,
+   "label": "security",
+   "event_slug": "myrealtrip-breach"
+  },
+  {
+   "id": 78079,
+   "label": "security",
+   "event_slug": "brotli-node2shell"
+  },
+  {
+   "id": 80573,
+   "label": "security",
+   "event_slug": "brotli-node2shell"
+  },
+  {
+   "id": 78928,
+   "label": "security",
+   "event_slug": "chrome-156-security-update"
+  },
+  {
+   "id": 78082,
+   "label": "security",
+   "event_slug": "juniper-session-smart-18"
+  },
+  {
+   "id": 78829,
+   "label": "security",
+   "event_slug": "prabang-exchange-hack"
+  },
+  {
+   "id": 82321,
+   "label": "security",
+   "event_slug": "simpol-script-injection"
+  },
+  {
+   "id": 78876,
+   "label": "security",
+   "event_slug": "oracle-ebs-cve-2026-101767"
+  },
+  {
+   "id": 78080,
+   "label": "security",
+   "event_slug": "volt-typhoon-zeroday"
+  },
+  {
+   "id": 79725,
+   "label": "security",
+   "event_slug": "hize-hacker-s2w"
+  },
+  {
+   "id": 82323,
+   "label": "security",
+   "event_slug": "hize-hacker-s2w"
+  },
+  {
+   "id": 81422,
+   "label": "security",
+   "event_slug": "sony-network-leak"
+  },
+  {
+   "id": 82273,
+   "label": "security",
+   "event_slug": "amazon-ad-malware"
+  },
+  {
+   "id": 81423,
+   "label": "security",
+   "event_slug": "nhis-health-check-phishing"
+  },
+  {
+   "id": 78081,
+   "label": "security",
+   "event_slug": "kaspersky-phishing-simulation"
+  },
+  {
+   "id": 78877,
+   "label": "security",
+   "event_slug": "gemini-4-carbon"
+  },
+  {
+   "id": 82957,
+   "label": "security",
+   "event_slug": "ai-election-abuse-monitoring"
+  },
+  {
+   "id": 81257,
+   "label": "security",
+   "event_slug": "ai-safety-california-regulation"
+  },
+  {
+   "id": 82165,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 82071,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 82322,
+   "label": "security",
+   "event_slug": "pipc-callcenter-inspection"
+  },
+  {
+   "id": 82057,
+   "label": "security",
+   "event_slug": "pipc-callcenter-inspection"
+  },
+  {
+   "id": 78841,
+   "label": "security",
+   "event_slug": "pipc-callcenter-inspection"
+  },
+  {
+   "id": 80673,
+   "label": "security",
+   "event_slug": "insurance-third-party-it-risk"
+  },
+  {
+   "id": 82083,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 79775,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 82260,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 81216,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 80674,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 80623,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 80575,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 78927,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 78675,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 80358,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 78078,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 81558,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 81522,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 78926,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 81523,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 79689,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 79724,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 80624,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 81409,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 78822,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 78671,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 78670,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 78028,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 80509,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 79824,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 79727,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 79774,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 80577,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 80626,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 80576,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 81260,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 80625,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 82082,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 82942,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 82272,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 83024,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 83094,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 82927,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 82923,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "포티넷코리아 2026 OT 사이버보안 서밋",
+   "start_date": "2026-11-11",
+   "end_date": null,
+   "place": "서울 JW 메리어트 호텔",
+   "organizer": "포티넷코리아",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209159",
+   "major": false,
+   "note": "제조·에너지·화학·반도체 OT·ICS 보안 담당자 대상, AI 자율제조 보안 전략 공유",
+   "article_ids": [
+    78926,
+    81523
+   ]
+  },
+  {
+   "name": "AI 시대 개인정보 보호·활용 국민 토론회",
+   "start_date": "2026-11-01",
+   "end_date": null,
+   "place": "서울 연세대 백양누리",
+   "organizer": "행정안전부·개인정보보호위원회",
+   "url": "https://www.ddaily.co.kr/page/view/2026102912115447927",
+   "major": true,
+   "note": "국민이 AI 시대 개인정보 보호와 활용법을 논의하는 토론회",
+   "article_ids": [
+    79689
+   ]
+  },
+  {
+   "name": "2026 정보보호 산업울림포럼",
+   "start_date": "2026-10-28",
+   "end_date": null,
+   "place": "과학기술컨벤션센터",
+   "organizer": "정보보호 인적자원개발위원회(한국정보보호산업협회)",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=146864",
+   "major": true,
+   "note": "고용노동부·한국산업인력공단 지원 ISC 사업, 정보보호 전문인력 처우 개선 논의",
+   "article_ids": [
+    79724,
+    80624
+   ]
+  }
+ ]
+}
