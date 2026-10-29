@@ -1,0 +1,372 @@
+{
+ "date": "2026-10-29",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-10-29-noon.md",
+ "stats": {
+  "candidates": 48,
+  "security": 22,
+  "pr": 10,
+  "not_security": 16,
+  "events": 14
+ },
+ "events": [
+  {
+   "slug": "daekyo-pipc-fine",
+   "title": "대교 65만명 유출, 개인정보위 과징금 32.5억원",
+   "category": "개인정보",
+   "summary": "개인정보위, 대교·영훈의료재단에 과징금 총 38억8500만원 부과",
+   "cves": []
+  },
+  {
+   "slug": "myrealtrip-breach",
+   "title": "마이리얼트립 해킹, 여권번호·암호화 비밀번호 유출",
+   "category": "개인정보",
+   "summary": "외부 비인가 접근으로 이름·연락처·암호화 비밀번호와 일부 이용자 여권번호 유출",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "중국 연계 추정 해커가 PHP 취약점으로 4개국 서버 25대 장악, 미국 정부 관련 시스템 포함",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "prabang-exchange-hack",
+   "title": "가상자산 거래소 프라뱅 해킹, 핫월렛서 1억원 피해",
+   "category": "침해사고",
+   "summary": "프라뱅 핫월렛 외부 비인가 접근, 약 1억원 피해·서비스 잠정 중단",
+   "cves": []
+  },
+  {
+   "slug": "dhs-staff-leak",
+   "title": "미국 국토안보부 직원 4만명 정보 유출",
+   "category": "개인정보",
+   "summary": "해커가 DHS 직원 4만여 명 정보를 온라인에 공개, 옥타 SSO에서 빼냈다고 주장",
+   "cves": []
+  },
+  {
+   "slug": "warhorse-cyberattack",
+   "title": "킹덤 컴 개발사 워호스 스튜디오 사이버공격",
+   "category": "침해사고",
+   "summary": "워호스 스튜디오, 사이버공격으로 시스템·데이터 무단 접근 피해",
+   "cves": []
+  },
+  {
+   "slug": "checkpoint-phishing-brands",
+   "title": "3분기 피싱 사칭 1위는 마이크로소프트",
+   "category": "기타",
+   "summary": "체크포인트, 7~9월 브랜드 사칭 중 마이크로소프트 33%, AI·개발 도구 미끼 등장",
+   "cves": []
+  },
+  {
+   "slug": "deepfake-ceo-phishing",
+   "title": "대표 목소리 복제한 딥페이크 송금 피싱 확산",
+   "category": "AI 보안",
+   "summary": "딥페이크로 대표 목소리를 복제해 송금을 지시하는 피싱 확산 경고",
+   "cves": []
+  },
+  {
+   "slug": "fca-pqc-warning",
+   "title": "英 금융감독청, AI 위협 대비 암호 체계 전환 촉구",
+   "category": "AI 보안",
+   "summary": "AI 수학 능력 향상으로 암호 기술 위험 우려, 기업에 전환 계획 수립 경고",
+   "cves": []
+  },
+  {
+   "slug": "gemini-4-carbon",
+   "title": "구글 제미나이 4 카본 출시, 사이버 보안 성능 강화",
+   "category": "AI 보안",
+   "summary": "취약점 탐지·검증·수정 성능 강화, 일부 사이버보안 방어 기업에 우선 제공",
+   "cves": []
+  },
+  {
+   "slug": "ms-agent-governance",
+   "title": "MS, 기업용 AI 에이전트 관리·보안 역량 강화",
+   "category": "AI 보안",
+   "summary": "MS, AI 에이전트 관리·보안 통합 플랫폼 전략 공개",
+   "cves": []
+  },
+  {
+   "slug": "kisa-director-dismissal",
+   "title": "이상중 KISA 원장 해임, 직무대행 체제",
+   "category": "정책·제도",
+   "summary": "경력 허위 기재·법인카드 부정 사용 의혹으로 해임, 류재철 교수 직무대행",
+   "cves": []
+  },
+  {
+   "slug": "pipc-callcenter-inspection",
+   "title": "개인정보위, 고객센터 점검 결과 쿠팡·CJ ENM 등 시정",
+   "category": "정책·제도",
+   "summary": "상담사 개인정보 과다 열람 방지, 상담 외 정보 마스킹 시정조치",
+   "cves": []
+  },
+  {
+   "slug": "woori-con-2026",
+   "title": "제6회 우리콘 모의해킹 경진대회 시상",
+   "category": "기타",
+   "summary": "우리은행·금융보안원, 청년 보안인재 발굴 모의해킹 대회 시상식 개최",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 76309,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 73620,
+   "label": "security",
+   "event_slug": "gemini-4-carbon"
+  },
+  {
+   "id": 74418,
+   "label": "security",
+   "event_slug": "gemini-4-carbon"
+  },
+  {
+   "id": 75274,
+   "label": "security",
+   "event_slug": "dhs-staff-leak"
+  },
+  {
+   "id": 74734,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 75272,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 74733,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 74685,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 74684,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 75269,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 74683,
+   "label": "security",
+   "event_slug": "myrealtrip-breach"
+  },
+  {
+   "id": 76317,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 76308,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77132,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 75616,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 76166,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 76298,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 76120,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77122,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 76333,
+   "label": "security",
+   "event_slug": "checkpoint-phishing-brands"
+  },
+  {
+   "id": 76332,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 76993,
+   "label": "security",
+   "event_slug": "woori-con-2026"
+  },
+  {
+   "id": 76331,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77145,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77980,
+   "label": "security",
+   "event_slug": "warhorse-cyberattack"
+  },
+  {
+   "id": 78021,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77184,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77183,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77282,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77283,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77182,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 76465,
+   "label": "security",
+   "event_slug": "prabang-exchange-hack"
+  },
+  {
+   "id": 77971,
+   "label": "security",
+   "event_slug": "ms-agent-governance"
+  },
+  {
+   "id": 77181,
+   "label": "security",
+   "event_slug": "deepfake-ceo-phishing"
+  },
+  {
+   "id": 77841,
+   "label": "security",
+   "event_slug": "fca-pqc-warning"
+  },
+  {
+   "id": 77966,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77963,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 77835,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77281,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 78025,
+   "label": "security",
+   "event_slug": "prabang-exchange-hack"
+  },
+  {
+   "id": 77316,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 78005,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 77280,
+   "label": "security",
+   "event_slug": "daekyo-pipc-fine"
+  },
+  {
+   "id": 77313,
+   "label": "security",
+   "event_slug": "kisa-director-dismissal"
+  },
+  {
+   "id": 77915,
+   "label": "security",
+   "event_slug": "pipc-callcenter-inspection"
+  },
+  {
+   "id": 77180,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 77817,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 77993,
+   "label": "security",
+   "event_slug": "daekyo-pipc-fine"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "제6회 우리콘(WooriCON)",
+   "start_date": "2026-10-28",
+   "end_date": null,
+   "place": "서울 우리은행 본점",
+   "organizer": "우리은행·금융보안원",
+   "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=710862",
+   "major": true,
+   "note": "청년 정보보호 인재 발굴 모의해킹 경진대회 시상식, 4개 팀 수상",
+   "article_ids": [
+    76993
+   ]
+  }
+ ]
+}
