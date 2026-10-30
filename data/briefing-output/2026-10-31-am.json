@@ -1,0 +1,160 @@
+{
+  "date": "2026-10-31",
+  "edition": "am",
+  "briefing_path": "briefings/2026-10-31-am.md",
+  "stats": {
+    "candidates": 19,
+    "security": 10,
+    "pr": 2,
+    "not_security": 7,
+    "events": 7
+  },
+  "events": [
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "바이낸스 약 57억~63억달러 탈취 정황, 북한 라자루스 가능성 제기",
+      "cves": []
+    },
+    {
+      "slug": "hanwha-systems-breach",
+      "title": "한화시스템 임직원 개인정보 유출 정황",
+      "category": "개인정보",
+      "summary": "계열사 외부 접속 계정으로 내부망 비인가 접근, KISA·개인정보위 신고",
+      "cves": []
+    },
+    {
+      "slug": "moneytoday-breach",
+      "title": "머니투데이 해킹 여파, 동행미디어 시대 구독자 정보 526건 유출",
+      "category": "개인정보",
+      "summary": "수탁사 머니투데이 해킹으로 머니위크 구독자 정보 유출",
+      "cves": []
+    },
+    {
+      "slug": "gs-xi-leak",
+      "title": "GS건설 자이 입주민 개인정보 유출",
+      "category": "개인정보",
+      "summary": "이름·주소·연락처·거주유형 유출, KISA·개인정보위 신고",
+      "cves": []
+    },
+    {
+      "slug": "ai-hacking-awareness",
+      "title": "AI 기반 해킹 증가, 기업 침해 인지 어려움",
+      "category": "AI 보안",
+      "summary": "AI 해킹으로 침해 사실을 모른 채 털릴 가능성이 커졌다는 경고",
+      "cves": []
+    },
+    {
+      "slug": "ai-chained-vulns",
+      "title": "AI가 작은 결함을 엮어 권한 탈취하는 공격 확산",
+      "category": "AI 보안",
+      "summary": "AI가 설정 오류·권한 검증 누락을 연결해 공격, AI 에이전트 악용 위협 부상",
+      "cves": []
+    },
+    {
+      "slug": "dailysecu-ciso-seminar-1029",
+      "title": "데일리시큐 CISO 조찬세미나, AI 보안 전략 논의",
+      "category": "기타",
+      "summary": "한국형 AI 사이버보안 프레임워크와 데이터 보안(DSPM) 강조",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 103492,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 105790,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 109186,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 106089,
+      "label": "security",
+      "event_slug": "gs-xi-leak"
+    },
+    {
+      "id": 104391,
+      "label": "security",
+      "event_slug": "moneytoday-breach"
+    },
+    {
+      "id": 104341,
+      "label": "security",
+      "event_slug": "hanwha-systems-breach"
+    },
+    {
+      "id": 103543,
+      "label": "security",
+      "event_slug": "dailysecu-ciso-seminar-1029"
+    },
+    {
+      "id": 103542,
+      "label": "security",
+      "event_slug": "dailysecu-ciso-seminar-1029"
+    },
+    {
+      "id": 105041,
+      "label": "security",
+      "event_slug": "ai-chained-vulns"
+    },
+    {
+      "id": 109338,
+      "label": "security",
+      "event_slug": "ai-hacking-awareness"
+    },
+    {
+      "id": 104268,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 104248,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 104271,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104270,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104269,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104133,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104132,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104092,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 104972,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ]
+}
