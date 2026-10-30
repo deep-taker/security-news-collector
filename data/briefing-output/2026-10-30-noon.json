@@ -1,0 +1,308 @@
+{
+ "date": "2026-10-30",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-10-30-noon.md",
+ "stats": {
+  "candidates": 36,
+  "security": 21,
+  "pr": 9,
+  "not_security": 6,
+  "events": 13
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "바이낸스에서 57억달러 이상 가상자산 탈취 정황, 테더·서클 23억달러 동결",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "팔로알토 PAN-OS 관리화면 공격 확인, 시놀로지 NAS도 영향·보안 업데이트 배포",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "mirae-asset-life-breach",
+   "title": "미래에셋생명 사이버 침해사고로 고객 개인·신용정보 유출",
+   "category": "개인정보",
+   "summary": "웹셸 업로드 취약점 악용 지목, 토르 경유 유출 시도 정황",
+   "cves": []
+  },
+  {
+   "slug": "gifticl-hack",
+   "title": "기프티엘 해킹 여파 롯데잇츠 멤버십 쿠폰 차질",
+   "category": "개인정보",
+   "summary": "운영사 스푼 개인정보 유출로 쿠폰 서비스 중단, 롯데잇츠 보상 조치",
+   "cves": []
+  },
+  {
+   "slug": "japan-cyber-surge",
+   "title": "일본 사이버보안 사고 723건…정부 긴급 대책 착수",
+   "category": "개인정보",
+   "summary": "일본 부정접속 개인정보 유출·우려 누적 2억6000만명, 신고 2094건",
+   "cves": []
+  },
+  {
+   "slug": "arara-breach",
+   "title": "일본 이메일 발송 서비스 아라라 해킹, 이메일 주소 301만 건 유출",
+   "category": "침해사고",
+   "summary": "서버 한 곳 비인가 접근으로 이메일 주소 약 301만 건 반출",
+   "cves": []
+  },
+  {
+   "slug": "polymarket-hack",
+   "title": "폴리마켓 265만달러 해킹",
+   "category": "침해사고",
+   "summary": "외부 업체 침해 확인, 피해 이용자 전액 보상 약속하나 거래는 미재개",
+   "cves": []
+  },
+  {
+   "slug": "nk-it-worker-sanction",
+   "title": "미 재무부, 북한 IT 인력 위장 취업·가상자산 세탁 조직 제재",
+   "category": "기타",
+   "summary": "OFAC가 개인 10명과 기관 제재, 수익을 가상자산으로 세탁",
+   "cves": []
+  },
+  {
+   "slug": "smart-home-iot-hacking",
+   "title": "스마트 가전 노린 홈 네트워크 해킹 실태",
+   "category": "기타",
+   "summary": "가정용 IoT 기기가 내부망 침투·좀비 PC 통로로 악용, 망분리 권고",
+   "cves": []
+  },
+  {
+   "slug": "nik-c2-ai-malware",
+   "title": "AI 활용 신종 해킹도구 NIK C2 발견",
+   "category": "악성코드·랜섬웨어",
+   "summary": "탈취 정보를 AI로 실시간 분석, 원격 제어와 랜섬웨어 기능 결합",
+   "cves": []
+  },
+  {
+   "slug": "fca-pqc-warning",
+   "title": "英 금융감독청, AI 위협 대비 암호 체계 전환 촉구",
+   "category": "AI 보안",
+   "summary": "AI 수학 능력 향상으로 암호 기술 위험 우려, 기업에 전환 계획 수립 경고",
+   "cves": []
+  },
+  {
+   "slug": "mistral-large4-open-weights",
+   "title": "미스트랄 라지 4 오픈웨이트 공개",
+   "category": "AI 보안",
+   "summary": "1조 파라미터 모델 가중치 공개, 기업·정부가 직접 운영 가능",
+   "cves": []
+  },
+  {
+   "slug": "coupang-pipc-fine",
+   "title": "쿠팡 개인정보 과징금 6000억원 공방",
+   "category": "정책·제도",
+   "summary": "쿠팡 고객 피해 주장에 개인정보위 모회사 배당 후에도 2.6조 남는다고 반박",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 94127,
+   "label": "security",
+   "event_slug": "mistral-large4-open-weights"
+  },
+  {
+   "id": 97533,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 94093,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 93942,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 94840,
+   "label": "security",
+   "event_slug": "mistral-large4-open-weights"
+  },
+  {
+   "id": 95639,
+   "label": "security",
+   "event_slug": "fca-pqc-warning"
+  },
+  {
+   "id": 95052,
+   "label": "security",
+   "event_slug": "gifticl-hack"
+  },
+  {
+   "id": 95636,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 95816,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 96672,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 96506,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 96671,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 95951,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 96664,
+   "label": "security",
+   "event_slug": "coupang-pipc-fine"
+  },
+  {
+   "id": 97502,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 97308,
+   "label": "security",
+   "event_slug": "japan-cyber-surge"
+  },
+  {
+   "id": 96700,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 98354,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 96699,
+   "label": "security",
+   "event_slug": "mirae-asset-life-breach"
+  },
+  {
+   "id": 98374,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 97302,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 98349,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 98347,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 98339,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 97552,
+   "label": "security",
+   "event_slug": "smart-home-iot-hacking"
+  },
+  {
+   "id": 97601,
+   "label": "security",
+   "event_slug": "arara-breach"
+  },
+  {
+   "id": 98212,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 97551,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 98201,
+   "label": "security",
+   "event_slug": "polymarket-hack"
+  },
+  {
+   "id": 97600,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 97599,
+   "label": "security",
+   "event_slug": "nik-c2-ai-malware"
+  },
+  {
+   "id": 97550,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 97549,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 97648,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 97598,
+   "label": "security",
+   "event_slug": "nk-it-worker-sanction"
+  },
+  {
+   "id": 97548,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "피스콘 2026(FISCON 2026)",
+   "start_date": "2026-11-12",
+   "end_date": null,
+   "place": "서울 여의도 콘래드 호텔",
+   "organizer": "금융보안원·금융정보보호협의회·금융보안포럼",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=146883",
+   "major": true,
+   "note": "국내 최대 금융 정보보호 컨퍼런스, KISIA 후원 정보보호 기업 전시회 병행",
+   "article_ids": [
+    96700,
+    97502,
+    97551,
+    97648
+   ]
+  }
+ ]
+}
