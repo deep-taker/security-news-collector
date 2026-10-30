@@ -35,10 +35,8 @@ th { color: var(--muted); font-weight: 500; font-size: 13px; }
 .tag.pending { border-style: dashed; }
 td .line { margin-top: 3px; font-size: 13.5px; color: var(--muted); line-height: 1.5; }
 .empty { color: var(--muted); padding: 40px 0; text-align: center; }
-.alert-banner { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; padding: 10px 14px; margin-bottom: 18px; border-radius: 8px; text-decoration: none; border: 1px solid; }
-.alert-banner .go { margin-left: auto; font-size: 13px; }
-.alert-banner.error, .alert.error { background: color-mix(in srgb, #d93025 12%, var(--card)); border-color: color-mix(in srgb, #d93025 45%, var(--line)); }
-.alert-banner.warn, .alert.warn { background: color-mix(in srgb, #e8a200 14%, var(--card)); border-color: color-mix(in srgb, #e8a200 45%, var(--line)); }
+.alert.error { background: color-mix(in srgb, #d93025 12%, var(--card)); border-color: color-mix(in srgb, #d93025 45%, var(--line)); }
+.alert.warn { background: color-mix(in srgb, #e8a200 14%, var(--card)); border-color: color-mix(in srgb, #e8a200 45%, var(--line)); }
 .alert.ok { background: color-mix(in srgb, #1e8e3e 10%, var(--card)); border-color: color-mix(in srgb, #1e8e3e 40%, var(--line)); }
 .alert { border: 1px solid; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; }
 .alert .detail, td .detail { margin-top: 2px; word-break: break-all; }
