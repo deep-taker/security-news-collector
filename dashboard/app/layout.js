@@ -1,5 +1,4 @@
 import "./globals.css";
-import AlertBanner from "./alert-banner";
 
 export const metadata = {
   title: "정보보안 브리핑", robots: { index: false, follow: false },
@@ -21,7 +20,7 @@ export default function RootLayout({ children }) {
           </nav>
         </div></header>
         <main>
-          <AlertBanner />
+          {/* 이상 경고는 '수집 상태' 화면에서만 표시 — 모든 페이지 상단 경고 띠 제거 (사용자 결정 2026-10-30) */}
           {children}
         </main>
       </body>
