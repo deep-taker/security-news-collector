@@ -224,10 +224,43 @@ def parse_ddaily(raw: bytes, base_url: str):
     return out
 
 
+_ITDONGA_ID = re.compile(r"^(?:https?:)?(?://it\.donga\.com)?/(\d{4,})/?$")
+
+
+def parse_itdonga(raw: bytes, base_url: str):
+    """IT동아 뉴스 목록(/news/) — robots.txt가 RSS(/feeds/)를 막아 목록 페이지를 읽는다 (2026-10-31 추가).
+    항목: <ul class="article"><li class="media"><a href="/109817/"><h5>제목</h5><time datetime=…><div class="intro">요약"""
+    soup = BeautifulSoup(raw, "lxml")
+    seen, out = set(), []
+    for li in soup.select("ul.article li.media"):
+        a = li.find("a", href=True)
+        m = _ITDONGA_ID.search(a["href"]) if a else None
+        h5 = li.find("h5")
+        if not m or not h5:
+            continue
+        aid = m.group(1)
+        if aid in seen:
+            continue
+        seen.add(aid)
+        t = li.find("time")
+        pub = parse_date(t.get("datetime")) if t else None
+        intro = li.find(class_="intro")
+        out.append({
+            "url": urljoin(base_url, f"/{aid}/"),
+            "title": clean_text(h5.get_text(" ")),
+            "summary_raw": clean_text(intro.get_text(" ")) if intro else "",
+            "published_at": pub,
+            "published_approx": pub is None,
+            "categories": [],
+        })
+    return out
+
+
 PARSERS = {
     "rss": lambda raw, url: parse_feed(raw),
     "html_etnews": parse_etnews,
     "html_ddaily": parse_ddaily,
+    "html_itdonga": parse_itdonga,
 }
 
 # 수집 텍스트에 AI를 겨냥한 지시문이 숨어 있는지 점검 (탐지 시 원문 영구 보관)

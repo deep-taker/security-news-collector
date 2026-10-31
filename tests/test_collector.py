@@ -1,4 +1,5 @@
 """수집기 단위 테스트: python -m pytest tests -q"""
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -273,6 +274,20 @@ def test_itchosun_feed():
     assert any(keywords.match(f'{i["title"]} {i.get("summary_raw") or ""}')[0] for i in items)
     assert check_links(f'[x]({items[0]["url"]})', set()) == []
     assert check_links("[x](https://www.chosun.com/a)", set()) != []   # 조선일보 본지는 허용 안 함
+
+
+def test_itdonga_list():
+    # IT동아 추가 (2026-10-31): 목록 페이지 파서
+    from collector.parsers import parse_itdonga
+    from collector.verify_briefing import check_links
+    items = parse_itdonga((FX / "itdonga.html").read_bytes(), "https://it.donga.com/news/")
+    assert len(items) == 3
+    for i in items:
+        assert re.fullmatch(r"https://it\.donga\.com/\d+/", i["url"]) and len(i["title"]) >= 8
+        assert i["published_at"] is not None and i["published_at"].utcoffset().total_seconds() == 9 * 3600
+        assert i["summary_raw"]
+    assert check_links(f'[x]({items[0]["url"]})', set()) == []
+    assert check_links("[x](https://www.donga.com/news/a)", set()) != []   # 동아일보 본지는 허용 안 함
 
 
 def test_verify_summary_lines():

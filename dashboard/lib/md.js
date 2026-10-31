@@ -1,8 +1,8 @@
 import { marked } from "marked";
 
-// 링크 허용 도메인: 수집 매체 10곳 (IT조선은 it.chosun.com만 — 조선일보 본지 주소는 허용하지 않음) (collector/verify_briefing.py ARTICLE_DOMAINS와 같게 유지)
+// 링크 허용 도메인: 수집 매체 11곳 (IT조선·IT동아는 it. 하위 주소만 — 본지 주소는 허용하지 않음) (collector/verify_briefing.py ARTICLE_DOMAINS와 같게 유지)
 const ARTICLE_DOMAINS = ["boannews.com", "dailysecu.com", "etnews.com", "dt.co.kr", "digitaltoday.co.kr",
-  "aitimes.com", "bloter.net", "zdnet.co.kr", "ddaily.co.kr", "it.chosun.com"];
+  "aitimes.com", "bloter.net", "zdnet.co.kr", "ddaily.co.kr", "it.chosun.com", "it.donga.com"];
 
 export function allowed(href) {
   try {
