@@ -171,5 +171,6 @@ insert into sources (id, name, grp, kind, url, fail_alert_after) values
   ('bloter', '블로터', 'domestic_press', 'rss', 'https://www.bloter.net/rss/allArticle.xml', 3),
   ('zdnet', '지디넷코리아', 'domestic_press', 'rss', 'https://feeds.feedburner.com/zdkorea', 3),
   ('ddaily', '디지털데일리', 'domestic_press', 'html_ddaily', 'https://www.ddaily.co.kr/news', 2),
-  ('itchosun', 'IT조선', 'domestic_press', 'rss', 'https://it.chosun.com/rss/allArticle.xml', 3)
+  ('itchosun', 'IT조선', 'domestic_press', 'rss', 'https://it.chosun.com/rss/allArticle.xml', 3),
+  ('itdonga', 'IT동아', 'domestic_press', 'html_itdonga', 'https://it.donga.com/news/', 3)
 on conflict (id) do nothing;

@@ -29,7 +29,7 @@ DASHBOARD = os.environ.get("DASHBOARD_URL", "https://briefing-security.vercel.ap
 # 브리핑 본문 링크로 허용하는 도메인 (수집 매체 9곳의 기사 주소). 외부 기사 내용의 숨은 지시로
 # 엉뚱한 주소가 공개 대시보드에 실리는 것을 막는다.
 ARTICLE_DOMAINS = ("boannews.com", "dailysecu.com", "etnews.com", "dt.co.kr", "digitaltoday.co.kr",
-                   "aitimes.com", "bloter.net", "zdnet.co.kr", "ddaily.co.kr", "it.chosun.com")
+                   "aitimes.com", "bloter.net", "zdnet.co.kr", "ddaily.co.kr", "it.chosun.com", "it.donga.com")
 LINK = re.compile(r"\]\(\s*<?([^)\s>]+)>?(?:\s+\"[^\"]*\")?\s*\)|<(https?://[^>\s]+)>|(?<![(<\w])(https?://[^\s)<>\]]+)")
 
 

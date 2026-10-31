@@ -4,12 +4,13 @@ kind:
   rss          - RSS/Atom 피드
   html_etnews  - 전자신문 섹션 목록 페이지
   html_ddaily  - 디지털데일리 전체기사 목록 페이지
+  html_itdonga - IT동아 뉴스 목록 페이지 (robots.txt가 RSS 경로를 막음)
 
 security_source: 보안 전문 매체·보안 섹션이라 모든 기사를 후보로 올림
 security_categories: RSS 분류값이 이 중 하나면 후보로 올림
 ai_source: AI 전문 매체 (AI 보안 키워드를 함께 적용)
 
-IT동아는 수집 대상에서 제외(사용자 결정, 2026-10-26). IT조선은 2026-10-31 추가(사용자 결정 — 공개 RSS, robots.txt 허용, 약관에 자동 수집 금지 조항 없음).
+IT조선·IT동아는 2026-10-31 추가(사용자 결정 — IT조선: 공개 RSS·robots.txt 허용·약관에 자동 수집 금지 조항 없음, IT동아: 목록 페이지는 robots.txt 허용, RSS 경로는 금지라 쓰지 않음).
 """
 
 SOURCES = [
@@ -88,6 +89,13 @@ SOURCES = [
         "group": "국내언론사",
         "kind": "rss",
         "url": "https://it.chosun.com/rss/allArticle.xml",   # 최근 50건(약 하루 분량)
+    },
+    {
+        "id": "itdonga",
+        "name": "IT동아",
+        "group": "국내언론사",
+        "kind": "html_itdonga",
+        "url": "https://it.donga.com/news/",   # 목록 1쪽 10건 — 하루 약 7건이라 1쪽으로 충분
     },
 ]
 
