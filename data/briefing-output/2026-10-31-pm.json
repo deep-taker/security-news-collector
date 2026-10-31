@@ -1,0 +1,301 @@
+{
+  "date": "2026-10-31",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-10-31-pm.md",
+  "stats": {
+    "candidates": 26,
+    "security": 20,
+    "trend": 1,
+    "pr": 2,
+    "column": 1,
+    "not_security": 2,
+    "events": 15
+  },
+  "events": [
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "바이낸스 약 57억~63억달러 탈취 정황, 북한 라자루스 가능성 제기",
+      "cves": []
+    },
+    {
+      "slug": "amadeus-breach",
+      "title": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+      "category": "개인정보",
+      "summary": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+      "cves": []
+    },
+    {
+      "slug": "hyundai-ezwel-breach",
+      "title": "현대이지웰 해킹으로 회원 개인정보 유출",
+      "category": "개인정보",
+      "summary": "회원정보 조회 API 비정상 접근으로 이름·연락처·주소 등 유출, 금감원·KISA 신고",
+      "cves": []
+    },
+    {
+      "slug": "wordpress-rce-attacks",
+      "title": "워드프레스 원격코드실행 취약점 공격 24시간 약 6만3천 건 시도",
+      "category": "취약점",
+      "summary": "워드프레스 원격코드실행 취약점 공격 24시간 약 6만3천 건 시도",
+      "cves": []
+    },
+    {
+      "slug": "moneytoday-breach",
+      "title": "머니투데이 해킹 여파, 동행미디어 시대 구독자 정보 526건 유출",
+      "category": "개인정보",
+      "summary": "수탁사 머니투데이 해킹으로 머니위크 구독자 정보 유출",
+      "cves": []
+    },
+    {
+      "slug": "railway-breach",
+      "title": "레일웨이 고객 환경변수 무단 접근, API 키 노출 가능성",
+      "category": "침해사고",
+      "summary": "레일웨이 고객 환경변수 무단 접근, API 키 노출 가능성",
+      "cves": []
+    },
+    {
+      "slug": "plex2shell-attack",
+      "title": "플렉스 미디어 서버 결함 4개 연계 공격 공개 하루 만에 시작",
+      "category": "취약점",
+      "summary": "플렉스 미디어 서버 결함 4개 연계 공격 공개 하루 만에 시작",
+      "cves": []
+    },
+    {
+      "slug": "telegram-android-call-rce",
+      "title": "텔레그램 안드로이드 통화 수신만으로 코드 실행되는 결함",
+      "category": "취약점",
+      "summary": "텔레그램 안드로이드 통화 수신만으로 코드 실행되는 결함",
+      "cves": []
+    },
+    {
+      "slug": "n0n-ai-ransomware",
+      "title": "AI 활용 랜섬웨어 n0n, 14개국 23개 조직 공격",
+      "category": "악성코드·랜섬웨어",
+      "summary": "AI 코딩 도구로 공격 스크립트 제작, 몸값 요구액 4천억 원 육박",
+      "cves": []
+    },
+    {
+      "slug": "polymarket-hack",
+      "title": "폴리마켓 265만달러 해킹",
+      "category": "침해사고",
+      "summary": "외부 업체 침해 확인, 피해 이용자 전액 보상 약속하나 거래는 미재개",
+      "cves": []
+    },
+    {
+      "slug": "bithumb-groupware-breach",
+      "title": "빗썸 사내 모바일 그룹웨어 해킹",
+      "category": "개인정보",
+      "summary": "빗썸 고객 6444명 개인정보 유출, 프라뱅 1억원 금전 피해",
+      "cves": []
+    },
+    {
+      "slug": "samsung-secret-leak-appeal",
+      "title": "삼성전자 기밀 유출 안승호 전 부사장, 2심도 징역 3년",
+      "category": "기타",
+      "summary": "보석 취소·법정구속, 함께 기소된 전 삼성디스플레이 직원은 징역 4년",
+      "cves": []
+    },
+    {
+      "slug": "huggingface-malicious-models",
+      "title": "허깅페이스에 채굴 악성코드 든 AI 모델 31개 유포, 다운로드 3만2천 회",
+      "category": "AI 보안",
+      "summary": "허깅페이스에 채굴 악성코드 든 AI 모델 31개 유포, 다운로드 3만2천 회",
+      "cves": []
+    },
+    {
+      "slug": "linux-kernel-cve-2026-98432",
+      "title": "리눅스 커널 고위험 취약점, AI 활용 실제 공격 성공",
+      "category": "AI 보안",
+      "summary": "리눅스 커널 고위험 취약점, AI 활용 실제 공격 성공",
+      "cves": [
+        "CVE-2026-98432"
+      ]
+    },
+    {
+      "slug": "kisa-director-dismissal",
+      "title": "이상중 KISA 원장 해임, 직무대행 체제",
+      "category": "정책·제도",
+      "summary": "경력 허위 기재·법인카드 부정 사용 의혹으로 해임, 류재철 교수 직무대행",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 123014,
+      "label": "security",
+      "event_slug": "bithumb-groupware-breach"
+    },
+    {
+      "id": 123000,
+      "label": "security",
+      "event_slug": "samsung-secret-leak-appeal"
+    },
+    {
+      "id": 122997,
+      "label": "security",
+      "event_slug": "linux-kernel-cve-2026-98432"
+    },
+    {
+      "id": 121391,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 122978,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 118787,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 122963,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 123021,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 122973,
+      "label": "security",
+      "event_slug": "amadeus-breach"
+    },
+    {
+      "id": 118784,
+      "label": "security",
+      "event_slug": "amadeus-breach"
+    },
+    {
+      "id": 122974,
+      "label": "security",
+      "event_slug": "kisa-director-dismissal"
+    },
+    {
+      "id": 118735,
+      "label": "security",
+      "event_slug": "railway-breach"
+    },
+    {
+      "id": 118734,
+      "label": "security",
+      "event_slug": "plex2shell-attack"
+    },
+    {
+      "id": 118786,
+      "label": "security",
+      "event_slug": "huggingface-malicious-models"
+    },
+    {
+      "id": 118785,
+      "label": "security",
+      "event_slug": "polymarket-hack"
+    },
+    {
+      "id": 118733,
+      "label": "security",
+      "event_slug": "moneytoday-breach"
+    },
+    {
+      "id": 118783,
+      "label": "security",
+      "event_slug": "wordpress-rce-attacks"
+    },
+    {
+      "id": 121273,
+      "label": "security",
+      "event_slug": "telegram-android-call-rce"
+    },
+    {
+      "id": 121272,
+      "label": "security",
+      "event_slug": "n0n-ai-ransomware"
+    },
+    {
+      "id": 121322,
+      "label": "security",
+      "event_slug": "hyundai-ezwel-breach"
+    },
+    {
+      "id": 124223,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 123015,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 123002,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 121209,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 123001,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 122972,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "AI 시대 개인정보 보호·활용 국민 토론회",
+      "start_date": "2026-11-01",
+      "end_date": null,
+      "place": "서울 연세대 백양누리",
+      "organizer": "행정안전부·개인정보보호위원회",
+      "url": "https://www.ddaily.co.kr/page/view/2026102912115447927",
+      "major": true,
+      "note": null,
+      "article_ids": []
+    },
+    {
+      "name": "포티넷코리아 2026 OT 사이버보안 서밋",
+      "start_date": "2026-11-11",
+      "end_date": null,
+      "place": "서울 JW 메리어트 호텔",
+      "organizer": "포티넷코리아",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209159",
+      "major": false,
+      "note": null,
+      "article_ids": []
+    },
+    {
+      "name": "피스콘 2026(FISCON 2026)",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "서울 여의도 콘래드 호텔",
+      "organizer": "금융보안원·금융정보보호협의회·금융보안포럼",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=146883",
+      "major": true,
+      "note": null,
+      "article_ids": []
+    },
+    {
+      "name": "CPS(OT/ICS) 시큐어 AX 서밋 2026",
+      "start_date": "2026-11-13",
+      "end_date": null,
+      "place": "양재 엘타워",
+      "organizer": null,
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209188",
+      "major": false,
+      "note": null,
+      "article_ids": []
+    }
+  ]
+}
