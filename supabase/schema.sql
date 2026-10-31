@@ -45,7 +45,7 @@ create table if not exists articles (
   keywords text[] default '{}',
   candidate boolean not null default false,   -- 1차 필터(키워드·보안 매체) 통과
   ai_related boolean not null default false,
-  label text check (label in ('security', 'pr', 'not_security')), -- Claude 최종 분류
+  label text check (label in ('security', 'trend', 'pr', 'column', 'not_security')), -- Claude 최종 분류 (trend·column 2026-10-31)
   event_id bigint references events(id) on delete set null,
   labeled_at timestamptz,
   summary_line text,                          -- 한 줄 요약 (제목 아래 표시)

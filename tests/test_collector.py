@@ -239,6 +239,32 @@ def test_verify_industry_order():
     assert any("업계 동향 배치" in w for w in check_format(bad, "am"))
 
 
+def test_opinion_titles():
+    from collector.daily import is_opinion
+    for t in ["[보안칼럼] 인간중심 사이버보안의 몰락", "[기고]개인정보보호법 개정, 72시간 골든타임", "[전문가기고] 클라우드 보안의 진화",
+              "[김정덕의 지속가능 보안-13] 안티프래질 보안", "[이희정 교수 AI 칼럼-18] 과학과 AI", "[사설] 정보보호 투자 늘려야", "[데스크시각] 보안 인력"]:
+        assert is_opinion(t), t
+    for t in ["[정보보안 연재소설-로그아웃되지 않는 밤] 제60화", "[단독] 국내 웹사이트 PHP 사용률 83%", "[인사] 개인정보보호위원회",
+              "[2026 대한민국 상장기업 리포트-4] 보안 상장기업 매출", "칼럼니스트가 본 보안 시장"]:
+        assert not is_opinion(t), t
+
+
+def test_verify_trend_column_labels():
+    from collector.verify_briefing import check_files, check_format
+    inp = {"date": "2026-10-31", "edition": "am", "articles": [{"id": 1}, {"id": 2}, {"id": 3}], "recent_events": []}
+    md = ("# 정보보안 브리핑 2026-10-31 (토) 06시판\n\n## 🔴 주요 사건·사고\n\n"
+          "## 📈 보안 동향\n- **[보안 상장사 매출 증가](https://www.boannews.com/a \"보도: 보안뉴스\")**\n  줄1\n  줄2\n\n"
+          "## 🏢 업계 동향\n- **[제품 출시](https://www.boannews.com/b \"보도: 보안뉴스\")**\n  줄1\n  줄2\n\n"
+          "## ✍️ 칼럼·기고\n- **[보안칼럼](https://www.boannews.com/c \"보도: 보안뉴스\")**\n  필자의 핵심 주장\n")
+    out = {"date": "2026-10-31", "edition": "am", "events": [], "labels": [
+        {"id": 1, "label": "trend", "line": "보안 상장사 81.5% 매출 증가"}, {"id": 2, "label": "pr", "line": "제품 출시"},
+        {"id": 3, "label": "column", "line": "인간중심 보안의 한계 지적"}]}
+    assert check_files(out, inp, md)[0] == []
+    assert check_format(md, "am") == []
+    swapped = md.replace("## 📈 보안 동향", "## 임시").replace("## 🏢 업계 동향", "## 📈 보안 동향").replace("## 임시", "## 🏢 업계 동향")
+    assert any("절 순서" in w for w in check_format(swapped, "am"))
+
+
 def test_verify_summary_lines():
     from collector.verify_briefing import check_files
     inp = {"date": "2026-10-27", "edition": "am", "articles": [{"id": 1}, {"id": 2}], "recent_events": []}
@@ -439,7 +465,7 @@ def test_weekly_input_and_verify(monkeypatch, tmp_path):
     data = __import__("json").loads(path.read_text(encoding="utf-8"))
     assert path.name == "2026-10-26-week.json" and n == 2 and data["period"] == {"start": "2026-10-19", "end": "2026-10-25"}
     assert data["events"][0]["slug"] == "b" and data["events"][0]["article_count"] == 2   # 많이 보도된 사건 먼저
-    assert data["events"][0]["sources"] == ["보안뉴스", "지디넷코리아"] and data["stats"] == {"security": 2, "pr": 1, "events": 2}
+    assert data["events"][0]["sources"] == ["보안뉴스", "지디넷코리아"] and data["stats"] == {"security": 2, "trend": 0, "pr": 1, "column": 0, "events": 2}
     md = "# 정보보안 브리핑 2026-10-26 주간 요약 (10/19~10/25)\n\n## 🔴 이번 주 핵심 사건\n[대표 기사](https://www.boannews.com/x)\n"
     out = {"date": "2026-10-26", "edition": "week", "events": [], "labels": [], "stats": {"events": 2}}
     errors, warns, _ = check_files(out, data, md)

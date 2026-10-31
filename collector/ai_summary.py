@@ -111,7 +111,7 @@ def run(limit: int = MAX_PER_RUN) -> dict:
     res = {"done": 0, "rejected": 0, "failed_batches": 0, "gave_up": 0, "enabled": enabled(), "target": 0, "errors": [], "why": {}}
     rows = store.select("articles", {
         "select": "id,title,summary,label,collected_at", "summary_source": "is.null",
-        "or": "(candidate.eq.true,label.in.(security,pr))", "order": "id.desc", "limit": str(limit)}, page_size=limit)
+        "or": "(candidate.eq.true,label.in.(security,trend,pr,column))", "order": "id.desc", "limit": str(limit)}, page_size=limit)
     now = datetime.now(KST)
 
     def age_h(r):

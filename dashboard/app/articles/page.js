@@ -14,7 +14,7 @@ export default async function Articles(props) {
   const text = raw.length >= 2 ? raw : "";   // 1글자 검색은 부하만 크고 쓸모가 적어 무시
   const source = SOURCES[searchParams.source] ? searchParams.source : "";
   // 분류: 기본은 '분류 대기' 포함 전체 (매시간 수집 직후 바로 보이도록). 무관 기사는 DB 정책상 공개되지 않음
-  const label = ["labeled", "security", "pr", "pending"].includes(searchParams.label) ? searchParams.label : "";
+  const label = ["labeled", "security", "trend", "pr", "column", "pending"].includes(searchParams.label) ? searchParams.label : "";
   const page = Math.max(1, parseInt(searchParams.page || "1", 10) || 1);
   const group = searchParams.group !== "0";   // 같은 사건 묶기 (기본 켬)
 
@@ -29,7 +29,7 @@ export default async function Articles(props) {
     if (f) params.or = f;
   }
   if (source) params.source_id = `eq.${source}`;
-  if (label === "labeled") params.label = "in.(security,pr)";
+  if (label === "labeled") params.label = "in.(security,trend,pr,column)";
   else if (label === "pending") params.label = "is.null";
   else if (label) params.label = `eq.${label}`;
 
@@ -67,7 +67,9 @@ export default async function Articles(props) {
           <option value="">전체 (분류 대기 포함)</option>
           <option value="labeled">분류된 기사만</option>
           <option value="security">보안</option>
+          <option value="trend">보안 동향</option>
           <option value="pr">업계 동향</option>
+          <option value="column">칼럼·기고</option>
           <option value="pending">분류 대기</option>
         </select>
         <select name="group" defaultValue={group ? "1" : "0"}>

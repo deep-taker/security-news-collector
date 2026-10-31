@@ -11,7 +11,7 @@ from pathlib import Path
 
 from . import store
 
-VALID = {"security", "pr", "not_security"}
+VALID = {"security", "trend", "pr", "column", "not_security"}
 
 
 def sync(path: Path):

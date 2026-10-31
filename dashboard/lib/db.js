@@ -24,7 +24,7 @@ export const SOURCES = {
   boannews: "보안뉴스", dailysecu: "데일리시큐", etnews_sec: "전자신문", dt_ict: "디지털타임스",
   digitaltoday: "디지털투데이", aitimes: "AI타임스", bloter: "블로터", zdnet: "지디넷코리아", ddaily: "디지털데일리",
 };
-export const LABELS = { security: "보안", pr: "업계 동향", not_security: "무관" };
+export const LABELS = { security: "보안", trend: "보안 동향", pr: "업계 동향", column: "칼럼·기고", not_security: "무관" };
 
 // 기사 목록용 짧은 시각: "10/26 17:11" (한국 시간, 24시간제)
 export function fmtShort(ts) {

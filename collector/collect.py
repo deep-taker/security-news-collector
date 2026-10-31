@@ -188,7 +188,7 @@ def fill_descriptions(limit=200):
     """AI 요약 재료 보완: 설명이 비어 있는 요약 전 공개 대상 기사(목록에 요약이 없던 사이드바 기사 등)에
     기사 페이지 설명 태그를 채운다. 한 번에 최대 PAGE_FETCH_MAX건, 1초 간격. 실패하면 다음 수집 때 다시."""
     rows = store.select("articles", {"select": "id,url,summary", "summary_source": "is.null",
-                                     "or": "(candidate.eq.true,label.in.(security,pr))", "order": "id.desc",
+                                     "or": "(candidate.eq.true,label.in.(security,trend,pr,column))", "order": "id.desc",
                                      "limit": str(limit)}, page_size=limit)
     fetched = filled = 0
     for r in rows:

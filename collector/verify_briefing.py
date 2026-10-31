@@ -20,7 +20,7 @@ import requests
 from . import store
 
 LABEL_NAME = {"am": "06시판", "noon": "12시판", "pm": "18시판", "week": "주간 요약"}
-VALID = {"security", "pr", "not_security"}
+VALID = {"security", "trend", "pr", "column", "not_security"}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 HANGUL = re.compile(r"[가-힣]")
 DASHBOARD = os.environ.get("DASHBOARD_URL", "https://briefing-security.vercel.app").rstrip("/")
@@ -50,7 +50,7 @@ def check_links(markdown: str, input_urls: set) -> list:
     return problems
 
 
-SECTION_ORDER = ["주요 사건", "기타 사건", "AI 보안", "정책", "국방", "업계 동향", "보안 행사"]   # 2026-10-27 개편 순서
+SECTION_ORDER = ["주요 사건", "기타 사건", "AI 보안", "정책", "국방", "보안 동향", "업계 동향", "칼럼", "보안 행사"]   # 2026-10-31 보안 동향·칼럼 추가
 SRC_LINK = re.compile(r'\[[^\]]+\]\(\s*<?[^)\s>]+>?\s+"보도:[^"]+"\s*\)')
 
 
@@ -65,7 +65,7 @@ def check_format(markdown: str, edition: str) -> list:
     pos = [next((i for i, k in enumerate(SECTION_ORDER) if k in h), None) for h in heads]
     pos = [p for p in pos if p is not None]
     if pos != sorted(pos):
-        warns.append("절 순서가 다름 (주요 사건·사고 → 기타 사건·사고 → AI 보안 → 정책·제도 → 국방·방산보안 → 업계 동향 → 보안 행사)")
+        warns.append("절 순서가 다름 (주요 사건·사고 → 기타 사건·사고 → AI 보안 → 정책·제도 → 국방·방산보안 → 보안 동향 → 업계 동향 → 칼럼·기고 → 보안 행사)")
     # 절별 항목 점검
     sections = re.split(r"^##\s+", markdown, flags=re.M)[1:]
     no_src, bad_lines = 0, 0
@@ -83,7 +83,7 @@ def check_format(markdown: str, edition: str) -> list:
                 lines = [l for l in rest.strip().splitlines() if l.strip()]
                 if not 1 <= len(lines) <= 3:
                     bad_lines += 1
-        elif any(k in title for k in ("기타 사건", "AI 보안", "정책", "국방", "업계 동향")):   # 업계 동향도 2줄 (2026-10-27)
+        elif any(k in title for k in ("기타 사건", "AI 보안", "정책", "국방", "보안 동향", "업계 동향")):   # 업계 동향도 2줄 (2026-10-27)
             for item in re.split(r"^- ", body, flags=re.M)[1:]:
                 head, _, rest = item.partition("\n")
                 if head.startswith("외 ") or "기사 검색에서 보기" in head:
@@ -145,7 +145,7 @@ def check_files(out: dict, inp: dict | None, markdown: str) -> tuple[list, list,
 
     # 확정 한 줄 요약: 보안·업계 동향 기사마다 60자 내외, 일반 글자만 (링크·마크다운·줄바꿈·지시문 금지)
     from .parsers import scan_injection
-    kept = [l for l in labels if l.get("label") in ("security", "pr")]
+    kept = [l for l in labels if l.get("label") in ("security", "trend", "pr", "column")]
     needs = {a.get("id") for a in (inp or {}).get("articles", []) if a.get("needs_line", True)}
     no_line = [l for l in kept if l.get("id") in needs and not str(l.get("line") or "").strip()]
     bad_line = [l.get("id") for l in kept if l.get("line") and (
