@@ -1,4 +1,4 @@
-import { q } from "../lib/db";
+import { q, dateWithDow } from "../lib/db";
 import { renderMarkdown } from "../lib/md";
 import { splitSections, mainIncidents } from "../lib/briefing";
 import BriefingTabs from "./briefing-tabs";
@@ -28,7 +28,7 @@ export default async function Briefing({ date, edition, editions }) {
       <aside className="dates">
         {editions.map((e) => (
           <a key={e.id} href={`/b/${e.id}`} className={e.id === cur ? "on" : ""}>
-            {e.date} {EDITION_LABEL[e.edition]}
+            {dateWithDow(e.date)} {EDITION_LABEL[e.edition]}
           </a>
         ))}
       </aside>
