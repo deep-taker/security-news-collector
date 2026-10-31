@@ -13,7 +13,7 @@ export default async function Articles(props) {
   const raw = (searchParams.q || "").trim().slice(0, 100);
   const text = raw.length >= 2 ? raw : "";   // 1글자 검색은 부하만 크고 쓸모가 적어 무시
   const source = SOURCES[searchParams.source] ? searchParams.source : "";
-  // 분류: 기본은 '분류 대기' 포함 전체 (매시간 수집 직후 바로 보이도록). 무관 기사는 DB 정책상 공개되지 않음
+  // 분류: 기본은 '분류 대기' 포함 전체 (수집 직후 바로 보이도록). 무관 기사는 DB 정책상 공개되지 않음
   const label = ["labeled", "security", "trend", "pr", "column", "pending"].includes(searchParams.label) ? searchParams.label : "";
   const page = Math.max(1, parseInt(searchParams.page || "1", 10) || 1);
   const group = searchParams.group !== "0";   // 같은 사건 묶기 (기본 켬)
@@ -78,7 +78,7 @@ export default async function Articles(props) {
         </select>
         <button type="submit">검색</button>
       </form>
-      <p className="muted">총 {total?.toLocaleString("ko-KR") ?? 0}건 · 매시간 수집 직후 반영, 새로 수집된 순{group && shown.size ? " · 같은 사건은 첫 기사 아래에 묶음" : ""}{raw && !text ? " · 검색어는 2글자 이상 입력하세요" : ""}</p>
+      <p className="muted">총 {total?.toLocaleString("ko-KR") ?? 0}건 · 2시간마다 수집 직후 반영, 새로 수집된 순{group && shown.size ? " · 같은 사건은 첫 기사 아래에 묶음" : ""}{raw && !text ? " · 검색어는 2글자 이상 입력하세요" : ""}</p>
       <p className="muted">'분류 대기'는 키워드로 고른 후보로, 다음 브리핑(06·12·18시)에서 보안·업계 동향으로 확정되거나 목록에서 빠집니다. 제목 아래 한 줄은 AI가 기사 내용을 핵심만 줄인 요약으로, 수집 직후 몇 분 안에 붙습니다.</p>
       <NewBanner since={since} />
       {rows.length === 0 ? <p className="empty">{page > 1 && total > 0 ? <>이 쪽에는 결과가 없습니다. <a href={`/articles?${qs(1)}`}>첫 쪽으로</a></> : "검색 결과가 없습니다."}</p> : (
