@@ -83,7 +83,7 @@ def check_format(markdown: str, edition: str) -> list:
                 lines = [l for l in rest.strip().splitlines() if l.strip()]
                 if not 1 <= len(lines) <= 3:
                     bad_lines += 1
-        elif any(k in title for k in ("기타 사건", "AI 보안", "정책", "국방", "보안 동향", "업계 동향")):   # 업계 동향도 2줄 (2026-10-27)
+        elif any(k in title for k in ("기타 사건", "AI 보안", "정책", "국방", "보안 동향", "업계 동향", "칼럼")):   # 칼럼도 2줄 (2026-10-31)   # 업계 동향도 2줄 (2026-10-27)
             for item in re.split(r"^- ", body, flags=re.M)[1:]:
                 head, _, rest = item.partition("\n")
                 if head.startswith("외 ") or "기사 검색에서 보기" in head:

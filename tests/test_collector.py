@@ -260,7 +260,7 @@ def test_verify_trend_column_labels():
     md = ("# 정보보안 브리핑 2026-10-31 (토) 06시판\n\n## 🔴 주요 사건·사고\n\n"
           "## 📈 보안 동향\n- **[보안 상장사 매출 증가](https://www.boannews.com/a \"보도: 보안뉴스\")**\n  줄1\n  줄2\n\n"
           "## 🏢 업계 동향\n- **[제품 출시](https://www.boannews.com/b \"보도: 보안뉴스\")**\n  줄1\n  줄2\n\n"
-          "## ✍️ 칼럼·기고\n- **[보안칼럼](https://www.boannews.com/c \"보도: 보안뉴스\")**\n  필자의 핵심 주장\n")
+          "## ✍️ 칼럼·기고\n- **[보안칼럼](https://www.boannews.com/c \"보도: 보안뉴스\")**\n  필자의 핵심 주장\n  근거와 제언\n")
     out = {"date": "2026-10-31", "edition": "am", "events": [], "labels": [
         {"id": 1, "label": "trend", "line": "보안 상장사 81.5% 매출 증가"}, {"id": 2, "label": "pr", "line": "제품 출시"},
         {"id": 3, "label": "column", "line": "인간중심 보안의 한계 지적"}]}
