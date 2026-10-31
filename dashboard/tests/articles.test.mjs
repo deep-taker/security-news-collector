@@ -2,12 +2,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { groupByEvent, validSince, searchFilter, buildRss } from "../lib/articles.js";
-import { fmtShort } from "../lib/db.js";
+import { fmtShort, fmt, dateWithDow } from "../lib/db.js";
 import { renderMarkdown } from "../lib/md.js";
 
 test("시각: 한국 시간 24시간제 'MM/DD HH:mm', 값 없으면 빈 문자열", () => {
-  assert.equal(fmtShort("2026-10-26T08:11:00Z"), "10/26 17:11");
-  assert.equal(fmtShort("2026-10-26T15:05:00Z"), "10/27 00:05");   // 자정 넘김
+  assert.equal(fmtShort("2026-10-26T08:11:00Z"), "10/26(월) 17:11");
+  assert.equal(fmtShort("2026-10-26T15:05:00Z"), "10/27(화) 00:05");   // 자정 넘김 — 요일도 한국 날짜 기준
   assert.equal(fmtShort(null), "");
 });
 
@@ -61,4 +61,11 @@ test("행사 일정: 진행 중은 다가오는 쪽, 날짜 표시(요일·기�
   assert.deepEqual(past.map((e) => e.id), [4, 2]);
   assert.equal(eventDate({ start_date: "2026-10-28" }), "10/28(수)");
   assert.equal(eventDate({ start_date: "2026-10-26", end_date: "2026-10-28" }), "10/26(월)~10/28(수)");
+});
+
+test("날짜 뒤 요일 (2026-10-31)", () => {
+  assert.equal(dateWithDow("2026-10-31"), "2026-10-31 (토)");
+  assert.equal(dateWithDow("2026-11-02"), "2026-11-02 (월)");
+  assert.equal(fmt("2026-10-31T15:30:00Z"), "2026-11-01(일) 00:30");
+  assert.equal(fmt(null), "");
 });

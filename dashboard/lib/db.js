@@ -26,18 +26,31 @@ export const SOURCES = {
 };
 export const LABELS = { security: "보안", trend: "보안 동향", pr: "업계 동향", column: "칼럼·기고", not_security: "무관" };
 
-// 기사 목록용 짧은 시각: "10/26 17:11" (한국 시간, 24시간제)
-export function fmtShort(ts) {
-  if (!ts) return "";
-  const p = Object.fromEntries(new Intl.DateTimeFormat("ko-KR", {
-    timeZone: "Asia/Seoul", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
-  }).formatToParts(new Date(ts)).map((x) => [x.type, x.value]));
-  return `${p.month}/${p.day} ${p.hour}:${p.minute}`;
+// 날짜 뒤에 요일을 붙인다 (사용자 요청 2026-10-31)
+const DOW = ["일", "월", "화", "수", "목", "금", "토"];
+const kstParts = (ts) => Object.fromEntries(new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+}).formatToParts(new Date(ts)).map((x) => [x.type, x.value]));
+const dowOf = (y, m, d) => DOW[new Date(Date.UTC(+y, +m - 1, +d)).getUTCDay()];
+
+// 'YYYY-MM-DD' → 'YYYY-MM-DD (토)' (브리핑 판 목록)
+export function dateWithDow(date) {
+  const [y, m, d] = (date || "").split("-");
+  return y && m && d ? `${date} (${dowOf(y, m, d)})` : date || "";
 }
 
+// 기사 목록용 짧은 시각: "10/26(월) 17:11" (한국 시간, 24시간제)
+export function fmtShort(ts) {
+  if (!ts) return "";
+  const p = kstParts(ts);
+  return `${p.month}/${p.day}(${dowOf(p.year, p.month, p.day)}) ${p.hour}:${p.minute}`;
+}
+
+// 상태 화면용 시각: "2026-10-26(월) 17:11"
 export function fmt(ts) {
   if (!ts) return "";
-  return new Date(ts).toLocaleString("ko-KR", { timeZone: "Asia/Seoul", dateStyle: "short", timeStyle: "short" });
+  const p = kstParts(ts);
+  return `${p.year}-${p.month}-${p.day}(${dowOf(p.year, p.month, p.day)}) ${p.hour}:${p.minute}`;
 }
 
 // 수집·브리핑 이상 점검 (공개용 DB 함수 system_alerts_public: 오류 원문 대신 분류만).
