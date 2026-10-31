@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url>
+	<loc><![CDATA[ https://zdnet.co.kr/view/?no=20261031160238 ]]></loc>
+	<news:news>
+		<news:publication>
+			<news:name>ZDNet Korea</news:name>
+			<news:language>ko</news:language>
+		</news:publication>
+		<news:genres>PressRelease</news:genres>
+		<news:publication_date><![CDATA[ 2026-10-31T16:26:52+09:00 ]]></news:publication_date>
+		<news:title><![CDATA[ 삼성 사장단, 올트먼과 'AI 미래전략' 논의 ]]></news:title>
+		<news:keywords><![CDATA[ ZDNet Korea,삼성,AI,오픈AI ]]></news:keywords>
+	</news:news>
+</url>
+<url>
+	<loc><![CDATA[ https://zdnet.co.kr/view/?no=20261031154116 ]]></loc>
+	<news:news>
+		<news:publication>
+			<news:name>ZDNet Korea</news:name>
+			<news:language>ko</news:language>
+		</news:publication>
+		<news:genres>PressRelease</news:genres>
+		<news:publication_date><![CDATA[ 2026-10-31T15:43:49+09:00 ]]></news:publication_date>
+		<news:title><![CDATA[ [기고] 대학·공공연 R&amp;D에 19.2조원 쓰고 기술료 수입 2800억원 그쳐 ]]></news:title>
+		<news:keywords><![CDATA[ ZDNet Korea,특허,박병욱 ]]></news:keywords>
+	</news:news>
+</url>
+<url>
+	<loc><![CDATA[ https://zdnet.co.kr/view/?no=20261031010426 ]]></loc>
+	<news:news>
+		<news:publication>
+			<news:name>ZDNet Korea</news:name>
+			<news:language>ko</news:language>
+		</news:publication>
+		<news:genres>PressRelease</news:genres>
+		<news:publication_date><![CDATA[ 2026-10-31T13:55:25+09:00 ]]></news:publication_date>
+		<news:title><![CDATA[ LG전자, 휴머노이드 직접 만든다…부품 내재화로 경쟁력↑ ]]></news:title>
+		<news:keywords><![CDATA[ ZDNet Korea,LG전자,클로이드,휴머노이드,중국,애지봇,로보스타,양재,데이터 팩토리,액추에이터,연산 칩,엔비디아,퀄컴,인텔 ]]></news:keywords>
+	</news:news>
+</url>
+</urlset>

@@ -76,7 +76,9 @@ SOURCES = [
         "name": "지디넷코리아",
         "group": "국내언론사",
         "kind": "rss",
-        "url": "https://feeds.feedburner.com/zdkorea",   # RSS가 최근 30건뿐 → 이 매체만 매시간 수집(DB 예약 collect-zdnet, 2026-10-31)
+        "url": "https://feeds.feedburner.com/zdkorea",
+        # RSS가 최근 30건뿐이라 2시간 간격(평일 최대 87건)이면 놓침 → 구글 뉴스 사이트맵(최근 300건, 약 이틀)을 함께 읽는다 (2026-10-31)
+        "extra_urls": ["https://zdnet.co.kr/feed/article_list2.xml"],
     },
     {
         "id": "ddaily",
