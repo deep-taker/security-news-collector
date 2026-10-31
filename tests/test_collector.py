@@ -294,6 +294,17 @@ def test_itdonga_list():
     assert check_links("[x](https://www.donga.com/news/a)", set()) != []   # 동아일보 본지는 허용 안 함
 
 
+def test_zdnet_news_sitemap():
+    # 지디넷 보조 주소(구글 뉴스 사이트맵)도 같은 'rss' 파서 자리에서 읽힌다 (2026-10-31)
+    from collector.parsers import PARSERS
+    items = PARSERS["rss"]((FX / "zdnet_sitemap.xml").read_bytes(), "https://feeds.feedburner.com/zdkorea")
+    assert len(items) == 3
+    for i in items:
+        assert i["url"].startswith("https://zdnet.co.kr/view/?no=") and i["title"] and i["summary_raw"] == ""
+        assert i["published_at"] is not None and i["keywords_raw"]
+    assert len(PARSERS["rss"]((FX / "zdnet.xml").read_bytes(), "x")) > 0   # 기존 RSS는 그대로
+
+
 def test_verify_summary_lines():
     from collector.verify_briefing import check_files
     inp = {"date": "2026-10-27", "edition": "am", "articles": [{"id": 1}, {"id": 2}], "recent_events": []}

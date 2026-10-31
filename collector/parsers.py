@@ -256,8 +256,39 @@ def parse_itdonga(raw: bytes, base_url: str):
     return out
 
 
+_NEWS_NS = "{http://www.google.com/schemas/sitemap-news/0.9}"
+_SM_NS = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
+
+
+def parse_news_sitemap(raw: bytes):
+    """구글 뉴스 사이트맵(<urlset> + news:news) — 지디넷코리아 RSS가 최근 30건뿐이라 보조로 읽는다 (2026-10-31).
+    설명(요약)이 없어 summary_raw는 비우고, 기사 키워드(news:keywords)는 보안 키워드 판정에만 쓴다."""
+    text = _XML_BAD_CHARS.sub("", raw.decode("utf-8", errors="replace").lstrip("\ufeff").lstrip())
+    root = ET.fromstring(text.encode("utf-8"))
+    out = []
+    for u in root.iter(f"{_SM_NS}url"):
+        loc = (u.findtext(f"{_SM_NS}loc") or "").strip()
+        news = u.find(f"{_NEWS_NS}news")
+        if not loc or news is None:
+            continue
+        title = clean_text(news.findtext(f"{_NEWS_NS}title") or "")
+        if not title:
+            continue
+        pub = parse_date((news.findtext(f"{_NEWS_NS}publication_date") or "").strip())
+        out.append({
+            "url": loc, "title": title, "summary_raw": "",
+            "keywords_raw": clean_text(news.findtext(f"{_NEWS_NS}keywords") or ""),
+            "published_at": pub, "published_approx": pub is None, "categories": [],
+        })
+    return out
+
+
+def _rss_or_sitemap(raw: bytes, url: str):
+    return parse_news_sitemap(raw) if b"<urlset" in raw[:600] else parse_feed(raw)
+
+
 PARSERS = {
-    "rss": lambda raw, url: parse_feed(raw),
+    "rss": _rss_or_sitemap,
     "html_etnews": parse_etnews,
     "html_ddaily": parse_ddaily,
     "html_itdonga": parse_itdonga,

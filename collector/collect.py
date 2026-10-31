@@ -118,7 +118,7 @@ def gap_check(items: list, last_ok) -> str | None:
 
 def build_row(src: dict, it: dict, now: datetime) -> dict:
     summary = clean_text(it["summary_raw"], SUMMARY_LIMIT)
-    sec, ai = keywords.match(f'{it["title"]} {summary}')
+    sec, ai = keywords.match(f'{it["title"]} {summary} {it.get("keywords_raw", "")}')   # 사이트맵 기사 키워드도 판정에 (지디넷)
     ev = keywords.event_match(f'{it["title"]} {summary}')   # 보안 행사 기사 (행사 단어 + 보안·국방 관련 단어)
     cats = it.get("categories") or []
     cat_hit = any(c in src.get("security_categories", []) for c in cats)
