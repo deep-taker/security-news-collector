@@ -51,7 +51,7 @@ begin
   end loop;
 
   for l in select * from jsonb_array_elements(coalesce(p_labels, '[]'::jsonb)) loop
-    ln := case when l->>'label' in ('security', 'pr')
+    ln := case when l->>'label' in ('security', 'trend', 'pr', 'column')
                then nullif(btrim(left(regexp_replace(coalesce(l->>'line', ''), '\s+', ' ', 'g'), 80)), '') end;
     update articles
        set label = l->>'label',
@@ -158,7 +158,7 @@ declare
 begin
   begin
     select max(run_at) into last_collect from public.collection_runs;
-    if last_collect < now() - interval '90 minutes'
+    if last_collect < now() - interval '150 minutes'
        and public.remediation_count('collect_restart', '', interval '60 minutes') = 0
        and public.remediation_count('collect_restart', '', interval '6 hours') < 2 then
       rid := public.dispatch_github_workflow('collect.yml');
@@ -573,13 +573,13 @@ begin
   ) t;
 
   select max(run_at) into last_any from public.collection_runs;
-  if last_any is null or last_any < now() - interval '2 hours 15 minutes' then
+  if last_any is null or last_any < now() - interval '2 hours 45 minutes' then
     alerts := alerts || jsonb_build_object('level','error','code','collect_stalled', 'title','수집이 멈췄습니다',
-      'detail', '마지막 수집: ' || coalesce(to_char(last_any at time zone 'Asia/Seoul','MM-DD HH24:MI'),'없음') || ' (매시 17분 실행, 실패 매체는 27분 재수집)');
+      'detail', '마지막 수집: ' || coalesce(to_char(last_any at time zone 'Asia/Seoul','MM-DD HH24:MI'),'없음') || ' (홀수 시 17분 실행, 실패 매체는 홀수 시 27분 재수집)');
   end if;
 
   select count(*) n, count(a.summary_line) filled into cov from public.articles a
-   where (a.candidate or a.label in ('security', 'pr')) and coalesce(a.label, '') <> 'not_security'
+   where (a.candidate or a.label in ('security', 'trend', 'pr', 'column')) and coalesce(a.label, '') <> 'not_security'
      and a.collected_at between now() - interval '27 hours' and now() - interval '3 hours';
   cov_all_ok := not (cov.n >= 10 and cov.filled < cov.n * 0.5);
   if not cov_all_ok then
@@ -603,7 +603,7 @@ begin
     end if;
     -- 한 줄 요약 채움률 (매체별): 전체가 정상인데 특정 매체만 낮으면 그 매체 설명(재료) 수집 문제
     select count(*) n, count(a.summary_line) filled into cov from public.articles a
-     where a.source_id = r.id and (a.candidate or a.label in ('security', 'pr')) and coalesce(a.label, '') <> 'not_security'
+     where a.source_id = r.id and (a.candidate or a.label in ('security', 'trend', 'pr', 'column')) and coalesce(a.label, '') <> 'not_security'
        and a.collected_at between now() - interval '27 hours' and now() - interval '3 hours';
     if cov_all_ok and cov.n >= 5 and cov.filled < cov.n * 0.5 then
       alerts := alerts || jsonb_build_object('level','warn','code','source_summary_low','source_id',r.id,
@@ -754,7 +754,7 @@ begin
     'price_in_per_mtok', 0.10, 'price_out_per_mtok', 0.50, 'model', 'claude-haiku-5-5'
   ) into ai
   from (select count(*) n, count(a.summary_line) filled from public.articles a
-         where (a.candidate or a.label in ('security', 'pr')) and coalesce(a.label, '') <> 'not_security'
+         where (a.candidate or a.label in ('security', 'trend', 'pr', 'column')) and coalesce(a.label, '') <> 'not_security'
            and a.collected_at between now() - interval '27 hours' and now() - interval '3 hours') cov_total;
   ai := ai || jsonb_build_object('month_cost_usd',
           round(((ai->>'month_in_tok')::numeric * 0.10 + (ai->>'month_out_tok')::numeric * 0.50) / 1e6, 4));
@@ -862,7 +862,7 @@ grant usage, select on sequence public.events_id_seq to service_role;
 grant usage, select on sequence public.remediation_runs_id_seq to service_role;
 grant usage, select on sequence public.security_events_id_seq to service_role;
 drop policy if exists public_read on public.articles;
-create policy public_read on public.articles as PERMISSIVE for SELECT to anon using (((label = ANY (ARRAY['security'::text, 'pr'::text])) OR ((label IS NULL) AND candidate)));
+create policy public_read on public.articles as PERMISSIVE for SELECT to anon using (((label = ANY (ARRAY['security'::text, 'trend'::text, 'pr'::text, 'column'::text])) OR ((label IS NULL) AND candidate)));
 drop policy if exists public_read on public.briefings;
 create policy public_read on public.briefings as PERMISSIVE for SELECT to anon using (true);
 drop policy if exists public_read on public.events;
@@ -889,10 +889,10 @@ do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') th
   perform cron.schedule('cleanup-logs', '10 19 * * *', 'delete from cron.job_run_details where end_time < now() - interval ''30 days''; delete from public.briefing_checks where checked_at < now() - interval ''30 days''; delete from public.backup_runs where run_at < now() - interval ''90 days''; delete from public.remediation_runs where run_at < now() - interval ''90 days''');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
-  perform cron.schedule('collect-hourly', '17 * * * *', 'select public.dispatch_github_workflow(''collect.yml'')');
+  perform cron.schedule('collect-hourly', '17 0-22/2 * * *', 'select public.dispatch_github_workflow(''collect.yml'')');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
-  perform cron.schedule('collect-retry', '27 * * * *', 'select public.retry_failed_sources()');
+  perform cron.schedule('collect-retry', '27 0-22/2 * * *', 'select public.retry_failed_sources()');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
   perform cron.schedule('prepare-am', '35 20 * * *', 'select public.dispatch_github_workflow(''daily.yml'')');
