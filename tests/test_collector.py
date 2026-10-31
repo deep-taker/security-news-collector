@@ -265,6 +265,16 @@ def test_verify_trend_column_labels():
     assert any("절 순서" in w for w in check_format(swapped, "am"))
 
 
+def test_itchosun_feed():
+    # IT조선 추가 (2026-10-31): 공개 RSS가 기존 파서로 읽히고, 링크가 허용 도메인인지
+    from collector.verify_briefing import check_links
+    items = parse_feed((FX / "itchosun.xml").read_bytes())
+    assert len(items) == 4 and all(i["url"].startswith("https://it.chosun.com/") for i in items)
+    assert any(keywords.match(f'{i["title"]} {i.get("summary_raw") or ""}')[0] for i in items)
+    assert check_links(f'[x]({items[0]["url"]})', set()) == []
+    assert check_links("[x](https://www.chosun.com/a)", set()) != []   # 조선일보 본지는 허용 안 함
+
+
 def test_verify_summary_lines():
     from collector.verify_briefing import check_files
     inp = {"date": "2026-10-27", "edition": "am", "articles": [{"id": 1}, {"id": 2}], "recent_events": []}
