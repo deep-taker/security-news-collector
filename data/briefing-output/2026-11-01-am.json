@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-01",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-01-am.md",
+  "stats": {
+    "candidates": 14,
+    "security": 12,
+    "trend": 1,
+    "pr": 0,
+    "column": 0,
+    "not_security": 1,
+    "events": 4
+  },
+  "events": [
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "국립박물관단지·창비·KLPGA 등 고객사 9곳 추가로 유출 가능성 공지, 규모는 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "vt-cosmetics-breach",
+      "title": "브이티코스메틱 해킹, 고객·퇴직 임직원 개인정보 유출",
+      "category": "개인정보",
+      "summary": "탈취된 임직원 계정으로 ERP 무단 접속, 주민번호·계좌정보 포함 유출",
+      "cves": []
+    },
+    {
+      "slug": "gmarket-ecoupon-abuse",
+      "title": "지마켓 e쿠폰 핀번호 무단 사용",
+      "category": "침해사고",
+      "summary": "e쿠폰 핀번호 제3자 무단 등록·사용 정황, 접근 차단 후 KISA 신고",
+      "cves": []
+    },
+    {
+      "slug": "php2shell-rce",
+      "title": "PHP2Shell 취약점 실제 악용 확인",
+      "category": "취약점",
+      "summary": "지니언스 실측 내부망 PHP 장비 96% 노출, 시놀로지 NAS 영향",
+      "cves": [
+        "CVE-2026-109618",
+        "CVE-2026-109619"
+      ]
+    }
+  ],
+  "labels": [
+    {
+      "id": 124386,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124385,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124384,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124383,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124382,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124381,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124380,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 124379,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 126935,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 126936,
+      "label": "security",
+      "event_slug": "vt-cosmetics-breach"
+    },
+    {
+      "id": 124387,
+      "label": "security",
+      "event_slug": "gmarket-ecoupon-abuse"
+    },
+    {
+      "id": 124430,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 126985,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 125055,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ]
+}
