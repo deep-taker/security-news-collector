@@ -9,7 +9,7 @@ security_source: 보안 전문 매체·보안 섹션이라 모든 기사를 후�
 security_categories: RSS 분류값이 이 중 하나면 후보로 올림
 ai_source: AI 전문 매체 (AI 보안 키워드를 함께 적용)
 
-IT동아·IT조선은 수집 대상에서 제외(사용자 결정, 2026-10-26).
+IT동아는 수집 대상에서 제외(사용자 결정, 2026-10-26). IT조선은 2026-10-31 추가(사용자 결정 — 공개 RSS, robots.txt 허용, 약관에 자동 수집 금지 조항 없음).
 """
 
 SOURCES = [
@@ -81,6 +81,13 @@ SOURCES = [
         "kind": "html_ddaily",
         "url": "https://www.ddaily.co.kr/news",
         "pages": 2,   # 목록 1쪽은 약 15~20건(낮 시간 3~4시간 분량)이라 2쪽까지 읽음
+    },
+    {
+        "id": "itchosun",
+        "name": "IT조선",
+        "group": "국내언론사",
+        "kind": "rss",
+        "url": "https://it.chosun.com/rss/allArticle.xml",   # 최근 50건(약 하루 분량)
     },
 ]
 
