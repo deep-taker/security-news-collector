@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-31",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-10-31-noon.md",
+  "stats": {
+    "candidates": 15,
+    "security": 8,
+    "pr": 2,
+    "not_security": 5,
+    "events": 5
+  },
+  "events": [
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "바이낸스 약 57억~63억달러 탈취 정황, 북한 라자루스 가능성 제기",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "백업 솔루션 Ahsay 제로데이 악용 가능성, 유출 여부·규모는 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "hyundai-ezwel-breach",
+      "title": "현대이지웰 해킹으로 회원 개인정보 유출",
+      "category": "개인정보",
+      "summary": "회원정보 조회 API 비정상 접근으로 이름·연락처·주소 등 유출, 금감원·KISA 신고",
+      "cves": []
+    },
+    {
+      "slug": "korean-passport-darkforums",
+      "title": "불법 해킹 포럼서 한국인 여권 150개 유포 정황",
+      "category": "개인정보",
+      "summary": "다크포럼스에 여권번호·주민등록번호가 담긴 여권 사진 150개 공유 주장",
+      "cves": []
+    },
+    {
+      "slug": "ai-attack-burnout",
+      "title": "AI 해킹 급증에 보안 인력 번아웃",
+      "category": "AI 보안",
+      "summary": "AI 활용 공격·취약점·오탐 경보가 쏟아져 보안 대응 인력 부담 가중",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 113764,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 114463,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 117042,
+      "label": "security",
+      "event_slug": "korean-passport-darkforums"
+    },
+    {
+      "id": 114465,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 114464,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 115978,
+      "label": "security",
+      "event_slug": "ai-attack-burnout"
+    },
+    {
+      "id": 115977,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 117041,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 117773,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 117824,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 117040,
+      "label": "security",
+      "event_slug": "hyundai-ezwel-breach"
+    },
+    {
+      "id": 117039,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 117822,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 117089,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 118519,
+      "label": "security",
+      "event_slug": "binance-hack"
+    }
+  ]
+}
