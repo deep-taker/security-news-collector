@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
           <nav>
             <a href="/">브리핑</a>
             <a href="/articles">기사 검색</a>
+            <a href="/columns">칼럼·기고</a>
             <a href="/events">행사 일정</a>
             <a href="/status">수집 상태</a>
             <a href="/rss.xml" title="브리핑 RSS 구독 주소">RSS</a>

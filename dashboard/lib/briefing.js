@@ -2,7 +2,7 @@
 
 const TAB_IDS = [
   ["주요 사건", "main"], ["핵심 사건", "main"], ["기타 사", "other"], ["AI 보안", "ai"],
-  ["국방", "defense"], ["정책", "policy"], ["업계", "industry"], ["보안 행사", "events"], ["다음 주", "next"], ["수집 상태", "status"],
+  ["국방", "defense"], ["정책", "policy"], ["보안 동향", "trend"], ["업계", "industry"], ["칼럼", "column"], ["보안 행사", "events"], ["다음 주", "next"], ["수집 상태", "status"],
 ];
 
 // 절 안 항목 수: 사건 제목(h3)이 있으면 h3 수(그 아래 설명 목록은 세지 않음), 없으면 맨 바깥 목록의 li (중첩 목록 제외)
