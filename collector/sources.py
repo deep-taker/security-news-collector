@@ -52,6 +52,9 @@ SOURCES = [
         "group": "국내언론사",
         "kind": "rss",
         "url": "https://www.digitaltoday.co.kr/rss/allArticle.xml",
+        # 2시간 간격 수집(2026-10-31)에서 전체 RSS 50건이 모자라는 시간대가 있어, 보안 기사가 나오는 분야 RSS(각 20건)를 함께 읽는다
+        # S1N10 AI·엔터프라이즈, S1N9 크립토, S1N7 통신미디어, S1N6 종합
+        "extra_urls": [f"https://www.digitaltoday.co.kr/rss/S1N{n}.xml" for n in (10, 9, 7, 6)],
     },
     {
         "id": "aitimes",
@@ -73,7 +76,7 @@ SOURCES = [
         "name": "지디넷코리아",
         "group": "국내언론사",
         "kind": "rss",
-        "url": "https://feeds.feedburner.com/zdkorea",
+        "url": "https://feeds.feedburner.com/zdkorea",   # RSS가 최근 30건뿐 → 이 매체만 매시간 수집(DB 예약 collect-zdnet, 2026-10-31)
     },
     {
         "id": "ddaily",
@@ -81,7 +84,7 @@ SOURCES = [
         "group": "국내언론사",
         "kind": "html_ddaily",
         "url": "https://www.ddaily.co.kr/news",
-        "pages": 2,   # 목록 1쪽은 약 15~20건(낮 시간 3~4시간 분량)이라 2쪽까지 읽음
+        "pages": 4,   # 2시간 간격 수집(2026-10-31): 평일 2시간 최대 75건 → 4쪽(약 76건)까지 읽음
     },
     {
         "id": "itchosun",

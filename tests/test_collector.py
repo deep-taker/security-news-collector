@@ -162,6 +162,10 @@ def test_gap_detection_and_pages():
     assert gap_check(items, None) is None
     assert page_urls({"url": "https://www.ddaily.co.kr/news", "pages": 2}) == [
         "https://www.ddaily.co.kr/news", "https://www.ddaily.co.kr/news?page=2"]
+    assert page_urls({"url": "https://a.kr/rss/all.xml", "extra_urls": ["https://a.kr/rss/S1N10.xml"]}) == [
+        "https://a.kr/rss/all.xml", "https://a.kr/rss/S1N10.xml"]
+    from collector.sources import SOURCE_BY_ID
+    assert len(page_urls(SOURCE_BY_ID["ddaily"])) == 4 and len(page_urls(SOURCE_BY_ID["digitaltoday"])) == 5
     assert page_urls({"url": "https://x.kr/a?b=1"}) == ["https://x.kr/a?b=1"]
 
 

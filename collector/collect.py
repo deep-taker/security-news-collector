@@ -80,10 +80,10 @@ def blocked_diag(e: Exception) -> str:
 
 
 def page_urls(src: dict) -> list:
-    """목록 여러 쪽을 읽는 매체 (예: 디지털데일리 2쪽)."""
+    """목록 여러 쪽을 읽는 매체 (예: 디지털데일리 4쪽)와 보조 주소(예: 디지털투데이 분야별 RSS). 같은 기사는 수집 때 한 번만 센다."""
     n = int(src.get("pages", 1))
     sep = "&" if "?" in src["url"] else "?"
-    return [src["url"]] + [f'{src["url"]}{sep}page={i}' for i in range(2, n + 1)]
+    return [src["url"]] + [f'{src["url"]}{sep}page={i}' for i in range(2, n + 1)] + list(src.get("extra_urls", []))
 
 
 def last_ok_times() -> dict:
