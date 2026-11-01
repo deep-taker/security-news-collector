@@ -1,0 +1,283 @@
+{
+ "date": "2026-11-01",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-01-pm.md",
+ "stats": {
+  "candidates": 31,
+  "security": 23,
+  "trend": 4,
+  "pr": 2,
+  "column": 0,
+  "not_security": 2,
+  "events": 13
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "탈취 비트코인 14억달러 19개 지갑 분산, FBI 북한 공식 지목",
+   "cves": []
+  },
+  {
+   "slug": "douzone-bizon-breach",
+   "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "category": "침해사고",
+   "summary": "국립박물관단지·창비·KLPGA 등 고객사 9곳 추가로 유출 가능성 공지, 규모는 조사 중",
+   "cves": []
+  },
+  {
+   "slug": "moin-breach",
+   "title": "해외송금 핀테크 모인 해킹, 신분증·주민번호·계좌정보 유출",
+   "category": "개인정보",
+   "summary": "고객·가족·주주 정보까지 포함 가능, 2차 피해 우려",
+   "cves": []
+  },
+  {
+   "slug": "hanwha-systems-breach",
+   "title": "한화시스템 임직원 개인정보 유출 정황",
+   "category": "개인정보",
+   "summary": "한화시스템ICT 관리 서버 비인가 접근, 한화엔진 임직원·협력업체 1,903건 영향 가능",
+   "cves": []
+  },
+  {
+   "slug": "wordpress-rce-attacks",
+   "title": "워드프레스 원격코드실행 취약점 공격 24시간 약 6만3천 건 시도",
+   "category": "취약점",
+   "summary": "워드펜스가 24시간 공격 시도 6만471건 차단, 7.1.4 업데이트 필요",
+   "cves": []
+  },
+  {
+   "slug": "wp-plugin-vulns-cvss98",
+   "title": "워드프레스 플러그인 CVSS 9.8 취약점 3건",
+   "category": "취약점",
+   "summary": "프로젝트 매니저·PDF 청구서·심플폼 인증 없는 공격 가능, 최신 버전 업데이트 필요",
+   "cves": []
+  },
+  {
+   "slug": "redhat-konflux-vulns",
+   "title": "레드햇 Konflux CI 고위험 취약점 3건",
+   "category": "취약점",
+   "summary": "깃허브 토큰 평문 저장 등 인증정보 탈취와 임의 명령 실행 위험",
+   "cves": []
+  },
+  {
+   "slug": "japan-digital-securities-breach",
+   "title": "일본 디지털증권 위탁 서비스 해킹, 채권 투자자 정보 유출 우려",
+   "category": "개인정보",
+   "summary": "NTT데이터 서비스 중단, 라쿠텐증권·킨테츠 구매자 정보 반출 가능성",
+   "cves": []
+  },
+  {
+   "slug": "japan-vpreca-breach",
+   "title": "일본 선불카드 V프리카 협력사 해킹",
+   "category": "개인정보",
+   "summary": "라이프카드 외부 위탁업체 비인가 접근, 서비스 일부 중단",
+   "cves": []
+  },
+  {
+   "slug": "chainalysis-ai-breach",
+   "title": "체이널리시스, AI 에이전트 공격으로 고객 정보 일부 유출",
+   "category": "AI 보안",
+   "summary": "오펜시브 에이전트 기법으로 내부 시스템 침입, 사용자 ID·이름·이메일 노출",
+   "cves": []
+  },
+  {
+   "slug": "cursor-fake-claude-extension",
+   "title": "커서 마켓플레이스에 가짜 클로드 코드 확장 프로그램",
+   "category": "악성코드·랜섬웨어",
+   "summary": "SSH 백도어 설치 시도, 최대 5000명 피해, 마켓플레이스 전체 중단",
+   "cves": []
+  },
+  {
+   "slug": "japan-cyber-surge",
+   "title": "일본 사이버보안 사고 723건…정부 긴급 대책 착수",
+   "category": "AI 보안",
+   "summary": "일본 AI 사이버공격 7월 이후 최소 81건, 사전 감시 체제로 전환",
+   "cves": []
+  },
+  {
+   "slug": "mois-ai-pii-policy",
+   "title": "행안부 AI 시대 개인정보 활용 제도 정비",
+   "category": "정책·제도",
+   "summary": "모두의 토론회에서 수집·제공 통합과 정당한 이익 확대 등 개편 논의",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 138450,
+   "label": "security",
+   "event_slug": "binance-hack",
+   "line": "바이낸스 해킹 북한 소행 확인…피해 자산 95% 자체 보충"
+  },
+  {
+   "id": 136465,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 137079,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 139521,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 138468,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 138381,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 138384,
+   "label": "security",
+   "event_slug": "douzone-bizon-breach"
+  },
+  {
+   "id": 138383,
+   "label": "security",
+   "event_slug": "moin-breach"
+  },
+  {
+   "id": 138382,
+   "label": "security",
+   "event_slug": "hanwha-systems-breach"
+  },
+  {
+   "id": 136467,
+   "label": "security",
+   "event_slug": "wordpress-rce-attacks"
+  },
+  {
+   "id": 135878,
+   "label": "security",
+   "event_slug": "wp-plugin-vulns-cvss98"
+  },
+  {
+   "id": 135877,
+   "label": "security",
+   "event_slug": "wp-plugin-vulns-cvss98"
+  },
+  {
+   "id": 135876,
+   "label": "security",
+   "event_slug": "wp-plugin-vulns-cvss98"
+  },
+  {
+   "id": 135875,
+   "label": "security",
+   "event_slug": "redhat-konflux-vulns"
+  },
+  {
+   "id": 135880,
+   "label": "security",
+   "event_slug": "japan-digital-securities-breach"
+  },
+  {
+   "id": 135879,
+   "label": "security",
+   "event_slug": "japan-vpreca-breach"
+  },
+  {
+   "id": 138965,
+   "label": "security",
+   "event_slug": "chainalysis-ai-breach"
+  },
+  {
+   "id": 136458,
+   "label": "security",
+   "event_slug": "cursor-fake-claude-extension"
+  },
+  {
+   "id": 137679,
+   "label": "security",
+   "event_slug": "japan-cyber-surge"
+  },
+  {
+   "id": 137912,
+   "label": "security",
+   "event_slug": "mois-ai-pii-policy"
+  },
+  {
+   "id": 137908,
+   "label": "security",
+   "event_slug": "mois-ai-pii-policy"
+  },
+  {
+   "id": 139162,
+   "label": "security",
+   "event_slug": "mois-ai-pii-policy"
+  },
+  {
+   "id": 139188,
+   "label": "security",
+   "event_slug": "mois-ai-pii-policy"
+  },
+  {
+   "id": 135963,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 135925,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 138431,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 138432,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 139163,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 138467,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 136966,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 136559,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "AI 시대 개인정보 보호·활용 국민 토론회",
+   "start_date": "2026-11-01",
+   "end_date": null,
+   "place": "서울 연세대 백양누리",
+   "organizer": "행정안전부·개인정보보호위원회",
+   "url": "https://zdnet.co.kr/view/?no=20261101160224",
+   "major": true,
+   "note": "AI 시대 개인정보 수집·제공 체계와 정보주체 동의 중심 규율의 한계 논의",
+   "article_ids": [
+    137912,
+    137908,
+    139162,
+    139188
+   ]
+  }
+ ]
+}
