@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-02",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-02-am.md",
+  "stats": {
+    "candidates": 14,
+    "security": 11,
+    "trend": 0,
+    "pr": 1,
+    "column": 0,
+    "not_security": 2,
+    "events": 4
+  },
+  "events": [
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "탈취 비트코인 14억달러 19개 지갑 분산, FBI 북한 공식 지목",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "국립박물관단지·창비·KLPGA 등 고객사 9곳 추가로 유출 가능성 공지, 규모는 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "hitai-breach",
+      "title": "하이타이 해킹, 이용자 16만3천 명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "API 취약점 악용, 피해 고객에 2만원 할인쿠폰 보상",
+      "cves": []
+    },
+    {
+      "slug": "lims-breach",
+      "title": "림스연구소 홈페이지 해킹, 회원정보 유출 우려",
+      "category": "개인정보",
+      "summary": "홈페이지 취약점으로 회원 DB 접근 가능, 실제 반출 흔적은 미확인",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 139678,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 142674,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 142673,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 142122,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 143370,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 143369,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 143368,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 143367,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 143366,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 144612,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 144611,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 144610,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 144609,
+      "label": "security",
+      "event_slug": "hitai-breach"
+    },
+    {
+      "id": 144608,
+      "label": "security",
+      "event_slug": "lims-breach"
+    }
+  ],
+  "security_events": []
+}
