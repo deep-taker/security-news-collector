@@ -116,6 +116,25 @@ def test_injection_scan():
     assert not scan_injection("북한 해킹조직이 PHP 취약점을 악용했다")
 
 
+def test_weekend_single_edition_windows():
+    # 2026-11-07(토)부터 주말은 06시판만: 일·월 06시판은 전날 05:30부터 24시간, 토 06시판은 평소(금 17:30부터)
+    from datetime import date
+    from collector.daily import briefing_window, weekend_single
+    sat, sun, mon = date(2026, 11, 7), date(2026, 11, 8), date(2026, 11, 9)
+    assert weekend_single(sat) and weekend_single(sun) and not weekend_single(mon)
+    assert not weekend_single(date(2026, 11, 1))                  # 시작 전 일요일은 그대로 하루 3회
+    s_sat, e_sat = briefing_window(sat, "am")
+    assert (s_sat.day, s_sat.hour) == (6, 17)                     # 금 17:30부터
+    s_sun, e_sun = briefing_window(sun, "am")
+    assert s_sun == e_sat and (e_sun - s_sun).total_seconds() == 24 * 3600
+    s_mon, e_mon = briefing_window(mon, "am")
+    assert s_mon == e_sun and (e_mon - s_mon).total_seconds() == 24 * 3600
+    s_tue, _ = briefing_window(date(2026, 11, 10), "am")
+    assert s_tue == briefing_window(mon, "pm")[1]                 # 평일은 그대로 이어짐
+    s_m2, _ = briefing_window(date(2026, 11, 2), "am")
+    assert (s_m2.day, s_m2.hour) == (1, 17)                       # 11/2 월요일은 기존 방식(일 18시판까지 있음)
+
+
 def test_briefing_windows_are_continuous():
     from datetime import date
     from collector.daily import briefing_window, edition_of

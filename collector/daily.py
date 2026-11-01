@@ -26,6 +26,12 @@ STALE_HOURS = 36
 EDITIONS = ("am", "noon", "pm")
 EDITION_LABEL = {"am": "06시판", "noon": "12시판", "pm": "18시판", "week": "주간 요약"}
 THREE_EDITIONS_FROM = date(2026, 10, 27)   # 이 날부터 하루 3회 (그 전 18시판은 05:30부터)
+WEEKEND_ONE_FROM = date(2026, 11, 7)       # 이 날(토)부터 주말은 06시판만 (사용자 결정 2026-11-01)
+
+
+def weekend_single(day) -> bool:
+    """토·일이고 주말 1회 운영 시작일 이후면 True — 이날은 06시판만 낸다."""
+    return day >= WEEKEND_ONE_FROM and day.weekday() >= 5
 
 
 
@@ -50,7 +56,10 @@ def edition_of(now: datetime) -> str:
 def briefing_window(day, edition):
     """(시작, 끝) — 수집 시각 기준 구간."""
     if edition == "am":
-        return _at(day, 17, 30) - timedelta(days=1), _at(day, 5, 30)
+        prev = day - timedelta(days=1)
+        # 전날이 주말(06시판만 낸 날)이면 전날 06시판 끝(05:30)부터 24시간 — 일·월요일 06시판
+        start = _at(prev, 5, 30) if weekend_single(prev) else _at(prev, 17, 30)
+        return start, _at(day, 5, 30)
     if edition == "noon":
         return _at(day, 5, 30), _at(day, 11, 30)
     start = _at(day, 11, 30) if day >= THREE_EDITIONS_FROM else _at(day, 5, 30)
