@@ -14,7 +14,8 @@ create table if not exists sources (
   kind text not null,
   url text not null,
   active boolean not null default true,
-  fail_alert_after integer not null default 3      -- 연속 실패 몇 회부터 '오류' 알림인지
+  fail_alert_after integer not null default 3,     -- 연속 실패 몇 회부터 '오류' 알림인지
+  no_new_alert_hours integer not null default 24   -- 이 시간 동안 새 기사 0건이면 '주의' (기사가 적은 매체는 늘림, 2026-11-02)
 );
 
 -- 사건 (중복 기사를 묶는 단위)
@@ -174,3 +175,4 @@ insert into sources (id, name, grp, kind, url, fail_alert_after) values
   ('itchosun', 'IT조선', 'domestic_press', 'rss', 'https://it.chosun.com/rss/allArticle.xml', 3),
   ('itdonga', 'IT동아', 'domestic_press', 'html_itdonga', 'https://it.donga.com/news/', 3)
 on conflict (id) do nothing;
+update sources set no_new_alert_hours = 48 where id = 'itdonga';   -- 평일 하루 약 7건, 주말 거의 없음
