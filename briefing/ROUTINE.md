@@ -8,6 +8,7 @@
 
 1. (고정 문구에서 이미 main 최신 상태로 맞춤) pip install -q -r requirements.txt 를 실행한다.
 2. 현재 시각(Asia/Seoul)으로 판을 정한다: 09시 이전이면 am(06시판), 09~15시면 noon(12시판), 15시 이후면 pm(18시판). 단, 실행이 늦어져 시각이 넘어갔더라도 오늘 앞선 판의 입력 파일은 있는데 그 판의 briefings/<오늘>-<판>.md 가 아직 없으면 그 앞선 판을 먼저 작성한다. 입력 파일은 data/briefing-input/<오늘>-<판>.json 이다.
+   - **주말(토·일, 2026-11-07부터)은 06시판만 작성한다**(사용자 결정 2026-11-01). 판 판정 결과가 noon·pm이면 브리핑을 만들지 말고, 준비 작업도 실행하지 말고, 파일을 바꾸거나 커밋하지 말고 "주말은 06시판만 작성합니다 (다음 판: <다음 06시판 날짜>)" 한 줄로 보고하고 끝낸다. 실행에 routine-fire-payload 블록이 있으면 이 규칙과 관계없이 7번을 따른다.
    - 파일이 없으면(예약 실행 누락) 준비 작업을 직접 실행한다:
      gh api -X POST repos/deep-taker/security-news-collector/actions/workflows/daily.yml/dispatches -f ref=main -f 'inputs[date]=<오늘>' -f 'inputs[edition]=<판>'
      그 뒤 30초 간격으로 git pull 하며 최대 10분 기다린다. 그래도 없으면 브리핑을 만들지 말고 "브리핑 입력이 생성되지 않았습니다 (GitHub Actions '브리핑 준비 (하루 3회)' 작업 확인 필요)"라고 보고하고 끝낸다.
