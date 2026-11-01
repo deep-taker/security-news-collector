@@ -171,6 +171,7 @@ begin
 
   foreach e in array array['am', 'noon', 'pm'] loop
     continue when e = 'noon' and today < date '2026-10-27';
+    continue when e in ('noon', 'pm') and today >= date '2026-11-07' and extract(isodow from today) in (6, 7);   -- 주말은 06시판만
     due := today + case e when 'am' then time '06:40' when 'noon' then time '12:40' else time '18:40' end;
     tgt := today || '-' || e;
     begin
@@ -597,9 +598,9 @@ begin
       alerts := alerts || jsonb_build_object('level','warn','code','source_failed','source_id',r.id,
         'title', r.name || ' 최근 수집 실패 (' || r.consecutive_fails || '회)', 'detail', coalesce(r.last_error,''));
     end if;
-    if r.runs_24h >= 3 and r.new_24h = 0 then
+    if r.runs_24h >= 3 and (select coalesce(sum(c.new_count), 0) from public.collection_runs c where c.source_id = r.id and c.run_at > now() - make_interval(hours => (select s.no_new_alert_hours from public.sources s where s.id = r.id))) = 0 then
       alerts := alerts || jsonb_build_object('level','warn','code','source_no_new','source_id',r.id,
-        'title', r.name || ' 24시간 동안 새 기사 0건', 'detail', '사이트 구조 변경이나 RSS 중단 가능성');
+        'title', r.name || ' ' || (select s.no_new_alert_hours from public.sources s where s.id = r.id) || '시간 동안 새 기사 0건', 'detail', '사이트 구조 변경이나 RSS 중단 가능성');
     end if;
     -- 한 줄 요약 채움률 (매체별): 전체가 정상인데 특정 매체만 낮으면 그 매체 설명(재료) 수집 문제
     select count(*) n, count(a.summary_line) filled into cov from public.articles a
@@ -620,6 +621,7 @@ begin
   for d in select generate_series(kst::date - 1, kst::date, interval '1 day')::date loop
     foreach e in array array['am','noon','pm'] loop
       continue when e = 'noon' and d < date '2026-10-27';
+      continue when e in ('noon', 'pm') and d >= date '2026-11-07' and extract(isodow from d) in (6, 7);   -- 주말은 06시판만
       continue when d < date '2026-10-28';   -- 2026-10-28 DB 기록을 지우고 새로 시작 (그 전 판은 없음)
       due := d + case e when 'am' then time '07:00' when 'noon' then time '13:00' else time '19:00' end;
       if due <= kst and due > kst - interval '36 hours'
@@ -898,10 +900,10 @@ do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') th
   perform cron.schedule('prepare-am', '35 20 * * *', 'select public.dispatch_github_workflow(''daily.yml'')');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
-  perform cron.schedule('prepare-noon', '35 2 * * *', 'select public.dispatch_github_workflow(''daily.yml'')');
+  perform cron.schedule('prepare-noon', '35 2 * * 1-5', 'select public.dispatch_github_workflow(''daily.yml'')');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
-  perform cron.schedule('prepare-pm', '35 8 * * *', 'select public.dispatch_github_workflow(''daily.yml'')');
+  perform cron.schedule('prepare-pm', '35 8 * * 1-5', 'select public.dispatch_github_workflow(''daily.yml'')');
 end if; end $c$;
 do $c$ begin if exists (select 1 from pg_extension where extname = 'pg_cron') then
   perform cron.schedule('restore-test', '10 22 1 * *', 'select public.dispatch_github_workflow(''restore-test.yml'')');

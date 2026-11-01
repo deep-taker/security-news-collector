@@ -98,3 +98,4 @@ sources.kind text not null
 sources.url text not null
 sources.active boolean not null default true
 sources.fail_alert_after integer not null default 3
+sources.no_new_alert_hours integer not null default 24
