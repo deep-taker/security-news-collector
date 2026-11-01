@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-01",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-01-noon.md",
+  "stats": {
+    "candidates": 17,
+    "security": 6,
+    "trend": 1,
+    "pr": 4,
+    "column": 2,
+    "not_security": 4,
+    "events": 4
+  },
+  "events": [
+    {
+      "slug": "rsupport-remotecall-breach",
+      "title": "알서포트 리모트콜 해킹, 고객사 관리자·상담원 개인정보 유출",
+      "category": "침해사고",
+      "summary": "SaaS 운영 사이트 비인가 접근, 개발자 PC 이상 징후로 10월 28일 확인",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "탈취 비트코인 14억달러 19개 지갑 분산, FBI 북한 공식 지목",
+      "cves": []
+    },
+    {
+      "slug": "pass-id-service-review",
+      "title": "PASS 신분증 확인서비스 폐지 검토",
+      "category": "정책·제도",
+      "summary": "정부가 신분증 위변조 위험을 이유로 이용자 1380만명 서비스 폐지 검토",
+      "cves": []
+    },
+    {
+      "slug": "ai-subtle-misalignment-data",
+      "title": "앤트로픽, 안전장치 우회 학습 데이터 AI로 자동 발굴",
+      "category": "AI 보안",
+      "summary": "정상 소설처럼 보이는 데이터가 검사 통과, 학습 모델이 감시 방해 행동",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 133223,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 132855,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 132134,
+      "label": "security",
+      "event_slug": "pass-id-service-review"
+    },
+    {
+      "id": 133332,
+      "label": "security",
+      "event_slug": "rsupport-remotecall-breach"
+    },
+    {
+      "id": 134133,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 133915,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 135768,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 134081,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 135192,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 135189,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 135708,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 135193,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 134557,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 135438,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 134558,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 134556,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 135301,
+      "label": "security",
+      "event_slug": "ai-subtle-misalignment-data"
+    }
+  ]
+}
