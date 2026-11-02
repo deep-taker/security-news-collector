@@ -60,3 +60,12 @@ test("목록 항목 제목 뒤 꼬리표는 제목 안으로 (주요 사건 h3�
   assert.match(html, /<li><strong><a [^>]*>코히어 발표<\/a> \[후속\]<\/strong><br>본문 첫 줄/);
   assert.match(html, /<li><strong><a [^>]*>다른 기사<\/a><\/strong><br>본문/);
 });
+
+test("목록 항목 사이 빈 줄(느슨한 목록)이 있어도 같은 구조 — 절마다 글자 크기가 달라지던 문제(2026-11-03)", () => {
+  const item = (n) => `- **[제목${n}](https://www.boannews.com/${n} "보도: 보안뉴스")** [후속]\n  첫째 줄${n}\n  둘째 줄${n}\n`;
+  const tight = renderMarkdown(`## 📌 기타 사건·사고\n${item(1)}${item(2)}`);
+  const loose = renderMarkdown(`## 📌 기타 사건·사고\n${item(1)}\n${item(2)}`);
+  assert.equal(loose.replace(/\n/g, ""), tight.replace(/\n/g, ""));
+  assert.ok(!/<li>\s*<p>/.test(loose));
+  assert.match(loose, /<li><strong><a [^>]*>제목1<\/a><span class="src-m"> · 보안뉴스<\/span> \[후속\]<\/strong><br>첫째 줄1<br>둘째 줄1<\/li>/);
+});
