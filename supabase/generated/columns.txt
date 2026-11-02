@@ -21,6 +21,7 @@ articles.event_id bigint
 articles.labeled_at timestamp with time zone
 articles.summary_line text
 articles.summary_source text
+articles.author_info jsonb
 backup_runs.id bigint not null default nextval('public.backup_runs_id_seq'::regclass)
 backup_runs.run_at timestamp with time zone not null default now()
 backup_runs.target text not null

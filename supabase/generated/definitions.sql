@@ -820,7 +820,7 @@ grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on public.al
 alter table public.articles enable row level security;
 revoke all on public.articles from public, anon, authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on public.articles to service_role;
-grant SELECT (ai_related, candidate, collected_at, event_id, id, keywords, label, published_at, source_id, summary_line, summary_source, title, url) on public.articles to anon;
+grant SELECT (ai_related, author_info, candidate, collected_at, event_id, id, keywords, label, published_at, source_id, summary_line, summary_source, title, url) on public.articles to anon;
 alter table public.backup_runs enable row level security;
 revoke all on public.backup_runs from public, anon, authenticated;
 grant DELETE, INSERT, REFERENCES, SELECT, TRIGGER, TRUNCATE, UPDATE on public.backup_runs to service_role;
