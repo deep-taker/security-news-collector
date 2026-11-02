@@ -1,6 +1,6 @@
 import { q, dateWithDow } from "../lib/db";
 import { renderMarkdown } from "../lib/md";
-import { splitSections, mainIncidents } from "../lib/briefing";
+import { splitSections, mainIncidents, linkUrls, addColumnAuthors } from "../lib/briefing";
 import BriefingTabs from "./briefing-tabs";
 import BriefingSide from "./briefing-side";
 
@@ -23,6 +23,7 @@ export default async function Briefing({ date, edition, editions }) {
   const cur = `${date}-${edition}`;
   const html = b ? renderMarkdown(b.markdown) : "";
   const incidents = b ? mainIncidents(splitSections(html).tabs) : [];
+  const authors = b ? await columnAuthors(html) : {};
   return (
     <div className="grid">
       <aside className="dates">
@@ -33,7 +34,7 @@ export default async function Briefing({ date, edition, editions }) {
         ))}
       </aside>
       <article className="card md">
-        {b ? <Sections html={html} /> : <p className="empty">해당 브리핑이 없습니다.</p>}
+        {b ? <Sections html={html} authors={authors} /> : <p className="empty">해당 브리핑이 없습니다.</p>}
       </article>
       <BriefingSide incidents={incidents} />
     </div>
@@ -41,11 +42,25 @@ export default async function Briefing({ date, edition, editions }) {
 }
 
 // 제목·대상 줄은 위에, 절(주요 사건·사고, 기타 사건·사고, AI 보안 …)은 탭으로. 절이 하나 이하면 탭 없이 그대로.
-function Sections({ html }) {
-  const { head, tabs: all } = splitSections(html);
+// 칼럼·기고 절 기사들의 필자 정보 { 주소: author_info } — 조회 실패해도 브리핑은 그대로 표시
+async function columnAuthors(html) {
+  const col = splitSections(html).tabs.find((t) => t.id.startsWith("column"));
+  const urls = col ? linkUrls(col.html).filter((u) => !/["\\]/.test(u)).slice(0, 50) : [];
+  if (!urls.length) return {};
+  try {
+    const { rows } = await q("articles", { select: "url,author_info", url: `in.(${urls.map((u) => `"${u}"`).join(",")})`,
+                                          author_info: "not.is.null" }, { revalidate: 300 });
+    return Object.fromEntries(rows.map((r) => [r.url, r.author_info]));
+  } catch { return {}; }
+}
+
+function Sections({ html, authors }) {
+  const { head, tabs: split } = splitSections(html);
+  // 칼럼·기고 절: 제목 뒤에 필자 '[소속, 직책, 성명]' (링크 없이, 사용자 결정 2026-11-02)
+  const all = split.map((t) => (t.id.startsWith("column") ? { ...t, html: addColumnAuthors(t.html, authors) } : t));
   // '보안 행사' 절은 대시보드 브리핑 화면에서 보이지 않게 — 상단 '행사 일정'(달력)에서 본다 (사용자 결정 2026-10-29)
   const tabs = all.filter((t) => !t.id.startsWith("events"));
-  if (tabs.length !== all.length) html = (head || "") + tabs.map((t) => `<h2>${t.title}</h2>${t.html}`).join("");   // 절이 하나만 남을 때(탭 없이) 쓰는 본문
+  if (tabs.length !== split.length || Object.keys(authors || {}).length) html = (head || "") + tabs.map((t) => `<h2>${t.title}</h2>${t.html}`).join("");   // 절이 하나만 남을 때(탭 없이) 쓰는 본문 (행사 절 제거·필자 표시 반영)
   if (tabs.length <= 1) return <div dangerouslySetInnerHTML={{ __html: html }} />;
   return (
     <>

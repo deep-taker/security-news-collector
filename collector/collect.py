@@ -17,7 +17,7 @@ from pathlib import Path
 
 import requests
 
-from . import ai_summary, keywords, store
+from . import ai_summary, authors, keywords, store
 from .parsers import KST, PARSERS, SUMMARY_LIMIT, canonical_url, clean_text, scan_injection, url_hash
 from .sources import SOURCES
 
@@ -313,6 +313,11 @@ def run(only=None, fixtures=None, retry_mode=False):
                                                        + [f"in_tok:{r.get('in_tok', 0)}", f"out_tok:{r.get('out_tok', 0)}", f"model:{r.get('model', '')}", f"truncated:{r.get('truncated', 0)}"]}])
         except requests.RequestException:
             pass
+        try:   # 칼럼·기고 필자 정보 (소속·직책·성명) — 실패해도 수집 결과에 영향 없음
+            report["authors"] = authors.run()
+        except Exception as e:
+            report["authors"] = {"errors": [f"{type(e).__name__}: {str(e)[:300]}"]}
+        print(f"::notice title=칼럼 필자 정보::{json.dumps(report['authors'], ensure_ascii=False)}")
 
     report["total"] = len(all_rows)
     report["total_candidates"] = sum(r["candidate"] for r in all_rows)

@@ -76,3 +76,20 @@ test("decodeEntities: 한 번만 되돌린다 (이중 참조는 글자 그대로
   const { decodeEntities } = await import("../lib/briefing.js");
   assert.equal(decodeEntities("a &amp;lt; b &#39;c&#x27; &bogus;"), "a &lt; b 'c' &bogus;");
 });
+
+test("칼럼 필자: 제목 링크 뒤에 '[소속, 직책, 성명]'을 링크 없이", async () => {
+  const { authorLabel, addColumnAuthors, linkUrls } = await import("../lib/briefing.js");
+  const { renderMarkdown } = await import("../lib/md.js");
+  assert.equal(authorLabel({ org: "나루시큐리티", position: "대표", name: "김혁준" }), "[나루시큐리티, 대표, 김혁준]");
+  assert.equal(authorLabel({ org: "", position: "CISO", name: "이혁중" }), "[CISO, 이혁중]");
+  assert.equal(authorLabel({}), "");
+  assert.equal(authorLabel(null), "");
+  const md = '## ✍️ 칼럼·기고\n- **[(보안칼럼) 인간중심 사이버보안의 몰락](https://zdnet.co.kr/view/?no=1&a=2 "보도: 지디넷코리아")**\n  1줄\n  2줄\n\n- **[(이슈칼럼) 다른 글](https://www.boannews.com/x "보도: 보안뉴스")**\n  1줄\n  2줄\n';
+  const html = renderMarkdown(md);
+  assert.deepEqual(linkUrls(html), ["https://zdnet.co.kr/view/?no=1&a=2", "https://www.boannews.com/x"]);
+  const out = addColumnAuthors(html, { "https://zdnet.co.kr/view/?no=1&a=2": { org: "나루<b>", position: "대표", name: "김혁준" } });
+  assert.match(out, /인간중심 사이버보안의 몰락<\/a><span class="author"> \[나루&lt;b&gt;, 대표, 김혁준\]<\/span><span class="src-m">/);
+  assert.ok(!/<span class="author">[^<]*<a/.test(out));                 // 필자 부분은 링크 아님
+  assert.equal((out.match(/class="author"/g) || []).length, 1);           // 필자 정보 없는 글은 그대로
+  assert.equal(addColumnAuthors(html, {}), html);
+});

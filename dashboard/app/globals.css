@@ -74,6 +74,8 @@ details.same-event li { margin: 2px 0; }
 .md a.has-src:hover::after { content: attr(data-src); position: absolute; left: 0; top: 100%; margin-top: 4px; z-index: 10;
   white-space: nowrap; background: var(--fg); color: var(--bg); font-size: 12px; font-weight: 400; padding: 3px 8px;
   border-radius: 4px; pointer-events: none; }
+/* 칼럼·기고 필자 '[소속, 직책, 성명]' — 제목 뒤 일반 글자(링크 아님, 굵게 하지 않음) */
+.author { font-weight: 400; color: var(--muted); }
 .md .src-m { display: none; font-size: 12px; font-weight: 400; color: var(--muted); }
 @media (hover: none) {
   .md .src-m { display: inline; }
