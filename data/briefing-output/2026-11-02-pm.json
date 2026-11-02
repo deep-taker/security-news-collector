@@ -1,0 +1,435 @@
+{
+  "date": "2026-11-02",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-02-pm.md",
+  "stats": {
+    "candidates": 69,
+    "security": 24,
+    "trend": 9,
+    "pr": 13,
+    "column": 4,
+    "not_security": 19,
+    "events": 10
+  },
+  "events": [
+    {
+      "slug": "hybe-breach",
+      "title": "하이브 사내 시스템 해킹, 임직원·협력사 개인정보 유출",
+      "category": "침해사고",
+      "summary": "하이브 전자결재·비용처리 시스템 해킹, 주민번호·계좌·의료정보 유출",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "cves": []
+    },
+    {
+      "slug": "gmarket-ecoupon-abuse",
+      "title": "지마켓 e쿠폰 핀번호 무단 사용",
+      "category": "개인정보",
+      "summary": "지마켓 e쿠폰 핀번호 무단 사용",
+      "cves": []
+    },
+    {
+      "slug": "php2shell-rce",
+      "title": "PHP2Shell 취약점 실제 악용 확인",
+      "category": "취약점",
+      "summary": "PHP2Shell 취약점 실제 악용 확인",
+      "cves": []
+    },
+    {
+      "slug": "linux-kernel-cve-2026-98432",
+      "title": "리눅스 커널 고위험 취약점, AI 활용 실제 공격 성공",
+      "category": "취약점",
+      "summary": "리눅스 커널 고위험 취약점, AI 활용 실제 공격 성공",
+      "cves": [
+        "CVE-2026-98432"
+      ]
+    },
+    {
+      "slug": "interpol-serengeti3",
+      "title": "인터폴 세렝게티 III 작전, 아프리카 사이버 범죄자 1462명 검거",
+      "category": "기타",
+      "summary": "인터폴 작전에 보안업계가 지원, 피해자 6만 5,929명",
+      "cves": []
+    },
+    {
+      "slug": "cursor-fake-claude-extension",
+      "title": "커서 마켓플레이스에 가짜 클로드 코드 확장 프로그램",
+      "category": "AI 보안",
+      "summary": "커서 마켓플레이스에 가짜 클로드 코드 확장 프로그램",
+      "cves": []
+    },
+    {
+      "slug": "volta-autodoxer-ai-malware",
+      "title": "AI로 피해자 가치 평가하는 정보 탈취 악성코드 볼타-오토독서",
+      "category": "AI 보안",
+      "summary": "시스코 탈로스가 AI 모델 전환 기능을 갖춘 정보 탈취 악성코드 발견",
+      "cves": []
+    },
+    {
+      "slug": "kisa-venturenara-recommend",
+      "title": "KISA, 정보보호 인증 기업 벤처나라 기관추천 11차 모집",
+      "category": "정책·제도",
+      "summary": "정보보호 인증 기업의 벤처나라 등록 기관추천 접수",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 153324,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 151930,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 150806,
+      "label": "security",
+      "event_slug": "cursor-fake-claude-extension"
+    },
+    {
+      "id": 151978,
+      "label": "security",
+      "event_slug": "gmarket-ecoupon-abuse"
+    },
+    {
+      "id": 151613,
+      "label": "security",
+      "event_slug": "kisa-venturenara-recommend"
+    },
+    {
+      "id": 150805,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 153213,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 153215,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 153252,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 150804,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 151508,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 151404,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 150803,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152072,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152071,
+      "label": "security",
+      "event_slug": "interpol-serengeti3"
+    },
+    {
+      "id": 152070,
+      "label": "security",
+      "event_slug": "interpol-serengeti3"
+    },
+    {
+      "id": 153212,
+      "label": "security",
+      "event_slug": "interpol-serengeti3"
+    },
+    {
+      "id": 152069,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 152716,
+      "label": "security",
+      "event_slug": "linux-kernel-cve-2026-98432"
+    },
+    {
+      "id": 153309,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152123,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152122,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153308,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152121,
+      "label": "security",
+      "event_slug": "interpol-serengeti3"
+    },
+    {
+      "id": 153189,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152710,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152120,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152068,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152119,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 152922,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152067,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 152118,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153307,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152703,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152702,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152701,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 152691,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152066,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 153306,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 153182,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 152117,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 154529,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153305,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 152116,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 152065,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 152115,
+      "label": "security",
+      "event_slug": "interpol-serengeti3"
+    },
+    {
+      "id": 153393,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153392,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 153482,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 154503,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 154018,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 154509,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 154104,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153340,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 153391,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 153390,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 153339,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 154565,
+      "label": "security",
+      "event_slug": "hybe-breach"
+    },
+    {
+      "id": 154100,
+      "label": "security",
+      "event_slug": "volta-autodoxer-ai-malware"
+    },
+    {
+      "id": 153976,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 153389,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 153338,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 153388,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 153337,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 153970,
+      "label": "security",
+      "event_slug": "hybe-breach"
+    },
+    {
+      "id": 154497,
+      "label": "security",
+      "event_slug": "hybe-breach"
+    },
+    {
+      "id": 153387,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 154096,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 154095,
+      "label": "trend",
+      "event_slug": null
+    }
+  ]
+}
