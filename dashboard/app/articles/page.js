@@ -35,7 +35,8 @@ export default async function Articles(props) {
 
   // 같은 조회는 60초 동안 결과 재사용 (공개 페이지 반복 요청으로 DB 부하가 커지지 않도록)
   const { rows, total } = await q("articles", params, { count: true, revalidate: 60 });
-  // 같은 사건 묶기: 브리핑에서 같은 사건으로 묶인 기사들을 이 쪽의 첫 기사 아래로 접어 보여 줌
+  // 같은 사건 묶기: 브리핑에서 같은 사건으로 묶인 기사들, 그리고 제목이 거의 같은 기사(다른 주소로 다시 올린 기사·다른 매체의 같은 기사)를
+  // 이 쪽의 첫 기사 아래로 접어 보여 줌 (lib/articles.js isDuplicate)
   const evIds = group ? [...new Set(rows.map((a) => a.event_id).filter(Boolean))] : [];
   let byEvent = {}, evTitle = {};
   if (evIds.length) {
@@ -49,7 +50,7 @@ export default async function Articles(props) {
       for (const e of evs.rows) evTitle[e.id] = e.title;
     } catch { byEvent = {}; }   // 묶기 실패해도 목록은 그대로 표시
   }
-  const { visible, shown, siblings } = groupByEvent(rows, byEvent);
+  const { visible, shown, siblings, merged } = groupByEvent(rows, byEvent, { similar: group });
   const now = Date.now();
   const since = new Date(now - 60e3).toISOString();   // 조회 결과는 최대 60초 재사용 → 그만큼 앞에서부터 새 기사 확인
   const isNew = (a) => a.collected_at && now - new Date(a.collected_at).getTime() < 3600e3;
@@ -73,12 +74,12 @@ export default async function Articles(props) {
           <option value="pending">분류 대기</option>
         </select>
         <select name="group" defaultValue={group ? "1" : "0"}>
-          <option value="1">같은 사건 묶기</option>
+          <option value="1">같은 사건·기사 묶기</option>
           <option value="0">모두 펼치기</option>
         </select>
         <button type="submit">검색</button>
       </form>
-      <p className="muted">총 {total?.toLocaleString("ko-KR") ?? 0}건 · 2시간마다 수집 직후 반영, 새로 수집된 순{group && shown.size ? " · 같은 사건은 첫 기사 아래에 묶음" : ""}{raw && !text ? " · 검색어는 2글자 이상 입력하세요" : ""}</p>
+      <p className="muted">총 {total?.toLocaleString("ko-KR") ?? 0}건 · 2시간마다 수집 직후 반영, 새로 수집된 순{group && (shown.size || merged) ? " · 같은 사건·같은 기사(제목이 거의 같은 기사)는 첫 기사 아래에 묶음" : ""}{raw && !text ? " · 검색어는 2글자 이상 입력하세요" : ""}</p>
       <p className="muted">'분류 대기'는 키워드로 고른 후보로, 다음 브리핑(06·12·18시)에서 보안·업계 동향으로 확정되거나 목록에서 빠집니다. 제목 아래 한 줄은 AI가 기사 내용을 핵심만 줄인 요약으로, 수집 직후 몇 분 안에 붙습니다.</p>
       <NewBanner since={since} />
       {rows.length === 0 ? <p className="empty">{page > 1 && total > 0 ? <>이 쪽에는 결과가 없습니다. <a href={`/articles?${qs(1)}`}>첫 쪽으로</a></> : "검색 결과가 없습니다."}</p> : (
@@ -95,7 +96,7 @@ export default async function Articles(props) {
                   {a.summary_line && ["ai", "claude"].includes(a.summary_source) && <div className="line">{a.summary_line}</div>}
                   {siblings(a).length > 0 && (
                     <details className="same-event">
-                      <summary>같은 사건 기사 {siblings(a).length}건 더{evTitle[a.event_id] ? ` · ${evTitle[a.event_id]}` : ""}</summary>
+                      <summary>같은 사건·기사 {siblings(a).length}건 더{evTitle[a.event_id] ? ` · ${evTitle[a.event_id]}` : ""}</summary>
                       <ul>
                         {siblings(a).map((b) => (
                           <li key={b.id}>
