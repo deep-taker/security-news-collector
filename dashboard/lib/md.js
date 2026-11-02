@@ -25,6 +25,9 @@ export function renderMarkdown(md) {
   // 대표 기사 제목 링크의 '보도: …' 설명 → PC는 마우스를 올리면 바로 뜨는 말풍선, 휴대폰(마우스 없음)은 제목 옆 작은 글씨
   html = html.replace(/<a href="([^"]*)" title="(보도:[^"]*)">([\s\S]*?)<\/a>/g, (m, href, t, text) =>
     `<a href="${href}" class="has-src" data-src="${t}">${text}</a><span class="src-m"> · ${t.replace(/^보도:\s*/, "")}</span>`);
+  // 항목 사이에 빈 줄이 있으면(느슨한 목록) 항목마다 <p>가 한 겹 더 씌워져, 제목 크기·간격 규칙(li > strong)이 안 먹고
+  // 절마다 글자 크기·줄 모양이 달라졌다(2026-11-03 재발). 문단이 하나뿐인 항목은 <p>를 벗겨 빈 줄 유무와 관계없이 같은 구조로 만든다.
+  html = html.replace(/<li>\s*<p>((?:(?!<\/?p>|<\/?li>)[\s\S])*)<\/p>\s*<\/li>/g, "<li>$1</li>");
   // 목록 항목 제목 뒤의 꼬리표(예: " [후속]")를 제목(굵은 글씨) 안으로 — 주요 사건(h3)처럼 제목 줄에 붙어 보이게.
   // 제목을 한 줄(블록)로 보이게 한 뒤 꼬리표가 본문 첫 줄 앞으로 내려가던 문제 (2026-10-28)
   html = html.replace(/<li><strong>([\s\S]*?)<\/strong>([^<\n]+?)<br>/g, (m, title, tail) => `<li><strong>${title}${tail}</strong><br>`);
