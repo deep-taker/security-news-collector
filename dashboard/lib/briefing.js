@@ -60,3 +60,28 @@ export function mainIncidents(tabs) {
   }
   return out;
 }
+
+// ── 칼럼·기고 필자 표시 (사용자 결정 2026-11-02): 제목 뒤에 '[소속, 직책, 성명]', 링크 없는 일반 글자 ──
+// info = articles.author_info {org, position, name} (수집기 collector/authors.py가 채움). 빈 값은 빼고, 모르면 빈 문자열.
+export function authorLabel(info) {
+  if (!info || typeof info !== "object") return "";
+  const parts = ["org", "position", "name"].map((k) => (typeof info[k] === "string" ? info[k].trim() : "")).filter(Boolean);
+  return parts.length ? `[${parts.join(", ")}]` : "";
+}
+
+const escHtml = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+export const urlKey = (u) => decodeEntities(String(u || "")).trim();
+
+// 절 HTML 안 기사 링크 주소 (필자 조회용)
+export function linkUrls(html) {
+  return [...new Set([...String(html || "").matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)].map((m) => urlKey(m[1])))].filter((u) => u !== "#");
+}
+
+// 칼럼 절 HTML: 기사 제목 링크(</a>) 바로 뒤에 필자 표시를 끼운다. byUrl = { 주소: author_info }
+export function addColumnAuthors(html, byUrl) {
+  if (!byUrl || !Object.keys(byUrl).length) return html;
+  return html.replace(/(<a\b[^>]*\bhref="([^"]+)"[^>]*>[\s\S]*?<\/a>)/g, (m, link, href) => {
+    const t = authorLabel(byUrl[urlKey(href)]);
+    return t ? `${link}<span class="author"> ${escHtml(t)}</span>` : link;
+  });
+}

@@ -50,7 +50,8 @@ create table if not exists articles (
   event_id bigint references events(id) on delete set null,
   labeled_at timestamptz,
   summary_line text,                          -- 한 줄 요약 (제목 아래 표시)
-  summary_source text check (summary_source in ('rss', 'ai', 'claude', 'none'))  -- ai=매시간 AI 요약, claude=브리핑 보완, none=포기, rss=옛 발췌(미사용)
+  summary_source text check (summary_source in ('rss', 'ai', 'claude', 'none')),  -- ai=매시간 AI 요약, claude=브리핑 보완, none=포기, rss=옛 발췌(미사용)
+  author_info jsonb                           -- 칼럼·기고 필자 {org, position, name} ({}=알 수 없음, null=미확인) — 2026-11-02
 );
 
 -- 브리핑 (판: am=06시판, noon=12시판, pm=18시판, week=주간 요약(월요일))
