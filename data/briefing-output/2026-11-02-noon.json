@@ -1,0 +1,353 @@
+{
+ "date": "2026-11-02",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-02-noon.md",
+ "stats": {
+  "candidates": 49,
+  "security": 20,
+  "trend": 6,
+  "pr": 4,
+  "column": 2,
+  "not_security": 17,
+  "events": 12
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "출금 재개 후 36억달러 순유출, 탈취 자금 지갑 1000여 개로 분산·솔라나 이동",
+   "cves": []
+  },
+  {
+   "slug": "gmarket-ecoupon-abuse",
+   "title": "지마켓 e쿠폰 핀번호 무단 사용",
+   "category": "침해사고",
+   "summary": "개인정보 유출 정황 공식 인정, 피해액 전액 환급·전 고객 1만원 보상",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "방화벽·NAS·기업용 SW까지 영향 확대",
+   "cves": [
+    "CVE-2026-109618",
+    "CVE-2026-109619"
+   ]
+  },
+  {
+   "slug": "litellm-claude-code-malware",
+   "title": "라이트LLM 악성코드 감염 경로에 클로드 코드 의혹",
+   "category": "AI 보안",
+   "summary": "개발자 인증정보 악용 정황, 클로드 코드 로그 노출 조사",
+   "cves": []
+  },
+  {
+   "slug": "cisa-ot-rce-warning",
+   "title": "CISA, 전력망·가속기 제어 SW 원격코드실행 위험 경고",
+   "category": "취약점",
+   "summary": "OT 제어 소프트웨어 원격코드 실행 위험",
+   "cves": []
+  },
+  {
+   "slug": "gmo-fx-nk-attribution",
+   "title": "일본 GMO인터넷 FX 서비스 정보 유출, 북한 연계 지목",
+   "category": "침해사고",
+   "summary": "배후로 북한 연계 해커 조직 지목, 당국에 신고",
+   "cves": []
+  },
+  {
+   "slug": "applebee-hardcoded-db",
+   "title": "애플비 앱 DB 비밀번호 하드코딩으로 회원 정보 노출",
+   "category": "개인정보",
+   "summary": "앱 보유자가 회원 정보 열람 가능했던 결함 수정",
+   "cves": []
+  },
+  {
+   "slug": "beta9-cvss99",
+   "title": "AI 플랫폼 베타9 CVSS 9.9 취약점 3건",
+   "category": "AI 보안",
+   "summary": "다른 고객 데이터 읽기·변조 위험",
+   "cves": []
+  },
+  {
+   "slug": "ai-agent-access-block",
+   "title": "JP모건·아마존, 외부 AI 에이전트 계정 접근 차단",
+   "category": "AI 보안",
+   "summary": "보안과 책임 문제로 AI 비서의 계정 접근 차단",
+   "cves": []
+  },
+  {
+   "slug": "bookit-sqli",
+   "title": "워드프레스 북잇 인증 없는 SQL 삽입 취약점",
+   "category": "취약점",
+   "summary": "2.6.0.7 이상 업데이트 필요",
+   "cves": []
+  },
+  {
+   "slug": "gitea-account-takeover",
+   "title": "기티아 관리자 계정 탈취 취약점",
+   "category": "취약점",
+   "summary": "CVE-2026-120263, 28.3.0 버전 업데이트 권고",
+   "cves": [
+    "CVE-2026-120263"
+   ]
+  },
+  {
+   "slug": "finance-network-separation-delay",
+   "title": "금융권 망 분리 규제 완화 지연 조짐",
+   "category": "정책·제도",
+   "summary": "잇단 개인정보 유출 여파, 해외는 감독체계 재정비",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 148286,
+   "label": "security",
+   "event_slug": "litellm-claude-code-malware"
+  },
+  {
+   "id": 148231,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148232,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 147175,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148228,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 149424,
+   "label": "security",
+   "event_slug": "cisa-ot-rce-warning"
+  },
+  {
+   "id": 148337,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148338,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 149425,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148420,
+   "label": "security",
+   "event_slug": "gmo-fx-nk-attribution"
+  },
+  {
+   "id": 148945,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148944,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148939,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148937,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 149157,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148935,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148933,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148931,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148336,
+   "label": "security",
+   "event_slug": "gmarket-ecoupon-abuse"
+  },
+  {
+   "id": 149150,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148926,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 148925,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 148924,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 148922,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 149541,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 149638,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 149540,
+   "label": "security",
+   "event_slug": "applebee-hardcoded-db"
+  },
+  {
+   "id": 150712,
+   "label": "security",
+   "event_slug": "gmarket-ecoupon-abuse"
+  },
+  {
+   "id": 150237,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 150236,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 150226,
+   "label": "security",
+   "event_slug": "ai-agent-access-block"
+  },
+  {
+   "id": 150703,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 150234,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 150220,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 149539,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 149591,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 149590,
+   "label": "security",
+   "event_slug": "beta9-cvss99"
+  },
+  {
+   "id": 149538,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 150396,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 150207,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 149589,
+   "label": "security",
+   "event_slug": "bookit-sqli"
+  },
+  {
+   "id": 150197,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 150195,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 150194,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 149588,
+   "label": "security",
+   "event_slug": "gitea-account-takeover"
+  },
+  {
+   "id": 150186,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 150182,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 150178,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 150411,
+   "label": "security",
+   "event_slug": "finance-network-separation-delay"
+  }
+ ],
+ "security_events": []
+}
