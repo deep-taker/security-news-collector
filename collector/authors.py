@@ -1,7 +1,8 @@
 """칼럼·기고 필자 정보 (소속·직책·성명) — 수집 직후 AI 요약 다음 단계 (사용자 결정 2026-11-02, ①안).
 
 - 대상: 최근 30일 기사 중 필자 정보를 아직 찾지 않은(author_info 비어 있음) 칼럼 — 브리핑이 `column`으로 분류했거나,
-  분류 전이라도 제목이 칼럼·기고 형식(daily.is_opinion)인 후보 기사
+  분류 전이라도 제목이 칼럼·기고 형식(daily.is_opinion)·개인 연재 머리말('[홍길동의 …]')인 후보 기사
+- 실행: 수집 끝(collect.py)과 브리핑 결과 DB 반영 직후(sync-briefing.yml, `python -m collector.authors`)
 - 1단계(규칙): 기사 페이지에서 필자 줄 후보만 뽑는다 — 제목 머리말([이혁중 CISO 칼럼]), 기자가 아닌 작성자 메타 정보,
   본문의 '[글. …]'·'[글_…]' 줄, 본문 처음·끝의 짧은 줄
 - 2단계(AI, Claude Haiku): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
@@ -135,8 +136,15 @@ def _call(items: list) -> dict:
     return {str(o.get("id")).strip(): o for o in out if isinstance(o, dict)}
 
 
+# 개인 연재 머리말 '[배종찬의 보안 빅데이터]'·'[전승재의 Law & Privacy]' — 칼럼 형식(is_opinion)에 안 걸려
+# 브리핑이 칼럼으로 분류한 뒤에야 처리되던 것(2026-11-03)을 수집 때 미리 잡는다
+_SERIES = re.compile(r"^\s*[\[［][가-힣]{2,4}의 [^\]］]{2,30}[\]］]")
+
+
 def targets(rows: list) -> list:
-    return [r for r in rows if r.get("label") == "column" or (r.get("label") is None and is_opinion(r.get("title") or ""))]
+    def opinion(t):
+        return is_opinion(t) or bool(_SERIES.match(t))
+    return [r for r in rows if r.get("label") == "column" or (r.get("label") is None and opinion(r.get("title") or ""))]
 
 
 def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
@@ -199,3 +207,9 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
             save(a, info)
             res["found" if info else "unknown"] += 1
     return res
+
+
+if __name__ == "__main__":   # 브리핑 결과 DB 반영 직후 실행 — 방금 칼럼으로 분류된 기사의 필자를 판이 보이기 전에 채움
+    import sys
+    r = run(limit=int(sys.argv[1]) if len(sys.argv) > 1 else MAX_PER_RUN)
+    print(f"::notice title=칼럼 필자 정보::{json.dumps(r, ensure_ascii=False)}")
