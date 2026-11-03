@@ -18,7 +18,7 @@ concurrency:   # 연달아 푸시될 때 먼저 시작한 반영이 늦게 끝�
 jobs:
   sync:
     runs-on: ubuntu-24.04
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -59,3 +59,12 @@ jobs:
           files=$(cat /tmp/files.txt)
           [ -z "$files" ] && exit 0
           python -m collector.verify_briefing $files
+      - name: 칼럼 필자 정보 보완 (방금 칼럼으로 분류된 기사 — 실패해도 반영 결과에는 영향 없음)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 4
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m collector.authors 10

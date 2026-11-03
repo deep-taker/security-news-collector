@@ -725,3 +725,15 @@ def test_author_run(monkeypatch):
     assert ("eq.3", {"author_info": {}}) in patched                                   # 지어낸 이름 → 알 수 없음
     assert ("eq.4", {"author_info": {}}) in patched and r["gave_up"] == 1             # 페이지 오류 + 48시간 지남 → 포기
     assert not any(m == "eq.2" for m, _ in patched)
+
+
+def test_author_targets_series():
+    from collector.authors import targets
+    rows = [{"id": 1, "title": "[배종찬의 보안 빅데이터] 블록체인 생태계 뒤흔든 북한 라자루스의 그림자", "label": None},
+            {"id": 2, "title": "[전승재의 Law & Privacy] 금융고객 정보유출 분야 행정처분의 현재와 미래", "label": None},
+            {"id": 3, "title": "[김영욱의 게임 후벼파기] AI 에이전트 해킹 확산에…한숨 쉬는 韓 게임", "label": None},
+            {"id": 4, "title": "[보안칼럼] 인간중심 사이버보안의 몰락", "label": None},
+            {"id": 5, "title": "[단독] 하이브 해킹", "label": None},
+            {"id": 6, "title": "[주의] 워드프레스 취약점", "label": None},
+            {"id": 7, "title": "[배종찬의 보안 빅데이터] 이미 분류된 무관 기사", "label": "not_security"}]
+    assert [r["id"] for r in targets(rows)] == [1, 2, 3, 4]
