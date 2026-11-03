@@ -1,0 +1,660 @@
+{
+ "date": "2026-11-03",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-03-pm.md",
+ "stats": {
+  "candidates": 94,
+  "security": 35,
+  "trend": 11,
+  "pr": 21,
+  "column": 6,
+  "not_security": 21,
+  "events": 20
+ },
+ "events": [
+  {
+   "slug": "cyber-security-czar",
+   "title": "대통령, 민관 아우르는 사이버 보안 총괄 기구(사이버 보안 차르) 검토 지시",
+   "category": "정책·제도",
+   "summary": "국무회의서 흩어진 보안 기능을 총괄할 범정부 기구 검토 주문",
+   "cves": []
+  },
+  {
+   "slug": "nis-public-inspection",
+   "title": "국정원, 중앙부처·지자체 등 2100여 곳 긴급 보안점검",
+   "category": "정책·제도",
+   "summary": "금융권 해킹 계기로 공공기관 긴급 점검, 핵심시설은 직접 조사",
+   "cves": []
+  },
+  {
+   "slug": "linksys-e8450-cve-2026-120283",
+   "title": "링크시스 E8450 공유기 최고위험 취약점",
+   "category": "취약점",
+   "summary": "인증 없이 원격 공격 가능한 CVE-2026-120283",
+   "cves": [
+    "CVE-2026-120283"
+   ]
+  },
+  {
+   "slug": "russia-alert-app-hack",
+   "title": "러시아 재난 알림 앱 해킹, 33개 지역 가짜 핵공격 경보",
+   "category": "침해사고",
+   "summary": "재난 알림 앱 해킹으로 허위 핵공격 경보 발송, 우크라이나도 유사 피해",
+   "cves": []
+  },
+  {
+   "slug": "rosstat-wiper-claim",
+   "title": "해커 조직, 러시아 통계청 서버 파괴 주장",
+   "category": "침해사고",
+   "summary": "반년 잠입 뒤 서버 파괴 주장, 통계청은 유출 부인",
+   "cves": []
+  },
+  {
+   "slug": "videostrong-tv-box-botnet",
+   "title": "구글, 중국 비디오스트롱 셋톱박스 130만대 백도어 봇넷 차단",
+   "category": "악성코드·랜섬웨어",
+   "summary": "안드로이드 셋톱박스에 백도어를 심어 봇넷으로 운영한 정황",
+   "cves": []
+  },
+  {
+   "slug": "digital-asset-law-gap",
+   "title": "디지털자산기본법 표류, 가상자산 해킹 배상 기준 공백",
+   "category": "정책·제도",
+   "summary": "입법 지연으로 해킹 시 이용자 배상 기준이 없는 상황",
+   "cves": []
+  },
+  {
+   "slug": "lgu-usim-replacement",
+   "title": "LG유플러스 유심 교체율 43%, 연말까지 990만건 남아",
+   "category": "기타",
+   "summary": "자동 업데이트로 교체율 상승, 연말까지 약 990만건 남음",
+   "cves": []
+  },
+  {
+   "slug": "kisa-ship-cyber-drill",
+   "title": "KISA, 해운사·관계기관 선박 사이버 침해사고 합동 모의훈련",
+   "category": "기타",
+   "summary": "부산 벡스코에서 해운사와 합동 모의훈련 실시",
+   "cves": []
+  },
+  {
+   "slug": "presidential-delegation-leak",
+   "title": "대통령 순방단 168명 개인정보 온라인 유출",
+   "category": "개인정보",
+   "summary": "각료·공직자·취재진 정보 유출, 청와대 비서실장 주재 긴급회의 소집",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "cves": []
+  },
+  {
+   "slug": "hybe-breach",
+   "title": "하이브 사내 시스템 해킹, 임직원·협력사 개인정보 유출",
+   "category": "침해사고",
+   "summary": "하이브 전자결재·비용처리 시스템 해킹, 주민번호·계좌·의료정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "hanyang-securities-breach",
+   "title": "한양증권 외부 그룹웨어 해킹, 주민번호·계좌번호 등 개인정보 31건 유출",
+   "category": "개인정보",
+   "summary": "지난달 29일 외부 그룹웨어 솔루션 통한 접근, 고객·임직원 정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "amadeus-breach",
+   "title": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+   "category": "개인정보",
+   "summary": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-am-breach",
+   "title": "미래에셋자산운용 사내 웹시스템 침해, 정보 유출 확인",
+   "category": "침해사고",
+   "summary": "사내 웹시스템 외부 IP 비정상 접근, 서버·DB 직접 침투 흔적은 없다고 밝힘",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "슈퍼마켓 냉동고 온도 최대 50도까지 올라 식품 폐기",
+   "cves": []
+  },
+  {
+   "slug": "fss-chief-it-security",
+   "title": "금감원장, 금융지주 이사회에 IT 보안 투자·내부통제 강화 주문",
+   "category": "정책·제도",
+   "summary": "금투업계 잇단 해킹에 해킹 상시화 대비 당부",
+   "cves": []
+  },
+  {
+   "slug": "volta-autodoxer-ai-malware",
+   "title": "AI로 피해자 가치 평가하는 정보 탈취 악성코드 볼타-오토독서",
+   "category": "AI 보안",
+   "summary": "시스코 탈로스가 AI 모델 전환 기능을 갖춘 정보 탈취 악성코드 발견",
+   "cves": []
+  },
+  {
+   "slug": "kisa-apcert-busan-2026",
+   "title": "KISA, APCERT 연례총회·FIRST 아태 심포지엄 부산 개최",
+   "category": "기타",
+   "summary": "20개국 사이버보안 전문가 참가, KrCERT/CC 설립 30주년 기념",
+   "cves": []
+  },
+  {
+   "slug": "pipc-privacy-act-forum-1109",
+   "title": "개인정보위, 개정 개인정보보호법 대응 방안 논의 행사 개최",
+   "category": "정책·제도",
+   "summary": "11월 9일 양재 엘타워, 공공·민간 대응 방안 논의",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 169483,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166150,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166891,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166201,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 166807,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  },
+  {
+   "id": 166802,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166200,
+   "label": "security",
+   "event_slug": "linksys-e8450-cve-2026-120283"
+  },
+  {
+   "id": 166149,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  },
+  {
+   "id": 167290,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  },
+  {
+   "id": 166199,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 167289,
+   "label": "security",
+   "event_slug": "nis-public-inspection"
+  },
+  {
+   "id": 166148,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 168570,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 166198,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166197,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 166793,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 166147,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 168569,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 166786,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 166781,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168253,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168572,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168061,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 167471,
+   "label": "security",
+   "event_slug": "russia-alert-app-hack"
+  },
+  {
+   "id": 168056,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 167470,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168537,
+   "label": "security",
+   "event_slug": "hybe-breach"
+  },
+  {
+   "id": 168245,
+   "label": "security",
+   "event_slug": "digital-asset-law-gap"
+  },
+  {
+   "id": 167417,
+   "label": "security",
+   "event_slug": "videostrong-tv-box-botnet"
+  },
+  {
+   "id": 167469,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168662,
+   "label": "security",
+   "event_slug": "nis-public-inspection"
+  },
+  {
+   "id": 167416,
+   "label": "security",
+   "event_slug": "hybe-breach"
+  },
+  {
+   "id": 168042,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 168041,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168039,
+   "label": "security",
+   "event_slug": "amadeus-breach"
+  },
+  {
+   "id": 167468,
+   "label": "security",
+   "event_slug": "kisa-apcert-busan-2026"
+  },
+  {
+   "id": 167415,
+   "label": "security",
+   "event_slug": "hanyang-securities-breach"
+  },
+  {
+   "id": 168661,
+   "label": "security",
+   "event_slug": "pipc-privacy-act-forum-1109"
+  },
+  {
+   "id": 167467,
+   "label": "security",
+   "event_slug": "pipc-privacy-act-forum-1109"
+  },
+  {
+   "id": 168545,
+   "label": "security",
+   "event_slug": "mirae-asset-am-breach"
+  },
+  {
+   "id": 167466,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168660,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 167465,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168235,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 167414,
+   "label": "security",
+   "event_slug": "rosstat-wiper-claim"
+  },
+  {
+   "id": 167413,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 167464,
+   "label": "security",
+   "event_slug": "kisa-ship-cyber-drill"
+  },
+  {
+   "id": 169582,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 167463,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169467,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168746,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168850,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169873,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 168848,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 169398,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169395,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 168745,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168797,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168744,
+   "label": "security",
+   "event_slug": "presidential-delegation-leak"
+  },
+  {
+   "id": 168700,
+   "label": "security",
+   "event_slug": "presidential-delegation-leak"
+  },
+  {
+   "id": 169520,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169572,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168697,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168698,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168699,
+   "label": "security",
+   "event_slug": "volta-autodoxer-ai-malware"
+  },
+  {
+   "id": 168796,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 169571,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169570,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169566,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169870,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169377,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169564,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169867,
+   "label": "security",
+   "event_slug": "presidential-delegation-leak"
+  },
+  {
+   "id": 169560,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169559,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169866,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168832,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 168831,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 169360,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169513,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169558,
+   "label": "security",
+   "event_slug": "lgu-usim-replacement"
+  },
+  {
+   "id": 169359,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168696,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169864,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 169862,
+   "label": "security",
+   "event_slug": "fss-chief-it-security"
+  },
+  {
+   "id": 169856,
+   "label": "security",
+   "event_slug": "videostrong-tv-box-botnet"
+  },
+  {
+   "id": 169855,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 168695,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 168794,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 168795,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 169854,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 169335,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 168694,
+   "label": "security",
+   "event_slug": "pipc-privacy-act-forum-1109"
+  },
+  {
+   "id": 168828,
+   "label": "security",
+   "event_slug": "nis-public-inspection"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 개정 개인정보보호법 대응 방안 논의 행사",
+   "start_date": "2026-11-09",
+   "end_date": null,
+   "place": "양재 엘타워 그랜드홀",
+   "organizer": "개인정보보호위원회·한국개인정보보호책임자협의회",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209292",
+   "major": true,
+   "note": "개정 개인정보보호법 대응과 예방 중심 보호체계, AI 위협 대응 논의",
+   "article_ids": [
+    167467,
+    168661,
+    168694
+   ]
+  },
+  {
+   "name": "2026 APCERT 연례총회 및 FIRST 아태 지역 심포지엄",
+   "start_date": "2026-11-03",
+   "end_date": "2026-11-06",
+   "place": "부산 롯데호텔",
+   "organizer": "과학기술정보통신부·KISA",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209291",
+   "major": true,
+   "note": "KrCERT/CC 설립 30주년, 아태 20개국 CERT 참석",
+   "article_ids": [
+    167468
+   ]
+  }
+ ]
+}
