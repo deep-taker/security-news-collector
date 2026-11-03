@@ -1,0 +1,453 @@
+{
+ "date": "2026-11-03",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-03-noon.md",
+ "stats": {
+  "candidates": 59,
+  "security": 29,
+  "trend": 5,
+  "pr": 11,
+  "column": 1,
+  "not_security": 13,
+  "events": 16
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "슈퍼마켓 냉동고 온도 최대 50도까지 올라 식품 폐기",
+   "cves": []
+  },
+  {
+   "slug": "chainalysis-ai-breach",
+   "title": "체이널리시스, AI 에이전트 공격으로 고객 정보 일부 유출",
+   "category": "AI 보안",
+   "summary": "오펜시브 에이전트 기법으로 내부 시스템 침입, 사용자 ID·이름·이메일 노출",
+   "cves": []
+  },
+  {
+   "slug": "daishin-securities-breach",
+   "title": "대신증권·빗썸·미래에셋운용 해킹 후속 조사",
+   "category": "침해사고",
+   "summary": "금융당국 점검에도 금융권 해킹 잇따라, 미 연준 제3자 리스크 지침 개정",
+   "cves": []
+  },
+  {
+   "slug": "zeabur-shutdown",
+   "title": "대만 클라우드 제이버, 재해킹 끝에 서비스 전면 종료",
+   "category": "침해사고",
+   "summary": "8월 말 1차 해킹 뒤 두 달 만에 내부망 재침해, 12월 31일 서비스 종료 발표",
+   "cves": []
+  },
+  {
+   "slug": "ivanti-connect-secure-zeroday",
+   "title": "이반티 커넥트 시큐어 제로데이 연쇄 악용",
+   "category": "취약점",
+   "summary": "10월 패치에 없던 추가 취약점 악용 확인, 추가 업데이트 필요",
+   "cves": []
+  },
+  {
+   "slug": "hanyang-securities-breach",
+   "title": "한양증권 외부 그룹웨어 해킹, 주민번호·계좌번호 등 개인정보 31건 유출",
+   "category": "개인정보",
+   "summary": "지난달 29일 외부 그룹웨어 솔루션 통한 접근, 고객·임직원 정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "mercado-bitcoin-hack",
+   "title": "브라질 최대 거래소 메르카도 비트코인 해킹, 입출금 중단",
+   "category": "침해사고",
+   "summary": "의심 거래 4000만달러 이상, 테더가 관련 자금 동결 착수",
+   "cves": []
+  },
+  {
+   "slug": "eu-agency-crypto-theft",
+   "title": "EU 기관 거래소 계정서 1억600만달러 암호화폐 탈취 의혹",
+   "category": "침해사고",
+   "summary": "온체인 조사자 지적, 피해 기관·거래소 미공개, 독립 확인 안 됨",
+   "cves": []
+  },
+  {
+   "slug": "douzone-bizon-breach",
+   "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "category": "침해사고",
+   "summary": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "cves": []
+  },
+  {
+   "slug": "presidential-delegation-leak",
+   "title": "대통령 순방단 168명 개인정보 온라인 유출",
+   "category": "개인정보",
+   "summary": "각료·공직자·취재진 정보 유출, 청와대 비서실장 주재 긴급회의 소집",
+   "cves": []
+  },
+  {
+   "slug": "volta-autodoxer-ai-malware",
+   "title": "AI로 피해자 가치 평가하는 정보 탈취 악성코드 볼타-오토독서",
+   "category": "AI 보안",
+   "summary": "시스코 탈로스가 AI 모델 전환 기능을 갖춘 정보 탈취 악성코드 발견",
+   "cves": []
+  },
+  {
+   "slug": "teams-it-impersonation",
+   "title": "마이크로소프트 팀즈 악용한 IT 관리자 사칭 공격 400건 이상 확인",
+   "category": "악성코드·랜섬웨어",
+   "summary": "아크틱울프가 팀즈 채팅으로 IT 지원팀을 사칭해 랜섬웨어 침입 시도",
+   "cves": []
+  },
+  {
+   "slug": "cyberstrikeai-edu-attack",
+   "title": "AI 침투 프레임워크 사이버스트라이크AI 악용, 교육기관 내부망 공격",
+   "category": "AI 보안",
+   "summary": "카스퍼스키, 도구 설치 3~4일 만에 도메인 관리자 계정 탈취 확인",
+   "cves": []
+  },
+  {
+   "slug": "kisa-apcert-busan-2026",
+   "title": "KISA, APCERT 연례총회·FIRST 아태 심포지엄 부산 개최",
+   "category": "기타",
+   "summary": "20개국 사이버보안 전문가 참가, KrCERT/CC 설립 30주년 기념",
+   "cves": []
+  },
+  {
+   "slug": "pipc-privacy-act-forum-1109",
+   "title": "개인정보위, 개정 개인정보보호법 대응 방안 논의 행사 개최",
+   "category": "정책·제도",
+   "summary": "11월 9일 양재 엘타워, 공공·민간 대응 방안 논의",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 162484,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 164279,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 164258,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 166090,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 165540,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 165766,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 165510,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 165504,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 163504,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 164485,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 164886,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 164933,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 163626,
+   "label": "security",
+   "event_slug": "chainalysis-ai-breach"
+  },
+  {
+   "id": 164282,
+   "label": "security",
+   "event_slug": "daishin-securities-breach"
+  },
+  {
+   "id": 163625,
+   "label": "security",
+   "event_slug": "zeabur-shutdown"
+  },
+  {
+   "id": 163624,
+   "label": "security",
+   "event_slug": "ivanti-connect-secure-zeroday"
+  },
+  {
+   "id": 164759,
+   "label": "security",
+   "event_slug": "hanyang-securities-breach"
+  },
+  {
+   "id": 164935,
+   "label": "security",
+   "event_slug": "hanyang-securities-breach"
+  },
+  {
+   "id": 166112,
+   "label": "security",
+   "event_slug": "hanyang-securities-breach"
+  },
+  {
+   "id": 164264,
+   "label": "security",
+   "event_slug": "mercado-bitcoin-hack"
+  },
+  {
+   "id": 164934,
+   "label": "security",
+   "event_slug": "mercado-bitcoin-hack"
+  },
+  {
+   "id": 164262,
+   "label": "security",
+   "event_slug": "eu-agency-crypto-theft"
+  },
+  {
+   "id": 166127,
+   "label": "security",
+   "event_slug": "douzone-bizon-breach"
+  },
+  {
+   "id": 166089,
+   "label": "security",
+   "event_slug": "presidential-delegation-leak"
+  },
+  {
+   "id": 165511,
+   "label": "security",
+   "event_slug": "volta-autodoxer-ai-malware"
+  },
+  {
+   "id": 164884,
+   "label": "security",
+   "event_slug": "teams-it-impersonation"
+  },
+  {
+   "id": 164932,
+   "label": "security",
+   "event_slug": "cyberstrikeai-edu-attack"
+  },
+  {
+   "id": 166048,
+   "label": "security",
+   "event_slug": "kisa-apcert-busan-2026"
+  },
+  {
+   "id": 166116,
+   "label": "security",
+   "event_slug": "pipc-privacy-act-forum-1109"
+  },
+  {
+   "id": 164261,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 166050,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 165648,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 165749,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 165490,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 163673,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 164821,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 164265,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 165762,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 163623,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 163757,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 166049,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 165526,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 164985,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 166038,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 165583,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 163567,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 164283,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165565,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165532,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165527,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165524,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165516,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 164885,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165500,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165491,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165728,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 165633,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 164883,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 164882,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 APCERT 연례총회 및 FIRST 아태 지역 심포지엄",
+   "start_date": "2026-11-03",
+   "end_date": "2026-11-06",
+   "place": "부산 롯데호텔",
+   "organizer": "과학기술정보통신부·KISA",
+   "url": "https://www.etnews.com/20261103000083",
+   "major": true,
+   "note": "아태 20개국 사이버보안 전문가가 침해사고 공동 대응과 사이버 회복력 강화 방안 논의, KrCERT/CC 설립 30주년 기념",
+   "article_ids": [
+    166048
+   ]
+  },
+  {
+   "name": "2026 개정 개인정보보호법 대응 방안 논의 행사",
+   "start_date": "2026-11-09",
+   "end_date": null,
+   "place": "양재 엘타워 그랜드홀",
+   "organizer": "개인정보보호위원회·한국개인정보보호책임자협의회",
+   "url": "https://www.ddaily.co.kr/page/view/2026110308311306327",
+   "major": true,
+   "note": "개정 개인정보보호법 시행에 따른 공공·민간 대응 방안 논의",
+   "article_ids": [
+    166116
+   ]
+  }
+ ]
+}
