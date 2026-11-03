@@ -1,0 +1,156 @@
+{
+  "date": "2026-11-04",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-04-am.md",
+  "stats": {
+    "candidates": 15,
+    "security": 5,
+    "trend": 2,
+    "pr": 6,
+    "column": 0,
+    "not_security": 2,
+    "events": 5
+  },
+  "events": [
+    {
+      "slug": "presidential-delegation-leak",
+      "title": "대통령 순방단 168명 개인정보 온라인 유출",
+      "category": "개인정보",
+      "summary": "외교부, 공군 1호기 탑승자 168명 개인정보 유출을 개인정보위에 신고",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "켑코이에스, 더존비즈온 해킹 여파로 주민번호 등 유출 가능성 공지",
+      "cves": []
+    },
+    {
+      "slug": "russia-alert-app-hack",
+      "title": "러시아 재난 알림 앱 해킹, 33개 지역 가짜 핵공격 경보",
+      "category": "침해사고",
+      "summary": "우크라이나·러시아 재난 경보 앱이 잇따라 해킹돼 가짜 방사능·핵미사일 경보 발송",
+      "cves": []
+    },
+    {
+      "slug": "kisa-apcert-busan-2026",
+      "title": "KISA, APCERT 연례총회·FIRST 아태 심포지엄 부산 개최",
+      "category": "기타",
+      "summary": "3일부터 나흘간 부산 롯데호텔, 아태 20개국 전문가 참가",
+      "cves": []
+    },
+    {
+      "slug": "kisa-forensic-center-equipment",
+      "title": "KISA, 지능형 포렌식센터 침해사고 분석 장비 도입 추진",
+      "category": "정책·제도",
+      "summary": "분석 SW·HW 13종, 예산 4억 2013만원",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 171208,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 170799,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 169983,
+      "label": "security",
+      "event_slug": "russia-alert-app-hack"
+    },
+    {
+      "id": 170689,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 169982,
+      "label": "security",
+      "event_slug": "presidential-delegation-leak"
+    },
+    {
+      "id": 170902,
+      "label": "security",
+      "event_slug": "kisa-forensic-center-equipment"
+    },
+    {
+      "id": 170793,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 169981,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 169980,
+      "label": "security",
+      "event_slug": "kisa-apcert-busan-2026"
+    },
+    {
+      "id": 169979,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 170029,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 170129,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 171369,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 173464,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 175024,
+      "label": "trend",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 APCERT 연례총회 및 FIRST 아태지역 심포지엄",
+      "start_date": "2026-11-03",
+      "end_date": "2026-11-06",
+      "place": "부산 롯데호텔",
+      "organizer": "과학기술정보통신부·KISA",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=146983",
+      "major": true,
+      "note": "아태 20개국 전문가가 참가해 다국적 침해대응 공조 논의, KrCERT/CC 설립 30주년",
+      "article_ids": [
+        169980
+      ]
+    },
+    {
+      "name": "이스라엘-한국 사이버보안 포럼 2026",
+      "start_date": "2026-11-03",
+      "end_date": null,
+      "place": "경기 성남",
+      "organizer": null,
+      "url": "https://zdnet.co.kr/view/?no=20261103134750",
+      "major": false,
+      "note": "이스라엘 사이버보안 기업 7곳이 AI 에이전트 보안 등을 소개",
+      "article_ids": [
+        173464
+      ]
+    }
+  ]
+}
