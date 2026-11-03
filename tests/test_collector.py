@@ -737,3 +737,20 @@ def test_author_targets_series():
             {"id": 6, "title": "[주의] 워드프레스 취약점", "label": None},
             {"id": 7, "title": "[배종찬의 보안 빅데이터] 이미 분류된 무관 기사", "label": "not_security"}]
     assert [r["id"] for r in targets(rows)] == [1, 2, 3, 4]
+
+
+def test_author_reporter_column():
+    from collector.authors import reporters, as_reporter
+    page = ('<html><head><meta name="author" content="디지털타임스"><meta property="article:author" content="김영욱"></head><body>'
+            '<div id="article-view-content-div"><p>본문이다.</p><p>김영욱 기자 someone@example.com</p></div></body></html>').encode()
+    reps = reporters(page)
+    assert reps == {"김영욱"}
+    want = {"org": "디지털타임스", "position": "기자", "name": "김영욱"}
+    assert as_reporter({"org": "", "position": "", "name": "김영욱"}, reps, "[김영욱의 게임 후벼파기] 제목", "dt_ict") == want
+    assert as_reporter({}, reps, "[김영욱의 게임 후벼파기] 제목", "dt_ict") == want                      # 필자 못 찾아도 머리말 이름이 기자면
+    assert as_reporter({}, reps, "[기자수첩] 제목", "dt_ict") == want                                       # 기자수첩 + 기자 한 명
+    assert as_reporter({}, {"김영욱", "박기자"}, "[기자수첩] 제목", "dt_ict") == {}                         # 기자가 여럿이면 모름
+    # 외부 기고문: 담당 기자(메타 작성자)는 필자와 이름이 달라 그대로
+    ext = {"org": "세일포인트 코리아", "position": "지사장", "name": "지정권"}
+    assert as_reporter(ext, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == ext
+    assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == {}

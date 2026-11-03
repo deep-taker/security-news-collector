@@ -7,6 +7,7 @@
   본문의 '[글. …]'·'[글_…]' 줄, 본문 처음·끝의 짧은 줄
 - 2단계(AI, Claude Haiku): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
 - 출력 검증: 각 값은 후보 글에 글자 그대로 있어야 하고(지어낸 값 금지), 40자 이하, 링크·꺾쇠·지시문 의심 금지, '기자'는 필자가 아님
+- 기자가 직접 쓴 칼럼(필자 이름이 그 매체 기자)은 {"org": 매체 이름, "position": "기자", "name": 성명} (2026-11-03)
 - 저장: articles.author_info = {"org": 소속, "position": 직책, "name": 성명} (모르는 값은 빈 문자열),
   필자를 알 수 없으면 {} (다시 찾지 않음). 페이지·API 오류는 다음 수집 때 다시, 48시간 넘으면 {}로 포기.
 - 키가 없으면 아무것도 하지 않음.
@@ -21,6 +22,7 @@ import requests
 from . import ai_summary, store
 from .daily import is_opinion
 from .parsers import KST, clean_text, scan_injection
+from .sources import SOURCE_BY_ID
 
 MAX_PER_RUN = 20
 WINDOW_DAYS = 30
@@ -83,6 +85,42 @@ def candidates(html: bytes, title: str) -> list:
             seen.add(c)
             res.append(c)
     return res[:12]
+
+
+_REPORTER = re.compile(r"(?<![가-힣])([가-힣]{2,4})\s?기자(?![가-힣])")
+_DESK = re.compile(r"기자수첩|취재수첩|데스크|기자의 눈|기자 칼럼|기자칼럼")
+
+
+def reporters(html: bytes) -> set:
+    """기사 페이지의 매체 기자 이름 ('김영욱 기자' — 작성자 메타 정보·본문 기자 줄)."""
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "lxml")
+    text = " ".join(t.get("content") or "" for t in soup.select('meta[name="author"], meta[property="article:author"], '
+                                                                 'meta[property="og:article:author"], meta[name="dable:author"]'))
+    body = next((b for b in (soup.select_one(s) for s in _BODY) if b), None) or soup.body
+    text += " " + (body.get_text(" ") if body else "")
+    return set(_REPORTER.findall(text))
+
+
+def as_reporter(info: dict, reps: set, title: str, source_id: str) -> dict:
+    """기자가 직접 쓴 칼럼이면 [매체, 기자, 성명]으로 (사용자 결정 2026-11-03).
+    - AI가 고른 필자 이름이 이 매체 기자면 → 기자
+    - 필자를 못 찾았어도 제목 머리말이 '[김영욱의 …]'이고 그 이름이 기자이거나, '[기자수첩]' 등이고 기자가 한 명뿐이면 → 그 기자
+    외부 기고문의 담당 기자(메타 작성자)는 필자 이름과 다르므로 바뀌지 않는다."""
+    if not reps:
+        return info
+    outlet = (SOURCE_BY_ID.get(source_id) or {}).get("name", "")
+    name = (info or {}).get("name", "")
+    if not name:
+        head = _TITLE_HEAD.match(title or "")
+        own = re.match(r"([가-힣]{2,4})의 ", head.group(1)) if head else None
+        if own and own.group(1) in reps:
+            name = own.group(1)
+        elif head and _DESK.search(head.group(1)) and len(reps) == 1:
+            name = next(iter(reps))
+    if name and name in reps and outlet:
+        return {"org": outlet, "position": "기자", "name": name}
+    return info
 
 
 def _norm(s: str) -> str:
@@ -158,7 +196,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
     now = datetime.now(KST)
     since = (now - timedelta(days=WINDOW_DAYS)).isoformat()
     rows = store.select("articles", {
-        "select": "id,title,url,label,collected_at", "author_info": "is.null", "collected_at": f"gte.{since}",
+        "select": "id,title,url,source_id,label,collected_at", "author_info": "is.null", "collected_at": f"gte.{since}",
         "or": "(label.eq.column,and(label.is.null,candidate.eq.true))", "order": "id.desc", "limit": "500"}, page_size=500)
     todo = targets(rows)[:limit]
     res["target"] = len(todo)
@@ -175,7 +213,9 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
     ready = []
     for a in todo:
         try:
-            a["cands"] = candidates(fetch(a["url"]), a.get("title") or "")
+            page = fetch(a["url"])
+            a["cands"] = candidates(page, a.get("title") or "")
+            a["reps"] = reporters(page)
             ready.append(a)
         except Exception as e:   # 페이지 오류: 다음 수집 때 다시 (오래되면 포기)
             res["failed"] += 1
@@ -186,8 +226,9 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
     asked = [a for a in ready if a["cands"]]
     for a in ready:
         if not a["cands"]:
-            save(a, {})
-            res["unknown"] += 1
+            info = as_reporter({}, a["reps"], a.get("title") or "", a.get("source_id") or "")
+            save(a, info)
+            res["found" if info else "unknown"] += 1
     for i in range(0, len(asked), 10):
         chunk = asked[i:i + 10]
         try:
@@ -204,6 +245,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
                     save(a, {})
                     res["gave_up"] += 1
                 continue
+            info = as_reporter(info, a["reps"], a.get("title") or "", a.get("source_id") or "")
             save(a, info)
             res["found" if info else "unknown"] += 1
     return res
