@@ -74,6 +74,8 @@ details.same-event li { margin: 2px 0; }
 .md a.has-src:hover::after { content: attr(data-src); position: absolute; left: 0; top: 100%; margin-top: 4px; z-index: 10;
   white-space: nowrap; background: var(--fg); color: var(--bg); font-size: 12px; font-weight: 400; padding: 3px 8px;
   border-radius: 4px; pointer-events: none; }
+/* 모든 화면에 취소선 글자 없음 (사용자 결정 2026-11-03) — 변환기에서 취소선 문법을 끄고, 혹시 남은 태그도 줄을 긋지 않음 */
+del, s, strike { text-decoration: none; }
 /* 칼럼·기고 필자 '[소속, 직책, 성명]' — 제목 뒤 일반 글자(링크 아님, 굵게 하지 않음) */
 .author { font-weight: 400; color: var(--muted); }
 .md .src-m { display: none; font-size: 12px; font-weight: 400; color: var(--muted); }
