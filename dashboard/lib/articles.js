@@ -79,7 +79,7 @@ const LABEL = { am: "06시판", noon: "12시판", pm: "18시판", week: "주간 
 const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const cdata = (s) => `<![CDATA[${String(s).replace(/]]>/g, "]]]]><![CDATA[>")}]]>`;
 
-export function buildRss(rows, render, site = "https://briefing-security.vercel.app") {
+export function buildRss(rows, render, site = "https://information-security-briefing.vercel.app") {
   const items = rows.map((b) => {
     const id = `${b.date}-${b.edition}`;
     const heading = (b.markdown || "").match(/^#\s+(.+)$/m)?.[1] || `정보보안 브리핑 ${b.date} ${LABEL[b.edition] || ""}`.trim();

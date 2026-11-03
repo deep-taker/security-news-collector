@@ -547,7 +547,7 @@ def test_briefing_new_format():
 - **[캡콤 계정 침해](https://zdnet.co.kr/b "보도: 지디넷코리아")**
   캡콤 ID 1170만 계정 영향 침해 확인.
   계정 196개 비밀번호 무단 변경.
-- 외 3건 — [기사 검색에서 보기](https://briefing-security.vercel.app/articles?label=security)
+- 외 3건 — [기사 검색에서 보기](https://information-security-briefing.vercel.app/articles?label=security)
 
 ## 🤖 AI 보안
 - **[AI 해킹 30대 검거](https://www.etnews.com/c "보도: 전자신문, 디지털타임스")**

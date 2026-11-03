@@ -5,7 +5,7 @@
 3) 사건 연결: 라벨의 event_slug가 이번 판 사건 또는 최근 사건 목록에 있는지
 4) 본문: 브리핑 마크다운이 있고 제목·판 표기·필수 절이 있는지
 5) DB: briefings 행 존재·본문 일치, 라벨이 실제 기사에 반영됐는지, 사건이 저장됐는지
-6) 대시보드: https://briefing-security.vercel.app/b/<날짜-판> 이 열리고 브리핑이 보이는지
+6) 대시보드: https://information-security-briefing.vercel.app/b/<날짜-판> 이 열리고 브리핑이 보이는지
 
 결과는 briefing_checks 표에 남기고(대시보드 '수집 상태'에 실패 표시), 실패하면 종료 코드 1.
 """
@@ -23,7 +23,7 @@ LABEL_NAME = {"am": "06시판", "noon": "12시판", "pm": "18시판", "week": "�
 VALID = {"security", "trend", "pr", "column", "not_security"}
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 HANGUL = re.compile(r"[가-힣]")
-DASHBOARD = os.environ.get("DASHBOARD_URL", "https://briefing-security.vercel.app").rstrip("/")
+DASHBOARD = os.environ.get("DASHBOARD_URL", "https://information-security-briefing.vercel.app").rstrip("/")
 
 
 # 브리핑 본문 링크로 허용하는 도메인 (수집 매체 9곳의 기사 주소). 외부 기사 내용의 숨은 지시로

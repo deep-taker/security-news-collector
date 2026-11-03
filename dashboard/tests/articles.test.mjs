@@ -80,7 +80,7 @@ test("RSS: 판마다 항목, 제목은 본문 첫 제목, 본문은 정리된 HT
   assert.equal((xml.match(/<item>/g) || []).length, 2);
   assert.ok(xml.includes("<title>정보보안 브리핑 2026-10-26 (월) 18시판</title>"));
   assert.ok(xml.includes("<title>정보보안 브리핑 2026-10-26 06시판</title>"));
-  assert.ok(xml.includes("<link>https://briefing-security.vercel.app/b/2026-10-26-pm</link>"));
+  assert.ok(xml.includes("<link>https://information-security-briefing.vercel.app/b/2026-10-26-pm</link>"));
   assert.ok(!xml.includes("<script>"));
   assert.equal((xml.match(/<!\[CDATA\[/g) || []).length, (xml.match(/]]>/g) || []).length);   // CDATA 균형
 });
