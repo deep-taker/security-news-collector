@@ -1,4 +1,8 @@
-import { marked } from "marked";
+import { Marked } from "marked";
+
+// 취소선 문법 끔: GFM은 '~…~'·'~~…~~'를 취소선으로 바꿔 "3~4일 … 9~10월"이 "34일 … 910월" + 취소선으로 보였다
+// (2026-11-03, 사용자 결정: 모든 화면에 취소선 글자 없음). 물결표는 글자 그대로 둔다.
+const marked = new Marked({ tokenizer: { del() { return undefined; } } });
 
 // 링크 허용 도메인: 수집 매체 11곳 (IT조선·IT동아는 it. 하위 주소만 — 본지 주소는 허용하지 않음) (collector/verify_briefing.py ARTICLE_DOMAINS와 같게 유지)
 const ARTICLE_DOMAINS = ["boannews.com", "dailysecu.com", "etnews.com", "dt.co.kr", "digitaltoday.co.kr",
@@ -19,6 +23,7 @@ export function allowed(href) {
 export function renderMarkdown(md) {
   const escaped = (md || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   let html = marked.parse(escaped, { gfm: true, breaks: true });   // 2줄 요약: 줄바꿈을 그대로 줄로 (2026-10-27 형식)
+  html = html.replace(/<\/?(?:del|s|strike)>/g, "");   // 혹시 남은 취소선 태그도 제거 (글자는 그대로 둠)
   html = html.replace(/href="([^"]*)"/gi, (m, href) => (allowed(href) ? m : 'href="#"'));
   // 이미지는 쓰지 않음: 외부 주소·javascript: 등을 막기 위해 대체 문자열만 남긴다
   html = html.replace(/<img\b[^>]*?\balt="([^"]*)"[^>]*>/gi, "$1").replace(/<img\b[^>]*>/gi, "");

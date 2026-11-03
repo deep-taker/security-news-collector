@@ -69,3 +69,14 @@ test("목록 항목 사이 빈 줄(느슨한 목록)이 있어도 같은 구조 
   assert.ok(!/<li>\s*<p>/.test(loose));
   assert.match(loose, /<li><strong><a [^>]*>제목1<\/a><span class="src-m"> · 보안뉴스<\/span> \[후속\]<\/strong><br>첫째 줄1<br>둘째 줄1<\/li>/);
 });
+
+test("물결표(~)는 취소선이 아니라 글자 그대로 (2026-11-03)", () => {
+  const html = renderMarkdown('- **[도구 설치 3~4일 만에 계정 탈취](https://www.dailysecu.com/news/articleView.html?idxno=1 "보도: 데일리시큐")**\n  AI가 3~4일 만에 탈취했고 공격은 9~10월 관측됐다.\n  ~~두 개~~도 그대로, 주소 https://zdnet.co.kr/~a 도\n');
+  assert.ok(!/<(del|s|strike)>/.test(html));
+  assert.match(html, /도구 설치 3~4일 만에 계정 탈취<\/a>/);
+  assert.match(html, /AI가 3~4일 만에 탈취했고 공격은 9~10월 관측됐다\./);
+  assert.match(html, /~~두 개~~도 그대로/);
+  assert.ok(!html.includes("\\~"));
+  const link = renderMarkdown("[글](https://zdnet.co.kr/view/~a?no=1)");
+  assert.match(link, /href="https:\/\/zdnet\.co\.kr\/view\/~a\?no=1"/);   // 링크 주소의 ~도 그대로
+});
