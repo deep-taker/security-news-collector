@@ -1,0 +1,405 @@
+{
+ "date": "2026-11-04",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-04-noon.md",
+ "stats": {
+  "candidates": 59,
+  "security": 19,
+  "trend": 6,
+  "pr": 14,
+  "column": 0,
+  "not_security": 20,
+  "events": 13
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "바이낸스 사후 보고서, 가짜 채용 면접·악성 과제 파일로 6월부터 5개월 침투한 북한 연계 작전 공개",
+   "cves": []
+  },
+  {
+   "slug": "douzone-bizon-breach",
+   "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "category": "침해사고",
+   "summary": "스마트 A10·APO백업서비스 침해, 중소기업 유출 의심 기업 현황 확인",
+   "cves": []
+  },
+  {
+   "slug": "hanyang-securities-breach",
+   "title": "한양증권 외부 그룹웨어 해킹, 주민번호·계좌번호 등 개인정보 31건 유출",
+   "category": "개인정보",
+   "summary": "다우기술 그룹웨어 취약점이 원인, 접근 차단 및 자체 점검 착수",
+   "cves": []
+  },
+  {
+   "slug": "cyber-security-czar",
+   "title": "대통령, 민관 아우르는 사이버 보안 총괄 기구(사이버 보안 차르) 검토 지시",
+   "category": "정책·제도",
+   "summary": "업계는 부처 간 주도권 경쟁 재발을 우려",
+   "cves": []
+  },
+  {
+   "slug": "finance-breach-guideline-gap",
+   "title": "금융권 침해사고 최소 20곳, 당국 가이드라인 점검의 한계 지적",
+   "category": "정책·제도",
+   "summary": "체크리스트 점검만으로는 해커가 찾은 취약점을 사전에 발견하지 못했다는 분석",
+   "cves": []
+  },
+  {
+   "slug": "digital-asset-law-gap",
+   "title": "디지털자산기본법 표류, 가상자산 해킹 배상 기준 공백",
+   "category": "정책·제도",
+   "summary": "거래소 무과실 배상책임 도입 쟁점 부각",
+   "cves": []
+  },
+  {
+   "slug": "nikke-launcher-malware",
+   "title": "니케 PC 런처 해킹, 악성코드 삽입 확인",
+   "category": "악성코드·랜섬웨어",
+   "summary": "계정·가상화폐 지갑 탈취 우려",
+   "cves": []
+  },
+  {
+   "slug": "videostrong-tv-box-botnet",
+   "title": "구글, 중국 비디오스트롱 셋톱박스 130만대 백도어 봇넷 차단",
+   "category": "악성코드·랜섬웨어",
+   "summary": "제어 서버만 차단됐고 악성코드는 기기 펌웨어에 잔존",
+   "cves": []
+  },
+  {
+   "slug": "darkweb-wallet-card-abuse",
+   "title": "다크웹서 도난 결제카드의 디지털 지갑 등록 악용 논의 증가",
+   "category": "기타",
+   "summary": "노드VPN 분석, 실제 결제 악용 사례 증가",
+   "cves": []
+  },
+  {
+   "slug": "fake-browser-update-malware",
+   "title": "정상 웹사이트 침해 후 가짜 브라우저 업데이트로 악성앱 유포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "삼성 브라우저 플러그인 위장 악성앱 설치 유도",
+   "cves": []
+  },
+  {
+   "slug": "barcode-scanner-hack-risk",
+   "title": "바코드 스캐너 무선 연결이 물류 창고 해킹 통로로 악용될 위험",
+   "category": "기타",
+   "summary": "창고 PC·OT 네트워크 침투 위험 경고",
+   "cves": []
+  },
+  {
+   "slug": "kisa-ship-cyber-drill",
+   "title": "KISA, 해운사·관계기관 선박 사이버 침해사고 합동 모의훈련",
+   "category": "정책·제도",
+   "summary": "부산에서 5대 해운사 참여, 협력사 PC 침해 후 선박 SW 변조 시나리오",
+   "cves": []
+  },
+  {
+   "slug": "us-banks-ai-agent-control",
+   "title": "美 주요 은행, AI 에이전트 계좌 접근 통제 강화",
+   "category": "AI 보안",
+   "summary": "외부 AI 에이전트의 고객 계좌 접근 제한, 사기·책임 공백 대응",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 179392,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 178868,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 180739,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 181673,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 180771,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 180775,
+   "label": "security",
+   "event_slug": "douzone-bizon-breach"
+  },
+  {
+   "id": 181573,
+   "label": "security",
+   "event_slug": "hanyang-securities-breach"
+  },
+  {
+   "id": 180614,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  },
+  {
+   "id": 181686,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  },
+  {
+   "id": 179457,
+   "label": "security",
+   "event_slug": "finance-breach-guideline-gap"
+  },
+  {
+   "id": 181674,
+   "label": "security",
+   "event_slug": "digital-asset-law-gap"
+  },
+  {
+   "id": 180905,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 181478,
+   "label": "security",
+   "event_slug": "videostrong-tv-box-botnet"
+  },
+  {
+   "id": 181977,
+   "label": "security",
+   "event_slug": "darkweb-wallet-card-abuse"
+  },
+  {
+   "id": 180872,
+   "label": "security",
+   "event_slug": "fake-browser-update-malware"
+  },
+  {
+   "id": 181682,
+   "label": "security",
+   "event_slug": "fake-browser-update-malware"
+  },
+  {
+   "id": 181964,
+   "label": "security",
+   "event_slug": "barcode-scanner-hack-risk"
+  },
+  {
+   "id": 180774,
+   "label": "security",
+   "event_slug": "kisa-ship-cyber-drill"
+  },
+  {
+   "id": 181426,
+   "label": "security",
+   "event_slug": "us-banks-ai-agent-control"
+  },
+  {
+   "id": 180737,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 181979,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 180113,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 181973,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 180616,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 180130,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 178869,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180738,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180348,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180347,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 181459,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180115,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180114,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 181945,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 181986,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180874,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180873,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 180871,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 181430,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 181651,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 178983,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180313,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180312,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180310,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180619,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180134,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180678,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180210,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180111,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181479,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181466,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181962,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181450,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181449,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180773,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181997,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181995,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 180772,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181920,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 181406,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": []
+}
