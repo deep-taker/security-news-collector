@@ -1,0 +1,545 @@
+{
+ "date": "2026-11-04",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-04-pm.md",
+ "stats": {
+  "candidates": 80,
+  "security": 32,
+  "trend": 9,
+  "pr": 14,
+  "column": 0,
+  "not_security": 25,
+  "events": 18
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "바이낸스 사후 분석, 가짜 면접으로 시작된 63억 달러 탈취 정리",
+   "cves": []
+  },
+  {
+   "slug": "bithumb-groupware-breach",
+   "title": "빗썸 사내 모바일 그룹웨어 해킹",
+   "category": "침해사고",
+   "summary": "빗썸·한양증권 해킹, 다우오피스 접근통제 취약점 제로데이 공격 확인",
+   "cves": []
+  },
+  {
+   "slug": "nikke-launcher-malware",
+   "title": "니케 PC 런처 해킹, 악성코드 삽입 확인",
+   "category": "악성코드·랜섬웨어",
+   "summary": "니케 PC 런처 해킹, 악성코드 삽입 확인",
+   "cves": []
+  },
+  {
+   "slug": "fintech-seven-breach",
+   "title": "핀테크 7곳 해킹으로 고객정보 유출, 일부는 자금까지 피해",
+   "category": "침해사고",
+   "summary": "핀테크 7곳 정보 유출과 자금 피해 확인",
+   "cves": []
+  },
+  {
+   "slug": "jinair-api-breach",
+   "title": "진에어 회원정보 조회 API 공격",
+   "category": "개인정보",
+   "summary": "진에어 대표 사임, 개인정보 유출 사고 책임",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "유럽 슈퍼마켓 냉동고 사이버 공격",
+   "cves": []
+  },
+  {
+   "slug": "barcode-scanner-hack-risk",
+   "title": "바코드 스캐너 무선 연결이 물류 창고 해킹 통로로 악용될 위험",
+   "category": "취약점",
+   "summary": "바코드 스캐너 무선 연결이 물류 창고 해킹 통로로 악용될 위험",
+   "cves": []
+  },
+  {
+   "slug": "fake-browser-update-malware",
+   "title": "정상 웹사이트 침해 후 가짜 브라우저 업데이트로 악성앱 유포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "정상 웹사이트 침해 후 가짜 브라우저 업데이트로 악성앱 유포",
+   "cves": []
+  },
+  {
+   "slug": "seoul-univ-clickfix",
+   "title": "서울시립대 홈페이지, 가짜 로봇인증 클릭픽스 공격 노출",
+   "category": "악성코드·랜섬웨어",
+   "summary": "서울시립대 홈페이지에서 가짜 로봇인증으로 악성 명령어 입력을 유도하는 공격 포착",
+   "cves": []
+  },
+  {
+   "slug": "nojima-breach",
+   "title": "일본 가전업체 노지마 회원정보 700만건 유출",
+   "category": "개인정보",
+   "summary": "노지마 온라인서 약 700만건 회원정보 유출, 비밀번호 강제 초기화 후 운영 중단",
+   "cves": []
+  },
+  {
+   "slug": "sega-pave-hack",
+   "title": "세가 서버 해킹으로 일본 게임센터 서비스 중단",
+   "category": "침해사고",
+   "summary": "세가 페이브 서버 해킹으로 ALL.Net·Aime 서비스 중단",
+   "cves": []
+  },
+  {
+   "slug": "naverpay-dev-mode-block",
+   "title": "네이버페이, 개발자 모드 사용자 앱 차단 논란",
+   "category": "기타",
+   "summary": "네이버페이 개발자 옵션 사용자 앱 차단, 이번 주 완화 예정",
+   "cves": []
+  },
+  {
+   "slug": "artex-ai-pentest-abuse",
+   "title": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+   "category": "AI 보안",
+   "summary": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+   "cves": []
+  },
+  {
+   "slug": "llmjacking-ai-bill",
+   "title": "LLM재킹 확산, 훔친 AI 접근권한 되팔아 요금 폭탄",
+   "category": "AI 보안",
+   "summary": "훔친 클라우드 인증정보로 기업 AI 모델을 무단 호출하는 LLM재킹 확산",
+   "cves": []
+  },
+  {
+   "slug": "openai-ignored-security-warnings",
+   "title": "오픈AI, 내부 보안 취약점 경고 수년간 무시 의혹",
+   "category": "AI 보안",
+   "summary": "오픈AI 직원들의 보안 경고를 경영진이 경쟁 우선으로 무시했다는 지적",
+   "cves": []
+  },
+  {
+   "slug": "ga-ciso-appointment",
+   "title": "GA업계, 개인정보보호법 개정 대응해 보안책임자 선임 의무화",
+   "category": "정책·제도",
+   "summary": "대형 GA 대다수 CISO 선임 마쳤거나 착수",
+   "cves": []
+  },
+  {
+   "slug": "russia-apple-ms-registry",
+   "title": "러시아, 애플·MS를 정보유통 조직자로 등록해 통신기록 제출 요구",
+   "category": "정책·제도",
+   "summary": "러시아, 애플·MS 정보유통 조직자 명단 등록",
+   "cves": []
+  },
+  {
+   "slug": "tmap-data-export",
+   "title": "티맵 외국계 매각에도 이용자 정보 임의 반출 불가",
+   "category": "정책·제도",
+   "summary": "티맵 외국계 매각 시에도 이용자 개인정보 임의 해외 반출은 불가능",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 182048,
+   "label": "security",
+   "event_slug": "artex-ai-pentest-abuse"
+  },
+  {
+   "id": 182047,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 182046,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 182045,
+   "label": "security",
+   "event_slug": "fake-browser-update-malware"
+  },
+  {
+   "id": 183193,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 182044,
+   "label": "security",
+   "event_slug": "barcode-scanner-hack-risk"
+  },
+  {
+   "id": 182904,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 183252,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 182145,
+   "label": "security",
+   "event_slug": "artex-ai-pentest-abuse"
+  },
+  {
+   "id": 182898,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 182891,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 183190,
+   "label": "security",
+   "event_slug": "naverpay-dev-mode-block"
+  },
+  {
+   "id": 182043,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 183251,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 183316,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 182926,
+   "label": "security",
+   "event_slug": "tmap-data-export"
+  },
+  {
+   "id": 184474,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 182144,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 182143,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 183365,
+   "label": "security",
+   "event_slug": "artex-ai-pentest-abuse"
+  },
+  {
+   "id": 184534,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 183364,
+   "label": "security",
+   "event_slug": "barcode-scanner-hack-risk"
+  },
+  {
+   "id": 184005,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 183315,
+   "label": "security",
+   "event_slug": "seoul-univ-clickfix"
+  },
+  {
+   "id": 183363,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 184210,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 183314,
+   "label": "security",
+   "event_slug": "llmjacking-ai-bill"
+  },
+  {
+   "id": 183313,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 183982,
+   "label": "security",
+   "event_slug": "llmjacking-ai-bill"
+  },
+  {
+   "id": 184202,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 183362,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 183414,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 184526,
+   "label": "security",
+   "event_slug": "fintech-seven-breach"
+  },
+  {
+   "id": 184056,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 183413,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 184525,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 183450,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 183361,
+   "label": "security",
+   "event_slug": "llmjacking-ai-bill"
+  },
+  {
+   "id": 183312,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 184524,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 183412,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 183963,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 184111,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  },
+  {
+   "id": 183411,
+   "label": "security",
+   "event_slug": "ga-ciso-appointment"
+  },
+  {
+   "id": 183447,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 183445,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 183951,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 183947,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 183946,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 183311,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185303,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185413,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185352,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185351,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185467,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 184580,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 185466,
+   "label": "security",
+   "event_slug": "nojima-breach"
+  },
+  {
+   "id": 185409,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185283,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185282,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185301,
+   "label": "security",
+   "event_slug": "russia-apple-ms-registry"
+  },
+  {
+   "id": 185407,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185461,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 185452,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 185761,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 185447,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 184579,
+   "label": "security",
+   "event_slug": "bithumb-groupware-breach"
+  },
+  {
+   "id": 185444,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185344,
+   "label": "security",
+   "event_slug": "openai-ignored-security-warnings"
+  },
+  {
+   "id": 185395,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185245,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185244,
+   "label": "security",
+   "event_slug": "sega-pave-hack"
+  },
+  {
+   "id": 185805,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 185480,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 185479,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 185225,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 184720,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185218,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185471,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 185213,
+   "label": "trend",
+   "event_slug": null
+  }
+ ],
+ "security_events": []
+}
