@@ -1,12 +1,12 @@
 {
- "date": "2026-11-04",
- "db_size_mb": 24.6,
+ "date": "2026-11-05",
+ "db_size_mb": 26.5,
  "limit_mb": 500,
  "warn": false,
  "retention": {
   "deleted_runs": 0,
-  "db_size_bytes": 25826995,
-  "articles_total": 6097,
+  "db_size_bytes": 27760307,
+  "articles_total": 7133,
   "deleted_articles": 0
  }
 }
