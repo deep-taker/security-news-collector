@@ -1,0 +1,505 @@
+{
+ "date": "2026-11-05",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-05-pm.md",
+ "stats": {
+  "candidates": 66,
+  "security": 30,
+  "trend": 3,
+  "pr": 15,
+  "column": 3,
+  "not_security": 15,
+  "events": 20
+ },
+ "events": [
+  {
+   "slug": "nikke-launcher-malware",
+   "title": "니케 PC 런처 해킹, 악성코드 삽입 확인",
+   "category": "악성코드·랜섬웨어",
+   "summary": "운영사 공식 사과, 악성코드 자동 치료 적용·2차 피해 접수",
+   "cves": []
+  },
+  {
+   "slug": "fsec-csp-evaluation",
+   "title": "금융보안원, CSP 안전성 대표평가 개편",
+   "category": "정책·제도",
+   "summary": "2027년 전면 적용, 서면 평가 한계 보완",
+   "cves": []
+  },
+  {
+   "slug": "finance-network-separation-delay",
+   "title": "금융권 망 분리 규제 완화 지연 조짐",
+   "category": "정책·제도",
+   "summary": "금융위 망분리 전면 해제 추진, AI 기반 신보안체계 TF 가동",
+   "cves": []
+  },
+  {
+   "slug": "fsc-finance-full-inspection",
+   "title": "금융위, 580개 금융사 전수점검 착수·CEO 책임 추궁",
+   "category": "정책·제도",
+   "summary": "한 달 새 37개 금융사 정보 47만 건 유출·10억원 탈취, 금융위 전 금융권 전수점검과 AI 보안체계 혁신 주문",
+   "cves": []
+  },
+  {
+   "slug": "tencent-hy4-cyber-limit",
+   "title": "텐센트 Hy4 공개, 사이버 공격 악용 줄이도록 학습 데이터 제한",
+   "category": "AI 보안",
+   "summary": "방어 목적 데이터 중심 학습",
+   "cves": []
+  },
+  {
+   "slug": "volt-typhoon-zeroday",
+   "title": "볼트 타이푼, 제로데이 4건 악용해 미국 핵심 인프라 침투",
+   "category": "악성코드·랜섬웨어",
+   "summary": "중국 연계 볼트 타이푼이 제로데이 4건으로 미국 정부·통신·방산·에너지 인프라 장기 침투",
+   "cves": []
+  },
+  {
+   "slug": "daegu-ro-breach",
+   "title": "대구시 공공배달앱 대구로 해킹",
+   "category": "개인정보",
+   "summary": "계좌번호 2만5천여 개·접속정보 250여 명분 유출",
+   "cves": []
+  },
+  {
+   "slug": "japan-cyber-surge",
+   "title": "일본 사이버보안 사고 723건…정부 긴급 대책 착수",
+   "category": "AI 보안",
+   "summary": "일본 AI 사이버공격 7월 이후 최소 81건, 사전 감시 체제로 전환",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "체이널리시스, 북한 허위면접 수법 분석…유사 수법 피해 1430만달러 초과",
+   "cves": []
+  },
+  {
+   "slug": "jinair-api-breach",
+   "title": "진에어 회원정보 조회 API 공격",
+   "category": "개인정보",
+   "summary": "진에어 대표 사임, 개인정보 유출 사고 책임",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "유럽 슈퍼마켓 냉동고 사이버 공격",
+   "cves": []
+  },
+  {
+   "slug": "pipc-safety-guide-public",
+   "title": "개인정보위, 안전성 확보조치 안내서 개정",
+   "category": "정책·제도",
+   "summary": "공공시스템 취약점 점검 방법 안내 추가",
+   "cves": []
+  },
+  {
+   "slug": "indonesia-malicious-app",
+   "title": "인도네시아 금융권 노린 악성앱 동남아 확산",
+   "category": "악성코드·랜섬웨어",
+   "summary": "베트남·태국·말레이시아로 확산, 국내도 표적 우려",
+   "cves": []
+  },
+  {
+   "slug": "infodisclosure-portal-exposure",
+   "title": "정보공개포털 민감 개인정보 노출",
+   "category": "개인정보",
+   "summary": "행안부 원문 다운로드 차단·전수점검 착수",
+   "cves": []
+  },
+  {
+   "slug": "adobe-commerce-psk-agent",
+   "title": "어도비 커머스 결함 악용 PSK 에이전트 악성코드 유포",
+   "category": "취약점",
+   "summary": "CVE-2026-75650 악용, 쇼핑몰 서버 원격제어",
+   "cves": [
+    "CVE-2026-75650"
+   ]
+  },
+  {
+   "slug": "pipc-ai-agent-privacy",
+   "title": "개인정보위, AI 에이전트·피지컬 AI 개인정보 보호 기술 논의",
+   "category": "AI 보안",
+   "summary": "PET 역할과 국제표준 방향 논의",
+   "cves": []
+  },
+  {
+   "slug": "japan-vuln-info-request",
+   "title": "일본 정부, 미국 AI 기업에 미공개 취약점 정보 요청",
+   "category": "AI 보안",
+   "summary": "공개 전 소프트웨어 취약점 정보 제공 요청 계획",
+   "cves": []
+  },
+  {
+   "slug": "google-mandiant-machine-speed",
+   "title": "구글·맨디언트, 머신 스피드 AI 악용 경고",
+   "category": "AI 보안",
+   "summary": "패치를 몇 시간 만에 역공학해 공격",
+   "cves": []
+  },
+  {
+   "slug": "apt29-mobile-stealer",
+   "title": "APT29 추정 해커, 변조 웹 스크립트로 모바일 정보 탈취",
+   "category": "악성코드·랜섬웨어",
+   "summary": "아이폰·안드로이드 메신저·비밀번호 탈취 노려",
+   "cves": []
+  },
+  {
+   "slug": "tatum-click-ai-agent",
+   "title": "테이텀, AI 에이전트 보안 플랫폼 클릭 출시",
+   "category": "AI 보안",
+   "summary": "에이전트 권한·데이터 이동 통제, AI 레드티밍 지원",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 199848,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 199858,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 197403,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 201126,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 197501,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 197402,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 197401,
+   "label": "security",
+   "event_slug": "fsec-csp-evaluation"
+  },
+  {
+   "id": 198047,
+   "label": "security",
+   "event_slug": "finance-network-separation-delay"
+  },
+  {
+   "id": 198627,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 199912,
+   "label": "security",
+   "event_slug": "fsc-finance-full-inspection"
+  },
+  {
+   "id": 198161,
+   "label": "security",
+   "event_slug": "tencent-hy4-cyber-limit"
+  },
+  {
+   "id": 198039,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 199372,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 198688,
+   "label": "security",
+   "event_slug": "volt-typhoon-zeroday"
+  },
+  {
+   "id": 199562,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 199555,
+   "label": "security",
+   "event_slug": "daegu-ro-breach"
+  },
+  {
+   "id": 199554,
+   "label": "security",
+   "event_slug": "japan-cyber-surge"
+  },
+  {
+   "id": 199367,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 199503,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  },
+  {
+   "id": 198787,
+   "label": "security",
+   "event_slug": "fsc-finance-full-inspection"
+  },
+  {
+   "id": 199362,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 198740,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 198739,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 199541,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 198786,
+   "label": "security",
+   "event_slug": "pipc-safety-guide-public"
+  },
+  {
+   "id": 198738,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 199837,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 199333,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 198737,
+   "label": "security",
+   "event_slug": "fsec-csp-evaluation"
+  },
+  {
+   "id": 199904,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 199903,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 200066,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 198687,
+   "label": "security",
+   "event_slug": "finance-network-separation-delay"
+  },
+  {
+   "id": 198686,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 198736,
+   "label": "security",
+   "event_slug": "tatum-click-ai-agent"
+  },
+  {
+   "id": 201156,
+   "label": "security",
+   "event_slug": "indonesia-malicious-app"
+  },
+  {
+   "id": 200018,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 199966,
+   "label": "security",
+   "event_slug": "infodisclosure-portal-exposure"
+  },
+  {
+   "id": 200734,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 200017,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 200016,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 199965,
+   "label": "security",
+   "event_slug": "adobe-commerce-psk-agent"
+  },
+  {
+   "id": 201131,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 200065,
+   "label": "security",
+   "event_slug": "pipc-ai-agent-privacy"
+  },
+  {
+   "id": 199964,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 201235,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 200784,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 200651,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 200649,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 200015,
+   "label": "security",
+   "event_slug": "fsc-finance-full-inspection"
+  },
+  {
+   "id": 200724,
+   "label": "security",
+   "event_slug": "japan-vuln-info-request"
+  },
+  {
+   "id": 200867,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 199963,
+   "label": "security",
+   "event_slug": "google-mandiant-machine-speed"
+  },
+  {
+   "id": 200637,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 200014,
+   "label": "security",
+   "event_slug": "apt29-mobile-stealer"
+  },
+  {
+   "id": 200617,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 201121,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 200013,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 200062,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 200063,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 200064,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 200612,
+   "label": "security",
+   "event_slug": "tatum-click-ai-agent"
+  },
+  {
+   "id": 200012,
+   "label": "security",
+   "event_slug": "nikke-launcher-malware"
+  },
+  {
+   "id": 200610,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 199962,
+   "label": "security",
+   "event_slug": "tatum-click-ai-agent"
+  },
+  {
+   "id": 200602,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 부산 사이버보안 콘퍼런스",
+   "start_date": "2026-11-04",
+   "end_date": "2026-11-05",
+   "place": "부산 벡스코 제2전시장",
+   "organizer": "부산광역시·한국주택금융공사·국가정보원 지부",
+   "url": "https://www.etnews.com/20261105000389",
+   "major": true,
+   "note": "AI시대 안전한 사이버 해양수도 부산을 주제로 한국정보보호학회 주관 개최",
+   "article_ids": [
+    200066
+   ]
+  }
+ ]
+}
