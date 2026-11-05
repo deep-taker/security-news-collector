@@ -754,3 +754,16 @@ def test_author_reporter_column():
     ext = {"org": "세일포인트 코리아", "position": "지사장", "name": "지정권"}
     assert as_reporter(ext, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == ext
     assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == {}
+
+
+def test_author_editorial():
+    from collector.authors import editorial, as_editorial, label
+    page = b'<html><head><meta name="author" content="www.etnews.com"><meta name="dable:author" content="\xeb\x85\xbc\xec\x84\xa4\xec\x9c\x84\xec\x9b\x90\xec\x8b\xa4"></head><body><p>x</p></body></html>'
+    assert editorial(page, "금융권, AI방어로 안전 입증해야")                     # 작성자 메타 '논설위원실'
+    assert editorial(b"<html></html>", "[사설] 금융권, AI방어로 안전 입증해야")  # 머리말 [사설]
+    assert not editorial(b"<html></html>", "[보안칼럼] 제목")
+    info = as_editorial({}, True, "etnews_sec")
+    assert info == {"org": "전자신문", "position": "논설위원실", "name": ""} and label(info) == "[전자신문, 논설위원실]"
+    person = {"org": "가나 시큐리티", "position": "대표", "name": "김철수"}
+    assert as_editorial(person, True, "etnews_sec") == person                     # 사람 필자를 찾았으면 그대로
+    assert as_editorial({}, False, "etnews_sec") == {}
