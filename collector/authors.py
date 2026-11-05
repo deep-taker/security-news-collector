@@ -8,6 +8,7 @@
 - 2단계(AI, Claude Haiku): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
 - 출력 검증: 각 값은 후보 글에 글자 그대로 있어야 하고(지어낸 값 금지), 40자 이하, 링크·꺾쇠·지시문 의심 금지, '기자'는 필자가 아님
 - 기자가 직접 쓴 칼럼(필자 이름이 그 매체 기자)은 {"org": 매체 이름, "position": "기자", "name": 성명} (2026-11-03)
+- 사설(머리말 [사설]·작성자 '논설위원실')은 {"org": 매체 이름, "position": "논설위원실", "name": ""} (2026-11-05)
 - 저장: articles.author_info = {"org": 소속, "position": 직책, "name": 성명} (모르는 값은 빈 문자열),
   필자를 알 수 없으면 {} (다시 찾지 않음). 페이지·API 오류는 다음 수집 때 다시, 48시간 넘으면 {}로 포기.
 - 키가 없으면 아무것도 하지 않음.
@@ -100,6 +101,25 @@ def reporters(html: bytes) -> set:
     body = next((b for b in (soup.select_one(s) for s in _BODY) if b), None) or soup.body
     text += " " + (body.get_text(" ") if body else "")
     return set(_REPORTER.findall(text))
+
+
+def editorial(html: bytes, title: str) -> bool:
+    """사설(매체 논설위원실 글): 제목 머리말 '[사설]' 또는 작성자 메타 정보 '논설위원실'."""
+    head = _TITLE_HEAD.match(title or "")
+    if head and "사설" in head.group(1):
+        return True
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "lxml")
+    return any("논설위원실" in (t.get("content") or "") for t in soup.select('meta[name="author"], meta[name="dable:author"], '
+                                                                          'meta[property="article:author"], meta[property="og:article:author"]'))
+
+
+def as_editorial(info: dict, is_editorial: bool, source_id: str) -> dict:
+    """사설은 사람 필자 대신 [매체, 논설위원실] (사용자 요청 2026-11-05). 사람 필자를 찾았으면 그대로."""
+    outlet = (SOURCE_BY_ID.get(source_id) or {}).get("name", "")
+    if is_editorial and outlet and not (info or {}).get("name"):
+        return {"org": outlet, "position": "논설위원실", "name": ""}
+    return info
 
 
 def as_reporter(info: dict, reps: set, title: str, source_id: str) -> dict:
@@ -216,6 +236,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
             page = fetch(a["url"])
             a["cands"] = candidates(page, a.get("title") or "")
             a["reps"] = reporters(page)
+            a["editorial"] = editorial(page, a.get("title") or "")
             ready.append(a)
         except Exception as e:   # 페이지 오류: 다음 수집 때 다시 (오래되면 포기)
             res["failed"] += 1
@@ -227,6 +248,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
     for a in ready:
         if not a["cands"]:
             info = as_reporter({}, a["reps"], a.get("title") or "", a.get("source_id") or "")
+            info = as_editorial(info, a["editorial"], a.get("source_id") or "")
             save(a, info)
             res["found" if info else "unknown"] += 1
     for i in range(0, len(asked), 10):
@@ -246,6 +268,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
                     res["gave_up"] += 1
                 continue
             info = as_reporter(info, a["reps"], a.get("title") or "", a.get("source_id") or "")
+            info = as_editorial(info, a["editorial"], a.get("source_id") or "")
             save(a, info)
             res["found" if info else "unknown"] += 1
     return res
