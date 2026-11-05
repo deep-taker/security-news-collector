@@ -1,0 +1,430 @@
+{
+  "date": "2026-11-05",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-05-noon.md",
+  "stats": {
+    "candidates": 64,
+    "security": 37,
+    "trend": 7,
+    "pr": 9,
+    "column": 0,
+    "not_security": 11,
+    "events": 13
+  },
+  "events": [
+    {
+      "slug": "fsc-finance-full-inspection",
+      "title": "금융위, 580개 금융사 전수점검 착수·CEO 책임 추궁",
+      "category": "정책·제도",
+      "summary": "한 달 새 37개 금융사 정보 47만 건 유출·10억원 탈취, 금융위 전 금융권 전수점검과 AI 보안체계 혁신 주문",
+      "cves": []
+    },
+    {
+      "slug": "europe-supermarket-freezer-attack",
+      "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+      "category": "침해사고",
+      "summary": "유럽 슈퍼마켓 냉동고 사이버 공격",
+      "cves": []
+    },
+    {
+      "slug": "arkea-bank-breach",
+      "title": "프랑스 아르케아 은행 협력업체 경유 공격, 1억 유로 탈취",
+      "category": "침해사고",
+      "summary": "협력업체 경유 공격으로 자체 자금 1억 유로 유출, 고객 예금 피해 없음",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "체이널리시스, 북한 허위면접 수법 분석…유사 수법 피해 1430만달러 초과",
+      "cves": []
+    },
+    {
+      "slug": "amadeus-breach",
+      "title": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+      "category": "개인정보",
+      "summary": "NH농협여행 일부 고객 항공예약번호 유출 안내, 최대 3년간 비인가 접근 의혹",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "더존 백업서버 침해로 서울시육아종합지원센터·광주여성가족재단 개인정보 유출 가능성 공지",
+      "cves": []
+    },
+    {
+      "slug": "nikke-launcher-malware",
+      "title": "니케 PC 런처 해킹, 악성코드 삽입 확인",
+      "category": "악성코드·랜섬웨어",
+      "summary": "PC 런처 공급망 공격으로 백도어 감염 위험, 긴급 패치 배포",
+      "cves": []
+    },
+    {
+      "slug": "finance-network-separation-delay",
+      "title": "금융권 망 분리 규제 완화 지연 조짐",
+      "category": "정책·제도",
+      "summary": "잇단 개인정보 유출 여파, 해외는 감독체계 재정비",
+      "cves": []
+    },
+    {
+      "slug": "pipc-safety-guide-public",
+      "title": "개인정보위, 안전성 확보조치 안내서 개정",
+      "category": "정책·제도",
+      "summary": "공공시스템 취약점 점검 방법 안내 추가",
+      "cves": []
+    },
+    {
+      "slug": "kisa-cpo-support-bid",
+      "title": "KISA, CPO 지정·신고 실무 지원 용역 입찰 공고",
+      "category": "정책·제도",
+      "summary": "개인정보보호책임자 지정·신고 접수 처리 운영 지원",
+      "cves": []
+    },
+    {
+      "slug": "jp-google-residential-proxy",
+      "title": "일본 경찰청·구글, 가정용 회선 악용 프록시 서버 무해화",
+      "category": "기타",
+      "summary": "범죄에 악용되는 레지덴셜 프록시 서버 무해화 조치",
+      "cves": []
+    },
+    {
+      "slug": "ntt-malicious-site-block-law",
+      "title": "일본 NTT, 악성 사이트 차단 법적 기준 마련 요구",
+      "category": "정책·제도",
+      "summary": "사이버 공격 악용 웹사이트 차단 근거를 정부에 요구",
+      "cves": []
+    },
+    {
+      "slug": "shinhan-voicephishing-check",
+      "title": "신한투자증권, 보이스피싱 차단에 개통 이력 확인 도입",
+      "category": "기타",
+      "summary": "의심 고액 출금 시 휴대전화 개통 이력 확인",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 193715,
+      "label": "security",
+      "event_slug": "europe-supermarket-freezer-attack"
+    },
+    {
+      "id": 195523,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 195526,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 194967,
+      "label": "security",
+      "event_slug": "europe-supermarket-freezer-attack"
+    },
+    {
+      "id": 194966,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 195520,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 194965,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 195747,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 194964,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 194999,
+      "label": "security",
+      "event_slug": "arkea-bank-breach"
+    },
+    {
+      "id": 195513,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 196136,
+      "label": "security",
+      "event_slug": "amadeus-breach"
+    },
+    {
+      "id": 197287,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 197000,
+      "label": "security",
+      "event_slug": "kisa-cpo-support-bid"
+    },
+    {
+      "id": 196999,
+      "label": "security",
+      "event_slug": "jp-google-residential-proxy"
+    },
+    {
+      "id": 196933,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 196838,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 196835,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 196991,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 197299,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196246,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 197358,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196985,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 197285,
+      "label": "security",
+      "event_slug": "shinhan-voicephishing-check"
+    },
+    {
+      "id": 196984,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 196815,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 196814,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 197356,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196976,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196277,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196810,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196240,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196241,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196242,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196243,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196244,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196245,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196235,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196236,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196237,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196238,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196239,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196234,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196233,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 196232,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    },
+    {
+      "id": 197044,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 196808,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 196805,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 197351,
+      "label": "security",
+      "event_slug": "arkea-bank-breach"
+    },
+    {
+      "id": 196135,
+      "label": "security",
+      "event_slug": "europe-supermarket-freezer-attack"
+    },
+    {
+      "id": 196134,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 196133,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196799,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 196798,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 196796,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 197031,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 196794,
+      "label": "security",
+      "event_slug": "ntt-malicious-site-block-law"
+    },
+    {
+      "id": 196791,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 196132,
+      "label": "security",
+      "event_slug": "arkea-bank-breach"
+    },
+    {
+      "id": 196275,
+      "label": "security",
+      "event_slug": "nikke-launcher-malware"
+    },
+    {
+      "id": 197343,
+      "label": "security",
+      "event_slug": "nikke-launcher-malware"
+    },
+    {
+      "id": 197276,
+      "label": "security",
+      "event_slug": "pipc-safety-guide-public"
+    },
+    {
+      "id": 197027,
+      "label": "security",
+      "event_slug": "finance-network-separation-delay"
+    },
+    {
+      "id": 197007,
+      "label": "security",
+      "event_slug": "fsc-finance-full-inspection"
+    }
+  ],
+  "security_events": []
+}
