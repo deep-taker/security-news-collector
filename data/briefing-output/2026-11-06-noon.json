@@ -1,0 +1,373 @@
+{
+ "date": "2026-11-06",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-06-noon.md",
+ "stats": {
+  "candidates": 47,
+  "security": 22,
+  "trend": 3,
+  "pr": 10,
+  "column": 1,
+  "not_security": 11,
+  "events": 17
+ },
+ "events": [
+  {
+   "slug": "hanpass-breach",
+   "title": "한패스 해킹, 소득금액증명·외국인등록 증명서 유출",
+   "category": "개인정보",
+   "summary": "고객 개인정보와 증명서 원본 노출 우려",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "냉장설비 인터넷 분리 권고",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "패치 전 대규모 악용, 오래된 소프트웨어 표적",
+   "cves": []
+  },
+  {
+   "slug": "jinair-api-breach",
+   "title": "진에어 회원정보 조회 API 공격",
+   "category": "침해사고",
+   "summary": "회원정보 조회 API 외부 공격, 보안 체계 재점검",
+   "cves": []
+  },
+  {
+   "slug": "gs-xi-leak",
+   "title": "GS건설 자이 입주민 개인정보 유출",
+   "category": "개인정보",
+   "summary": "커뮤니티 예약 시스템 보안 위탁업체 관리 감독 미흡",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "비트코인 시세 영향 제한적, 국내 거래소 유입 미미",
+   "cves": []
+  },
+  {
+   "slug": "ad-eavesdrop-privacy",
+   "title": "일상 대화 기반 맞춤 광고 논란, 플랫폼 개인정보 수집 의혹",
+   "category": "개인정보",
+   "summary": "대화 엿듣기 의혹 확산",
+   "cves": []
+  },
+  {
+   "slug": "samsung-china-leak-sentence",
+   "title": "삼성전자 기술 중국 유출 전 직원 징역 5년",
+   "category": "기타",
+   "summary": "반도체 영업비밀 분쟁 확산",
+   "cves": []
+  },
+  {
+   "slug": "openai-gpt6-cyber",
+   "title": "오픈AI, 취약점 탐색 특화 GPT-6 사이버 공개",
+   "category": "AI 보안",
+   "summary": "리눅스 취약점 1724개 발견, 승인 기업에 제공",
+   "cves": []
+  },
+  {
+   "slug": "kaist-agent-auth",
+   "title": "KAIST, AI 에이전트 간 통신 신원·권한 검증 체계 연구",
+   "category": "AI 보안",
+   "summary": "에이전트 간 다중 신원·권한 검증",
+   "cves": []
+  },
+  {
+   "slug": "zerotrust-agentic-guide",
+   "title": "과기정통부·KISA, 에이전틱 AI 제로트러스트 안내서 발간",
+   "category": "정책·제도",
+   "summary": "AI 에이전트 권한 검증 강조",
+   "cves": []
+  },
+  {
+   "slug": "finance-network-separation-delay",
+   "title": "금융권 망 분리 규제 완화 지연 조짐",
+   "category": "정책·제도",
+   "summary": "AI 해킹 대응 신보안체계 구축 예고",
+   "cves": []
+  },
+  {
+   "slug": "japan-medical-cyber-budget",
+   "title": "일본, 의료 사이버보안 예산 137배 확대 추진",
+   "category": "정책·제도",
+   "summary": "후생노동성 137억엔 요구",
+   "cves": []
+  },
+  {
+   "slug": "bithumb-voicephishing-edu",
+   "title": "빗썸, 디지털자산 보이스피싱 예방교육 의무화 제안",
+   "category": "정책·제도",
+   "summary": "입법박람회에서 국가·지자체 책무 명시 제안",
+   "cves": []
+  },
+  {
+   "slug": "kisa-vuln-cleaning",
+   "title": "KISA 취약점 클리닝 서비스, PC 취약 SW 555만건 조치",
+   "category": "정책·제도",
+   "summary": "내년 점검 대상 확대",
+   "cves": []
+  },
+  {
+   "slug": "virustotal-guide-dispute",
+   "title": "과기정통부, 바이러스토탈 이용 권장 지적에 반박",
+   "category": "정책·제도",
+   "summary": "침해사고 안내서에 권장 내용 없다는 입장",
+   "cves": []
+  },
+  {
+   "slug": "kcsa-2026-conference",
+   "title": "2026 한국사이버안보학회 학술대회",
+   "category": "기타",
+   "summary": "자율 공격 시대 대비 소버린 AI 국가 강조",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 212612,
+   "label": "security",
+   "event_slug": "zerotrust-agentic-guide"
+  },
+  {
+   "id": 210152,
+   "label": "security",
+   "event_slug": "finance-network-separation-delay"
+  },
+  {
+   "id": 209578,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 210094,
+   "label": "security",
+   "event_slug": "ad-eavesdrop-privacy"
+  },
+  {
+   "id": 209688,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 210091,
+   "label": "security",
+   "event_slug": "gs-xi-leak"
+  },
+  {
+   "id": 210149,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 210871,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 210212,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 210264,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 210862,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 210263,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 211341,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 210262,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 210857,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 210856,
+   "label": "security",
+   "event_slug": "japan-medical-cyber-budget"
+  },
+  {
+   "id": 211342,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 211474,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 210844,
+   "label": "security",
+   "event_slug": "bithumb-voicephishing-edu"
+  },
+  {
+   "id": 210211,
+   "label": "security",
+   "event_slug": "kcsa-2026-conference"
+  },
+  {
+   "id": 210261,
+   "label": "security",
+   "event_slug": "hanpass-breach"
+  },
+  {
+   "id": 211570,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 211569,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 212148,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 211568,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211567,
+   "label": "security",
+   "event_slug": "kisa-vuln-cleaning"
+  },
+  {
+   "id": 211566,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211565,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 212629,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 212133,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 212631,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211472,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211471,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 211470,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 211469,
+   "label": "security",
+   "event_slug": "kaist-agent-auth"
+  },
+  {
+   "id": 211468,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211467,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 211466,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 212112,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 211465,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 212105,
+   "label": "security",
+   "event_slug": "zerotrust-agentic-guide"
+  },
+  {
+   "id": 212103,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 212102,
+   "label": "security",
+   "event_slug": "virustotal-guide-dispute"
+  },
+  {
+   "id": 212338,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 212100,
+   "label": "security",
+   "event_slug": "samsung-china-leak-sentence"
+  },
+  {
+   "id": 212336,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 212256,
+   "label": "security",
+   "event_slug": "jinair-api-breach"
+  }
+ ],
+ "security_events": []
+}
