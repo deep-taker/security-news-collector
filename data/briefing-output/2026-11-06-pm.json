@@ -1,0 +1,437 @@
+{
+ "date": "2026-11-06",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-06-pm.md",
+ "stats": {
+  "security": 30,
+  "trend": 4,
+  "pr": 7,
+  "column": 1,
+  "not_security": 10,
+  "candidates": 52,
+  "events": 20
+ },
+ "events": [
+  {
+   "slug": "coupang-pipc-fine",
+   "title": "쿠팡 개인정보 과징금 6000억원 공방",
+   "category": "개인정보",
+   "summary": "법원, 과징금 6000억원 중 2000억원 집행정지 결정",
+   "cves": []
+  },
+  {
+   "slug": "amadeus-breach",
+   "title": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+   "category": "개인정보",
+   "summary": "한진·삼천리 계열사로 피해 확산",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "해킹 뒤 비트코인 최대 5.7% 하락",
+   "cves": []
+  },
+  {
+   "slug": "openai-gpt6-cyber",
+   "title": "오픈AI, 취약점 탐색 특화 GPT-6 사이버 공개",
+   "category": "AI 보안",
+   "summary": "공격 재현 성공률 48.5%, 파이어폭스 고위험 취약점 81건 발견",
+   "cves": []
+  },
+  {
+   "slug": "zerotrust-agentic-guide",
+   "title": "과기정통부·KISA, 에이전틱 AI 제로트러스트 안내서 발간",
+   "category": "정책·제도",
+   "summary": "AI 에이전트 행위 검증·정책 집행 권고",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "미국 CISA·FBI, 기반시설 냉각 설비 보안 경고",
+   "cves": []
+  },
+  {
+   "slug": "kisa-vuln-cleaning",
+   "title": "KISA 취약점 클리닝 서비스, PC 취약 SW 555만건 조치",
+   "category": "정책·제도",
+   "summary": "백신 4사와 PC 취약 SW 555만건 조치",
+   "cves": []
+  },
+  {
+   "slug": "cyber-security-czar",
+   "title": "대통령, 민관 아우르는 사이버 보안 총괄 기구(사이버 보안 차르) 검토 지시",
+   "category": "정책·제도",
+   "summary": "국가안보실 중심 대응 방안 논의",
+   "cves": []
+  },
+  {
+   "slug": "ssg-api-leak",
+   "title": "SSG닷컴 고객 개인정보 유출",
+   "category": "개인정보",
+   "summary": "API 취약점 악용, 성명·내부 고객번호 유출",
+   "cves": []
+  },
+  {
+   "slug": "wordpress-cve-2026-119977",
+   "title": "워드프레스 핵심 결함 실제 악용 확인",
+   "category": "취약점",
+   "summary": "CISA, CVE-2026-119977 KEV 등재",
+   "cves": [
+    "CVE-2026-119977"
+   ]
+  },
+  {
+   "slug": "openssh-auth-bypass",
+   "title": "오픈SSH 인증 우회 취약점 발견",
+   "category": "취약점",
+   "summary": "CVE-2026-123158, CVSS 8.1, 비밀번호 없이 원격 로그인",
+   "cves": [
+    "CVE-2026-123158"
+   ]
+  },
+  {
+   "slug": "cwpdoor-backdoor",
+   "title": "리눅스 웹호스팅 관리도구 변조 백도어 발견",
+   "category": "악성코드·랜섬웨어",
+   "summary": "CWPdoor, 공격 흔적까지 은폐",
+   "cves": []
+  },
+  {
+   "slug": "jarvis-impersonation",
+   "title": "세무 서비스 자비스 사칭 해킹",
+   "category": "침해사고",
+   "summary": "운영사 사칭 유출 안내 메일 발송, 서비스 일시 중단",
+   "cves": []
+  },
+  {
+   "slug": "fsec-refund-scam",
+   "title": "금융보안원 사칭 보이스피싱 환급 2차 사기",
+   "category": "기타",
+   "summary": "피해금 환급 미끼로 추가 입금 유도",
+   "cves": []
+  },
+  {
+   "slug": "ai-crypto-exchange-attacks",
+   "title": "AI 악용 암호화폐 거래소 공격 확산",
+   "category": "AI 보안",
+   "summary": "아시아 각국 거래소 보안 강화",
+   "cves": []
+  },
+  {
+   "slug": "openai-astra-sandbagging",
+   "title": "GPT-6 아스트라, AI 안전 연구 과제서 태업",
+   "category": "AI 보안",
+   "summary": "요청보다 적게 일하고 내부 감시도 대부분 못 잡아",
+   "cves": []
+  },
+  {
+   "slug": "fsc-special-response-extended",
+   "title": "금융당국, 2차 피해 특별대응기간 연말까지 연장",
+   "category": "정책·제도",
+   "summary": "금융권 개인정보 유출 2차 피해 예방",
+   "cves": []
+  },
+  {
+   "slug": "kisa-daejeon-center",
+   "title": "KISA 대전 지역정보보호지원센터 개소",
+   "category": "정책·제도",
+   "summary": "전국 지역정보보호지원센터 16곳 구축 완료",
+   "cves": []
+  },
+  {
+   "slug": "defense-ai-protection-seminar",
+   "title": "방산 AI 데이터센터·기술보호 세미나·토론회",
+   "category": "방산보안",
+   "summary": "방위산업기술보호법 시행 10주년 계기 논의",
+   "cves": []
+  },
+  {
+   "slug": "toss-guardians-26",
+   "title": "토스 보안 콘퍼런스 가디언즈 26",
+   "category": "기타",
+   "summary": "AI 시대 보안 담당자 연대 강조",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 212736,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 213386,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 212735,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 213384,
+   "label": "security",
+   "event_slug": "ai-crypto-exchange-attacks"
+  },
+  {
+   "id": 213381,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 215178,
+   "label": "security",
+   "event_slug": "amadeus-breach"
+  },
+  {
+   "id": 213571,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 213570,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 212734,
+   "label": "security",
+   "event_slug": "zerotrust-agentic-guide"
+  },
+  {
+   "id": 212833,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 212733,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 213371,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 213598,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 213868,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 214048,
+   "label": "security",
+   "event_slug": "openssh-auth-bypass"
+  },
+  {
+   "id": 214671,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 214047,
+   "label": "security",
+   "event_slug": "cwpdoor-backdoor"
+  },
+  {
+   "id": 213998,
+   "label": "security",
+   "event_slug": "openai-astra-sandbagging"
+  },
+  {
+   "id": 214046,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 215169,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 215167,
+   "label": "security",
+   "event_slug": "coupang-pipc-fine"
+  },
+  {
+   "id": 214093,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 215168,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 213997,
+   "label": "security",
+   "event_slug": "jarvis-impersonation"
+  },
+  {
+   "id": 214748,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 213996,
+   "label": "security",
+   "event_slug": "defense-ai-protection-seminar"
+  },
+  {
+   "id": 215170,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 213995,
+   "label": "security",
+   "event_slug": "defense-ai-protection-seminar"
+  },
+  {
+   "id": 215152,
+   "label": "security",
+   "event_slug": "fsec-refund-scam"
+  },
+  {
+   "id": 214888,
+   "label": "security",
+   "event_slug": "toss-guardians-26"
+  },
+  {
+   "id": 214746,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 214045,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 214884,
+   "label": "security",
+   "event_slug": "toss-guardians-26"
+  },
+  {
+   "id": 214044,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 214043,
+   "label": "security",
+   "event_slug": "fsec-refund-scam"
+  },
+  {
+   "id": 214893,
+   "label": "security",
+   "event_slug": "toss-guardians-26"
+  },
+  {
+   "id": 213994,
+   "label": "security",
+   "event_slug": "kisa-vuln-cleaning"
+  },
+  {
+   "id": 216107,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 215149,
+   "label": "security",
+   "event_slug": "fsc-special-response-extended"
+  },
+  {
+   "id": 213993,
+   "label": "security",
+   "event_slug": "kisa-daejeon-center"
+  },
+  {
+   "id": 214875,
+   "label": "security",
+   "event_slug": "coupang-pipc-fine"
+  },
+  {
+   "id": 216147,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 215269,
+   "label": "security",
+   "event_slug": "wordpress-cve-2026-119977"
+  },
+  {
+   "id": 216142,
+   "label": "security",
+   "event_slug": "ssg-api-leak"
+  },
+  {
+   "id": 216140,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 215973,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 216504,
+   "label": "security",
+   "event_slug": "openai-gpt6-cyber"
+  },
+  {
+   "id": 215318,
+   "label": "security",
+   "event_slug": "kisa-daejeon-center"
+  },
+  {
+   "id": 216093,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 216089,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 215268,
+   "label": "security",
+   "event_slug": "toss-guardians-26"
+  },
+  {
+   "id": 216169,
+   "label": "security",
+   "event_slug": "cyber-security-czar"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "토스 가디언즈 26",
+   "start_date": "2026-11-06",
+   "end_date": null,
+   "place": null,
+   "organizer": "토스",
+   "url": "https://zdnet.co.kr/view/?no=20261106140604",
+   "major": false,
+   "note": "토스 보안 리더들이 AI 시대 보안 담당자 연대를 강조한 보안 콘퍼런스",
+   "article_ids": [
+    214893
+   ]
+  }
+ ]
+}
