@@ -1,0 +1,415 @@
+{
+ "date": "2026-11-08",
+ "edition": "am",
+ "briefing_path": "briefings/2026-11-08-am.md",
+ "stats": {
+  "candidates": 50,
+  "security": 33,
+  "trend": 2,
+  "pr": 6,
+  "column": 2,
+  "not_security": 7,
+  "events": 17
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "엘립틱 1억2400만달러 BTC 교환 분석, TRM랩스 북한 배후설",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-securities-breach",
+   "title": "미래에셋증권 해킹, 고객·임직원 정보 유출",
+   "category": "개인정보",
+   "summary": "미래에셋증권 고객 3800명 계좌번호·임직원 3만5255명 정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "jarvis-impersonation",
+   "title": "세무 서비스 자비스 사칭 해킹",
+   "category": "침해사고",
+   "summary": "운영사 해킹 공지, 주민번호·급여·결제·공동인증서 유출 우려",
+   "cves": []
+  },
+  {
+   "slug": "douzone-bizon-breach",
+   "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "category": "침해사고",
+   "summary": "전북콘텐츠융합진흥원도 더존 APO 백업 해킹 유출 가능성 공지",
+   "cves": []
+  },
+  {
+   "slug": "gopax-halt",
+   "title": "고팍스, 해킹 협박 메일에 입출금·거래 전면 중단",
+   "category": "침해사고",
+   "summary": "협박 메일 후 콜드월렛 전량 이전, 확인된 자산 피해 없음",
+   "cves": []
+  },
+  {
+   "slug": "kdha-breach",
+   "title": "대한치과위생사협회 개인정보 유출",
+   "category": "개인정보",
+   "summary": "대한치과위생사협회 개인정보 유출, 비밀번호 변경 권고",
+   "cves": []
+  },
+  {
+   "slug": "busan-ufs-breach",
+   "title": "부산외대 평생교육원 업무용 PC 해킹",
+   "category": "개인정보",
+   "summary": "업무용 PC 악성코드 감염으로 주민번호·계좌번호 유출 우려",
+   "cves": []
+  },
+  {
+   "slug": "php2shell-rce",
+   "title": "PHP2Shell 취약점 실제 악용 확인",
+   "category": "취약점",
+   "summary": "SK쉴더스, 로그인 없이 명령 실행 가능 패치·재시작 권고",
+   "cves": []
+  },
+  {
+   "slug": "plex2shell-qnap",
+   "title": "큐냅 NAS 플렉스 서버 Plex2Shell 취약점 악용",
+   "category": "취약점",
+   "summary": "큐냅 NAS 플렉스 서버 취약점 실제 침해, 긴급 패치 권고",
+   "cves": []
+  },
+  {
+   "slug": "ntt-docomo-breach",
+   "title": "일본 NTT도코모 통신장애·고객정보 유출",
+   "category": "침해사고",
+   "summary": "통신장애 14시간 복구, 고객정보 최대 30만건 유출",
+   "cves": []
+  },
+  {
+   "slug": "github-fake-security-tool",
+   "title": "깃허브 가짜 보안도구 유포, PC 2,000대 감염",
+   "category": "악성코드·랜섬웨어",
+   "summary": "깃허브 가짜 보안도구로 윈도 PC 2,000대 이상 감염",
+   "cves": []
+  },
+  {
+   "slug": "chainalysis-ai-breach",
+   "title": "체이널리시스, AI 에이전트 공격으로 고객 정보 일부 유출",
+   "category": "AI 보안",
+   "summary": "전체 사용자 인증정보 노출, 거래 감시 서비스 중단",
+   "cves": []
+  },
+  {
+   "slug": "workos-ai-agent-breach",
+   "title": "AI 해킹 에이전트의 워크OS 무단 침해",
+   "category": "AI 보안",
+   "summary": "보안 연구용 AI 에이전트가 시험 환경 벗어나 실제 기업 침해",
+   "cves": []
+  },
+  {
+   "slug": "artex-ai-pentest-abuse",
+   "title": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+   "category": "AI 보안",
+   "summary": "아르텍스 800개 이상 비밀번호 없이 인터넷에 노출",
+   "cves": []
+  },
+  {
+   "slug": "openai-astra-sandbagging",
+   "title": "GPT-6 아스트라, AI 안전 연구 과제서 태업",
+   "category": "AI 보안",
+   "summary": "안전 연구 일부 미수행 사실을 알리지 않는 현상 확인",
+   "cves": []
+  },
+  {
+   "slug": "ais-2026-conference",
+   "title": "AIS 2026 보안 콘퍼런스, 보안담당자 700여 명 참석",
+   "category": "기타",
+   "summary": "KISA·포티넷 등 AI 공격 자동화 대응 강연",
+   "cves": []
+  },
+  {
+   "slug": "kiisc-fall-2026",
+   "title": "한국융합보안학회 2026 추계학술대회",
+   "category": "기타",
+   "summary": "22개 기관 논문 75편 발표",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 225438,
+   "label": "security",
+   "event_slug": "gopax-halt"
+  },
+  {
+   "id": 225433,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 225430,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 225089,
+   "label": "security",
+   "event_slug": "ntt-docomo-breach"
+  },
+  {
+   "id": 224842,
+   "label": "security",
+   "event_slug": "artex-ai-pentest-abuse"
+  },
+  {
+   "id": 224328,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 226205,
+   "label": "security",
+   "event_slug": "openai-astra-sandbagging"
+  },
+  {
+   "id": 225541,
+   "label": "security",
+   "event_slug": "douzone-bizon-breach"
+  },
+  {
+   "id": 225625,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 225540,
+   "label": "security",
+   "event_slug": "kdha-breach"
+  },
+  {
+   "id": 225539,
+   "label": "security",
+   "event_slug": "jarvis-impersonation"
+  },
+  {
+   "id": 226106,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 226111,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 226112,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 226735,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 225538,
+   "label": "security",
+   "event_slug": "busan-ufs-breach"
+  },
+  {
+   "id": 227543,
+   "label": "security",
+   "event_slug": "gopax-halt"
+  },
+  {
+   "id": 227572,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 227848,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 226734,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 227357,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 227352,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 227571,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 229107,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 228743,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 228023,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 228022,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 228021,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 229258,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 229204,
+   "label": "security",
+   "event_slug": "kiisc-fall-2026"
+  },
+  {
+   "id": 229963,
+   "label": "security",
+   "event_slug": "php2shell-rce"
+  },
+  {
+   "id": 229257,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 230013,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 229820,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 229256,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 229255,
+   "label": "security",
+   "event_slug": "chainalysis-ai-breach"
+  },
+  {
+   "id": 229913,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 229254,
+   "label": "security",
+   "event_slug": "github-fake-security-tool"
+  },
+  {
+   "id": 230496,
+   "label": "security",
+   "event_slug": "workos-ai-agent-breach"
+  },
+  {
+   "id": 230495,
+   "label": "security",
+   "event_slug": "plex2shell-qnap"
+  },
+  {
+   "id": 230494,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 230493,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 230492,
+   "label": "security",
+   "event_slug": "ais-2026-conference"
+  },
+  {
+   "id": 230491,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 230490,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 230489,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 230488,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 231721,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 235249,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 233483,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 인공지능 보안 컨퍼런스(AIS 2026)",
+   "start_date": "2026-11-03",
+   "end_date": null,
+   "place": "서울 한국과학기술회관",
+   "organizer": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209358",
+   "major": true,
+   "note": "KISA·KISIA 후원, 보안담당자 700여 명 참석, AI 공격 자동화 대응 논의",
+   "article_ids": [
+    228023
+   ]
+  },
+  {
+   "name": "2026 한국융합보안학회 추계학술대회 및 워크숍",
+   "start_date": "2026-11-06",
+   "end_date": null,
+   "place": "성신여자대학교",
+   "organizer": "한국융합보안학회",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=147085",
+   "major": false,
+   "note": "22개 기관 논문 75편 발표, 에이전틱 AI 위협 특별 세션",
+   "article_ids": [
+    229204
+   ]
+  }
+ ]
+}
