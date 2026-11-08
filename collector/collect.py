@@ -318,6 +318,8 @@ def run(only=None, fixtures=None, retry_mode=False):
         except Exception as e:
             report["authors"] = {"errors": [f"{type(e).__name__}: {str(e)[:300]}"]}
         print(f"::notice title=칼럼 필자 정보::{json.dumps(report['authors'], ensure_ascii=False)}")
+        for t in report["authors"].get("unknown_titles", []):
+            print(f"::warning title=칼럼 필자를 찾지 못함::{t}")
 
     report["total"] = len(all_rows)
     report["total_candidates"] = sum(r["candidate"] for r in all_rows)

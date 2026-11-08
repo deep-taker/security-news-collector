@@ -122,11 +122,24 @@ def as_editorial(info: dict, is_editorial: bool, source_id: str) -> dict:
     return info
 
 
-def as_reporter(info: dict, reps: set, title: str, source_id: str) -> dict:
+def _external_byline(cands, reps: set) -> bool:
+    """외부 필자의 흔적: '[글. …]' 줄, 또는 기자도 매체 주소도 아닌 작성자 정보."""
+    for c in cands or ():
+        if c.startswith("글. "):
+            return True
+        if c.startswith("작성자 정보: "):
+            v = c[len("작성자 정보: "):]
+            if not re.search(r"www\.|\.com|\.co\.kr|\.net", v) and not any(r in v for r in reps):
+                return True
+    return False
+
+
+def as_reporter(info: dict, reps: set, title: str, source_id: str, cands=()) -> dict:
     """기자가 직접 쓴 칼럼이면 [매체, 기자, 성명]으로 (사용자 결정 2026-11-03).
     - AI가 고른 필자 이름이 이 매체 기자면 → 기자
     - 필자를 못 찾았어도 제목 머리말이 '[김영욱의 …]'이고 그 이름이 기자이거나, '[기자수첩]' 등이고 기자가 한 명뿐이면 → 그 기자
-    외부 기고문의 담당 기자(메타 작성자)는 필자 이름과 다르므로 바뀌지 않는다."""
+    - 그 밖의 연재 머리말('[ET톡]'·'[슬기로운 디지털 부모생활]')도 외부 필자 흔적이 없고 기자가 한 명뿐이면 → 그 기자 (2026-11-08)
+    외부 기고문의 담당 기자(메타 작성자)는 필자 이름과 다르고, 외부 기고문에는 '[글. …]' 줄이 있어 바뀌지 않는다."""
     if not reps:
         return info
     outlet = (SOURCE_BY_ID.get(source_id) or {}).get("name", "")
@@ -137,6 +150,8 @@ def as_reporter(info: dict, reps: set, title: str, source_id: str) -> dict:
         if own and own.group(1) in reps:
             name = own.group(1)
         elif head and _DESK.search(head.group(1)) and len(reps) == 1:
+            name = next(iter(reps))
+        elif len(reps) == 1 and not _external_byline(cands, reps):
             name = next(iter(reps))
     if name and name in reps and outlet:
         return {"org": outlet, "position": "기자", "name": name}
@@ -229,6 +244,8 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
 
     def save(a, info):
         store.patch("articles", {"id": f'eq.{a["id"]}', "author_info": "is.null"}, {"author_info": info})
+        if not info:   # 필자를 끝내 못 찾은 칼럼은 경고로 남겨 규칙 보완 대상을 바로 알 수 있게 (2026-11-08)
+            res.setdefault("unknown_titles", []).append(clean_text(a.get("title") or "", 60))
 
     ready = []
     for a in todo:
@@ -247,7 +264,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
     asked = [a for a in ready if a["cands"]]
     for a in ready:
         if not a["cands"]:
-            info = as_reporter({}, a["reps"], a.get("title") or "", a.get("source_id") or "")
+            info = as_reporter({}, a["reps"], a.get("title") or "", a.get("source_id") or "", a["cands"])
             info = as_editorial(info, a["editorial"], a.get("source_id") or "")
             save(a, info)
             res["found" if info else "unknown"] += 1
@@ -267,7 +284,7 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
                     save(a, {})
                     res["gave_up"] += 1
                 continue
-            info = as_reporter(info, a["reps"], a.get("title") or "", a.get("source_id") or "")
+            info = as_reporter(info, a["reps"], a.get("title") or "", a.get("source_id") or "", a["cands"])
             info = as_editorial(info, a["editorial"], a.get("source_id") or "")
             save(a, info)
             res["found" if info else "unknown"] += 1
@@ -278,3 +295,5 @@ if __name__ == "__main__":   # 브리핑 결과 DB 반영 직후 실행 — 방�
     import sys
     r = run(limit=int(sys.argv[1]) if len(sys.argv) > 1 else MAX_PER_RUN)
     print(f"::notice title=칼럼 필자 정보::{json.dumps(r, ensure_ascii=False)}")
+    for t in r.get("unknown_titles", []):
+        print(f"::warning title=칼럼 필자를 찾지 못함::{t}")

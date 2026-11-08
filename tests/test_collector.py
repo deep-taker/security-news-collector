@@ -753,7 +753,7 @@ def test_author_reporter_column():
     # 외부 기고문: 담당 기자(메타 작성자)는 필자와 이름이 달라 그대로
     ext = {"org": "세일포인트 코리아", "position": "지사장", "name": "지정권"}
     assert as_reporter(ext, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == ext
-    assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu") == {}
+    assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu", ["글. 지정권 세일포인트 코리아 지사장"]) == {}   # 외부 필자 흔적
 
 
 def test_author_editorial():
@@ -767,3 +767,15 @@ def test_author_editorial():
     person = {"org": "가나 시큐리티", "position": "대표", "name": "김철수"}
     assert as_editorial(person, True, "etnews_sec") == person                     # 사람 필자를 찾았으면 그대로
     assert as_editorial({}, False, "etnews_sec") == {}
+
+
+def test_author_reporter_series_without_name():
+    """'[ET톡]'·'[슬기로운 디지털 부모생활]'처럼 기자 이름 없는 연재 머리말의 기자 칼럼 (2026-11-08)"""
+    from collector.authors import as_reporter
+    cands = ["제목 머리말: ET톡", "작성자 정보: www.etnews.com", "박정은 통신미디어부 기자", "박정은 기자"]
+    assert as_reporter({}, {"박정은"}, "[ET톡] 게임이 악성코드 통로가 된다면", "etnews_sec", cands) == \
+        {"org": "전자신문", "position": "기자", "name": "박정은"}
+    # 외부 기고문: '[글. …]' 줄이나 기자 아닌 작성자 정보가 있으면 담당 기자로 바꾸지 않음 (AI가 필자를 못 찾았어도)
+    assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu", ["제목 머리말: 보안칼럼", "글. 홍길동 가나 대표"]) == {}
+    assert as_reporter({}, {"원병철"}, "[이슈칼럼] 제목", "boannews", ["작성자 정보: 홍길동 가나 대표"]) == {}
+    assert as_reporter({}, {"갑", "을을"}, "[ET톡] 제목", "etnews_sec", cands) == {}            # 기자가 여럿이면 모름
