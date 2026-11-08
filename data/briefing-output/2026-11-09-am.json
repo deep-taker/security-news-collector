@@ -1,0 +1,315 @@
+{
+ "date": "2026-11-09",
+ "edition": "am",
+ "briefing_path": "briefings/2026-11-09-am.md",
+ "stats": {
+  "candidates": 37,
+  "security": 28,
+  "trend": 6,
+  "pr": 2,
+  "column": 1,
+  "not_security": 0,
+  "events": 15
+ },
+ "events": [
+  {
+   "slug": "sm-entertainment-breach",
+   "title": "SM엔터테인먼트·디어유·드림메이커 업무시스템 해킹",
+   "category": "개인정보",
+   "summary": "외부 공격자가 업무시스템에 접근해 임직원 주민번호·계좌번호·계약서 정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-securities-breach",
+   "title": "미래에셋증권 해킹, 고객·임직원 정보 유출",
+   "category": "개인정보",
+   "summary": "미래에셋증권 고객 3800명 계좌번호·임직원 3만5255명 정보 유출",
+   "cves": []
+  },
+  {
+   "slug": "fss-crypto-ciso-meeting",
+   "title": "가상자산 연쇄 해킹, 금감원 CISO 긴급 소집",
+   "category": "정책·제도",
+   "summary": "금감원 19일 가상자산사업자 CISO 소집, KISA 실시간 감시 강화",
+   "cves": []
+  },
+  {
+   "slug": "hyperithm-breach",
+   "title": "디지털자산 운용사 하이퍼리즘 해킹",
+   "category": "개인정보",
+   "summary": "주민등록번호·은행 계좌정보 유출, 사고 나흘 뒤 인지",
+   "cves": []
+  },
+  {
+   "slug": "kf-breach",
+   "title": "한국국제교류재단 해킹 피해 확대 정황",
+   "category": "개인정보",
+   "summary": "대량메일 시스템 공격이 일반메일시스템 개인정보 유출 정황으로 확대",
+   "cves": []
+  },
+  {
+   "slug": "openssh-auth-bypass",
+   "title": "오픈SSH 인증 우회 취약점 발견",
+   "category": "취약점",
+   "summary": "CVE-2026-123158, 공개 9시간 만에 실제 악용·루트 권한 탈취, KISA 업데이트 권고",
+   "cves": [
+    "CVE-2026-123158"
+   ]
+  },
+  {
+   "slug": "sonicwall-sslvpn-mfa-bypass",
+   "title": "소닉월 SSL-VPN 다중인증 우회 취약점 악용",
+   "category": "취약점",
+   "summary": "CVE-2026-19868 실제 악용, CISA KEV 등록",
+   "cves": [
+    "CVE-2026-19868"
+   ]
+  },
+  {
+   "slug": "digicert-breach",
+   "title": "디지서트 해킹, 고객 신원확인 서류 유출",
+   "category": "침해사고",
+   "summary": "노출된 사내 시스템 악용, 기업 고객 연락처와 여권·운전면허증 일부 노출",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "해킹 일주일 만에 CFO 교체",
+   "cves": []
+  },
+  {
+   "slug": "metaencrypter-korea-claims",
+   "title": "랜섬웨어 메타인크립터, 현대건설 등 한국 기업 4곳 탈취 주장",
+   "category": "악성코드·랜섬웨어",
+   "summary": "유출사이트에 피해 주장 게시, 실제 침해 여부는 조사 필요",
+   "cves": []
+  },
+  {
+   "slug": "n0n-smarttv-claim",
+   "title": "랜섬웨어 N0n, 한국 스마트TV 광고 데이터 기업 해킹 주장",
+   "category": "악성코드·랜섬웨어",
+   "summary": "피해 주장만 게시, 기업명·실제 탈취 여부 미확인",
+   "cves": []
+  },
+  {
+   "slug": "refrigeration-hack-warning",
+   "title": "냉장·냉동설비 해킹 경고, 정부 보안 점검 권고",
+   "category": "정책·제도",
+   "summary": "과기정통부 초기 비밀번호 변경 등 민간 사업자 점검 권고",
+   "cves": []
+  },
+  {
+   "slug": "alpine-gitlab-rce",
+   "title": "알파인 리눅스 깃랩 서버 공격 시도, 전면 재구축",
+   "category": "취약점",
+   "summary": "깃랩 RCE 취약점 CVE-2026-97229 노린 공격에 서버 새로 구축",
+   "cves": [
+    "CVE-2026-97229"
+   ]
+  },
+  {
+   "slug": "apt28-naval-shipyard",
+   "title": "러시아 APT28, 나토 회원국 해군 조선소 표적 공격",
+   "category": "방산보안",
+   "summary": "시만텍 스왈로테일 활동 추적, 실제 침해 여부는 미확인",
+   "cves": []
+  },
+  {
+   "slug": "voicephishing-telco-liability",
+   "title": "통신사 AI 보이스피싱 탐지와 배상책임 쟁점",
+   "category": "정책·제도",
+   "summary": "무과실 배상책임제 추진 속 통신사 책임 범위 논의",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 240220,
+   "label": "security",
+   "event_slug": "voicephishing-telco-liability"
+  },
+  {
+   "id": 239099,
+   "label": "security",
+   "event_slug": "metaencrypter-korea-claims"
+  },
+  {
+   "id": 240328,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 240896,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 240378,
+   "label": "security",
+   "event_slug": "refrigeration-hack-warning"
+  },
+  {
+   "id": 241036,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 241510,
+   "label": "security",
+   "event_slug": "alpine-gitlab-rce"
+  },
+  {
+   "id": 241648,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 242683,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 242334,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 241509,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 242624,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 243557,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 242842,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 242742,
+   "label": "security",
+   "event_slug": "apt28-naval-shipyard"
+  },
+  {
+   "id": 242792,
+   "label": "security",
+   "event_slug": "kf-breach"
+  },
+  {
+   "id": 244605,
+   "label": "security",
+   "event_slug": "digicert-breach"
+  },
+  {
+   "id": 244076,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 244077,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 244078,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 244075,
+   "label": "security",
+   "event_slug": "fss-crypto-ciso-meeting"
+  },
+  {
+   "id": 244603,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 243975,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 245212,
+   "label": "security",
+   "event_slug": "refrigeration-hack-warning"
+  },
+  {
+   "id": 246419,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 246420,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 246359,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 245998,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 246418,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 245263,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 245312,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 245262,
+   "label": "security",
+   "event_slug": "hyperithm-breach"
+  },
+  {
+   "id": 246626,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 249026,
+   "label": "security",
+   "event_slug": "digicert-breach"
+  },
+  {
+   "id": 250272,
+   "label": "security",
+   "event_slug": "openssh-auth-bypass"
+  },
+  {
+   "id": 250271,
+   "label": "security",
+   "event_slug": "sonicwall-sslvpn-mfa-bypass"
+  },
+  {
+   "id": 250270,
+   "label": "security",
+   "event_slug": "n0n-smarttv-claim"
+  }
+ ],
+ "security_events": []
+}
