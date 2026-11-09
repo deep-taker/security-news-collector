@@ -1,0 +1,358 @@
+{
+ "date": "2026-11-09",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-09-noon.md",
+ "stats": {
+  "candidates": 51,
+  "security": 15,
+  "trend": 4,
+  "pr": 19,
+  "column": 2,
+  "not_security": 11,
+  "events": 8
+ },
+ "events": [
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "북한 추정 조직의 가짜 화상면접 수법 확인, CFO 교체",
+   "cves": []
+  },
+  {
+   "slug": "sm-entertainment-breach",
+   "title": "SM엔터테인먼트·디어유·드림메이커 업무시스템 해킹",
+   "category": "개인정보",
+   "summary": "하이브에 이어 SM도 임직원 개인정보 유출, K팝 기획사 보안 우려",
+   "cves": []
+  },
+  {
+   "slug": "emergency-inspection-fatigue",
+   "title": "복수 기관 긴급점검 중복, 보안 현장 피로감",
+   "category": "정책·제도",
+   "summary": "금감원·과기정통부 등 점검표 중복 요구, 일원화 요구",
+   "cves": []
+  },
+  {
+   "slug": "fsec-asap-ai-voicephishing",
+   "title": "금융보안원, ASAP에 AI 이상거래 탐지 모델 탑재",
+   "category": "정책·제도",
+   "summary": "AI 피싱지수 조회 API 제공, 보이스피싱 대응 강화",
+   "cves": []
+  },
+  {
+   "slug": "ssu-deception-defense",
+   "title": "숭실대, 자율 AI 해킹 도구 무력화 기만 방어 기술 개발",
+   "category": "AI 보안",
+   "summary": "아르텍스를 가짜 서버로 유인해 실제 서버 침해 0건으로 차단",
+   "cves": []
+  },
+  {
+   "slug": "ai-watermark-spymark",
+   "title": "AI 워터마크 이용자 추적 악용 우려 제기",
+   "category": "AI 보안",
+   "summary": "비가시 워터마크가 개인정보와 연결되면 감시 도구로 변질될 수 있다는 지적",
+   "cves": []
+  },
+  {
+   "slug": "smartglasses-privacy-guide",
+   "title": "개인정보위, 스마트 글래스 촬영 시 고지 당부",
+   "category": "정책·제도",
+   "summary": "사생활 침해 위협 분석 보고서 공개, 연내 가이드라인 마련",
+   "cves": []
+  },
+  {
+   "slug": "argonwiper-skshieldus",
+   "title": "SK쉴더스, 아르곤와이퍼 공격 인프라 추적",
+   "category": "악성코드·랜섬웨어",
+   "summary": "실행파일 38개의 공통 인증정보로 명령 제어 도메인 4개 확인",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 255050,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 255045,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 255155,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 255156,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 255157,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 255921,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 255154,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 255204,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 255739,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 255104,
+   "label": "security",
+   "event_slug": "emergency-inspection-fatigue"
+  },
+  {
+   "id": 255917,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 255240,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 255731,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 255730,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 256438,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257520,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256479,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256437,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257516,
+   "label": "security",
+   "event_slug": "sm-entertainment-breach"
+  },
+  {
+   "id": 257025,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 257485,
+   "label": "security",
+   "event_slug": "fsec-asap-ai-voicephishing"
+  },
+  {
+   "id": 257486,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256436,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257180,
+   "label": "security",
+   "event_slug": "ssu-deception-defense"
+  },
+  {
+   "id": 257009,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 257495,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257496,
+   "label": "security",
+   "event_slug": "ssu-deception-defense"
+  },
+  {
+   "id": 256344,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257176,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 256343,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256342,
+   "label": "security",
+   "event_slug": "fsec-asap-ai-voicephishing"
+  },
+  {
+   "id": 256999,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 256341,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257503,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 256340,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256998,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256339,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 256338,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 257501,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 256337,
+   "label": "security",
+   "event_slug": "ssu-deception-defense"
+  },
+  {
+   "id": 256336,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 257487,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256993,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256989,
+   "label": "security",
+   "event_slug": "ai-watermark-spymark"
+  },
+  {
+   "id": 256987,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 257478,
+   "label": "security",
+   "event_slug": "smartglasses-privacy-guide"
+  },
+  {
+   "id": 257545,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257544,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 257542,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 256473,
+   "label": "security",
+   "event_slug": "argonwiper-skshieldus"
+  },
+  {
+   "id": 256962,
+   "label": "security",
+   "event_slug": "smartglasses-privacy-guide"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "데일리시큐 웨비나 'AI 시대 사이버 위협 동향과 대응방안'",
+   "start_date": "2026-11-20",
+   "end_date": null,
+   "place": "온라인",
+   "organizer": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209372",
+   "major": false,
+   "note": "KISA와 아카마이 전문가가 AI 기반 사이버 공격 양상과 대응 전략 공유",
+   "article_ids": [
+    255154
+   ]
+  },
+  {
+   "name": "2026 FIDO 얼라이언스 서울 세미나 - 패스키 데이 인 서울",
+   "start_date": "2026-12-01",
+   "end_date": null,
+   "place": "서울 강남구 한국과학기술회관",
+   "organizer": "FIDO 얼라이언스",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=147093",
+   "major": false,
+   "note": "구글·삼성전자·SKT 등 패스키 도입 사례와 차세대 인증 기술 공유",
+   "article_ids": [
+    256341,
+    257545
+   ]
+  }
+ ]
+}
