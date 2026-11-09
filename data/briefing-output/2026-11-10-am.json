@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-10",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-10-am.md",
+  "stats": {
+    "candidates": 23,
+    "security": 17,
+    "trend": 3,
+    "pr": 1,
+    "column": 0,
+    "not_security": 2,
+    "events": 8
+  },
+  "events": [
+    {
+      "slug": "claude-enterprise-account-leak",
+      "title": "앤트로픽 클로드 국내 기업용 계정 100여 건 유출 신고",
+      "category": "개인정보",
+      "summary": "외부 보안업체가 SW 취약점으로 내부 접근, 이름·이메일 노출 가능성, 개인정보위 검토",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "탈취 비트코인을 19개 지갑으로 분산한 필 체인 수법 확인",
+      "cves": []
+    },
+    {
+      "slug": "gta6-fake-leak-scam",
+      "title": "GTA 6 미끼 가짜 유출 빌드·사기 사이트 급증",
+      "category": "악성코드·랜섬웨어",
+      "summary": "넷크래프트 분석, 악성코드 설치나 선입금 요구",
+      "cves": []
+    },
+    {
+      "slug": "ai-training-data-backdoor",
+      "title": "AI 학습 데이터 0.1% 오염으로 에이전트 원격 코드 백도어",
+      "category": "AI 보안",
+      "summary": "미세조정 후에도 백도어 제거 안 되고 탐지 어려움",
+      "cves": []
+    },
+    {
+      "slug": "google-ai-rsa-weakness",
+      "title": "구글 AI, 구형 1024비트 RSA 약점 2건 발견",
+      "category": "AI 보안",
+      "summary": "다중 키 인수분해 비용을 낮추는 새 알고리즘 개발",
+      "cves": []
+    },
+    {
+      "slug": "pipc-fine-reduction-rule",
+      "title": "개보위, 중대 사고 시 과징금 감경 불가 경고",
+      "category": "정책·제도",
+      "summary": "선제적 투자 시 과징금 최대 40% 감경, 고의·중과실은 제외",
+      "cves": []
+    },
+    {
+      "slug": "smartglasses-privacy-guide",
+      "title": "개인정보위, 스마트 글래스 촬영 시 고지 당부",
+      "category": "정책·제도",
+      "summary": "촬영·녹음 사실을 알리고 상대가 거부하면 중단",
+      "cves": []
+    },
+    {
+      "slug": "pipc-privacy-act-forum-1109",
+      "title": "개인정보위, 개정 개인정보보호법 대응 방안 논의 행사 개최",
+      "category": "정책·제도",
+      "summary": "정책포럼에서 사전 예방 중심 체계와 AI 해킹 대응 논의",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 262594,
+      "label": "security",
+      "event_slug": "claude-enterprise-account-leak"
+    },
+    {
+      "id": 262853,
+      "label": "security",
+      "event_slug": "claude-enterprise-account-leak"
+    },
+    {
+      "id": 264894,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 261435,
+      "label": "security",
+      "event_slug": "gta6-fake-leak-scam"
+    },
+    {
+      "id": 262199,
+      "label": "security",
+      "event_slug": "ai-training-data-backdoor"
+    },
+    {
+      "id": 262203,
+      "label": "security",
+      "event_slug": "google-ai-rsa-weakness"
+    },
+    {
+      "id": 264055,
+      "label": "security",
+      "event_slug": "pipc-fine-reduction-rule"
+    },
+    {
+      "id": 265344,
+      "label": "security",
+      "event_slug": "pipc-fine-reduction-rule"
+    },
+    {
+      "id": 261574,
+      "label": "security",
+      "event_slug": "smartglasses-privacy-guide"
+    },
+    {
+      "id": 261434,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 264054,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 265343,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 265342,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 265341,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 265340,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 265339,
+      "label": "security",
+      "event_slug": "pipc-privacy-act-forum-1109"
+    },
+    {
+      "id": 261534,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 261579,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 262819,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 264864,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 262312,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 266438,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 264638,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 개인정보정책포럼",
+      "start_date": "2026-11-09",
+      "end_date": null,
+      "place": "서울 양재 엘타워",
+      "organizer": "개인정보보호위원회·한국개인정보보호책임자협의회",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209414",
+      "major": true,
+      "note": "AI 해킹 시대 사전 예방 중심 개인정보 보호 체계 논의",
+      "article_ids": [
+        264054,
+        261434
+      ]
+    },
+    {
+      "name": "2026 Web3 시대의 블록체인·AI 융합 해커톤 대회",
+      "start_date": "2026-11-06",
+      "end_date": "2026-11-07",
+      "place": "서울 스페이스쉐어 삼성역센터",
+      "organizer": "충남대 COSS사업단·한국AI블록체인융합원",
+      "url": "https://www.etnews.com/20261109000419",
+      "major": false,
+      "note": "전국 45개 팀 참가, 본선과 데모데이 진행",
+      "article_ids": [
+        261534
+      ]
+    }
+  ]
+}
