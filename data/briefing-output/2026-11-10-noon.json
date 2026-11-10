@@ -1,0 +1,399 @@
+{
+ "date": "2026-11-10",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-10-noon.md",
+ "stats": {
+  "candidates": 59,
+  "security": 14,
+  "trend": 3,
+  "pr": 30,
+  "column": 2,
+  "not_security": 10,
+  "events": 12
+ },
+ "events": [
+  {
+   "slug": "claude-enterprise-account-leak",
+   "title": "앤트로픽 클로드 국내 기업용 계정 100여 건 유출 신고",
+   "category": "개인정보",
+   "summary": "외부 보안업체가 SW 취약점으로 내부 접근, 이름·이메일 노출 가능성, 개인정보위 검토",
+   "cves": []
+  },
+  {
+   "slug": "europe-supermarket-freezer-attack",
+   "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+   "category": "침해사고",
+   "summary": "프랑스·미국이 이란 혁명수비대 배후 지목, 프랑스 슈퍼마켓 700여 곳 냉장설비 피해",
+   "cves": []
+  },
+  {
+   "slug": "douzone-bizon-breach",
+   "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+   "category": "침해사고",
+   "summary": "농협은행 AI 자회사 애자일소다도 더존비즈온 백업서비스 침해 관련 개인정보 안내",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-securities-breach",
+   "title": "미래에셋증권 해킹, 고객·임직원 정보 유출",
+   "category": "침해사고",
+   "summary": "취약점 보고 7개월 뒤 유출, 경영진 책임 논란",
+   "cves": []
+  },
+  {
+   "slug": "ppskr-chatgpt-photo-leak",
+   "title": "조달청 평가위원 189명 얼굴사진 챗GPT로 유출",
+   "category": "개인정보",
+   "summary": "업무용 AI 개발 과정에서 외부 생성형AI로 사진 전송",
+   "cves": []
+  },
+  {
+   "slug": "zoomzoom-tour-breach",
+   "title": "줌줌투어 해킹·개발 오류로 개인정보 유출",
+   "category": "개인정보",
+   "summary": "외부 공격과 개발 오류 두 건, 동행자 정보 약 2년간 노출",
+   "cves": []
+  },
+  {
+   "slug": "kocom-homenet-intrusion",
+   "title": "코콤 홈네트워크 중앙 서버 외부 침해 시도",
+   "category": "침해사고",
+   "summary": "해외 VPN 경유 접속 시도, 운영사 포트 차단과 서비스 중단",
+   "cves": []
+  },
+  {
+   "slug": "siemens-nodered-cve-2026-58115",
+   "title": "지멘스 산업용 PC 노드레드 취약점 실제 공격 확인",
+   "category": "취약점",
+   "summary": "공개 두 달 만에 봇·웹셸 공격 포착",
+   "cves": [
+    "CVE-2026-58115"
+   ]
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "북한 연계 의심 조직이 자체 밈코인으로 탈취 자금 세탁",
+   "cves": []
+  },
+  {
+   "slug": "trezor-cryptobilis-tamper",
+   "title": "트레저, 크립토빌리스 경유 지갑 구매자에 자금 이동 권고",
+   "category": "기타",
+   "summary": "복구 문구 탈취 부품 삽입 가능성, 기기 미검사",
+   "cves": []
+  },
+  {
+   "slug": "fbi-insider-crypto-theft",
+   "title": "FBI 전 방첩 간부, 수사 대상 지갑서 240만달러 절도 유죄 인정",
+   "category": "기타",
+   "summary": "선고는 3월 예정, 최대 징역 20년",
+   "cves": []
+  },
+  {
+   "slug": "pipc-shortform-contest",
+   "title": "개인정보위, 개인정보 보호 숏폼 콘텐츠 공모전 개최",
+   "category": "정책·제도",
+   "summary": "국민 대상 일상 속 개인정보 보호 실천 문화 확산",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 271791,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271673,
+   "label": "security",
+   "event_slug": "kocom-homenet-intrusion"
+  },
+  {
+   "id": 270345,
+   "label": "security",
+   "event_slug": "claude-enterprise-account-leak"
+  },
+  {
+   "id": 270273,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 269165,
+   "label": "security",
+   "event_slug": "zoomzoom-tour-breach"
+  },
+  {
+   "id": 272846,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 269918,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 269746,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271081,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271076,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 271074,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 270534,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 271282,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271055,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 271048,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 270533,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271038,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271039,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272411,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 272888,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271270,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271807,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272532,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272528,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272353,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272868,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272469,
+   "label": "security",
+   "event_slug": "mirae-asset-securities-breach"
+  },
+  {
+   "id": 272351,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272859,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271672,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271671,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271670,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271766,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271669,
+   "label": "security",
+   "event_slug": "fbi-insider-crypto-theft"
+  },
+  {
+   "id": 271668,
+   "label": "security",
+   "event_slug": "siemens-nodered-cve-2026-58115"
+  },
+  {
+   "id": 271765,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271667,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272834,
+   "label": "security",
+   "event_slug": "ppskr-chatgpt-photo-leak"
+  },
+  {
+   "id": 272515,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 272463,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 272363,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 271666,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 271665,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 272338,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 272336,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 272330,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 271764,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271664,
+   "label": "security",
+   "event_slug": "trezor-cryptobilis-tamper"
+  },
+  {
+   "id": 271663,
+   "label": "security",
+   "event_slug": "europe-supermarket-freezer-attack"
+  },
+  {
+   "id": 271801,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271800,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272877,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272818,
+   "label": "security",
+   "event_slug": "douzone-bizon-breach"
+  },
+  {
+   "id": 272543,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 271763,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272816,
+   "label": "security",
+   "event_slug": "pipc-shortform-contest"
+  },
+  {
+   "id": 271714,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 271713,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 272540,
+   "label": "pr",
+   "event_slug": null
+  }
+ ]
+}
