@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-11",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-11-am.md",
+  "stats": {
+    "candidates": 35,
+    "security": 16,
+    "trend": 4,
+    "pr": 9,
+    "column": 0,
+    "not_security": 6,
+    "events": 5
+  },
+  "events": [
+    {
+      "slug": "fsec-assessment-system-breach",
+      "title": "금융보안원 정보보호 상시평가 시스템 해킹, 일부 자료 유출",
+      "category": "침해사고",
+      "summary": "행정서식 약 200건·개인정보 300여건 유출, 금융위·KISA 신고 후 당국 전체 재점검 지시",
+      "cves": []
+    },
+    {
+      "slug": "ppskr-chatgpt-photo-leak",
+      "title": "조달청 평가위원 189명 얼굴사진 챗GPT로 유출",
+      "category": "개인정보",
+      "summary": "직원 1명이 AI 시스템 개발·시험 중 외부 생성형 AI에 업로드, 재발 방지 대책 공개",
+      "cves": []
+    },
+    {
+      "slug": "claude-enterprise-account-leak",
+      "title": "앤트로픽 클로드 국내 기업용 계정 100여 건 유출 신고",
+      "category": "개인정보",
+      "summary": "국내 기업용 계정 정보 유출에 대한 정식 조사 시작",
+      "cves": []
+    },
+    {
+      "slug": "israel-cyberweek-2026-ai",
+      "title": "이스라엘 사이버위크 2026, AI 공격 대응 논의",
+      "category": "AI 보안",
+      "summary": "AI 에이전트 권한 부여 관행을 새 위협으로 지목, 기본 보안 개선 강조",
+      "cves": []
+    },
+    {
+      "slug": "nsr-director-appointment",
+      "title": "국보연 신임 소장에 임정석 책임연구원 내정",
+      "category": "정책·제도",
+      "summary": "ETRI 공모 후 최종 후보 3인 심사·면접 거쳐 결정",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 278192,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 277558,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 277653,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 277649,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 277648,
+      "label": "security",
+      "event_slug": "israel-cyberweek-2026-ai"
+    },
+    {
+      "id": 276782,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 277686,
+      "label": "security",
+      "event_slug": "israel-cyberweek-2026-ai"
+    },
+    {
+      "id": 277953,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 277688,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 276833,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 277447,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 276883,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 278944,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 277599,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 277689,
+      "label": "security",
+      "event_slug": "claude-enterprise-account-leak"
+    },
+    {
+      "id": 277682,
+      "label": "security",
+      "event_slug": "israel-cyberweek-2026-ai"
+    },
+    {
+      "id": 276882,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 279312,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 276832,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 278938,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 278123,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280614,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 280613,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 279244,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280606,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 278073,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280605,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280604,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 278713,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 278971,
+      "label": "security",
+      "event_slug": "israel-cyberweek-2026-ai"
+    },
+    {
+      "id": 279419,
+      "label": "security",
+      "event_slug": "ppskr-chatgpt-photo-leak"
+    },
+    {
+      "id": 280539,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280262,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 280663,
+      "label": "security",
+      "event_slug": "nsr-director-appointment"
+    },
+    {
+      "id": 280713,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    }
+  ]
+}
