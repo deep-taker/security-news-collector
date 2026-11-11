@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-12",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-12-am.md",
+  "stats": {"candidates": 14, "security": 8, "trend": 0, "pr": 4, "column": 0, "not_security": 2, "events": 5},
+  "events": [
+    {"slug": "gs-xi-leak", "title": "GS건설 자이 입주민 개인정보 유출", "category": "개인정보", "summary": "과기정통부, 심의위원회 거쳐 첫 직권조사 결정…GS건설 자체 조사 방침에 제동", "cves": []},
+    {"slug": "fsec-assessment-system-breach", "title": "금융보안원 정보보호 상시평가 시스템 해킹, 일부 자료 유출", "category": "침해사고", "summary": "9일 외부 비정상 접근으로 정보유출 확인, 혁신 방안 발표 나흘 만에 사고", "cves": []},
+    {"slug": "binance-hack", "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결", "category": "침해사고", "summary": "블록체인 아닌 서명 권한·운영체계 노린 공격 분석, 임직원 노트북 침해 가능성", "cves": []},
+    {"slug": "suiball-wallet-cancel", "title": "수이재단, 공급망 공격 우려로 하드웨어 지갑 수이볼 중단", "category": "기타", "summary": "레저 공급망 공격 여파, 첫 출하 직전 사업 종료", "cves": []},
+    {"slug": "kisa-ipcam-security-check", "title": "KISA·소비자원 IP카메라 10종 보안 점검, 3개 제품 미흡", "category": "취약점", "summary": "사생활 침해 우려 취약점 발견, 제조사에 개선 요청", "cves": []}
+  ],
+  "labels": [
+    {"id": 292867, "label": "not_security", "event_slug": null},
+    {"id": 292859, "label": "security", "event_slug": "gs-xi-leak"},
+    {"id": 292331, "label": "security", "event_slug": "gs-xi-leak"},
+    {"id": 292853, "label": "security", "event_slug": "binance-hack"},
+    {"id": 292190, "label": "security", "event_slug": "gs-xi-leak"},
+    {"id": 292837, "label": "security", "event_slug": "fsec-assessment-system-breach"},
+    {"id": 293050, "label": "pr", "event_slug": null},
+    {"id": 292327, "label": "pr", "event_slug": null},
+    {"id": 292326, "label": "not_security", "event_slug": null},
+    {"id": 293611, "label": "pr", "event_slug": null},
+    {"id": 295396, "label": "security", "event_slug": "suiball-wallet-cancel"},
+    {"id": 295620, "label": "security", "event_slug": "gs-xi-leak"},
+    {"id": 295618, "label": "pr", "event_slug": null},
+    {"id": 295649, "label": "security", "event_slug": "kisa-ipcam-security-check"}
+  ]
+}
