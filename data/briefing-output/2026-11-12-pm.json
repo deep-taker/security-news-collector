@@ -1,0 +1,761 @@
+{
+  "date": "2026-11-12",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-12-pm.md",
+  "stats": {
+    "candidates": 96,
+    "security": 44,
+    "trend": 6,
+    "pr": 26,
+    "column": 2,
+    "not_security": 18,
+    "events": 28
+  },
+  "events": [
+    {
+      "slug": "fsec-assessment-system-breach",
+      "title": "금융보안원 정보보호 상시평가 시스템 해킹, 일부 자료 유출",
+      "category": "침해사고",
+      "summary": "금융위 16일부터 특정감사 착수, 원장 FISCON서 공식 사과",
+      "cves": []
+    },
+    {
+      "slug": "samyang-privacy-fine",
+      "title": "삼양그룹 4개사 개인정보 유출, 과징금 5억5200만원",
+      "category": "개인정보",
+      "summary": "이관 끝난 서버 외부망 방치, 파일 85만개·1.3TB 탈취, 주민번호 8만2750명분 포함",
+      "cves": []
+    },
+    {
+      "slug": "chrome-cve-2026-125350",
+      "title": "구글, 실제 악용된 크롬 제로데이 CVE-2026-125350 긴급 패치",
+      "category": "취약점",
+      "summary": "실제 공격에 쓰인 크롬 XML 처리 UAF 결함 긴급 패치, 올해 8번째 제로데이",
+      "cves": [
+        "CVE-2026-125350"
+      ]
+    },
+    {
+      "slug": "xen-orchestra-auth-bypass",
+      "title": "젠 오케스트라 인증 우회 취약점 실제 악용",
+      "category": "취약점",
+      "summary": "관리 서버 로그인 토큰 검증 결함 실제 악용, 위험도 치명적 긴급 업데이트 권고",
+      "cves": []
+    },
+    {
+      "slug": "cisco-broadworks-cve-2026-20320",
+      "title": "시스코 브로드웍스 취약점 실제 악용, CISA KEV 등재",
+      "category": "취약점",
+      "summary": "CISA가 KEV에 추가, 8월 패치 공개 약 석 달 만에 실제 악용 확인",
+      "cves": [
+        "CVE-2026-20320"
+      ]
+    },
+    {
+      "slug": "mvno-privacy-fine",
+      "title": "알뜰폰 8개사 개인정보보호법 위반, 1억7130만원 제재",
+      "category": "개인정보",
+      "summary": "법적 근거 없는 주민번호 수집·미파기·불필요 동의 요구 등 확인",
+      "cves": []
+    },
+    {
+      "slug": "kisa-ipcam-security-check",
+      "title": "KISA·소비자원 IP카메라 10종 보안 점검, 3개 제품 미흡",
+      "category": "취약점",
+      "summary": "과기정통부, 점검 결과 바탕으로 제조·유통사 보안 개선 요구·제도 개선 추진",
+      "cves": []
+    },
+    {
+      "slug": "gs-xi-leak",
+      "title": "GS건설 자이 입주민 개인정보 유출",
+      "category": "개인정보",
+      "summary": "KISA 조사 미동의로 침해사고 조사 심의위원회 열어 첫 직권조사 결정",
+      "cves": []
+    },
+    {
+      "slug": "scattered-lapsus-hunters-revival",
+      "title": "해킹 조직 연합 스캐터드랩서스헌터스 활동 재개",
+      "category": "침해사고",
+      "summary": "사칭 사기 잇따르자 텔레그램서 동맹 부활 공식화, UNC6783 언급",
+      "cves": []
+    },
+    {
+      "slug": "iverify-spyware-mass-infection",
+      "title": "유출 아이폰 해킹 도구로 일반인 스파이웨어 감염 확산",
+      "category": "악성코드·랜섬웨어",
+      "summary": "유출 아이폰 해킹 도구가 범죄자 손에, 무료 점검 1000건당 1.07건 감염",
+      "cves": []
+    },
+    {
+      "slug": "xrp-fake-airdrop-scam",
+      "title": "XRP 가짜 에어드롭 사기 게시물 확산",
+      "category": "기타",
+      "summary": "엑스서 무료 XRP 미끼 피싱 게시물 30일간 약 1150만건 추산",
+      "cves": []
+    },
+    {
+      "slug": "ivanti-epm-cve-2026-121653",
+      "title": "이반티 엔드포인트 매니저 비인증 SQL 삽입 취약점 수정",
+      "category": "취약점",
+      "summary": "로그인 없이 원격 SQL 삽입 가능한 CVSS 9.8 결함 수정, 2024 SU8 미만 영향",
+      "cves": [
+        "CVE-2026-121653"
+      ]
+    },
+    {
+      "slug": "adobe-connect-apsb26-191",
+      "title": "어도비 커넥트 취약점 24건 수정",
+      "category": "취약점",
+      "summary": "취약점 24건 수정, CVSS 10.0 경로 순회 결함 포함, 실제 악용 사례는 없음",
+      "cves": [
+        "CVE-2026-121351"
+      ]
+    },
+    {
+      "slug": "firefox-160-security-update",
+      "title": "파이어폭스 160, 보안 취약점 99건 수정",
+      "category": "취약점",
+      "summary": "취약점 99건 수정, WebGL 격리 우회 결함 위험도 높음",
+      "cves": [
+        "CVE-2026-124907"
+      ]
+    },
+    {
+      "slug": "prisma-browser-pan-sa-2026-0014",
+      "title": "팔로알토 프리즈마 브라우저 보안 업데이트",
+      "category": "취약점",
+      "summary": "크로미엄 보안 패치 반영, CVSS 4.0 9.4점, 157.19.4.39 이상 권고",
+      "cves": []
+    },
+    {
+      "slug": "voicephishing-telco-liability",
+      "title": "통신사 AI 보이스피싱 탐지와 배상책임 쟁점",
+      "category": "정책·제도",
+      "summary": "통신사 AI 변작 탐지에도 010 위장 보이스피싱 차단 미흡 지적",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "블룸버그, 중국 정보기관 연계 의심 앨리스 황 베이징 체류 보도",
+      "cves": []
+    },
+    {
+      "slug": "antifox-ai-pentest-abuse",
+      "title": "AI 모의해킹 플랫폼 안티폭스, AWS 노린 공격에 활용",
+      "category": "AI 보안",
+      "summary": "AI 모의해킹 플랫폼 안티폭스가 AWS 인증정보 탈취 공격에 쓰인 정황",
+      "cves": []
+    },
+    {
+      "slug": "us-firms-block-ai-agents",
+      "title": "미국 은행·항공사, 외부 AI 에이전트 접근 차단",
+      "category": "AI 보안",
+      "summary": "미 은행 이어 유나이티드항공도 미승인 외부 AI 에이전트 접근 차단",
+      "cves": []
+    },
+    {
+      "slug": "ai-safety-monitoring-group",
+      "title": "과기정통부, 국민 AI 안전 모니터링단 출범",
+      "category": "AI 보안",
+      "summary": "과기정통부·AI안전연구소, 국민 참여 AI 오류·위험 모니터링단 출범",
+      "cves": []
+    },
+    {
+      "slug": "national-cyber-resilience-tf",
+      "title": "국가AI전략위, 국가 사이버복원력 강화 TF 출범",
+      "category": "정책·제도",
+      "summary": "국가AI전략위 범정부 TF 출범, 내년 1분기 전략안·2027~2028 로드맵 마련",
+      "cves": []
+    },
+    {
+      "slug": "vasp-security-rules-strengthen",
+      "title": "금융당국, 가상자산 거래소 보안 규율 강화",
+      "category": "정책·제도",
+      "summary": "해킹 의심 단계 입출금 선제 차단, 콜드월렛 95% 상향, 금보원 회원사 확대",
+      "cves": []
+    },
+    {
+      "slug": "finance-network-separation-lift",
+      "title": "금융당국, 금융권 망분리 규제 전면 해제 예고",
+      "category": "정책·제도",
+      "summary": "금융당국, 차세대 보안 체계 일환으로 망분리 규제 전면 해제 예고",
+      "cves": []
+    },
+    {
+      "slug": "edutech-privacy-inspection",
+      "title": "개인정보위, 에듀테크 주요 사업자 실태점검 시정권고",
+      "category": "개인정보",
+      "summary": "비상교육 등 5곳 점검, 전 직원 관리자 권한·탈퇴 회원정보 보관 확인",
+      "cves": []
+    },
+    {
+      "slug": "fiscon-2026",
+      "title": "금융정보보호 컨퍼런스 FISCON 2026",
+      "category": "기타",
+      "summary": "금융보안원 FISCON 2026, AI 자율 방어·망 대신 데이터 중심 보안 논의",
+      "cves": []
+    },
+    {
+      "slug": "poc-2026",
+      "title": "국제 해킹·보안 컨퍼런스 POC 2026",
+      "category": "취약점",
+      "summary": "POC 2026서 데브코어가 샌드박스 켠 사파리 26.5 웹킷 취약점 시연",
+      "cves": []
+    },
+    {
+      "slug": "defense-ai-unmanned-seminar-2026",
+      "title": "2026 국방혁신 AI유무인복합체계 발전 세미나",
+      "category": "방산보안",
+      "summary": "국방혁신 AI유무인복합체계 세미나서 공공·국방 AI 보안 전략 발표",
+      "cves": []
+    },
+    {
+      "slug": "national-crypto-contest-2026",
+      "title": "국정원 2026 국가암호공모전 시상, 서울대팀 대상",
+      "category": "기타",
+      "summary": "180개팀 참여, 55개 팀 시상, 서울대팀 분산형 공개키 암호로 대상",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 306128,
+      "label": "security",
+      "event_slug": "national-cyber-resilience-tf"
+    },
+    {
+      "id": 304843,
+      "label": "security",
+      "event_slug": "national-crypto-contest-2026"
+    },
+    {
+      "id": 304849,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 304908,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 303751,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 303698,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 304344,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 303800,
+      "label": "security",
+      "event_slug": "mvno-privacy-fine"
+    },
+    {
+      "id": 303835,
+      "label": "security",
+      "event_slug": "samyang-privacy-fine"
+    },
+    {
+      "id": 303799,
+      "label": "security",
+      "event_slug": "samyang-privacy-fine"
+    },
+    {
+      "id": 303750,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 303798,
+      "label": "security",
+      "event_slug": "edutech-privacy-inspection"
+    },
+    {
+      "id": 303697,
+      "label": "security",
+      "event_slug": "kisa-ipcam-security-check"
+    },
+    {
+      "id": 303834,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 304340,
+      "label": "security",
+      "event_slug": "kisa-ipcam-security-check"
+    },
+    {
+      "id": 304339,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 303797,
+      "label": "security",
+      "event_slug": "national-crypto-contest-2026"
+    },
+    {
+      "id": 304338,
+      "label": "security",
+      "event_slug": "antifox-ai-pentest-abuse"
+    },
+    {
+      "id": 304336,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 303749,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 304841,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 303748,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 303747,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305666,
+      "label": "security",
+      "event_slug": "xrp-fake-airdrop-scam"
+    },
+    {
+      "id": 305029,
+      "label": "security",
+      "event_slug": "gs-xi-leak"
+    },
+    {
+      "id": 305028,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305652,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 305066,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305027,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305694,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 304974,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 305651,
+      "label": "security",
+      "event_slug": "ai-safety-monitoring-group"
+    },
+    {
+      "id": 306124,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 305026,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305065,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 305025,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 305646,
+      "label": "security",
+      "event_slug": "national-cyber-resilience-tf"
+    },
+    {
+      "id": 305820,
+      "label": "security",
+      "event_slug": "national-cyber-resilience-tf"
+    },
+    {
+      "id": 305642,
+      "label": "security",
+      "event_slug": "mvno-privacy-fine"
+    },
+    {
+      "id": 304973,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 305637,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 305629,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 304972,
+      "label": "security",
+      "event_slug": "fiscon-2026"
+    },
+    {
+      "id": 305773,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 304971,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 305105,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 304970,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 304969,
+      "label": "security",
+      "event_slug": "chrome-cve-2026-125350"
+    },
+    {
+      "id": 305024,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306187,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 306184,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305023,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305624,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306121,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305022,
+      "label": "security",
+      "event_slug": "xen-orchestra-auth-bypass"
+    },
+    {
+      "id": 304968,
+      "label": "security",
+      "event_slug": "iverify-spyware-mass-infection"
+    },
+    {
+      "id": 305770,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 305021,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305020,
+      "label": "security",
+      "event_slug": "cisco-broadworks-cve-2026-20320"
+    },
+    {
+      "id": 305019,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 304967,
+      "label": "security",
+      "event_slug": "national-crypto-contest-2026"
+    },
+    {
+      "id": 305018,
+      "label": "security",
+      "event_slug": "adobe-connect-apsb26-191"
+    },
+    {
+      "id": 307439,
+      "label": "security",
+      "event_slug": "finance-network-separation-lift"
+    },
+    {
+      "id": 305017,
+      "label": "security",
+      "event_slug": "ivanti-epm-cve-2026-121653"
+    },
+    {
+      "id": 305016,
+      "label": "security",
+      "event_slug": "firefox-160-security-update"
+    },
+    {
+      "id": 304966,
+      "label": "security",
+      "event_slug": "scattered-lapsus-hunters-revival"
+    },
+    {
+      "id": 306180,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 305015,
+      "label": "security",
+      "event_slug": "prisma-browser-pan-sa-2026-0014"
+    },
+    {
+      "id": 304965,
+      "label": "security",
+      "event_slug": "national-cyber-resilience-tf"
+    },
+    {
+      "id": 305714,
+      "label": "security",
+      "event_slug": "us-firms-block-ai-agents"
+    },
+    {
+      "id": 306240,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 307473,
+      "label": "security",
+      "event_slug": "voicephishing-telco-liability"
+    },
+    {
+      "id": 306339,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306999,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306387,
+      "label": "security",
+      "event_slug": "kisa-ipcam-security-check"
+    },
+    {
+      "id": 307155,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306300,
+      "label": "security",
+      "event_slug": "samyang-privacy-fine"
+    },
+    {
+      "id": 307150,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306239,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306299,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 307147,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 306380,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 306298,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306297,
+      "label": "security",
+      "event_slug": "defense-ai-unmanned-seminar-2026"
+    },
+    {
+      "id": 306296,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306295,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306294,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 306293,
+      "label": "security",
+      "event_slug": "poc-2026"
+    },
+    {
+      "id": 306292,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 307139,
+      "label": "security",
+      "event_slug": "fiscon-2026"
+    },
+    {
+      "id": 306377,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306881,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306291,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 306290,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 307124,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 306289,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 국방혁신 AI유무인복합체계 발전 세미나",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "대전대학교",
+      "organizer": null,
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209478",
+      "major": true,
+      "note": "NSHC가 공공·국방 AI 도입 시 데이터 접근·작업 권한 관리 중심의 AI 보안 전략 발표",
+      "article_ids": [
+        306297
+      ]
+    },
+    {
+      "name": "POC 2026",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "서울 강남구 더 웨스틴 서울 파르나스",
+      "organizer": null,
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209480",
+      "major": false,
+      "note": "국제 해킹·보안 컨퍼런스, 데브코어가 사파리 26.5 웹킷 취약점 시연",
+      "article_ids": [
+        306293
+      ]
+    },
+    {
+      "name": "금융정보보호 컨퍼런스(FISCON 2026)",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "서울 여의도 콘래드 서울",
+      "organizer": "금융보안원·금융정보보호협의회·금융보안포럼",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147218",
+      "major": true,
+      "note": "Now for Next Finance 주제로 AI 시대 금융보안 전환 전략 논의, 원장 해킹 사고 사과",
+      "article_ids": [
+        304972,
+        307139
+      ]
+    },
+    {
+      "name": "2026 국가암호공모전 시상식",
+      "start_date": "2026-11-11",
+      "end_date": null,
+      "place": "서울 양재 엘타워",
+      "organizer": "국가정보원",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147221",
+      "major": true,
+      "note": "180개팀 참여, 55개 팀 시상, 서울대팀 대상",
+      "article_ids": [
+        304843,
+        303797,
+        304967
+      ]
+    }
+  ]
+}
