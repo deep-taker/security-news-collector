@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-13",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-13-am.md",
+  "stats": {"candidates": 15, "security": 10, "trend": 0, "pr": 0, "column": 0, "not_security": 5, "events": 9},
+  "events": [
+    {"slug": "multicampus-breach", "title": "삼성SDS 자회사 멀티캠퍼스 해킹, 임직원 개인정보 약 7만명 유출", "category": "개인정보", "summary": "이름·연락처·부서·사번·직급 등 유출, 고객사 임직원 피해 가능성", "cves": []},
+    {"slug": "flybit-breach", "title": "가상자산 거래소 플라이빗 해킹, 고객 40명 주민등록번호 유출", "category": "침해사고", "summary": "외부 업체 운영 그룹웨어 비인가 접근, 납세정보 일부 포함, 경찰 수사 의뢰", "cves": []},
+    {"slug": "nec-special-counsel-security-doc", "title": "선관위 특검, 보안점검 문서 허위작성 정황 압수수색", "category": "기타", "summary": "투표용지 부족 사태 수사 특검팀, 선관위 보안 실태 점검 문서 허위 작성 정황 포착", "cves": []},
+    {"slug": "fsec-assessment-system-breach", "title": "금융보안원 정보보호 상시평가 시스템 해킹, 일부 자료 유출", "category": "침해사고", "summary": "금융위 16일부터 금융보안원 특정감사 실시", "cves": []},
+    {"slug": "nvidia-huang-intel-probe", "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사", "category": "기타", "summary": "중국 외교부, 간첩설은 미국이 만든 서사라며 반박", "cves": []},
+    {"slug": "anthropic-mythos-power-grid", "title": "앤트로픽 미소스, 미국 전력망 보안에 활용", "category": "AI 보안", "summary": "듀크에너지 등 전력회사, 전력 소프트웨어 취약점 탐지에 시험 도입", "cves": []},
+    {"slug": "vasp-security-rules-strengthen", "title": "금융당국, 가상자산 거래소 보안 규율 강화", "category": "정책·제도", "summary": "디지털자산법에 IT 안전성 확보 의무·손해배상책임 반영 추진", "cves": []},
+    {"slug": "national-cyber-resilience-tf", "title": "국가AI전략위, 국가 사이버복원력 강화 TF 출범", "category": "정책·제도", "summary": "사이버 공격에도 국가 핵심 기능 유지·신속 복구 목표, 제3차 회의 후속조치", "cves": []},
+    {"slug": "national-crypto-contest-2026", "title": "국정원 2026 국가암호공모전 시상, 서울대팀 대상", "category": "기타", "summary": "11일 양재 엘타워 시상식, 한국정보보호학회·양자내성암호연구단 주관", "cves": []}
+  ],
+  "labels": [
+    {"id": 307632, "label": "security", "event_slug": "nvidia-huang-intel-probe"},
+    {"id": 311318, "label": "security", "event_slug": "nec-special-counsel-security-doc"},
+    {"id": 307569, "label": "not_security", "event_slug": null},
+    {"id": 307568, "label": "not_security", "event_slug": null},
+    {"id": 308222, "label": "security", "event_slug": "vasp-security-rules-strengthen"},
+    {"id": 308694, "label": "security", "event_slug": "fsec-assessment-system-breach"},
+    {"id": 308287, "label": "not_security", "event_slug": null},
+    {"id": 308285, "label": "security", "event_slug": "anthropic-mythos-power-grid"},
+    {"id": 308418, "label": "security", "event_slug": "national-crypto-contest-2026"},
+    {"id": 307654, "label": "security", "event_slug": "national-cyber-resilience-tf"},
+    {"id": 307567, "label": "security", "event_slug": "flybit-breach"},
+    {"id": 308162, "label": "not_security", "event_slug": null},
+    {"id": 307653, "label": "security", "event_slug": "nvidia-huang-intel-probe"},
+    {"id": 309450, "label": "not_security", "event_slug": null},
+    {"id": 311431, "label": "security", "event_slug": "multicampus-breach"}
+  ],
+  "security_events": [
+    {"name": "2026 국가암호공모전 시상식", "start_date": "2026-11-11", "end_date": null, "place": "서울 양재 엘타워", "organizer": "국가정보원", "url": "https://zdnet.co.kr/view/?no=20261112175538", "major": true, "note": "한국정보보호학회·양자내성암호연구단 주관, 서울대팀 대상", "article_ids": [308418]}
+  ]
+}
