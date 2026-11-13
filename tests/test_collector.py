@@ -779,3 +779,17 @@ def test_author_reporter_series_without_name():
     assert as_reporter({}, {"길민권"}, "[보안칼럼] 제목", "dailysecu", ["제목 머리말: 보안칼럼", "글. 홍길동 가나 대표"]) == {}
     assert as_reporter({}, {"원병철"}, "[이슈칼럼] 제목", "boannews", ["작성자 정보: 홍길동 가나 대표"]) == {}
     assert as_reporter({}, {"갑", "을을"}, "[ET톡] 제목", "etnews_sec", cands) == {}            # 기자가 여럿이면 모름
+
+
+def test_author_meta_property_and_byline_outside_body():
+    """지디넷 형식: 기자 정보가 property 속성 메타(dable:author·dd:author)에만 있고 기자 줄은 본문 밖 (2026-11-13)"""
+    from collector.authors import candidates, reporters, as_reporter, editorial
+    page = ('<html><head><meta property="dable:author" content="홍하나 기자"><meta property="dd:author" content="홍하나 기자"></head>'
+            '<body><div class="news_head"><span>홍하나 기자</span></div><div class="view_cont"><p>본문이다.</p>'
+            '<p>관련 기사 제목…다른 기자 이름 없음</p></div></body></html>').encode()
+    t = "[기자수첩] 가상자산 보안, 옥죄는 것만이 능사 아니다"
+    reps = reporters(page)
+    assert reps == {"홍하나"}
+    assert as_reporter({}, reps, t, "zdnet", candidates(page, t)) == {"org": "지디넷코리아", "position": "기자", "name": "홍하나"}
+    # property 속성의 '논설위원실'도 사설로
+    assert editorial(b'<html><head><meta property="dable:author" content="\xeb\x85\xbc\xec\x84\xa4\xec\x9c\x84\xec\x9b\x90\xec\x8b\xa4"></head></html>', "제목")

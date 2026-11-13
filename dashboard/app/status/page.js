@@ -1,4 +1,4 @@
-import { getHealth, fmt } from "../../lib/db";
+import { getHealth, fmt, q, SOURCES, fmtShort } from "../../lib/db";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "수집 상태 · 정보보안 브리핑" };
@@ -91,8 +91,19 @@ function AiTable({ ai }) {
   );
 }
 
+// 필자 정보가 비어 있는 칼럼 (null = 아직 찾는 중, {} = 못 찾음) — 같은 누락이 반복되지 않게 바로 보이도록 (2026-11-13)
+async function columnsWithoutAuthor() {
+  try {
+    const since = new Date(Date.now() - 14 * 86400e3).toISOString();
+    const { rows } = await q("articles", { select: "id,title,source_id,collected_at,author_info", label: "eq.column",
+                                           collected_at: `gte.${since}`, order: "collected_at.desc", limit: "300" }, { revalidate: 60 });
+    return rows.filter((a) => a.author_info === null || !a.author_info?.name && !a.author_info?.org);
+  } catch { return null; }
+}
+
 export default async function Status() {
   const h = (await getHealth()) || { alerts: [], sources: [], error: "환경변수가 설정되지 않았습니다" };
+  const noAuthor = await columnsWithoutAuthor();
   const alerts = h.alerts || [];
   return (
     <>
@@ -136,6 +147,24 @@ export default async function Status() {
       </div>
       <h2 className="sec">AI 한 줄 요약</h2>
       <AiTable ai={h.ai} />
+
+      <h2 className="sec">칼럼 필자 정보 (최근 14일)</h2>
+      {noAuthor === null ? <p className="muted">조회 실패</p> : noAuthor.length === 0 ? (
+        <p className="muted">✅ 모든 칼럼·기고에 필자가 표시됩니다.</p>
+      ) : (
+        <>
+          <div className="alert warn"><strong>⚠️ 필자를 찾지 못한 칼럼 {noAuthor.length}건</strong>
+            <div className="muted detail">새 형식의 필자 표기일 수 있습니다 — 규칙 보완 대상(collector/authors.py). 찾는 중인 칼럼은 다음 수집·브리핑 반영 때 다시 찾습니다.</div></div>
+          <div className="scroll"><table>
+            <thead><tr><th>수집</th><th>칼럼</th><th>매체</th><th>상태</th></tr></thead>
+            <tbody>{noAuthor.map((a) => (
+              <tr key={a.id}><td className="muted">{fmtShort(a.collected_at)}</td><td>{a.title}</td>
+                <td className="muted">{SOURCES[a.source_id] || a.source_id}</td>
+                <td className="muted">{a.author_info === null ? "찾는 중" : "못 찾음"}</td></tr>))}
+            </tbody>
+          </table></div>
+        </>
+      )}
 
       <h2 className="sec">자동 조치 (최근 48시간)</h2>
       <Remediations rows={h.remediations || []} />
