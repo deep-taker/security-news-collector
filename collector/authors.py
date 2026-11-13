@@ -50,6 +50,18 @@ _TITLE_HEAD = re.compile(r"^\s*[\[［]([^\]］]{2,40})[\]］]")
 _GEUL = re.compile(r"[\[［(]?\s*글\s*[._:·_]\s*([^\]］)\n]{2,80})")
 
 
+def _author_metas(soup) -> list:
+    """작성자 메타 정보 전부 — name·property 어느 쪽이든, 키에 'author'가 든 것(dable:author·dd:author·aicon:author·article:author …).
+    매체마다 속성 이름이 달라 일부만 읽다가 지디넷 기자수첩의 기자를 놓쳤다(2026-11-13)."""
+    out = []
+    for t in soup.find_all("meta"):
+        key = (t.get("name") or t.get("property") or "").lower()
+        v = clean_text(t.get("content") or "")
+        if "author" in key and v and v not in out:
+            out.append(v)
+    return out
+
+
 def _short(line: str) -> bool:
     return 2 <= len(line) <= 60 and not line.endswith(("다.", "다", "요.", "까?"))
 
@@ -62,12 +74,9 @@ def candidates(html: bytes, title: str) -> list:
     m = _TITLE_HEAD.match(title or "")
     if m:
         out.append(f"제목 머리말: {m.group(1).strip()}")
-    for sel in ('meta[name="dable:author"]', 'meta[property="dable:author"]', 'meta[name="author"]',
-                'meta[property="article:author"]', 'meta[property="og:article:author"]'):
-        for t in soup.select(sel):
-            v = clean_text(t.get("content") or "")
-            if v and not re.search(r"기자\s*$|@|https?://", v):
-                out.append(f"작성자 정보: {v}")
+    for v in _author_metas(soup):
+        if not re.search(r"기자\s*$|@|https?://", v):
+            out.append(f"작성자 정보: {v}")
     body = next((b for b in (soup.select_one(s) for s in _BODY) if b), None) or soup.body
     if body:
         text = body.get_text("\n")
@@ -89,6 +98,9 @@ def candidates(html: bytes, title: str) -> list:
 
 
 _REPORTER = re.compile(r"(?<![가-힣])([가-힣]{2,4})\s?기자(?![가-힣])")
+# '다른 기자'·'담당 기자'처럼 이름이 아닌 말 (본문·관련 기사 문구에서 기자 이름으로 잘못 잡히지 않게)
+_NOT_NAME = {"다른", "담당", "해당", "취재", "현직", "전직", "일선", "출입", "기자", "전문", "객원", "수습", "사진", "영상",
+             "선임", "편집", "모든", "여러", "많은", "한국", "외신", "본지", "자사", "매체", "방송", "신문", "언론", "명예"}
 _DESK = re.compile(r"기자수첩|취재수첩|데스크|기자의 눈|기자 칼럼|기자칼럼")
 
 
@@ -96,11 +108,10 @@ def reporters(html: bytes) -> set:
     """기사 페이지의 매체 기자 이름 ('김영욱 기자' — 작성자 메타 정보·본문 기자 줄)."""
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "lxml")
-    text = " ".join(t.get("content") or "" for t in soup.select('meta[name="author"], meta[property="article:author"], '
-                                                                 'meta[property="og:article:author"], meta[name="dable:author"]'))
+    text = " ".join(_author_metas(soup))
     body = next((b for b in (soup.select_one(s) for s in _BODY) if b), None) or soup.body
     text += " " + (body.get_text(" ") if body else "")
-    return set(_REPORTER.findall(text))
+    return {n for n in _REPORTER.findall(text) if n not in _NOT_NAME}
 
 
 def editorial(html: bytes, title: str) -> bool:
@@ -110,8 +121,7 @@ def editorial(html: bytes, title: str) -> bool:
         return True
     from bs4 import BeautifulSoup
     soup = BeautifulSoup(html, "lxml")
-    return any("논설위원실" in (t.get("content") or "") for t in soup.select('meta[name="author"], meta[name="dable:author"], '
-                                                                          'meta[property="article:author"], meta[property="og:article:author"]'))
+    return any("논설위원실" in v for v in _author_metas(soup))
 
 
 def as_editorial(info: dict, is_editorial: bool, source_id: str) -> dict:
