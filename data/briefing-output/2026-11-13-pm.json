@@ -1,0 +1,527 @@
+{
+  "date": "2026-11-13",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-13-pm.md",
+  "stats": {
+    "candidates": 61,
+    "security": 35,
+    "trend": 3,
+    "pr": 12,
+    "column": 1,
+    "not_security": 10,
+    "events": 24
+  },
+  "events": [
+    {
+      "slug": "socar-employee-data-leak",
+      "title": "쏘카 임직원·협력사 개인정보 유출, 카드·계좌번호 포함",
+      "category": "개인정보",
+      "summary": "도용된 인증정보로 내부 관리 시스템 접근, 일반 고객 정보는 제외",
+      "cves": []
+    },
+    {
+      "slug": "kakaowork-breach",
+      "title": "카카오워크 운영사 디케이테크인 해킹, 이용자 정보 유출",
+      "category": "침해사고",
+      "summary": "업무 메일 본문·첨부파일 원본까지 유출, 비밀번호 변경·사칭 주의 당부",
+      "cves": []
+    },
+    {
+      "slug": "gwangju-donggu-app-leak",
+      "title": "광주 동구 마을공동체 앱 '우리동네do반장' 2101명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "관리자 페이지 접속 인증 미적용 취약점, 이름·휴대전화번호 등 유출",
+      "cves": []
+    },
+    {
+      "slug": "kb-capital-breach",
+      "title": "KB캐피탈 해킹, 고객·협력사·임직원 1811명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "비금융 업무망 겨냥 공격, 2금융권 연쇄 침해 우려·금융당국 전수조사",
+      "cves": []
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "광주관광공사 등 13개 기업·기관 추가 유출 가능성 공지, 백업 서비스 저장 정보 중심",
+      "cves": []
+    },
+    {
+      "slug": "north-korea-facestealer",
+      "title": "북한 해커 '페이스스틸러', 가짜 화상회의로 가상자산 4억달러 탈취",
+      "category": "침해사고",
+      "summary": "미 법무부·FBI 클라우드 인프라 압수, 사칭용 웹캠 영상 900여 개 확보",
+      "cves": []
+    },
+    {
+      "slug": "apache-httpd-cve-2026-119618",
+      "title": "아파치 HTTP 서버 2.4.71, HTTP/2 원격 코드 실행 결함 수정",
+      "category": "취약점",
+      "summary": "치명적 등급 CVE-2026-119618 포함 취약점 3건 수정, 악용 사례 미명시",
+      "cves": [
+        "CVE-2026-119618"
+      ]
+    },
+    {
+      "slug": "fortinet-nov-2026-vulns",
+      "title": "포티넷 제품군 취약점 98건 공개, 19건 치명적",
+      "category": "취약점",
+      "summary": "포티OS·포티매니저 등, CVSS 9.8 CVE-2026-126170·SQL 삽입·인증 우회 포함",
+      "cves": [
+        "CVE-2026-126170",
+        "CVE-2026-126262",
+        "CVE-2026-126253"
+      ]
+    },
+    {
+      "slug": "barracuda-cloud-breach",
+      "title": "바라쿠다 내부 클라우드 해킹, 고객 연동 자격증명 저장소 접근",
+      "category": "침해사고",
+      "summary": "협력사 프로젝트 종료 후에도 유효했던 클라우드 키 악용, 탈취 직접 증거는 없음",
+      "cves": []
+    },
+    {
+      "slug": "github-wfx-credential-theft",
+      "title": "탈취 계정으로 깃허브 6만여 저장소 탐색, 1806곳 자격증명 유출",
+      "category": "침해사고",
+      "summary": "엔도랩스 'wfx' 공격 분석, 8926개 저장소에 악성 코드 삽입 흔적",
+      "cves": []
+    },
+    {
+      "slug": "maplestory-universe-server-breach",
+      "title": "메이플스토리 유니버스 서버 무단 접근 차단",
+      "category": "침해사고",
+      "summary": "오프체인 서버 일부 비인가 접근 확인·차단, 긴급 점검, 자산 손실 없다고 밝힘",
+      "cves": []
+    },
+    {
+      "slug": "nable-ncentral-4everable2shell",
+      "title": "엔에이블 엔센트럴, 긴급 패치 후 추가 취약점 공개",
+      "category": "취약점",
+      "summary": "4EverAble2Shell, 레거시 API 노출 서버에서 로그인 없이 최고 권한 획득",
+      "cves": []
+    },
+    {
+      "slug": "citrix-netscaler-cve-2026-120868",
+      "title": "시트릭스 넷스케일러 메모리 결함 28개 수정",
+      "category": "취약점",
+      "summary": "CVE-2026-120868(CVSS 9.3) 기본 설정 장비도 영향, 악용 사례 미확인",
+      "cves": [
+        "CVE-2026-120868"
+      ]
+    },
+    {
+      "slug": "tsmc-employee-data-exposure",
+      "title": "TSMC 전·현직 직원 개인정보 외부 사이트 무단 공개",
+      "category": "개인정보",
+      "summary": "외부 클라우드 보관 자료와 일치, 자사 시스템 침해 증거는 없다고 공시",
+      "cves": []
+    },
+    {
+      "slug": "ms365-global-outage",
+      "title": "MS 아웃룩·팀즈·코파일럿 전 세계 대규모 장애",
+      "category": "기타",
+      "summary": "미국에서 시작해 한국·일본 등 아시아로 확산, 기업·공공기관 업무 차질",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "FBI, 북한 '트레이더트레이터'를 60억달러 이상 탈취 배후로 지목, 동결 27억달러 이상",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "대만·미국 간첩 의혹 공동 조사, 중국은 기술 제재 구실 삼지 말라고 반발",
+      "cves": []
+    },
+    {
+      "slug": "fireworks-ai-breach",
+      "title": "AI 개발 플랫폼 파이어웍스AI 해킹, 노션 등 고객 데이터 유출",
+      "category": "AI 보안",
+      "summary": "클라우드 제공업체 경유 침투, 고객 결제 정보와 일부 데이터셋 유출",
+      "cves": []
+    },
+    {
+      "slug": "ai-platform-compute-theft",
+      "title": "AI 개발 플랫폼 해킹해 컴퓨팅 파워 접근권 거래",
+      "category": "AI 보안",
+      "summary": "레일웨이, 탈취된 고객 AI 키 무단 사용액 약 74만달러 추산, 1852명 토큰 재설정",
+      "cves": []
+    },
+    {
+      "slug": "google-map-export-security-check",
+      "title": "정부, 구글 지도 국외반출 보안조건 이행 확인",
+      "category": "정책·제도",
+      "summary": "좌표 표시 제거·군사시설 영상 보안조치 확인, 영상 교체·반출 절차 남아",
+      "cves": []
+    },
+    {
+      "slug": "vasp-security-rules-strengthen",
+      "title": "금융당국, 가상자산 거래소 보안 규율 강화",
+      "category": "정책·제도",
+      "summary": "금융위 가상자산업권 보안 대책회의, 금융사 수준 보안체계 주문",
+      "cves": []
+    },
+    {
+      "slug": "voicephishing-telco-liability",
+      "title": "통신사 AI 보이스피싱 탐지와 배상책임 쟁점",
+      "category": "정책·제도",
+      "summary": "010 위장 보이스피싱 차단 미흡으로 통신사 책임론 확산",
+      "cves": []
+    },
+    {
+      "slug": "hanwha-ocean-ciso",
+      "title": "한화오션, 미 방산 확대에 KAI 출신 CISO 영입",
+      "category": "방산보안",
+      "summary": "미 국방부 사업 보안 인증 대응 경험 활용, 방산 공급망 정보보호 강화",
+      "cves": []
+    },
+    {
+      "slug": "aviation-drone-terror-forum-2026",
+      "title": "한국항공보안학회 드론 테러 대응 국회 토론회",
+      "category": "기타",
+      "summary": "16일 국회의원회관, 국가중요시설·공항 드론 방호 대책 논의",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 319707,
+      "label": "security",
+      "event_slug": "fireworks-ai-breach"
+    },
+    {
+      "id": 319802,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 320207,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 319157,
+      "label": "security",
+      "event_slug": "kakaowork-breach"
+    },
+    {
+      "id": 320262,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 320263,
+      "label": "security",
+      "event_slug": "voicephishing-telco-liability"
+    },
+    {
+      "id": 321491,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 319057,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 319107,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 321489,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 319932,
+      "label": "security",
+      "event_slug": "kakaowork-breach"
+    },
+    {
+      "id": 319849,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 320384,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 320328,
+      "label": "security",
+      "event_slug": "aviation-drone-terror-forum-2026"
+    },
+    {
+      "id": 320327,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 320326,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321001,
+      "label": "security",
+      "event_slug": "google-map-export-security-check"
+    },
+    {
+      "id": 320998,
+      "label": "security",
+      "event_slug": "kakaowork-breach"
+    },
+    {
+      "id": 320383,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321541,
+      "label": "security",
+      "event_slug": "kakaowork-breach"
+    },
+    {
+      "id": 320993,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321471,
+      "label": "security",
+      "event_slug": "google-map-export-security-check"
+    },
+    {
+      "id": 320382,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 320325,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 321578,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 320324,
+      "label": "security",
+      "event_slug": "maplestory-universe-server-breach"
+    },
+    {
+      "id": 320323,
+      "label": "security",
+      "event_slug": "gwangju-donggu-app-leak"
+    },
+    {
+      "id": 320381,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 320380,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321121,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 320379,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321535,
+      "label": "security",
+      "event_slug": "google-map-export-security-check"
+    },
+    {
+      "id": 320378,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 321201,
+      "label": "security",
+      "event_slug": "google-map-export-security-check"
+    },
+    {
+      "id": 320377,
+      "label": "security",
+      "event_slug": "nable-ncentral-4everable2shell"
+    },
+    {
+      "id": 320376,
+      "label": "security",
+      "event_slug": "citrix-netscaler-cve-2026-120868"
+    },
+    {
+      "id": 320967,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 320375,
+      "label": "security",
+      "event_slug": "github-wfx-credential-theft"
+    },
+    {
+      "id": 320374,
+      "label": "security",
+      "event_slug": "barracuda-cloud-breach"
+    },
+    {
+      "id": 321194,
+      "label": "security",
+      "event_slug": "maplestory-universe-server-breach"
+    },
+    {
+      "id": 320373,
+      "label": "security",
+      "event_slug": "ai-platform-compute-theft"
+    },
+    {
+      "id": 320372,
+      "label": "security",
+      "event_slug": "apache-httpd-cve-2026-119618"
+    },
+    {
+      "id": 321114,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 320322,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321113,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 322814,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 322257,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 322853,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 321643,
+      "label": "security",
+      "event_slug": "ms365-global-outage"
+    },
+    {
+      "id": 322396,
+      "label": "security",
+      "event_slug": "hanwha-ocean-ciso"
+    },
+    {
+      "id": 321642,
+      "label": "security",
+      "event_slug": "north-korea-facestealer"
+    },
+    {
+      "id": 321641,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 321589,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 322434,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321640,
+      "label": "security",
+      "event_slug": "fortinet-nov-2026-vulns"
+    },
+    {
+      "id": 321639,
+      "label": "security",
+      "event_slug": "tsmc-employee-data-exposure"
+    },
+    {
+      "id": 321688,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 321588,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 321638,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 322745,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 322384,
+      "label": "security",
+      "event_slug": "socar-employee-data-leak"
+    }
+  ],
+  "security_events": [
+    {
+      "name": "고도화되는 드론 테러, 국가 항공보안의 패러다임 대전환 토론회",
+      "start_date": "2026-11-16",
+      "end_date": null,
+      "place": "국회의원회관 제6간담회실",
+      "organizer": "한국항공보안학회",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147245",
+      "major": true,
+      "note": "부승찬 의원실·항공안전기술원 공동 주최, 국가중요시설·공항 드론 테러 방호 대책 논의, 국방부·경찰청 등 참여",
+      "article_ids": [
+        320328
+      ]
+    },
+    {
+      "name": "CPS(OT/ICS) 시큐어 AX 서밋 2026",
+      "start_date": "2026-11-13",
+      "end_date": null,
+      "place": "서울 엘타워",
+      "organizer": "앤앤에스피·한국기계전기전자시험연구원(KTC)·K-ICS협의회",
+      "url": "https://www.etnews.com/20261113000267",
+      "major": false,
+      "note": "AI 시대 산업현장 OT 보안과 안전한 데이터 연계 방안, OT 제어망 보안·시험인증 사례 공유",
+      "article_ids": [
+        321688
+      ]
+    }
+  ]
+}
