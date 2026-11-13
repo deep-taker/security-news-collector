@@ -1,0 +1,372 @@
+{
+  "date": "2026-11-13",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-13-noon.md",
+  "stats": {
+    "candidates": 41,
+    "security": 22,
+    "trend": 2,
+    "pr": 4,
+    "column": 1,
+    "not_security": 12,
+    "events": 15
+  },
+  "events": [
+    {
+      "slug": "kb-capital-breach",
+      "title": "KB캐피탈 해킹, 고객·협력사·임직원 1811명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "자동차임대자산관리시스템 침해, 이름·주소·차량번호·임직원 계정정보 등 유출",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "미 법무부 북한 연계 탈취 자산 12억달러 압류 승인, 동결 27억달러 넘어, 바이낸스 63억달러 보충 완료",
+      "cves": []
+    },
+    {
+      "slug": "kakaowork-breach",
+      "title": "카카오워크 운영사 디케이테크인 해킹, 이용자 정보 유출",
+      "category": "침해사고",
+      "summary": "9일 외부 공격, 이름·닉네임·부서 등 업무정보 유출, 피해 범위 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "flybit-breach",
+      "title": "가상자산 거래소 플라이빗 해킹, 고객 40명 주민등록번호 유출",
+      "category": "침해사고",
+      "summary": "다우기술 그룹웨어 경유 빗썸·한양증권 이어 세 번째 피해",
+      "cves": []
+    },
+    {
+      "slug": "cisco-broadworks-cve-2026-20320",
+      "title": "시스코 브로드웍스 취약점 실제 악용, CISA KEV 등재",
+      "category": "취약점",
+      "summary": "오픈웨이브 웹메일 결함도 KEV 등재, 연방 기관 24일까지 패치 요구",
+      "cves": [
+        "CVE-2026-20320"
+      ]
+    },
+    {
+      "slug": "erp-backup-zeroday-leak-risk",
+      "title": "ERP 백업망 제로데이 공격, 수만 개 기업 급여정보 연쇄 유출 위기",
+      "category": "취약점",
+      "summary": "백업 소프트웨어 취약점이 고객사 전체 침투로 이어지는 공급망 위협",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "젠슨 황 사임 후폭풍, 백악관 러트닉 상무장관 경질 논의",
+      "cves": []
+    },
+    {
+      "slug": "china-ai-intrusion-200-orgs",
+      "title": "중국 연계 해커, AI 침투 도구로 200여 개 기관 공격",
+      "category": "AI 보안",
+      "summary": "미국 반도체·방산 기업과 각국 정부 부처·통신사업자 대상",
+      "cves": []
+    },
+    {
+      "slug": "ai-api-key-hijack",
+      "title": "AI 기업 API 키 탈취, 2차 공격 도구로 악용",
+      "category": "AI 보안",
+      "summary": "국내 AI 기업 고객사 데모 페이지 관리자 계정 침해, 5시간 동안 초당 50회 로그인 시도",
+      "cves": []
+    },
+    {
+      "slug": "ai-chatbot-risky-shop-recommend",
+      "title": "AI 챗봇, 쇼핑몰 추천에 가짜·위험 사이트 포함",
+      "category": "AI 보안",
+      "summary": "포드키 조사, 챗GPT·제미나이·퍼플렉시티 모두 위험 사이트 안내",
+      "cves": []
+    },
+    {
+      "slug": "mobile-id-ci-provision",
+      "title": "전자정부법 개정안, 모바일 신분증 CI 제공 근거 마련",
+      "category": "정책·제도",
+      "summary": "분산신원 기술로 실시간 검증, CI 유출 가능성 낮다는 분석",
+      "cves": []
+    },
+    {
+      "slug": "europe-supermarket-freezer-attack",
+      "title": "유럽 6개국 슈퍼마켓 냉동고 사이버 공격 추정",
+      "category": "침해사고",
+      "summary": "미 국방부, 냉동고 해킹 계기로 군 기반시설 OT 보안 강화·AI 점검",
+      "cves": []
+    },
+    {
+      "slug": "fiscon-2026",
+      "title": "금융정보보호 컨퍼런스 FISCON 2026",
+      "category": "기타",
+      "summary": "박상원 금융보안원장 해킹 사고 사과로 개막, AI 해킹 핵심 위협 지목",
+      "cves": []
+    },
+    {
+      "slug": "defense-ai-unmanned-seminar-2026",
+      "title": "2026 국방혁신 AI유무인복합체계 발전 세미나",
+      "category": "방산보안",
+      "summary": "12일 대전대학교 개최, NSHC 공공·국방 AI 보안 전략 강연",
+      "cves": []
+    },
+    {
+      "slug": "gangwon-infosec-conference-2026",
+      "title": "2026 강원지역 정보보호 컨퍼런스",
+      "category": "기타",
+      "summary": "12일 원주 개최, AI 시대 사이버 위협 주제로 산학연 200여명 참석",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 316408,
+      "label": "security",
+      "event_slug": "ai-api-key-hijack"
+    },
+    {
+      "id": 316492,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 316491,
+      "label": "security",
+      "event_slug": "fiscon-2026"
+    },
+    {
+      "id": 316490,
+      "label": "security",
+      "event_slug": "fiscon-2026"
+    },
+    {
+      "id": 317799,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 317798,
+      "label": "pr",
+      "event_slug": "defense-ai-unmanned-seminar-2026"
+    },
+    {
+      "id": 317797,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 316403,
+      "label": "security",
+      "event_slug": "mobile-id-ci-provision"
+    },
+    {
+      "id": 316001,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 316468,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 316626,
+      "label": "security",
+      "event_slug": "europe-supermarket-freezer-attack"
+    },
+    {
+      "id": 317193,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 316625,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317730,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317164,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 317890,
+      "label": "security",
+      "event_slug": "gangwon-infosec-conference-2026"
+    },
+    {
+      "id": 318644,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 317796,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317795,
+      "label": "security",
+      "event_slug": "cisco-broadworks-cve-2026-20320"
+    },
+    {
+      "id": 318471,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 319007,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 317794,
+      "label": "security",
+      "event_slug": "flybit-breach"
+    },
+    {
+      "id": 318470,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 318587,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317793,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 318464,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 318463,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 318456,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 318455,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317792,
+      "label": "security",
+      "event_slug": "kakaowork-breach"
+    },
+    {
+      "id": 317926,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 318439,
+      "label": "security",
+      "event_slug": "ai-chatbot-risky-shop-recommend"
+    },
+    {
+      "id": 317791,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317790,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 317839,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 317789,
+      "label": "security",
+      "event_slug": "erp-backup-zeroday-leak-risk"
+    },
+    {
+      "id": 318585,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 317889,
+      "label": "security",
+      "event_slug": "china-ai-intrusion-200-orgs"
+    },
+    {
+      "id": 318664,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 318955,
+      "label": "security",
+      "event_slug": "kb-capital-breach"
+    },
+    {
+      "id": 318425,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "금융정보보호 컨퍼런스 FISCON 2026",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": null,
+      "organizer": "금융보안원",
+      "url": "https://it.chosun.com/news/articleView.html?idxno=3000000000894",
+      "major": true,
+      "note": "금융보안원 연례 보안 행사, 원장 해킹 사고 사과로 개막, AI 해킹 위협 논의",
+      "article_ids": [
+        316490,
+        316491
+      ]
+    },
+    {
+      "name": "2026 국방혁신 AI유무인복합체계 발전 세미나",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "대전대학교",
+      "organizer": null,
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147232",
+      "major": true,
+      "note": "NSHC 공공·국방 AI 보안 전략 강연, 대전대 군사학과 산학협력 후속 프로그램",
+      "article_ids": [
+        317798
+      ]
+    },
+    {
+      "name": "2026 강원지역 정보보호 컨퍼런스",
+      "start_date": "2026-11-12",
+      "end_date": null,
+      "place": "원주 인터불고호텔",
+      "organizer": "강원특별자치도·강원테크노파크",
+      "url": "https://www.etnews.com/20261113000039",
+      "major": true,
+      "note": "AI 대전환 시대 사이버 위협과 정보보호 주제, 산학연 200여명 참석",
+      "article_ids": [
+        317890
+      ]
+    }
+  ]
+}
