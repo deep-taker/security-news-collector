@@ -1,0 +1,308 @@
+{
+  "date": "2026-11-15",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-15-am.md",
+  "stats": {
+    "candidates": 38,
+    "security": 25,
+    "trend": 2,
+    "pr": 2,
+    "column": 3,
+    "not_security": 6,
+    "events": 14
+  },
+  "events": [
+    {
+      "slug": "nooranusan-kbiz-breach",
+      "title": "192만명 가입 노란우산 홈페이지 해킹, 개인정보 유출 정황",
+      "category": "개인정보",
+      "summary": "11일 비정상 접근·제3자 조회 정황, 주민번호 앞 7자리·주소 등 유출 가능성",
+      "cves": []
+    },
+    {
+      "slug": "kyungil-univ-edms-breach",
+      "title": "경일대 교직원 전자문서시스템 해킹",
+      "category": "침해사고",
+      "summary": "같은 해커가 국내 대학 31곳 데이터 공개 주장, 인제대 2만4011건 유출 공지",
+      "cves": []
+    },
+    {
+      "slug": "fsec-assessment-system-breach",
+      "title": "금융보안원 정보보호 상시평가 시스템 해킹, 일부 자료 유출",
+      "category": "침해사고",
+      "summary": "공격 IP 246개 차단, 48개 금융사 정보 130여 건 유출, 유동 IP 허용 원인 지목",
+      "cves": []
+    },
+    {
+      "slug": "modu-changup-amicuslex-breach",
+      "title": "중기부 '모두의 창업' AI 공급기업 해킹, 2만28명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "관리자 페이지 SQL 인젝션으로 취약 API 통해 유출, 1차 사고 이후 재발",
+      "cves": []
+    },
+    {
+      "slug": "ms365-global-outage",
+      "title": "MS 아웃룩·팀즈·코파일럿 전 세계 대규모 장애",
+      "category": "기타",
+      "summary": "원인은 네트워크 작업 오류, 과기정통부 비상대응반 가동, 기업용 일부 복구",
+      "cves": []
+    },
+    {
+      "slug": "apache-httpd-cve-2026-119618",
+      "title": "아파치 HTTP 서버 2.4.71, HTTP/2 원격 코드 실행 결함 수정",
+      "category": "취약점",
+      "summary": "앤트로픽·구글이 발견, 2.4.55~2.4.70 영향, HTTP/2 사용 서버 업데이트 필요",
+      "cves": [
+        "CVE-2026-119618"
+      ]
+    },
+    {
+      "slug": "us-faa-atc-comm-outage",
+      "title": "미국 전역 항공기 이륙 중단, 관제통신 장애",
+      "category": "기타",
+      "summary": "4시간 넘게 이륙 중단, 약 150만명 발 묶여, 사이버공격 징후 없어",
+      "cves": []
+    },
+    {
+      "slug": "maersk-whitearmor-ransomware",
+      "title": "머스크 인수 회사 옛 시스템 데이터 도난, 랜섬웨어 500만달러 요구",
+      "category": "악성코드·랜섬웨어",
+      "summary": "화이트아머가 옛 LF로지스틱스 플랫폼 데이터 약 100GB 공개 예고",
+      "cves": []
+    },
+    {
+      "slug": "silentair-asia-telecom-intrusion",
+      "title": "국가 배후 해킹 조직 사일런트에어, 아시아 6개국 통신망 침투",
+      "category": "침해사고",
+      "summary": "통신사 장비 장악해 대만 사용자 통화·문자 가로채",
+      "cves": []
+    },
+    {
+      "slug": "fireworks-ai-breach",
+      "title": "AI 개발 플랫폼 파이어웍스AI 해킹, 노션 등 고객 데이터 유출",
+      "category": "AI 보안",
+      "summary": "우버 운전자 수천명 운전면허 정보 유출, 미국 주 법무장관실 신고",
+      "cves": []
+    },
+    {
+      "slug": "cpguard-update-supply-chain",
+      "title": "리눅스 서버 보안도구 시피가드 업데이트 배포망 오염",
+      "category": "악성코드·랜섬웨어",
+      "summary": "탈취 계정으로 업데이트 인프라 침투해 악성 스크립트 유포",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "대만 매체 앨리스 황 중국 국가안전부 칩 팀 소속 보도, 미국은 확인 안 돼",
+      "cves": []
+    },
+    {
+      "slug": "openai-daybreak-security-products",
+      "title": "오픈AI, 취약점 탐지·패치 자동화 보안 제품 2종 공개",
+      "category": "AI 보안",
+      "summary": "데이브레이크 레드팀·디펜스 팩토리로 취약점 발견과 수정안 작성 자동화",
+      "cves": []
+    },
+    {
+      "slug": "australia-frontier-ai-law",
+      "title": "호주, 첨단 AI 안전·보안 의무 법제화 추진",
+      "category": "정책·제도",
+      "summary": "뉴욕주 AI 안전법 대상 기업 등록 시작, 프런티어 AI 안전관리 의무화 확산",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 338413,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 333341,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 332131,
+      "label": "security",
+      "event_slug": "modu-changup-amicuslex-breach"
+    },
+    {
+      "id": 332130,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 331530,
+      "label": "security",
+      "event_slug": "fireworks-ai-breach"
+    },
+    {
+      "id": 333352,
+      "label": "security",
+      "event_slug": "fireworks-ai-breach"
+    },
+    {
+      "id": 332821,
+      "label": "security",
+      "event_slug": "openai-daybreak-security-products"
+    },
+    {
+      "id": 333349,
+      "label": "security",
+      "event_slug": "us-faa-atc-comm-outage"
+    },
+    {
+      "id": 333030,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 332929,
+      "label": "security",
+      "event_slug": "ms365-global-outage"
+    },
+    {
+      "id": 333466,
+      "label": "security",
+      "event_slug": "cpguard-update-supply-chain"
+    },
+    {
+      "id": 333465,
+      "label": "security",
+      "event_slug": "modu-changup-amicuslex-breach"
+    },
+    {
+      "id": 334103,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 333464,
+      "label": "security",
+      "event_slug": "us-faa-atc-comm-outage"
+    },
+    {
+      "id": 333463,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 333563,
+      "label": "security",
+      "event_slug": "us-faa-atc-comm-outage"
+    },
+    {
+      "id": 334203,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 334098,
+      "label": "security",
+      "event_slug": "us-faa-atc-comm-outage"
+    },
+    {
+      "id": 335947,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 334736,
+      "label": "security",
+      "event_slug": "apache-httpd-cve-2026-119618"
+    },
+    {
+      "id": 335946,
+      "label": "security",
+      "event_slug": "us-faa-atc-comm-outage"
+    },
+    {
+      "id": 335883,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 334735,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 337276,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 337275,
+      "label": "security",
+      "event_slug": "maersk-whitearmor-ransomware"
+    },
+    {
+      "id": 336845,
+      "label": "security",
+      "event_slug": "australia-frontier-ai-law"
+    },
+    {
+      "id": 336874,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 336873,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 336641,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 337912,
+      "label": "security",
+      "event_slug": "silentair-asia-telecom-intrusion"
+    },
+    {
+      "id": 337274,
+      "label": "security",
+      "event_slug": "ms365-global-outage"
+    },
+    {
+      "id": 337409,
+      "label": "security",
+      "event_slug": "nooranusan-kbiz-breach"
+    },
+    {
+      "id": 338531,
+      "label": "security",
+      "event_slug": "nooranusan-kbiz-breach"
+    },
+    {
+      "id": 338581,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 339835,
+      "label": "security",
+      "event_slug": "nooranusan-kbiz-breach"
+    },
+    {
+      "id": 340421,
+      "label": "security",
+      "event_slug": "ms365-global-outage"
+    },
+    {
+      "id": 340643,
+      "label": "security",
+      "event_slug": "nooranusan-kbiz-breach"
+    },
+    {
+      "id": 342337,
+      "label": "security",
+      "event_slug": "kyungil-univ-edms-breach"
+    }
+  ]
+}
