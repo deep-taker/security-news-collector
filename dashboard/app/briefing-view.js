@@ -49,7 +49,7 @@ async function columnAuthors(html) {
   if (!urls.length) return {};
   try {
     const { rows } = await q("articles", { select: "url,author_info", url: `in.(${urls.map((u) => `"${u}"`).join(",")})`,
-                                          author_info: "not.is.null" }, { revalidate: 300 });
+                                          author_info: "not.is.null" });   // 캐시 없음: 판이 올라온 직후 비어 있던 필자가 5분간 남던 문제(2026-11-15)
     return Object.fromEntries(rows.map((r) => [r.url, r.author_info]));
   } catch { return {}; }
 }

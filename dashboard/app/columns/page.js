@@ -13,7 +13,7 @@ export default async function Columns() {
     ({ rows } = await q("articles", {
       select: "id,title,url,source_id,published_at,collected_at,summary_line,author_info",
       label: "eq.column", collected_at: `gte.${since}`, order: "collected_at.desc,id.desc", limit: "200",
-    }, { revalidate: 300 }));
+    }));   // 캐시 없음: 새 칼럼의 필자가 채워지는 즉시 보이게 (2026-11-15)
   } catch { rows = []; }
   return (
     <>
