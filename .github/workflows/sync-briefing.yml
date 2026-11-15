@@ -50,6 +50,15 @@ jobs:
           else
             echo "반영할 파일 없음"
           fi
+      - name: 칼럼 필자 정보 보완 (방금 칼럼으로 분류된 기사 — 검증이 대시보드를 열기 전에 채움, 실패해도 반영 결과에는 영향 없음)
+        if: always()
+        continue-on-error: true
+        timeout-minutes: 4
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python -m collector.authors 10
       - name: 반영 검증 (누락·사건 연결·DB·대시보드) — 실패 시 대시보드 '수집 상태'에 표시
         if: always()
         env:
@@ -59,12 +68,3 @@ jobs:
           files=$(cat /tmp/files.txt)
           [ -z "$files" ] && exit 0
           python -m collector.verify_briefing $files
-      - name: 칼럼 필자 정보 보완 (방금 칼럼으로 분류된 기사 — 실패해도 반영 결과에는 영향 없음)
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 4
-        env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python -m collector.authors 10
