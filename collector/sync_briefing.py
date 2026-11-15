@@ -28,6 +28,7 @@ def sync(path: Path):
     if markdown and not markdown.lstrip().startswith("# 정보보안 브리핑"):
         raise ValueError(f"{md_path}: 브리핑 제목 형식이 아니라 반영하지 않음")
     labels = [l for l in data.get("labels", []) if l.get("label") in VALID and isinstance(l.get("id"), int)]
+    fill_column_authors([l["id"] for l in labels if l["label"] == "column"], path)
     res = store.rpc("apply_briefing", {
         "p_date": data["date"],
         "p_edition": edition,
@@ -40,6 +41,22 @@ def sync(path: Path):
     evs = clean_security_events(data.get("security_events"))
     if evs:
         print(f"{path}: 보안 행사 {store.rpc('apply_security_events', {'p_events': evs})}")
+
+
+def fill_column_authors(ids, path) -> None:
+    """판을 공개(apply_briefing)하기 직전에 이 판의 칼럼 필자부터 채운다 (2026-11-15 설계 변경).
+    전에는 판을 먼저 공개하고 필자를 나중에 채워, 그 사이 대시보드에 필자가 비어 보였다(캐시까지 겹쳐 수 분).
+    실패해도 판 공개는 막지 않는다 — 반영 뒤 보완 단계(python -m collector.authors)와 다음 수집이 다시 시도한다."""
+    if not ids:
+        return
+    try:
+        from . import authors
+        r = authors.run(limit=20, ids=ids)
+        print(f"{path}: 칼럼 필자 {json.dumps(r, ensure_ascii=False)}")
+        for t in r.get("unknown_titles", []):
+            print(f"::warning title=칼럼 필자를 찾지 못함::{t}")
+    except Exception as e:  # noqa: BLE001 — 필자 실패가 판 공개를 막지 않게
+        print(f"::warning title=칼럼 필자 선행 채우기 실패::{type(e).__name__}: {str(e)[:200]}")
 
 
 def allowed_event_url(url) -> bool:

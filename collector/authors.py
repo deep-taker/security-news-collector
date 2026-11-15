@@ -2,7 +2,11 @@
 
 - 대상: 최근 30일 기사 중 필자 정보를 아직 찾지 않은(author_info 비어 있음) 칼럼 — 브리핑이 `column`으로 분류했거나,
   분류 전이라도 제목이 칼럼·기고 형식(daily.is_opinion)·개인 연재 머리말('[홍길동의 …]')인 후보 기사
-- 실행: 수집 끝(collect.py)과 브리핑 결과 DB 반영 직후(sync-briefing.yml, `python -m collector.authors`)
+- 실행 (2026-11-15 설계: 판이 공개될 때 필자가 이미 DB에 있어야 한다)
+  1) 브리핑 반영 직전: sync_briefing이 그 판의 칼럼 기사(ids)부터 채운 뒤 판을 공개 — 제목 형식과 관계없음
+  2) 반영 뒤 안전망: sync-briefing.yml `python -m collector.authors` (1에서 실패한 것 재시도)
+  3) 수집 끝(collect.py): 칼럼 형식 제목은 브리핑 전에 미리
+  감시: 반영 검증(verify_briefing.check_authors) 경고, 대시보드 '수집 상태'의 필자 누락 목록
 - 1단계(규칙): 기사 페이지에서 필자 줄 후보만 뽑는다 — 제목 머리말([이혁중 CISO 칼럼]), 기자가 아닌 작성자 메타 정보,
   본문의 '[글. …]'·'[글_…]' 줄, 본문 처음·끝의 짧은 줄
 - 2단계(AI, Claude Haiku): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
@@ -230,8 +234,9 @@ def targets(rows: list) -> list:
     return [r for r in rows if r.get("label") == "column" or (r.get("label") is None and opinion(r.get("title") or ""))]
 
 
-def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
-    """필자 정보를 찾아 저장. 반환: {"target", "found", "unknown", "failed", "gave_up"}."""
+def run(limit: int = MAX_PER_RUN, fetch=None, ids=None) -> dict:
+    """필자 정보를 찾아 저장. 반환: {"target", "found", "unknown", "failed", "gave_up"}.
+    ids: 브리핑 반영 직전에 그 판의 칼럼 기사만 지정해 채울 때 (sync_briefing — 판이 공개되기 전에 필자가 DB에 있도록)."""
     res = {"enabled": ai_summary.enabled(), "target": 0, "found": 0, "unknown": 0, "failed": 0, "gave_up": 0, "errors": []}
     if not res["enabled"]:
         return res
@@ -240,10 +245,17 @@ def run(limit: int = MAX_PER_RUN, fetch=None) -> dict:
         fetch = lambda u: _fetch(u, waits=())   # noqa: E731
     now = datetime.now(KST)
     since = (now - timedelta(days=WINDOW_DAYS)).isoformat()
-    rows = store.select("articles", {
-        "select": "id,title,url,source_id,label,collected_at", "author_info": "is.null", "collected_at": f"gte.{since}",
-        "or": "(label.eq.column,and(label.is.null,candidate.eq.true))", "order": "id.desc", "limit": "500"}, page_size=500)
-    todo = targets(rows)[:limit]
+    if ids is not None:   # 브리핑이 칼럼으로 분류한 기사(아직 DB 라벨 반영 전) — 제목 형식과 관계없이 대상
+        ids = [i for i in ids if isinstance(i, int)][:limit]
+        if not ids:
+            return res
+        todo = store.select("articles", {"select": "id,title,url,source_id,label,collected_at", "author_info": "is.null",
+                                         "id": f"in.({','.join(map(str, ids))})"})
+    else:
+        rows = store.select("articles", {
+            "select": "id,title,url,source_id,label,collected_at", "author_info": "is.null", "collected_at": f"gte.{since}",
+            "or": "(label.eq.column,and(label.is.null,candidate.eq.true))", "order": "id.desc", "limit": "500"}, page_size=500)
+        todo = targets(rows)[:limit]
     res["target"] = len(todo)
 
     def old(a):

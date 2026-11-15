@@ -793,3 +793,56 @@ def test_author_meta_property_and_byline_outside_body():
     assert as_reporter({}, reps, t, "zdnet", candidates(page, t)) == {"org": "지디넷코리아", "position": "기자", "name": "홍하나"}
     # property 속성의 '논설위원실'도 사설로
     assert editorial(b'<html><head><meta property="dable:author" content="\xeb\x85\xbc\xec\x84\xa4\xec\x9c\x84\xec\x9b\x90\xec\x8b\xa4"></head></html>', "제목")
+
+
+def test_sync_fills_column_authors_before_publishing(monkeypatch, tmp_path):
+    """판 공개(apply_briefing) 전에 그 판의 칼럼 필자부터 채운다 — 공개 직후 필자 빈칸 방지 (2026-11-15)"""
+    import json as _json
+    from collector import authors, store, sync_briefing
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "briefings").mkdir()
+    (tmp_path / "briefings" / "2026-11-15-am.md").write_text("# 정보보안 브리핑 2026-11-15 (일) 06시판\n", encoding="utf-8")
+    out = tmp_path / "2026-11-15-am.json"
+    out.write_text(_json.dumps({"date": "2026-11-15", "edition": "am", "labels": [
+        {"id": 1, "label": "column"}, {"id": 2, "label": "security"}, {"id": 3, "label": "column"}]}), encoding="utf-8")
+    order = []
+    monkeypatch.setattr(authors, "run", lambda limit=20, fetch=None, ids=None: order.append(("authors", ids)) or {"found": 2})
+    monkeypatch.setattr(store, "rpc", lambda name, args: order.append((name, None)) or "ok")
+    sync_briefing.sync(out)
+    assert order[0] == ("authors", [1, 3]) and order[1][0] == "apply_briefing"
+    # 필자 채우기가 실패해도 판은 공개
+    order.clear()
+    monkeypatch.setattr(authors, "run", lambda **k: (_ for _ in ()).throw(RuntimeError("x")))
+    sync_briefing.sync(out)
+    assert order == [("apply_briefing", None)]
+
+
+def test_author_run_with_ids_ignores_title_form(monkeypatch):
+    """ids 지정: 브리핑이 칼럼으로 분류한 기사는 제목 형식('[Tech Insight]' 등)과 관계없이 처리"""
+    from collector import authors, store
+    from datetime import timedelta, timezone
+    recent = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+    calls = []
+    def select(t, p, page_size=1000):
+        calls.append(p)
+        return [{"id": 9, "title": "[Tech Insight] 기반시설 보안", "url": "https://www.digitaltoday.co.kr/a", "source_id": "digitaltoday",
+                 "label": None, "collected_at": recent}]
+    patched = []
+    monkeypatch.setattr(store, "select", select)
+    monkeypatch.setattr(store, "patch", lambda t, m, v: patched.append((m["id"], v)))
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    page = '<html><head><meta property="dable:author" content="황치규 기자"></head><body><div class="view_cont"><p>본문</p></div></body></html>'
+    monkeypatch.setattr(authors, "_call", lambda items: {"9": {"id": 9, "org": "", "position": "", "name": ""}})   # AI: 외부 필자 없음
+    r = authors.run(ids=[9], fetch=lambda u: page.encode())
+    assert calls[0]["id"] == "in.(9)" and r["target"] == 1
+    assert ("eq.9", {"author_info": {"org": "디지털투데이", "position": "기자", "name": "황치규"}}) in patched
+    assert authors.run(ids=[], fetch=lambda u: b"")["target"] == 0
+
+
+def test_verify_warns_column_without_author(monkeypatch):
+    from collector import store, verify_briefing
+    monkeypatch.setattr(store, "select", lambda t, p, page_size=1000: [
+        {"id": 1, "title": "[ET톡] 제목", "author_info": {}}, {"id": 3, "title": "[보안칼럼] 제목", "author_info": {"org": "가", "position": "", "name": "나"}}])
+    w = verify_briefing.check_authors({"labels": [{"id": 1, "label": "column"}, {"id": 3, "label": "column"}, {"id": 2, "label": "security"}]})
+    assert len(w) == 1 and "1건" in w[0] and "ET톡" in w[0]
+    assert verify_briefing.check_authors({"labels": [{"id": 2, "label": "security"}]}) == []

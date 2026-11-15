@@ -228,6 +228,18 @@ def check_db(out: dict, markdown: str) -> list:
     return errors
 
 
+def check_authors(out: dict) -> list:
+    """이번 판 칼럼의 필자 정보가 DB에 있는지 (2026-11-15 — 필자 빈칸 재발 감시). 없으면 경고."""
+    ids = [l["id"] for l in out.get("labels", []) if l.get("label") == "column" and isinstance(l.get("id"), int)]
+    if not ids:
+        return []
+    rows = store.select("articles", {"select": "id,title,author_info", "id": f"in.({','.join(map(str, ids))})"})
+    missing = [r for r in rows if not (r.get("author_info") or {}).get("name") and not (r.get("author_info") or {}).get("org")]
+    if not missing:
+        return []
+    return [f"필자 정보가 없는 칼럼 {len(missing)}건: " + "; ".join((r.get("title") or "")[:40] for r in missing[:3])]
+
+
 def check_dashboard(out: dict) -> list:
     url = f"{DASHBOARD}/b/{out['date']}-{out['edition']}"
     try:
@@ -257,6 +269,7 @@ def verify(out_path: Path) -> bool:
     if store.enabled():
         errors += check_db(out, markdown)
         errors += check_dashboard(out)
+        warns += check_authors(out)
     ok = not errors
     print(f"[{eid}] {'통과' if ok else '실패'} — 오류 {len(errors)}건, 경고 {len(warns)}건, {summary}")
     for p in errors:
