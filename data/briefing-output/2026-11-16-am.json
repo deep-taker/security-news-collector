@@ -1,0 +1,407 @@
+{
+  "date": "2026-11-16",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-16-am.md",
+  "stats": {
+    "candidates": 50,
+    "security": 32,
+    "trend": 3,
+    "pr": 9,
+    "column": 1,
+    "not_security": 5,
+    "events": 17
+  },
+  "events": [
+    {
+      "slug": "coinone-metam-breach",
+      "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "12일 수탁사 서버 침입, 주민번호·계좌번호 등 11개 항목 유출 가능, KISA 신고",
+      "cves": []
+    },
+    {
+      "slug": "php2shell-rce",
+      "title": "PHP2Shell 취약점 실제 악용 확인",
+      "category": "취약점",
+      "summary": "북한 라자루스, PHP2Shell로 국내 정부·금융·통신 서버 30곳 표적, 10개국 216개 서버 겨냥",
+      "cves": []
+    },
+    {
+      "slug": "komsco-chak-breach",
+      "title": "한국조폐공사 지역사랑상품권 앱 '착' 해킹, 3083명 개인정보 조회",
+      "category": "개인정보",
+      "summary": "계좌번호·암호화된 카드번호 등 포함, 13일 비정상 접근 차단 후 KISA 신고",
+      "cves": []
+    },
+    {
+      "slug": "kyungil-univ-edms-breach",
+      "title": "경일대 교직원 전자문서시스템 해킹",
+      "category": "침해사고",
+      "summary": "인제대 2만4011건 유출, 12일 교육부 통보로 침해 인지",
+      "cves": []
+    },
+    {
+      "slug": "jbe-data-leak-claim",
+      "title": "해커, 전북교육청 학생·학부모 개인정보 유출 주장",
+      "category": "침해사고",
+      "summary": "텔레그램서 수능 당일 응시자 정보 공개 주장, KimJEN 계정이 통학버스 정보 등 거론",
+      "cves": []
+    },
+    {
+      "slug": "kipa-idearo-breach",
+      "title": "한국발명진흥회 '아이디어로' 플랫폼 해킹, 62MB 데이터 유출",
+      "category": "침해사고",
+      "summary": "파일 등록 기능 취약점으로 침입해 악성 프로그램 설치, 첨부파일 저장장치 접근",
+      "cves": []
+    },
+    {
+      "slug": "peterpan-room-breach",
+      "title": "'피터팬의 좋은방 구하기' 개인정보 유출",
+      "category": "개인정보",
+      "summary": "11일 외부인 침입, 성명·휴대전화번호·일부 구매내역 유출, 아파트너 이후 3주 만",
+      "cves": []
+    },
+    {
+      "slug": "dhu-rerp-breach",
+      "title": "대구한의대 연구행정시스템 해킹, 개인정보 1281건 유출",
+      "category": "개인정보",
+      "summary": "직번·학번·성명·부서명 유출, 30건 생년월일 포함, KISA·교육부 신고",
+      "cves": []
+    },
+    {
+      "slug": "n0n-smarttv-claim",
+      "title": "랜섬웨어 N0n, 한국 스마트TV 광고 데이터 기업 해킹 주장",
+      "category": "악성코드·랜섬웨어",
+      "summary": "유출 사이트에 삼성전자 도메인 공개, 실제 침해 여부 미확인",
+      "cves": []
+    },
+    {
+      "slug": "modoojobs-defacement",
+      "title": "'모두의잡스' 홈페이지 해킹·변조",
+      "category": "침해사고",
+      "summary": "메인 화면에 해킹 주장 화면 표시, 해커 닉네임이 웹셸 판매 게시물에도 등장",
+      "cves": []
+    },
+    {
+      "slug": "antifox-ai-pentest-abuse",
+      "title": "AI 모의해킹 플랫폼 안티폭스, AWS 노린 공격에 활용",
+      "category": "AI 보안",
+      "summary": "알리바바 클라우드에 띄운 안티폭스로 AWS 운영 비밀 정보 일부 탈취",
+      "cves": []
+    },
+    {
+      "slug": "fireworks-ai-breach",
+      "title": "AI 개발 플랫폼 파이어웍스AI 해킹, 노션 등 고객 데이터 유출",
+      "category": "AI 보안",
+      "summary": "커서 악성 확장 사고, 파이어웍스AI에서 유출된 접근 키로 데이터 복사",
+      "cves": []
+    },
+    {
+      "slug": "ai-exam-cheating",
+      "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+      "category": "AI 보안",
+      "summary": "초소형 카메라·생성형 AI 부정행위 인정, 청와대 긴급 대책 회의",
+      "cves": []
+    },
+    {
+      "slug": "us-firms-block-ai-agents",
+      "title": "미국 은행·항공사, 외부 AI 에이전트 접근 차단",
+      "category": "AI 보안",
+      "summary": "유나이티드항공, 보안·개인정보 위험 이유로 AI 에이전트 예약·구매 차단",
+      "cves": []
+    },
+    {
+      "slug": "fss-deepfake-fraud-education",
+      "title": "금감원, 딥페이크·딥보이스 사기 예방 체험 교육",
+      "category": "AI 보안",
+      "summary": "여의도에 AI 가짜 영상·목소리 구별 체험관 마련",
+      "cves": []
+    },
+    {
+      "slug": "nsa-civil-mil-it-asset-review",
+      "title": "국가안보실, 민·관·군 IT 자산 관리 체계 전수 점검",
+      "category": "정책·제도",
+      "summary": "구성도 실운영 환경에 맞게 갱신, 공개 전 취약점 정보 확보·SBOM 도입 앞당김",
+      "cves": []
+    },
+    {
+      "slug": "italy-meta-gallery-fine",
+      "title": "이탈리아, 메타에 8억500만유로 과징금",
+      "category": "개인정보",
+      "summary": "페이스북 앱이 동의 없이 사진·동영상 접근, 약 1조1900억원",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 347343,
+      "label": "security",
+      "event_slug": "kipa-idearo-breach"
+    },
+    {
+      "id": 347344,
+      "label": "security",
+      "event_slug": "modoojobs-defacement"
+    },
+    {
+      "id": 348118,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 348482,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 348541,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 348542,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 348543,
+      "label": "security",
+      "event_slug": "kyungil-univ-edms-breach"
+    },
+    {
+      "id": 348544,
+      "label": "security",
+      "event_slug": "komsco-chak-breach"
+    },
+    {
+      "id": 348545,
+      "label": "security",
+      "event_slug": "us-firms-block-ai-agents"
+    },
+    {
+      "id": 348546,
+      "label": "security",
+      "event_slug": "antifox-ai-pentest-abuse"
+    },
+    {
+      "id": 348591,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 348592,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 348593,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 348594,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 348680,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 349667,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 349683,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 349726,
+      "label": "security",
+      "event_slug": "italy-meta-gallery-fine"
+    },
+    {
+      "id": 349784,
+      "label": "security",
+      "event_slug": "peterpan-room-breach"
+    },
+    {
+      "id": 349834,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 349884,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 350419,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 350508,
+      "label": "security",
+      "event_slug": "italy-meta-gallery-fine"
+    },
+    {
+      "id": 350509,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 350605,
+      "label": "security",
+      "event_slug": "italy-meta-gallery-fine"
+    },
+    {
+      "id": 350611,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 350634,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 351074,
+      "label": "security",
+      "event_slug": "komsco-chak-breach"
+    },
+    {
+      "id": 351075,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 351076,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 351077,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 351124,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 351843,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 351873,
+      "label": "security",
+      "event_slug": "php2shell-rce"
+    },
+    {
+      "id": 352144,
+      "label": "security",
+      "event_slug": "fss-deepfake-fraud-education"
+    },
+    {
+      "id": 352203,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 352263,
+      "label": "security",
+      "event_slug": "nsa-civil-mil-it-asset-review"
+    },
+    {
+      "id": 352313,
+      "label": "security",
+      "event_slug": "n0n-smarttv-claim"
+    },
+    {
+      "id": 352363,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 352364,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 352399,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 353551,
+      "label": "security",
+      "event_slug": "dhu-rerp-breach"
+    },
+    {
+      "id": 353552,
+      "label": "security",
+      "event_slug": "nsa-civil-mil-it-asset-review"
+    },
+    {
+      "id": 353642,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 354741,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 355375,
+      "label": "security",
+      "event_slug": "fireworks-ai-breach"
+    },
+    {
+      "id": 355376,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 355377,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 356031,
+      "label": "security",
+      "event_slug": "jbe-data-leak-claim"
+    },
+    {
+      "id": 357856,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "CPS(OT/ICS) 시큐어 AX 서밋 2026",
+      "start_date": "2026-11-13",
+      "end_date": null,
+      "place": "서울 양재 엘타워",
+      "organizer": null,
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209529",
+      "major": false,
+      "note": "산업제어망 OT 보안, 망연계 기술, 산업용 이더넷 시험평가, 랜섬웨어 이후 OT 보안 사례 공유",
+      "article_ids": [
+        348593,
+        348592,
+        348591,
+        349834,
+        351077,
+        351076
+      ]
+    }
+  ]
+}
