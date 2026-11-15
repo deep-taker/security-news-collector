@@ -32,6 +32,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 판 공개 직전 칼럼 필자 채우기 (없으면 건너뜀)
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             files=$(ls data/briefing-output/*.json 2>/dev/null | tail -n 3)
@@ -50,7 +51,7 @@ jobs:
           else
             echo "반영할 파일 없음"
           fi
-      - name: 칼럼 필자 정보 보완 (방금 칼럼으로 분류된 기사 — 검증이 대시보드를 열기 전에 채움, 실패해도 반영 결과에는 영향 없음)
+      - name: 칼럼 필자 정보 보완 (안전망 — 반영 직전 채우기에서 실패한 것을 다시 시도, 실패해도 반영 결과에는 영향 없음)
         if: always()
         continue-on-error: true
         timeout-minutes: 4
