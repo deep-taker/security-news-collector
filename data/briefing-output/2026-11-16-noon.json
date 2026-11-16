@@ -1,0 +1,288 @@
+{
+  "date": "2026-11-16",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-16-noon.md",
+  "stats": {
+    "candidates": 40,
+    "security": 12,
+    "trend": 4,
+    "pr": 13,
+    "column": 1,
+    "not_security": 10,
+    "events": 10
+  },
+  "events": [
+    {
+      "slug": "dhu-rerp-breach",
+      "title": "대구한의대 연구행정시스템 해킹, 개인정보 1281건 유출",
+      "category": "개인정보",
+      "summary": "강원대·대구한의대 14일 오전 6시 22분 동시 침해, 인천대도 웹케시 서버 해킹 의심에 ERP 차단",
+      "cves": []
+    },
+    {
+      "slug": "dooray-api-breach",
+      "title": "협업 도구 두레이 해킹 시도, API 키 전량 폐기",
+      "category": "침해사고",
+      "summary": "일부 고객사 계정 침해로 개인정보·API 키 유출 확인, KISA·개인정보위 신고",
+      "cves": []
+    },
+    {
+      "slug": "bunjang-cs-breach",
+      "title": "번개장터 고객상담 위탁업체 불법 접근, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "성명·휴대전화번호·통화 일시·상담 중 언급한 계좌번호 포함, 규모 파악 중",
+      "cves": []
+    },
+    {
+      "slug": "liveanywhere-breach",
+      "title": "한달살기 플랫폼 리브애니웨어 해킹, 고객정보 유출",
+      "category": "개인정보",
+      "summary": "외부 해킹으로 일부 고객 개인정보 유출·변경 확인",
+      "cves": []
+    },
+    {
+      "slug": "brotli-rce-ot",
+      "title": "구글 브로틀리 원격코드 실행 취약점, 지멘스 OT 제품 영향",
+      "category": "취약점",
+      "summary": "CISA 경고, 전력·빌딩·제조 현장 OT 제품까지 영향",
+      "cves": []
+    },
+    {
+      "slug": "kimsuky-assembly-impersonation",
+      "title": "북한 김수키, 국회의원실 사칭 공격",
+      "category": "침해사고",
+      "summary": "사례비 지급 미끼로 정책·안보 분야 관계자 겨냥 맞춤형 피싱",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "메가스피드, 앨리스 황 2025년 8월 퇴사 밝히고 공급망 보도 내부 조사 착수",
+      "cves": []
+    },
+    {
+      "slug": "pipc-brazil-anpd-mou",
+      "title": "개인정보위, 브라질 데이터보호청과 협약",
+      "category": "정책·제도",
+      "summary": "중남미 국가와 첫 협약, 글로벌 조사·집행 공조 강화",
+      "cves": []
+    },
+    {
+      "slug": "nis-pqc-guidebook",
+      "title": "국정원, 공공기관 암호 안전성 기준·양자내성암호 전환 가이드북 공개",
+      "category": "정책·제도",
+      "summary": "국가보안기술연구소와 가이드라인 2종을 국가사이버안보센터에 공개",
+      "cves": []
+    },
+    {
+      "slug": "mobile-identity-theft-block",
+      "title": "휴대전화 명의도용 차단 강화, 가입제한서비스 기본 제공",
+      "category": "정책·제도",
+      "summary": "과기정통부 고시 개정안 행정예고, 19일까지 의견 수렴, 20일 시행 예정",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 363338,
+      "label": "security",
+      "event_slug": "brotli-rce-ot"
+    },
+    {
+      "id": 364644,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 362136,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 361582,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 362130,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 362847,
+      "label": "security",
+      "event_slug": "mobile-identity-theft-block"
+    },
+    {
+      "id": 362242,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 362839,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 362241,
+      "label": "security",
+      "event_slug": "dhu-rerp-breach"
+    },
+    {
+      "id": 362290,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 362831,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364662,
+      "label": "security",
+      "event_slug": "pipc-brazil-anpd-mou"
+    },
+    {
+      "id": 364682,
+      "label": "security",
+      "event_slug": "liveanywhere-breach"
+    },
+    {
+      "id": 362824,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 362240,
+      "label": "security",
+      "event_slug": "dhu-rerp-breach"
+    },
+    {
+      "id": 364138,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364685,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364356,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364678,
+      "label": "security",
+      "event_slug": "bunjang-cs-breach"
+    },
+    {
+      "id": 364673,
+      "label": "security",
+      "event_slug": "kimsuky-assembly-impersonation"
+    },
+    {
+      "id": 364352,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 364120,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 363539,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364119,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 363538,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 364112,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364642,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364581,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 364107,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 363577,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 363489,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 364578,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364089,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364233,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 364232,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 364085,
+      "label": "security",
+      "event_slug": "nis-pqc-guidebook"
+    },
+    {
+      "id": 364316,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 363438,
+      "label": "security",
+      "event_slug": "dooray-api-breach"
+    },
+    {
+      "id": 363488,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 364313,
+      "label": "security",
+      "event_slug": "bunjang-cs-breach"
+    }
+  ]
+}
