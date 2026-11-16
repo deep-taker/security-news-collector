@@ -1,0 +1,232 @@
+{
+  "date": "2026-11-17",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-17-am.md",
+  "stats": {
+    "candidates": 23,
+    "security": 13,
+    "trend": 2,
+    "pr": 3,
+    "column": 0,
+    "not_security": 5,
+    "events": 12
+  },
+  "events": [
+    {
+      "slug": "gov-email-sso-breach",
+      "title": "행정기관 업무용 이메일 해킹, 300여 계정 비정상 접속",
+      "category": "침해사고",
+      "summary": "9일 해킹 통보, 국정원·KISA 합동점검 착수, 유출 사실 신고·피해자 통지",
+      "cves": []
+    },
+    {
+      "slug": "dhu-rerp-breach",
+      "title": "대구한의대 연구행정시스템 해킹, 개인정보 1281건 유출",
+      "category": "개인정보",
+      "summary": "한림대·숙명여대·한경국립대 3078건 유출 확인, 한남대·한국외대 서비스 중단",
+      "cves": []
+    },
+    {
+      "slug": "coinone-metam-breach",
+      "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "메타엠 AI 상담 고객사 150곳, 병원 등 연쇄 유출 공급망 위협 우려",
+      "cves": []
+    },
+    {
+      "slug": "uos-homepage-breach",
+      "title": "서울시립대 홈페이지 해킹, 구성원 15명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "10월 18일 해킹, 포털 아이디·인증 토큰 등 조회, 경찰 수사 의뢰",
+      "cves": []
+    },
+    {
+      "slug": "nokrnofun-hacking-claims",
+      "title": "해킹팀 No KR No FUN, 국내 대학 30여 곳 해킹 주장",
+      "category": "침해사고",
+      "summary": "텔레그램 인터뷰서 한국 사이트 계속 해킹 예고",
+      "cves": []
+    },
+    {
+      "slug": "ms365-global-outage",
+      "title": "MS 아웃룩·팀즈·코파일럿 전 세계 대규모 장애",
+      "category": "기타",
+      "summary": "장애 미끼 피싱 메일 확산, MS 위협 인텔리전스 팀 공식 경고",
+      "cves": []
+    },
+    {
+      "slug": "clickfix-attacks-korea",
+      "title": "가짜 캡차 이용 픽스 계열 공격 국내 포착",
+      "category": "악성코드·랜섬웨어",
+      "summary": "클릭픽스 등 악성 명령어 직접 입력 유도, 일반인·기업 주의 당부",
+      "cves": []
+    },
+    {
+      "slug": "fss-finance-580-inspection",
+      "title": "금감원, 580개 금융사 보안 전수점검",
+      "category": "정책·제도",
+      "summary": "외부 접점·내부통제 점검 결과 12월 31일까지 CEO 서명 제출",
+      "cves": []
+    },
+    {
+      "slug": "nis-install-free-security-sw-guide",
+      "title": "국정원, 공공 웹사이트 설치형 보안SW 최소화 가이드 공개",
+      "category": "정책·제도",
+      "summary": "개인용 공동인증서 무설치 로그인 추진, 클라우드 공동인증서로 전환",
+      "cves": []
+    },
+    {
+      "slug": "germany-intel-hackback-law",
+      "title": "독일, 정보기관에 해킹·적대 서버 차단 권한 부여 법 통과",
+      "category": "정책·제도",
+      "summary": "연방의회 찬성 308표로 통과, 전후 최대 정보기관법 개편",
+      "cves": []
+    },
+    {
+      "slug": "pipc-brazil-anpd-mou",
+      "title": "개인정보위, 브라질 데이터보호청과 협약",
+      "category": "정책·제도",
+      "summary": "중남미 감독기구와 첫 협약, 15일(현지시각) 체결",
+      "cves": []
+    },
+    {
+      "slug": "poc-2026",
+      "title": "국제 해킹·보안 컨퍼런스 POC 2026",
+      "category": "취약점",
+      "summary": "37개국 405명 참석, 기술 발표 14개·패널 토론 1개 진행",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 369929,
+      "label": "security",
+      "event_slug": "gov-email-sso-breach"
+    },
+    {
+      "id": 372407,
+      "label": "security",
+      "event_slug": "gov-email-sso-breach"
+    },
+    {
+      "id": 368528,
+      "label": "security",
+      "event_slug": "clickfix-attacks-korea"
+    },
+    {
+      "id": 368622,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 368526,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 369161,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 368525,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 368524,
+      "label": "security",
+      "event_slug": "fss-finance-580-inspection"
+    },
+    {
+      "id": 369382,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 368523,
+      "label": "security",
+      "event_slug": "ms365-global-outage"
+    },
+    {
+      "id": 369159,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 369745,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 368522,
+      "label": "security",
+      "event_slug": "germany-intel-hackback-law"
+    },
+    {
+      "id": 369327,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 369407,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 370652,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 371962,
+      "label": "security",
+      "event_slug": "pipc-brazil-anpd-mou"
+    },
+    {
+      "id": 372408,
+      "label": "security",
+      "event_slug": "dhu-rerp-breach"
+    },
+    {
+      "id": 372406,
+      "label": "security",
+      "event_slug": "uos-homepage-breach"
+    },
+    {
+      "id": 372990,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 372405,
+      "label": "security",
+      "event_slug": "nokrnofun-hacking-claims"
+    },
+    {
+      "id": 373684,
+      "label": "security",
+      "event_slug": "poc-2026"
+    },
+    {
+      "id": 373683,
+      "label": "security",
+      "event_slug": "nis-install-free-security-sw-guide"
+    }
+  ],
+  "security_events": [
+    {
+      "name": "POC 2026",
+      "start_date": "2026-11-12",
+      "end_date": "2026-11-13",
+      "place": "서울 더 웨스틴 서울 파르나스",
+      "organizer": "피오씨시큐리티",
+      "url": "https://www.dailysecu.com/news/articleView.html?idxno=209556",
+      "major": true,
+      "note": "국제 해킹·보안 컨퍼런스, 37개국 405명 참석, 기술 발표 14개와 패널 토론 1개",
+      "article_ids": [
+        373684
+      ]
+    }
+  ]
+}
