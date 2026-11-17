@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-18",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-18-am.md",
+  "stats": {
+    "candidates": 13,
+    "security": 8,
+    "trend": 0,
+    "pr": 3,
+    "column": 1,
+    "not_security": 1,
+    "events": 8
+  },
+  "events": [
+    {
+      "slug": "coinone-metam-breach",
+      "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "코인원·번개장터·메가MGC커피 이용자 정보 유출, 전화번호·상담 대화 포함",
+      "cves": []
+    },
+    {
+      "slug": "jbe-data-leak-claim",
+      "title": "해커, 전북교육청 학생·학부모 개인정보 유출 주장",
+      "category": "침해사고",
+      "summary": "통학차량 관리시스템 해킹으로 실제 유출 확인, 학생 주소·통학버스 노선 포함",
+      "cves": []
+    },
+    {
+      "slug": "yeungnam-univ-homepage-breach",
+      "title": "영남대 도서관·취업 홈페이지 해킹, 학생 개인정보 유출",
+      "category": "개인정보",
+      "summary": "16일 전자책·취업 홈페이지 해킹, 17일 사과문 게시",
+      "cves": []
+    },
+    {
+      "slug": "barracuda-esg-exploited",
+      "title": "바라쿠다 이메일 보안 장비 취약점 2건 실제 악용",
+      "category": "취약점",
+      "summary": "싱가포르 CSA 즉시 패치 권고, 인증 우회·명령어 삽입 결함",
+      "cves": [
+        "CVE-2026-116606",
+        "CVE-2026-111560"
+      ]
+    },
+    {
+      "slug": "google-gtig-exploit-agent",
+      "title": "구글, 사람 개입 없는 AI 자동 공격 프레임워크 첫 확인",
+      "category": "AI 보안",
+      "summary": "GTIG AI 위협 추적 보고서 최신판, 자율형 멀티 에이전트 공격 확산",
+      "cves": []
+    },
+    {
+      "slug": "china-ai-distillation",
+      "title": "중국, 미국 AI 모델 증류 산업화",
+      "category": "AI 보안",
+      "summary": "로이터 문서 300여건 분석, 미국은 지재권 침해 가능성 비공개 경고",
+      "cves": []
+    },
+    {
+      "slug": "meta-ai-test-privacy-bugs",
+      "title": "메타, AI 테스트로 개인정보 심각 버그 74건 발견",
+      "category": "AI 보안",
+      "summary": "캐칭 지트테스트 적용, 개인정보 중대 사고 20% 감소",
+      "cves": []
+    },
+    {
+      "slug": "lig-da-bid-ban",
+      "title": "LIG D&A, 방사청 뇌물 의혹으로 2년 입찰 제한",
+      "category": "방산보안",
+      "summary": "법원 집행정지 결정으로 입찰 자격 당분간 유지",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 387309,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 387752,
+      "label": "security",
+      "event_slug": "jbe-data-leak-claim"
+    },
+    {
+      "id": 386460,
+      "label": "security",
+      "event_slug": "yeungnam-univ-homepage-breach"
+    },
+    {
+      "id": 387753,
+      "label": "security",
+      "event_slug": "barracuda-esg-exploited"
+    },
+    {
+      "id": 387308,
+      "label": "security",
+      "event_slug": "google-gtig-exploit-agent"
+    },
+    {
+      "id": 384596,
+      "label": "security",
+      "event_slug": "china-ai-distillation"
+    },
+    {
+      "id": 384591,
+      "label": "security",
+      "event_slug": "meta-ai-test-privacy-bugs"
+    },
+    {
+      "id": 385003,
+      "label": "security",
+      "event_slug": "lig-da-bid-ban"
+    },
+    {
+      "id": 383826,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 387307,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 383825,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 383824,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 391013,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ]
+}
