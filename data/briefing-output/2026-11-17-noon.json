@@ -1,0 +1,352 @@
+{
+  "date": "2026-11-17",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-17-noon.md",
+  "stats": {
+    "candidates": 44,
+    "security": 20,
+    "trend": 8,
+    "pr": 12,
+    "column": 0,
+    "not_security": 4,
+    "events": 16
+  },
+  "events": [
+    {
+      "slug": "hansung-univ-webmail-breach",
+      "title": "한성대 종합정보시스템 해킹, 웹메일 계정 2만5천 건 유출",
+      "category": "개인정보",
+      "summary": "16일 새벽 2시간 해킹, 암호화 비밀번호·접속 IP·로그인 기록 포함",
+      "cves": []
+    },
+    {
+      "slug": "legoland-korea-annual-pass-leak",
+      "title": "레고랜드 코리아 연간이용권 고객 개인정보 유출",
+      "category": "개인정보",
+      "summary": "외부 티켓팅 시스템 침해로 이름·주소·연락처 조회, 유출 시점·규모 확인 중",
+      "cves": []
+    },
+    {
+      "slug": "megacoffee-customer-leak",
+      "title": "메가MGC커피 고객 개인정보 유출",
+      "category": "개인정보",
+      "summary": "올해 초 6억원대 과징금 받은 지 9개월 만에 유출 사고",
+      "cves": []
+    },
+    {
+      "slug": "dhu-rerp-breach",
+      "title": "대구한의대 연구행정시스템 해킹, 개인정보 1281건 유출",
+      "category": "개인정보",
+      "summary": "국립한국해양대 rERP 해킹으로 1,359건 유출, 14일 해킹 화면 발견해 차단",
+      "cves": []
+    },
+    {
+      "slug": "checkpoint-gateway-israel-attack",
+      "title": "체크포인트 보안 게이트웨이 침투, 이스라엘 기관 서버 파일 삭제",
+      "category": "침해사고",
+      "summary": "10월 30일 이스라엘 기관 1차 공격, 11월 2일 여러 나라·업종으로 확산",
+      "cves": []
+    },
+    {
+      "slug": "coinone-metam-breach",
+      "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "12일 오전 4시께 침입해 상담 정보 조회·유출, 금융당국 금융사 수준 보안 요구",
+      "cves": []
+    },
+    {
+      "slug": "uos-homepage-breach",
+      "title": "서울시립대 홈페이지 해킹, 구성원 15명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "3일 가짜 reCAPTCHA 화면 발생, 서울시 사이버안전센터와 로그 분석해 15명 유출 확인",
+      "cves": []
+    },
+    {
+      "slug": "silentair-asia-telecom-intrusion",
+      "title": "국가 배후 해킹 조직 사일런트에어, 아시아 6개국 통신망 침투",
+      "category": "침해사고",
+      "summary": "에네아 보고서, 일부 표적 문자 실제 탈취, 중국 연계 판단은 확신 낮음",
+      "cves": []
+    },
+    {
+      "slug": "fake-zillow-rat-sites",
+      "title": "가짜 질로우 후기 페이지로 원격조종 프로그램 유포",
+      "category": "악성코드·랜섬웨어",
+      "summary": "이피션트IP 연구소 발견, 파워셸 명령으로 윈도우 PC 감염",
+      "cves": []
+    },
+    {
+      "slug": "coles-cyber-incident",
+      "title": "호주 유통업체 콜스, 사이버 보안 사고 조사",
+      "category": "침해사고",
+      "summary": "매장 영업 영향 없고 정보 유출 증거 없음, 호주사이버보안센터 조사 참여",
+      "cves": []
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "트럼프, 젠슨 황 복귀에 긍정적 입장, 국가안보 위협 논란엔 선 그어",
+      "cves": []
+    },
+    {
+      "slug": "google-gtig-exploit-agent",
+      "title": "구글, 사람 개입 없는 AI 자동 공격 프레임워크 첫 확인",
+      "category": "AI 보안",
+      "summary": "GTIG 분기 보고서, LLM 연동 exploit_agent가 취약점 탐색·공격 코드 작성 자동화",
+      "cves": []
+    },
+    {
+      "slug": "california-sues-openai",
+      "title": "캘리포니아주, AI 에이전트 사이버공격 위험으로 오픈AI 제소",
+      "category": "AI 보안",
+      "summary": "AI 통제 실패·사이버 공격 유발 책임 제기, 허깅페이스 해킹 논란 배경",
+      "cves": []
+    },
+    {
+      "slug": "ai-exam-cheating",
+      "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+      "category": "AI 보안",
+      "summary": "수능 안경·시계 전수 점검, 여당 최대 10년 응시 제한 입법 추진",
+      "cves": []
+    },
+    {
+      "slug": "fss-finance-580-inspection",
+      "title": "금감원, 580개 금융사 보안 전수점검",
+      "category": "정책·제도",
+      "summary": "전금업자 227곳·온투업자 47곳 간담회, 사고 시 점검 적정성 책임 추궁",
+      "cves": []
+    },
+    {
+      "slug": "nis-install-free-security-sw-guide",
+      "title": "국정원, 공공 웹사이트 설치형 보안SW 최소화 가이드 공개",
+      "category": "정책·제도",
+      "summary": "전자서명SW 클라우드 공동인증서 전환, 보안SW 4종 무설치 우선",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 378730,
+      "label": "security",
+      "event_slug": "silentair-asia-telecom-intrusion"
+    },
+    {
+      "id": 376824,
+      "label": "security",
+      "event_slug": "google-gtig-exploit-agent"
+    },
+    {
+      "id": 377336,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 377400,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378111,
+      "label": "security",
+      "event_slug": "fsec-assessment-system-breach"
+    },
+    {
+      "id": 378729,
+      "label": "security",
+      "event_slug": "fake-zillow-rat-sites"
+    },
+    {
+      "id": 377510,
+      "label": "security",
+      "event_slug": "hansung-univ-webmail-breach"
+    },
+    {
+      "id": 378106,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 378104,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378310,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 378309,
+      "label": "security",
+      "event_slug": "nis-install-free-security-sw-guide"
+    },
+    {
+      "id": 378308,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 378303,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 377562,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 377561,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 377560,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378250,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378728,
+      "label": "security",
+      "event_slug": "checkpoint-gateway-israel-attack"
+    },
+    {
+      "id": 378330,
+      "label": "security",
+      "event_slug": "california-sues-openai",
+      "line": "캘리포니아주, AI 통제 실패와 사이버 공격 유발 책임 물어 오픈AI 제소"
+    },
+    {
+      "id": 379416,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379637,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 379426,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378827,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379916,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379420,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 379411,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379913,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379909,
+      "label": "security",
+      "event_slug": "california-sues-openai"
+    },
+    {
+      "id": 379890,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 379636,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 378727,
+      "label": "security",
+      "event_slug": "uos-homepage-breach"
+    },
+    {
+      "id": 379409,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379895,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 379400,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 378826,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 379628,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 378726,
+      "label": "security",
+      "event_slug": "coles-cyber-incident"
+    },
+    {
+      "id": 379387,
+      "label": "security",
+      "event_slug": "fss-finance-580-inspection"
+    },
+    {
+      "id": 379375,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 379867,
+      "label": "security",
+      "event_slug": "legoland-korea-annual-pass-leak"
+    },
+    {
+      "id": 379871,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 378776,
+      "label": "security",
+      "event_slug": "dhu-rerp-breach"
+    },
+    {
+      "id": 379600,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 379607,
+      "label": "security",
+      "event_slug": "megacoffee-customer-leak"
+    }
+  ],
+  "security_events": []
+}
