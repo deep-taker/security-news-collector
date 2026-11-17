@@ -1,0 +1,577 @@
+{
+ "date": "2026-11-17",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-17-pm.md",
+ "stats": {
+  "candidates": 78,
+  "security": 33,
+  "trend": 11,
+  "pr": 23,
+  "column": 1,
+  "not_security": 10,
+  "events": 20
+ },
+ "events": [
+  {
+   "slug": "korea-univ-28-data-leak",
+   "title": "국내 28개 대학 시스템 데이터 해킹 포럼 유포",
+   "category": "침해사고",
+   "summary": "공격자 KimJEN, 아르텍스로 대학 공통 연구행정시스템 rERP 집중 공격 정황",
+   "cves": []
+  },
+  {
+   "slug": "daouoffice-messenger-update-malware",
+   "title": "다우오피스 PC메신저 업데이트 서버 통해 악성코드 배포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "15~16일 윈도우 PC메신저 자동 업데이트로 악성 파일 설치, 브라우저 저장 계정 유출 우려",
+   "cves": []
+  },
+  {
+   "slug": "dongeui-univ-research-system-breach",
+   "title": "동의대 연구비관리시스템 해킹, 개인정보 530명 유출",
+   "category": "개인정보",
+   "summary": "산학협력단 서버 해킹, 직번·이름·생년월일 등 유출, 17일 사과문 게시",
+   "cves": []
+  },
+  {
+   "slug": "legoland-korea-annual-pass-leak",
+   "title": "레고랜드 코리아 연간이용권 고객 개인정보 유출",
+   "category": "개인정보",
+   "summary": "예약시스템 운영사 액세소 해킹, 바코드 번호 포함, 씨라이프 부산 아쿠아리움도 피해",
+   "cves": []
+  },
+  {
+   "slug": "megacoffee-customer-leak",
+   "title": "메가MGC커피 고객 개인정보 유출",
+   "category": "개인정보",
+   "summary": "고객센터 위탁업체 메타엠 해킹으로 휴대전화번호 30건 유출, 추가 유출 조사 중",
+   "cves": []
+  },
+  {
+   "slug": "coinone-metam-breach",
+   "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+   "category": "개인정보",
+   "summary": "주민번호·지갑 주소·거래 정보·일부 비밀번호 유출, 자산 탈취 등 2차 피해 우려",
+   "cves": []
+  },
+  {
+   "slug": "turla-romania-cereal",
+   "title": "러시아 연계 투를라, 새 악성코드로 루마니아 정부 이메일 서버 공격",
+   "category": "악성코드·랜섬웨어",
+   "summary": "이셋 분석, 악성코드 시리얼로 나토·EU 관련 이메일 선별 수집",
+   "cves": []
+  },
+  {
+   "slug": "taiwan-ai-agent-attacks",
+   "title": "대만 AI 에이전트 악용 해킹 민간 확산, 개인정보 100만건 노출",
+   "category": "AI 보안",
+   "summary": "전자상거래 등 10여개 기업 피해, 대만 디지털발전부 주의 당부",
+   "cves": []
+  },
+  {
+   "slug": "google-gtig-exploit-agent",
+   "title": "구글, 사람 개입 없는 AI 자동 공격 프레임워크 첫 확인",
+   "category": "AI 보안",
+   "summary": "GTIG·맨디언트 보고서, 아르텍스·펜트AGI 등 다중 에이전트 침투 도구 악용 경고",
+   "cves": []
+  },
+  {
+   "slug": "california-sues-openai",
+   "title": "캘리포니아주, AI 에이전트 사이버공격 위험으로 오픈AI 제소",
+   "category": "AI 보안",
+   "summary": "AI 에이전트 통제 실패 80건 넘어, 7월 허깅페이스 해킹이 소송 중심",
+   "cves": []
+  },
+  {
+   "slug": "ai-infostealer-profile-market",
+   "title": "AI가 피해자 소개서 붙여 인포스틸러 기록 파는 범죄 장터 등장",
+   "category": "AI 보안",
+   "summary": "허드슨록 발견, 시트릭스·VPN 로그인 정보 포함 기록 판매",
+   "cves": []
+  },
+  {
+   "slug": "ai-brand-typosquatting",
+   "title": "AI 서비스 사칭 유사 도메인 186개로 악성코드 유포",
+   "category": "AI 보안",
+   "summary": "보안기업 아일랜드, 27개 AI 브랜드 사칭 타이포스쿼팅 발견",
+   "cves": []
+  },
+  {
+   "slug": "ai-chatbot-tracker-leak",
+   "title": "AI 챗봇 42개 중 절반, 대화 정보 외부 추적 프로그램에 전송",
+   "category": "AI 보안",
+   "summary": "스토니브룩대 연구진, 일부 서비스는 질문 원문까지 노출",
+   "cves": []
+  },
+  {
+   "slug": "ai-exam-cheating",
+   "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+   "category": "AI 보안",
+   "summary": "초소형 카메라·생성형 AI 부정행위로 시험장 탐지 한계 드러나, 불법촬영 우려도",
+   "cves": []
+  },
+  {
+   "slug": "anthropic-cvd-30days",
+   "title": "앤트로픽, 고위험 취약점 공개 유예기간 90일에서 30일로 단축",
+   "category": "AI 보안",
+   "summary": "AI 취약점 탐지 가속에 따른 CVD 정책 개정, 2027년 1월 적용",
+   "cves": []
+  },
+  {
+   "slug": "openai-external-safety-audit",
+   "title": "오픈AI, 외부 4개 기관에 비공개 모델·학습 데이터 개방",
+   "category": "AI 보안",
+   "summary": "아폴로 리서치·METR 등과 계약, 개발·학습 과정까지 안전성 독립 검증",
+   "cves": []
+  },
+  {
+   "slug": "fss-finance-580-inspection",
+   "title": "금감원, 580개 금융사 보안 전수점검",
+   "category": "정책·제도",
+   "summary": "대부업체 70곳 설명회·연말 자체 점검, 전금·온투업 274곳 점검 강화",
+   "cves": []
+  },
+  {
+   "slug": "cyber-czar-control-tower",
+   "title": "정부, 범정부 사이버보안 컨트롤타워 '차르' 구성 준비",
+   "category": "정책·제도",
+   "summary": "대통령 주문에 과기정통부·국정원 등 부처별 검토안 마련",
+   "cves": []
+  },
+  {
+   "slug": "voicephishing-telco-liability",
+   "title": "통신사 AI 보이스피싱 탐지와 배상책임 쟁점",
+   "category": "정책·제도",
+   "summary": "KTOA 세미나서 통신사 무과실 배상 확대 신중론, 영국 배상제 후 피해 19% 증가",
+   "cves": []
+  },
+  {
+   "slug": "uk-ncf-new-hq",
+   "title": "영국 공격형 사이버 부대 국가사이버군 새 본부 개소",
+   "category": "방산보안",
+   "summary": "찰스 3세 국왕 개소식 참석, GCHQ·국방부·MI6 인력으로 매일 작전 수행",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 379992,
+   "label": "security",
+   "event_slug": "ai-infostealer-profile-market"
+  },
+  {
+   "id": 380883,
+   "label": "security",
+   "event_slug": "coinone-metam-breach"
+  },
+  {
+   "id": 381144,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380631,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 381141,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 380739,
+   "label": "security",
+   "event_slug": "california-sues-openai"
+  },
+  {
+   "id": 380095,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380044,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380094,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380093,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382447,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 380043,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380042,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 380092,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381268,
+   "label": "security",
+   "event_slug": "california-sues-openai"
+  },
+  {
+   "id": 381365,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381267,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 381321,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381266,
+   "label": "security",
+   "event_slug": "uk-ncf-new-hq"
+  },
+  {
+   "id": 381265,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 381953,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381320,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381940,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 381939,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 381364,
+   "label": "security",
+   "event_slug": "google-gtig-exploit-agent"
+  },
+  {
+   "id": 381937,
+   "label": "security",
+   "event_slug": "turla-romania-cereal"
+  },
+  {
+   "id": 381933,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 382443,
+   "label": "security",
+   "event_slug": "megacoffee-customer-leak"
+  },
+  {
+   "id": 381264,
+   "label": "security",
+   "event_slug": "google-gtig-exploit-agent"
+  },
+  {
+   "id": 381363,
+   "label": "security",
+   "event_slug": "fss-finance-580-inspection"
+  },
+  {
+   "id": 382013,
+   "label": "security",
+   "event_slug": "openai-external-safety-audit"
+  },
+  {
+   "id": 382065,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 381319,
+   "label": "security",
+   "event_slug": "dongeui-univ-research-system-breach"
+  },
+  {
+   "id": 381318,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382171,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 381317,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381926,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381316,
+   "label": "security",
+   "event_slug": "legoland-korea-annual-pass-leak"
+  },
+  {
+   "id": 382427,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381315,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 381913,
+   "label": "security",
+   "event_slug": "ai-brand-typosquatting"
+  },
+  {
+   "id": 382166,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 381263,
+   "label": "security",
+   "event_slug": "daouoffice-messenger-update-malware"
+  },
+  {
+   "id": 381314,
+   "label": "security",
+   "event_slug": "megacoffee-customer-leak"
+  },
+  {
+   "id": 381907,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 381313,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382540,
+   "label": "security",
+   "event_slug": "megacoffee-customer-leak"
+  },
+  {
+   "id": 383776,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 383225,
+   "label": "security",
+   "event_slug": "ai-chatbot-tracker-leak"
+  },
+  {
+   "id": 383224,
+   "label": "security",
+   "event_slug": "anthropic-cvd-30days"
+  },
+  {
+   "id": 383222,
+   "label": "security",
+   "event_slug": "taiwan-ai-agent-attacks"
+  },
+  {
+   "id": 383361,
+   "label": "security",
+   "event_slug": "fss-finance-580-inspection"
+  },
+  {
+   "id": 383738,
+   "label": "security",
+   "event_slug": "fss-finance-580-inspection"
+  },
+  {
+   "id": 382640,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382539,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 383214,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 383213,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 382538,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 382537,
+   "label": "security",
+   "event_slug": "legoland-korea-annual-pass-leak"
+  },
+  {
+   "id": 382536,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382636,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 382637,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 382638,
+   "label": "security",
+   "event_slug": "cyber-czar-control-tower"
+  },
+  {
+   "id": 382639,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 383203,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 383202,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 382635,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 382535,
+   "label": "security",
+   "event_slug": "korea-univ-28-data-leak"
+  },
+  {
+   "id": 383349,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 383302,
+   "label": "security",
+   "event_slug": "google-gtig-exploit-agent"
+  },
+  {
+   "id": 382589,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 383449,
+   "label": "security",
+   "event_slug": "voicephishing-telco-liability"
+  },
+  {
+   "id": 382588,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 383436,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 382587,
+   "label": "security",
+   "event_slug": "legoland-korea-annual-pass-leak"
+  },
+  {
+   "id": 382586,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 383175,
+   "label": "security",
+   "event_slug": "voicephishing-telco-liability"
+  },
+  {
+   "id": 382585,
+   "label": "security",
+   "event_slug": "google-gtig-exploit-agent"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "2026 병원의료정보보호 컨퍼런스(KHISC 2026)",
+   "start_date": "2026-11-19",
+   "end_date": null,
+   "place": "서울 세종대학교 광개토관",
+   "organizer": "대한병원협회·한국사회보장정보원·디지털헬스보안협회",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209569",
+   "major": true,
+   "note": "병원 관계자 1200명 이상 참석, 의료기관 정보보안·개인정보보호 기술과 대응 방안 공유",
+   "article_ids": [
+    381315,
+    381365
+   ]
+  },
+  {
+   "name": "제158차 CISO포럼",
+   "start_date": "2026-11-17",
+   "end_date": null,
+   "place": "서울 중구 롯데호텔 서울",
+   "organizer": "한국CISO협의회",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=147322",
+   "major": false,
+   "note": "정회원 등 120여명 참석, 섀도 AI·섀도 에이전트 등 AI 권한 위임과 책임 문제 논의",
+   "article_ids": [
+    381267
+   ]
+  }
+ ]
+}
