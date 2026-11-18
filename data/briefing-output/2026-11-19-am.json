@@ -1,0 +1,174 @@
+{
+ "date": "2026-11-19",
+ "edition": "am",
+ "briefing_path": "briefings/2026-11-19-am.md",
+ "stats": {
+  "candidates": 21,
+  "security": 10,
+  "trend": 5,
+  "pr": 4,
+  "column": 0,
+  "not_security": 2,
+  "events": 7
+ },
+ "events": [
+  {
+   "slug": "nooranusan-kbiz-breach",
+   "title": "192만명 가입 노란우산 홈페이지 해킹, 개인정보 유출 정황",
+   "category": "개인정보",
+   "summary": "유출 규모 36만여명으로 확대, 사업장 정보 포함…계좌 비밀번호는 유출 안 돼",
+   "cves": []
+  },
+  {
+   "slug": "jeonju-univ-aha-breach",
+   "title": "전주대 온라인 교양교육 서비스 해킹, 개인정보 약 18만 건 유출",
+   "category": "개인정보",
+   "summary": "주민등록번호 포함 약 2만5천 건, 18일 사과문 게시·피해자 통지",
+   "cves": []
+  },
+  {
+   "slug": "java4shell-cve-2026-114938",
+   "title": "자바 자바4셸 원격 코드 실행 취약점",
+   "category": "취약점",
+   "summary": "개인정보위, 자바 기반 시스템 운영 기관·기업에 유출 예방조치 당부…아파치+자바 조합 위험 우려",
+   "cves": [
+    "CVE-2026-114938"
+   ]
+  },
+  {
+   "slug": "nginx2root-nginx-vulns",
+   "title": "엔진엑스 인증 없는 원격 코드 실행 등 취약점 5건 공개",
+   "category": "취약점",
+   "summary": "티오리 Xint 연구팀 공개, 리눅스 커널 취약점과 결합해 root 권한 획득…악용 증거는 없어",
+   "cves": []
+  },
+  {
+   "slug": "screenconnect-msp-attack",
+   "title": "스크린커넥트 결함 악용한 MSP 대상 공격",
+   "category": "취약점",
+   "summary": "헌트리스 분석, 한 달 가까이 MSP 서버 42곳에 배치 파일 실행 요청 68만여 건",
+   "cves": []
+  },
+  {
+   "slug": "us-it-outages-ai-vuln-patch",
+   "title": "미국 대규모 IT 장애, AI가 찾은 취약점 긴급 패치 과정서 발생",
+   "category": "기타",
+   "summary": "월가 경영진·NSA가 의회에 설명했다고 워싱턴선 보도, 항공·은행·NSA 통신망 장애",
+   "cves": []
+  },
+  {
+   "slug": "ai-exam-cheating",
+   "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+   "category": "AI 보안",
+   "summary": "텔레그램서 부정행위 장비·수법 조직적 유통 확인, 수능 감독인력 8,400명 추가",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 400413,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 399910,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 399239,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 399909,
+   "label": "security",
+   "event_slug": "us-it-outages-ai-vuln-patch"
+  },
+  {
+   "id": 399286,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 399285,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 400055,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 400054,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 400409,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 399238,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 399237,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 399236,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 399235,
+   "label": "security",
+   "event_slug": "screenconnect-msp-attack"
+  },
+  {
+   "id": 399999,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 399882,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 399876,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 400666,
+   "label": "security",
+   "event_slug": "nooranusan-kbiz-breach"
+  },
+  {
+   "id": 401865,
+   "label": "security",
+   "event_slug": "jeonju-univ-aha-breach"
+  },
+  {
+   "id": 403961,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 403991,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 404443,
+   "label": "security",
+   "event_slug": "nginx2root-nginx-vulns"
+  }
+ ]
+}
