@@ -1,0 +1,538 @@
+{
+ "date": "2026-11-18",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-18-pm.md",
+ "stats": {
+  "candidates": 81,
+  "security": 24,
+  "trend": 10,
+  "pr": 33,
+  "column": 2,
+  "not_security": 12,
+  "events": 14
+ },
+ "events": [
+  {
+   "slug": "java4shell-cve-2026-114938",
+   "title": "자바 자바4셸 원격 코드 실행 취약점",
+   "category": "취약점",
+   "summary": "국가안보실 민·관·군 대응 점검, 공공 시스템 71% 자바 기반…내장형 자바 파악이 관건",
+   "cves": [
+    "CVE-2026-114938"
+   ]
+  },
+  {
+   "slug": "nooranusan-kbiz-breach",
+   "title": "192만명 가입 노란우산 홈페이지 해킹, 개인정보 유출 정황",
+   "category": "개인정보",
+   "summary": "유출 규모 약 20만5000명으로 특정, 중기중앙회 14일 개인정보위 신고",
+   "cves": []
+  },
+  {
+   "slug": "mirae-asset-life-breach",
+   "title": "미래에셋생명 사이버 침해사고로 고객 개인·신용정보 유출",
+   "category": "개인정보",
+   "summary": "유출 규모 6800명 수준에서 1만418명으로 확대, 금융위 제출 자료로 확인",
+   "cves": []
+  },
+  {
+   "slug": "cj-logistics-one-chatbot-breach",
+   "title": "CJ대한통운 오네 챗봇 서비스 해킹 의심, 개인정보 유출 가능성",
+   "category": "개인정보",
+   "summary": "챗봇 서버에 비정상 자동화 대량 접근 확인, 유출 규모·대상 미확정",
+   "cves": []
+  },
+  {
+   "slug": "kisa-web-emergency-check",
+   "title": "KISA 대민 웹 서비스 7곳 긴급 보안 점검으로 접속 불가",
+   "category": "기타",
+   "summary": "아카데미·ISMS-P 누리집 등 4곳은 일주일째 접속 제한 지속",
+   "cves": []
+  },
+  {
+   "slug": "access-dental-breach",
+   "title": "미국 치과 운영사 액세스덴털, 환자 34만명 개인정보 유출 가능성",
+   "category": "개인정보",
+   "summary": "5월 내부망 침입, 사회보장번호·진료 정보 포함 가능…2개 주에 34만1049명 신고",
+   "cves": []
+  },
+  {
+   "slug": "equinor-cyberattack",
+   "title": "노르웨이 에너지 기업 에퀴노르, IT 시스템 겨냥 사이버 공격 공개",
+   "category": "침해사고",
+   "summary": "같은 날 애플·NSA 시스템 장애 발생, 세 사건을 연결할 근거는 없어",
+   "cves": []
+  },
+  {
+   "slug": "musk-deepfake-crypto-scam",
+   "title": "일론 머스크 딥페이크 암호화폐 사기, 코인베이스가 470만달러 유출 차단",
+   "category": "AI 보안",
+   "summary": "테슬라 시연 유튜브 생중계 탈취 뒤 딥페이크 송출, 거래소 자동 보안 시스템이 송금 차단",
+   "cves": []
+  },
+  {
+   "slug": "ai-exam-cheating",
+   "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+   "category": "AI 보안",
+   "summary": "정부, 19일 수능 중 위급재난문자로 미제출 전자기기 적발 추진…다층 대응 필요 지적",
+   "cves": []
+  },
+  {
+   "slug": "huggingface-kokoro-account-takeover",
+   "title": "허깅페이스 음성 AI 모델 코코로 게시자 계정, 버려진 도메인으로 장악",
+   "category": "AI 보안",
+   "summary": "월 1300만 다운로드 모델, 게시자 소유권 미확인 허점을 보안 연구원이 입증",
+   "cves": []
+  },
+  {
+   "slug": "china-ai-cyber-capability-reduction",
+   "title": "중국 AI 기업들, 수출 규제 앞두고 모델의 사이버 공격 능력 축소",
+   "category": "AI 보안",
+   "summary": "알리바바·텐센트·문샷 AI, 최근 모델에서 공격 활용 기능 줄이고 방어 능력 강화",
+   "cves": []
+  },
+  {
+   "slug": "characterai-sale-privacy-review",
+   "title": "미국 30여개 주, 캐릭터닷AI 매각에 개인정보 심사 강화 요구",
+   "category": "AI 보안",
+   "summary": "아동 대화·개인정보 대량 포함, 파산법원에 개인정보 보호 옴부즈맨 참여 촉구",
+   "cves": []
+  },
+  {
+   "slug": "gemini-activity-retention-change",
+   "title": "구글 제미나이, 대화 기록 꺼도 데이터 약 2개월 보관으로 정책 변경",
+   "category": "AI 보안",
+   "summary": "기록 보관과 AI 학습 동의 분리, 비활성화 시 보관 기간 72시간에서 약 2개월로",
+   "cves": []
+  },
+  {
+   "slug": "openai-nato-cyber-ai",
+   "title": "오픈AI, NATO 통신정보국에 사이버 보안 AI 모델 공급",
+   "category": "방산보안",
+   "summary": "동맹 핵심 기관·네트워크 보호에 활용, 우크라이나·프랑스·독일 방어 기관에 이어 확대",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 395414,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 395518,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 395517,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 395516,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 395515,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 395514,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396698,
+   "label": "security",
+   "event_slug": "huggingface-kokoro-account-takeover"
+  },
+  {
+   "id": 396267,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396266,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 396265,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 396697,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 395467,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 395466,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 397925,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396262,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 396696,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 395465,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 395464,
+   "label": "security",
+   "event_slug": "equinor-cyberattack"
+  },
+  {
+   "id": 396790,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396747,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 396746,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396695,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396694,
+   "label": "security",
+   "event_slug": "access-dental-breach"
+  },
+  {
+   "id": 397911,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 396745,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396744,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396693,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 397904,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 397362,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 397359,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 397355,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 397352,
+   "label": "security",
+   "event_slug": "gemini-activity-retention-change"
+  },
+  {
+   "id": 397899,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 396692,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397441,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 396789,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396691,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 397900,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 396743,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397490,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 397901,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 396742,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396690,
+   "label": "security",
+   "event_slug": "nooranusan-kbiz-breach"
+  },
+  {
+   "id": 399190,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396741,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396740,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 397437,
+   "label": "security",
+   "event_slug": "openai-nato-cyber-ai"
+  },
+  {
+   "id": 396689,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 396739,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397573,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 398656,
+   "label": "security",
+   "event_slug": "musk-deepfake-crypto-scam"
+  },
+  {
+   "id": 398019,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 399186,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 398018,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398102,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 397968,
+   "label": "security",
+   "event_slug": "mirae-asset-life-breach"
+  },
+  {
+   "id": 398672,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 398647,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 398065,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397967,
+   "label": "security",
+   "event_slug": "kisa-web-emergency-check"
+  },
+  {
+   "id": 398824,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 398822,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398642,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397966,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 398017,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 398016,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397965,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 398630,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398810,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398015,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398809,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 398628,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 397964,
+   "label": "security",
+   "event_slug": "cj-logistics-one-chatbot-breach"
+  },
+  {
+   "id": 398625,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398623,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 398712,
+   "label": "security",
+   "event_slug": "characterai-sale-privacy-review"
+  },
+  {
+   "id": 398844,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398064,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 398709,
+   "label": "security",
+   "event_slug": "china-ai-cyber-capability-reduction"
+  },
+  {
+   "id": 398014,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 398839,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  }
+ ],
+ "security_events": [
+  {
+   "name": "OWASP Korea Day 2026",
+   "start_date": "2026-11-28",
+   "end_date": null,
+   "place": "서울 강남구 스페이스쉐어 삼성역센터",
+   "organizer": "OWASP 서울 챕터",
+   "url": "https://www.boannews.com/news/articleView.html?idxno=147338",
+   "major": false,
+   "note": "AI 에이전트 통제와 LLM 버그헌팅 등 현업 실무자·연구자 경험 공유",
+   "article_ids": [
+    395414
+   ]
+  }
+ ]
+}
