@@ -1,0 +1,368 @@
+{
+  "date": "2026-11-18",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-18-noon.md",
+  "stats": {
+    "candidates": 54,
+    "security": 30,
+    "trend": 5,
+    "pr": 5,
+    "column": 1,
+    "not_security": 13,
+    "events": 11
+  },
+  "events": [
+    {
+      "slug": "java4shell-cve-2026-114938",
+      "title": "자바 자바4셸 원격 코드 실행 취약점",
+      "category": "취약점",
+      "summary": "인증 없이 원격 코드 실행, CVSS 9.2…과기정통부·KISA 긴급 점검 권고, 오라클 패치 배포",
+      "cves": [
+        "CVE-2026-114938"
+      ]
+    },
+    {
+      "slug": "rakuten-securities-test-env-breach",
+      "title": "라쿠텐증권 테스트 환경 해킹, 최대 447만 계좌 정보 유출 우려",
+      "category": "침해사고",
+      "summary": "이름·주소·출금계좌·연소득 등 포함 가능성, 침입 원인 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "oracle-nov-2026-cpu-655",
+      "title": "오라클 보안 패치 655건 배포, 웹로직 로그인 없이 서버 장악 위험",
+      "category": "취약점",
+      "summary": "DB·기업용 업무 소프트웨어 대상 신규 패치 655건",
+      "cves": []
+    },
+    {
+      "slug": "barracuda-cloud-breach",
+      "title": "바라쿠다 내부 클라우드 해킹, 고객 연동 자격증명 저장소 접근",
+      "category": "침해사고",
+      "summary": "AI 침투 도구 아르텍스로 44시간 동안 클라우드 계정 10개가량 접근",
+      "cves": []
+    },
+    {
+      "slug": "ai-exam-cheating",
+      "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+      "category": "AI 보안",
+      "summary": "S2W, 장비·수법 유통 경로로 중국어권 텔레그램 지목…해외선 형사수사·체포",
+      "cves": []
+    },
+    {
+      "slug": "windows11-ai-coding-agent-telemetry",
+      "title": "윈도우 11, AI 코딩 도구 사용 여부 진단 데이터에 수집",
+      "category": "개인정보",
+      "summary": "클로드·코덱스·커서 등 식별, 진단 데이터 끄면 전송 차단",
+      "cves": []
+    },
+    {
+      "slug": "california-sues-openai",
+      "title": "캘리포니아주, AI 에이전트 사이버공격 위험으로 오픈AI 제소",
+      "category": "AI 보안",
+      "summary": "불공정경쟁법 위반·공공 방해 혐의, 안전장치 없는 AI 개발 주장",
+      "cves": []
+    },
+    {
+      "slug": "gemini-memory-privacy-control",
+      "title": "구글 제미나이, AI가 기억한 개인정보 확인·수정 기능 도입",
+      "category": "AI 보안",
+      "summary": "메모리 요약 기능으로 수집 개인 정보·선호도 직접 수정",
+      "cves": []
+    },
+    {
+      "slug": "dp-ict-special-committee",
+      "title": "민주당 정보통신특위 출범, AI 해킹·개인정보 유출 대응 논의",
+      "category": "정책·제도",
+      "summary": "19일 발대식, 이주희 의원 위원장",
+      "cves": []
+    },
+    {
+      "slug": "voicephishing-telco-liability",
+      "title": "통신사 AI 보이스피싱 탐지와 배상책임 쟁점",
+      "category": "정책·제도",
+      "summary": "통신사 무과실 배상책임 확대해도 예방 효과 불확실 지적",
+      "cves": []
+    },
+    {
+      "slug": "lig-da-bid-ban",
+      "title": "LIG D&A, 방사청 뇌물 의혹으로 2년 입찰 제한",
+      "category": "방산보안",
+      "summary": "집행정지는 1심 선고 후 30일까지, 방사청·ADD 매출 절반 육박",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 391582,
+      "label": "security",
+      "event_slug": "barracuda-cloud-breach"
+    },
+    {
+      "id": 392823,
+      "label": "security",
+      "event_slug": "lig-da-bid-ban"
+    },
+    {
+      "id": 392821,
+      "label": "security",
+      "event_slug": "california-sues-openai"
+    },
+    {
+      "id": 394270,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938",
+      "line": "자바 실행환경 치명적 취약점 공개…공공·금융·기업 시스템 보안 비상"
+    },
+    {
+      "id": 392223,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 392749,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 391581,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 392922,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393524,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394029,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 392970,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393670,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 392921,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393010,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393669,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 394086,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 392870,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 394027,
+      "label": "security",
+      "event_slug": "oracle-nov-2026-cpu-655"
+    },
+    {
+      "id": 392920,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393522,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394084,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 393515,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 393666,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394992,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 394195,
+      "label": "security",
+      "event_slug": "rakuten-securities-test-env-breach"
+    },
+    {
+      "id": 394834,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 395338,
+      "label": "security",
+      "event_slug": "voicephishing-telco-liability"
+    },
+    {
+      "id": 395053,
+      "label": "security",
+      "event_slug": "dp-ict-special-committee"
+    },
+    {
+      "id": 394244,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394843,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 395337,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394824,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 395330,
+      "label": "security",
+      "event_slug": "dp-ict-special-committee"
+    },
+    {
+      "id": 394194,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 394148,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 394951,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 395323,
+      "label": "security",
+      "event_slug": "lig-da-bid-ban"
+    },
+    {
+      "id": 395052,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 394812,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 395314,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 394808,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394805,
+      "label": "security",
+      "event_slug": "gemini-memory-privacy-control"
+    },
+    {
+      "id": 394146,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 394147,
+      "label": "security",
+      "event_slug": "windows11-ai-coding-agent-telemetry"
+    },
+    {
+      "id": 394802,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 395289,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394145,
+      "label": "security",
+      "event_slug": "ai-exam-cheating"
+    },
+    {
+      "id": 394794,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 395031,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 394791,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 394788,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 395030,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 394144,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 395024,
+      "label": "trend",
+      "event_slug": null
+    }
+  ]
+}
