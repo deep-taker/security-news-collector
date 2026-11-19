@@ -1,0 +1,542 @@
+{
+ "date": "2026-11-19",
+ "edition": "pm",
+ "briefing_path": "briefings/2026-11-19-pm.md",
+ "stats": {
+  "candidates": 77,
+  "security": 28,
+  "trend": 5,
+  "pr": 22,
+  "column": 3,
+  "not_security": 19,
+  "events": 15
+ },
+ "events": [
+  {
+   "slug": "nooranusan-kbiz-breach",
+   "title": "192만명 가입 노란우산 홈페이지 해킹, 개인정보 유출 정황",
+   "category": "개인정보",
+   "summary": "외부 전문기관 정밀검사 결과 공개, 36만여 건에 이체은행·계좌번호·공제 납부 내역 포함",
+   "cves": []
+  },
+  {
+   "slug": "daouoffice-messenger-update-malware",
+   "title": "다우오피스 PC메신저 업데이트 서버 통해 악성코드 배포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "그룹웨어 해킹에 이어 사고 반복, 원격 접속용 관리자 계정도 점검…피해 규모 미공개",
+   "cves": []
+  },
+  {
+   "slug": "paichai-univ-lms-breach",
+   "title": "배재대 학습관리시스템·학사시스템 해킹, 학생·교직원 개인정보 유출",
+   "category": "개인정보",
+   "summary": "학번·사번·성명·이메일과 계정·비밀번호 관련 정보 유출, 시스템 2대 차단·비밀번호 초기화",
+   "cves": []
+  },
+  {
+   "slug": "savings-bank-edu-site-breach",
+   "title": "저축은행 직원 교육관리 사이트 해킹, 직원 개인정보 유출",
+   "category": "개인정보",
+   "summary": "KG에듀원 운영 사이트서 이름·직위·소속 유출, 저축은행중앙회 직원 사칭 금융사기 주의 당부",
+   "cves": []
+  },
+  {
+   "slug": "jeonju-univ-aha-breach",
+   "title": "전주대 온라인 교양교육 서비스 해킹, 개인정보 약 18만 건 유출",
+   "category": "개인정보",
+   "summary": "16일 밤 유출·17일 오후 확인, 재학·졸업생과 교직원·평생교육원 수강생 대상, 서비스 중단",
+   "cves": []
+  },
+  {
+   "slug": "java4shell-cve-2026-114938",
+   "title": "자바 자바4셸 원격 코드 실행 취약점",
+   "category": "취약점",
+   "summary": "개인정보위, 자바 기반 시스템 운영 기관·기업에 유출 예방 조치 당부…탐지 도구 소개",
+   "cves": [
+    "CVE-2026-114938"
+   ]
+  },
+  {
+   "slug": "nginx2root-nginx-vulns",
+   "title": "엔진엑스 인증 없는 원격 코드 실행 등 취약점 5건 공개",
+   "category": "취약점",
+   "summary": "티오리, 11년 잠재 취약점을 AI가 90분 만에 발견…식별 가능 호스트 98.9% 영향권",
+   "cves": [
+    "CVE-2026-123007",
+    "CVE-2026-123633",
+    "CVE-2026-123634"
+   ]
+  },
+  {
+   "slug": "us-it-outages-ai-vuln-patch",
+   "title": "미국 대규모 IT 장애, AI가 찾은 취약점 긴급 패치 과정서 발생",
+   "category": "기타",
+   "summary": "미 NSA 내부망 17일 장애, PHP2Shell 취약점 긴급 패치 작업과 관련 있다고 CBS뉴스 보도",
+   "cves": []
+  },
+  {
+   "slug": "iran-us-infrastructure-cyberattacks",
+   "title": "미 정부, 이란이 전쟁 발발 후 미국 핵심 인프라를 사이버 공격 표적으로 삼았다고 발표",
+   "category": "침해사고",
+   "summary": "멀린 국토안보부 장관 서면 증언, 교통·금융·에너지·의료·수도 분야 표적…최근 장애와는 무관",
+   "cves": []
+  },
+  {
+   "slug": "osaki-electric-ransomware",
+   "title": "일본 오사키전기공업, 랜섬웨어 공격으로 스마트미터 생산·출하 중단",
+   "category": "악성코드·랜섬웨어",
+   "summary": "17일 서버 데이터 암호화로 사이타마 사업소 등 가동 중단, 재개 시기 미정",
+   "cves": []
+  },
+  {
+   "slug": "coldrelic-us-chain-intrusion",
+   "title": "러시아 연계 해킹 조직 콜드렐릭, 미국 기관 연쇄 침투",
+   "category": "침해사고",
+   "summary": "구글 맨디언트·GTIG 분석, 다른 기관 해킹으로 얻은 데이터·직원 명부·계정 정보 활용",
+   "cves": []
+  },
+  {
+   "slug": "tcherber-fortigate-access-broker",
+   "title": "포티게이트 계정 500여 건 보유 해커, 내부망 접속권 판매·악성코드 대여",
+   "category": "악성코드·랜섬웨어",
+   "summary": "사이더스 분석, 허술한 VPN 비밀번호 수집…도구 모음에 정보 탈취 악성코드·랜섬웨어 포함",
+   "cves": []
+  },
+  {
+   "slug": "us-trucking-logistics-attacks",
+   "title": "미국 트럭 운송·물류 업계 겨냥 사이버 공격 세 갈래 확인",
+   "category": "침해사고",
+   "summary": "애니런 분석, 연방자동차운송안전청 사칭 메일과 화물 중개 서류·거래 사이트 위장 수법",
+   "cves": []
+  },
+  {
+   "slug": "cryptominer-botnet-return",
+   "title": "2019년 무력화됐던 가상화폐 채굴 악성코드 봇넷 활동 재개",
+   "category": "악성코드·랜섬웨어",
+   "summary": "봇넷 이름은 레타덥, USB 드라이브로 확산…카스퍼스키 9개월간 약 1만5000건 차단",
+   "cves": []
+  },
+  {
+   "slug": "artex-ai-pentest-abuse",
+   "title": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+   "category": "AI 보안",
+   "summary": "FBI, 아르텍스 이용한 전 세계 조직 공격 경고…일부는 관리자 권한 획득까지 3시간 미만",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 410800,
+   "label": "security",
+   "event_slug": "tcherber-fortigate-access-broker"
+  },
+  {
+   "id": 410801,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 410803,
+   "label": "security",
+   "event_slug": "nginx2root-nginx-vulns"
+  },
+  {
+   "id": 410850,
+   "label": "security",
+   "event_slug": "cryptominer-botnet-return"
+  },
+  {
+   "id": 410851,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 410852,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 410853,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 410854,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 410855,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 410900,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 410919,
+   "label": "security",
+   "event_slug": "savings-bank-edu-site-breach"
+  },
+  {
+   "id": 411447,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 411466,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 411549,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 411600,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 411649,
+   "label": "security",
+   "event_slug": "iran-us-infrastructure-cyberattacks"
+  },
+  {
+   "id": 411650,
+   "label": "security",
+   "event_slug": "osaki-electric-ransomware"
+  },
+  {
+   "id": 411651,
+   "label": "security",
+   "event_slug": "jeonju-univ-aha-breach"
+  },
+  {
+   "id": 411652,
+   "label": "security",
+   "event_slug": "nginx2root-nginx-vulns"
+  },
+  {
+   "id": 412017,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 412027,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 412075,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 412076,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412077,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412125,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412126,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 412127,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412175,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412212,
+   "label": "security",
+   "event_slug": "daouoffice-messenger-update-malware"
+  },
+  {
+   "id": 412214,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412220,
+   "label": "security",
+   "event_slug": "nginx2root-nginx-vulns"
+  },
+  {
+   "id": 412729,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 412734,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 412738,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 412749,
+   "label": "security",
+   "event_slug": "nginx2root-nginx-vulns"
+  },
+  {
+   "id": 412756,
+   "label": "security",
+   "event_slug": "us-it-outages-ai-vuln-patch"
+  },
+  {
+   "id": 412759,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 412763,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 412767,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 412943,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 412944,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 412950,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 412951,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 413218,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413239,
+   "label": "security",
+   "event_slug": "daouoffice-messenger-update-malware"
+  },
+  {
+   "id": 413342,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 413343,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 413344,
+   "label": "security",
+   "event_slug": "coldrelic-us-chain-intrusion"
+  },
+  {
+   "id": 413345,
+   "label": "security",
+   "event_slug": "java4shell-cve-2026-114938"
+  },
+  {
+   "id": 413346,
+   "label": "security",
+   "event_slug": "us-trucking-logistics-attacks"
+  },
+  {
+   "id": 413392,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413393,
+   "label": "security",
+   "event_slug": "paichai-univ-lms-breach"
+  },
+  {
+   "id": 413394,
+   "label": "security",
+   "event_slug": "nooranusan-kbiz-breach"
+  },
+  {
+   "id": 413395,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413396,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 413397,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 413398,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413442,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 413443,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 413444,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 413445,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413487,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413493,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 413978,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414016,
+   "label": "security",
+   "event_slug": "artex-ai-pentest-abuse"
+  },
+  {
+   "id": 414021,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414099,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414123,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414151,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414251,
+   "label": "security",
+   "event_slug": null
+  },
+  {
+   "id": 414272,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 414278,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 414285,
+   "label": "security",
+   "event_slug": "paichai-univ-lms-breach"
+  },
+  {
+   "id": 414286,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414527,
+   "label": "security",
+   "event_slug": "savings-bank-edu-site-breach"
+  },
+  {
+   "id": 414554,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 414585,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "OWASP Korea Day 2026",
+   "start_date": "2026-11-28",
+   "end_date": null,
+   "place": "서울 강남구 스페이스쉐어 삼성역센터",
+   "organizer": "OWASP 서울 챕터",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209618",
+   "major": false,
+   "note": "AI 시대의 보안, 우리들의 연결 고리를 주제로 메인·커뮤니티 세션, 핸즈온 랩, 부스 존 운영",
+   "article_ids": [
+    412126
+   ]
+  },
+  {
+   "name": "데일리시큐 웨비나 'AI 시대 사이버 위협 동향과 대응방안'",
+   "start_date": "2026-11-20",
+   "end_date": null,
+   "place": "온라인",
+   "organizer": "데일리시큐",
+   "url": "https://www.dailysecu.com/news/articleView.html?idxno=209627",
+   "major": false,
+   "note": "오후 2~3시, KISA와 아카마이 전문가가 AI 활용 사이버공격 동향과 대응 전략 발표",
+   "article_ids": [
+    413392
+   ]
+  }
+ ]
+}
