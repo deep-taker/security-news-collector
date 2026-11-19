@@ -1,0 +1,148 @@
+{
+ "date": "2026-11-20",
+ "edition": "am",
+ "briefing_path": "briefings/2026-11-20-am.md",
+ "stats": {
+  "candidates": 19,
+  "security": 6,
+  "trend": 1,
+  "pr": 4,
+  "column": 1,
+  "not_security": 7,
+  "events": 5
+ },
+ "events": [
+  {
+   "slug": "postech-portal-breach",
+   "title": "포항공대 연구장비지원포털·IT서비스포털 해킹, 개인정보 1만9천978건 유출",
+   "category": "개인정보",
+   "summary": "13일 새벽 공격, 연구실 GPU 서버 불법 채굴 프로그램 발견 뒤 조사로 확인…19일 유출 안내 게시",
+   "cves": []
+  },
+  {
+   "slug": "korea-univ-28-data-leak",
+   "title": "국내 28개 대학 시스템 데이터 해킹 포럼 유포",
+   "category": "침해사고",
+   "summary": "S2W 보고서, KimJEN이 12~17일 대학·공공기관 해킹 주장하며 텔레그램에 내부 데이터 공개",
+   "cves": []
+  },
+  {
+   "slug": "daouoffice-messenger-update-malware",
+   "title": "다우오피스 PC메신저 업데이트 서버 통해 악성코드 배포",
+   "category": "악성코드·랜섬웨어",
+   "summary": "크롬·엣지 저장 아이디·비밀번호와 다우오피스HR 계정 정보 유출 가능성, 보안 공지로 대응 방안 안내",
+   "cves": []
+  },
+  {
+   "slug": "ai-exam-cheating",
+   "title": "세무사 시험 AI 부정행위 자수, 국가자격시험 전수조사",
+   "category": "AI 보안",
+   "summary": "19일 수능 당일 부정방지 재난문자 발송, 학계는 기술·윤리 종합대책 마련 촉구",
+   "cves": []
+  },
+  {
+   "slug": "ai-api-router-abuse",
+   "title": "AI 에이전트용 API 중계 서비스, 악성코드 유포·인증정보 탈취에 악용",
+   "category": "AI 보안",
+   "summary": "UCSB 공동 연구진, 서드파티 API 라우터 428개 보안 위험 분석 논문 공개",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 415503,
+   "label": "security",
+   "event_slug": "daouoffice-messenger-update-malware"
+  },
+  {
+   "id": 415502,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 415308,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 415303,
+   "label": "security",
+   "event_slug": "ai-api-router-abuse"
+  },
+  {
+   "id": 415301,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 415495,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 415450,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 415492,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 417145,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 415284,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414728,
+   "label": "security",
+   "event_slug": "korea-univ-28-data-leak"
+  },
+  {
+   "id": 414629,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 415268,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 414628,
+   "label": "security",
+   "event_slug": "ai-exam-cheating"
+  },
+  {
+   "id": 415519,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 415963,
+   "label": "security",
+   "event_slug": "daouoffice-messenger-update-malware"
+  },
+  {
+   "id": 416775,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 421927,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 418536,
+   "label": "security",
+   "event_slug": "postech-portal-breach"
+  }
+ ]
+}
