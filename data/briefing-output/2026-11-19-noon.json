@@ -1,0 +1,441 @@
+{
+  "date": "2026-11-19",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-19-noon.md",
+  "stats": {
+    "candidates": 60,
+    "security": 29,
+    "trend": 6,
+    "pr": 15,
+    "column": 0,
+    "not_security": 10,
+    "events": 17
+  },
+  "events": [
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "한국전자인증·곡성군미래교육재단·광주연구원·광주여성재단 4곳 추가 유출 가능성 확인",
+      "cves": []
+    },
+    {
+      "slug": "coinone-metam-breach",
+      "title": "코인원 고객상담 수탁사 메타엠 해킹, 개인정보 유출",
+      "category": "개인정보",
+      "summary": "코인원 유출 규모 일주일째 미공개, 고팍스는 유출 대상 9명에서 2009명으로 증가",
+      "cves": []
+    },
+    {
+      "slug": "binance-hack",
+      "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+      "category": "침해사고",
+      "summary": "아부다비글로벌마켓 법원서 65억달러 규모 전 세계 자산 동결 명령 확보, 회수 추진",
+      "cves": []
+    },
+    {
+      "slug": "apache-httpd-cve-2026-119618",
+      "title": "아파치 HTTP 서버 2.4.71, HTTP/2 원격 코드 실행 결함 수정",
+      "category": "취약점",
+      "summary": "싱가포르 사이버보안청, 실제 악용 보고·개념증명 코드 공개로 즉시 업데이트 권고",
+      "cves": [
+        "CVE-2026-119618"
+      ]
+    },
+    {
+      "slug": "nginx2root-nginx-vulns",
+      "title": "엔진엑스 인증 없는 원격 코드 실행 등 취약점 5건 공개",
+      "category": "취약점",
+      "summary": "F5가 18일 수정 버전 배포, 5건 중 4건은 티오리 AI 보안 플랫폼이 자율 발굴",
+      "cves": []
+    },
+    {
+      "slug": "java4shell-cve-2026-114938",
+      "title": "자바 자바4셸 원격 코드 실행 취약점",
+      "category": "취약점",
+      "summary": "엔키화이트햇 내부 점검 스크립트·분석 보고서 배포, CVSS 4.0 기준 9.2점",
+      "cves": [
+        "CVE-2026-114938"
+      ]
+    },
+    {
+      "slug": "us-it-outages-ai-vuln-patch",
+      "title": "미국 대규모 IT 장애, AI가 찾은 취약점 긴급 패치 과정서 발생",
+      "category": "기타",
+      "summary": "미 정보당국 청문회서 적국 공격 징후 없다고 밝혀, 다운디텍터 주간 신고 600만건 육박",
+      "cves": []
+    },
+    {
+      "slug": "shadowcloud-backdoors",
+      "title": "깃허브·셰어포인트 악용 백도어 2종, 아시아·아프리카 정부기관 공격",
+      "category": "악성코드·랜섬웨어",
+      "summary": "카스퍼스키가 섀도클라우드 작전으로 명명, 대만 조직에서도 감염 두 건 확인",
+      "cves": []
+    },
+    {
+      "slug": "cryptominer-botnet-return",
+      "title": "2019년 무력화됐던 가상화폐 채굴 악성코드 봇넷 활동 재개",
+      "category": "악성코드·랜섬웨어",
+      "summary": "카스퍼스키 분석, 일반 사용자 PC에 채굴 악성코드 배치",
+      "cves": []
+    },
+    {
+      "slug": "hertz-cppa-optout-fine",
+      "title": "렌터카 허츠, 개인정보 판매 거부 설정 미이행으로 벌금 155만달러",
+      "category": "개인정보",
+      "summary": "캘리포니아주 개인정보보호청 처분, 허츠는 벌금 수용하고 영업 관행 변경",
+      "cves": []
+    },
+    {
+      "slug": "ms-agent-framework-pypi-compromise",
+      "title": "MS AI 에이전트 프레임워크 파이썬 패키지에 계정 탈취 코드 배포",
+      "category": "AI 보안",
+      "summary": "파이파이 1.26.1·1.26.2 버전에 클라우드 계정 정보 탈취 코드, 스텝시큐리티 분석 공개",
+      "cves": []
+    },
+    {
+      "slug": "meta-muse-agent-privacy",
+      "title": "메타 AI 비서 뮤즈, 사적 대화 열람하고 무단 예약",
+      "category": "AI 보안",
+      "summary": "메타 직원이 무관한 은행 잔액까지 전달받아 개인정보 유출 우려 제기",
+      "cves": []
+    },
+    {
+      "slug": "deepfake-celebrity-invest-ads",
+      "title": "AI로 만든 유명인 사칭 투자 광고 피해",
+      "category": "AI 보안",
+      "summary": "유튜브 투자 모임이 조인성·송혜교 가짜 광고 영상으로 피해자 유인",
+      "cves": []
+    },
+    {
+      "slug": "us-banks-ai-agent-liability",
+      "title": "미국 대형 은행들, 외부 AI 에이전트 피해는 고객 책임으로 규정",
+      "category": "AI 보안",
+      "summary": "씨티은행 약관 변경, 해킹 피해도 고객 책임…자사 제공 에이전트는 예외",
+      "cves": []
+    },
+    {
+      "slug": "dhs-ai-cyberattack-warning",
+      "title": "미 국토안보부, AI 활용 사이버 공격 확대와 핵심 기반시설 위협 경고",
+      "category": "AI 보안",
+      "summary": "멀린 장관 하원 서면 증언, 데이터 탈취·제3자 제공업체 통한 피해 확산 가능성 제기",
+      "cves": []
+    },
+    {
+      "slug": "pipc-japan-ppc-moc",
+      "title": "개인정보위, 일본 개인정보보호위원회와 데이터 이전·AI 프라이버시 협약",
+      "category": "정책·제도",
+      "summary": "브뤼셀 제48차 GPA 총회 기간 중 체결, 신뢰 가능한 데이터 이전 환경 조성",
+      "cves": []
+    },
+    {
+      "slug": "japan-asean-ai-security-partnership",
+      "title": "일본·ASEAN, AI 안전·보안 파트너십 출범",
+      "category": "정책·제도",
+      "summary": "제29차 일본·ASEAN 정상회의서 발표, 사이버보안·핵심 광물·에너지 안보 협력 확대",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 409543,
+      "label": "security",
+      "event_slug": "hertz-cppa-optout-fine"
+    },
+    {
+      "id": 409542,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 407790,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 407789,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 408096,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 408095,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 407568,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 407687,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 407567,
+      "label": "security",
+      "event_slug": "us-banks-ai-agent-liability"
+    },
+    {
+      "id": 408909,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 409480,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 409114,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 408356,
+      "label": "security",
+      "event_slug": "dhs-ai-cyberattack-warning"
+    },
+    {
+      "id": 409412,
+      "label": "security",
+      "event_slug": "nginx2root-nginx-vulns"
+    },
+    {
+      "id": 408355,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 409541,
+      "label": "security",
+      "event_slug": "shadowcloud-backdoors"
+    },
+    {
+      "id": 408901,
+      "label": "security",
+      "event_slug": "japan-asean-ai-security-partnership"
+    },
+    {
+      "id": 409637,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409636,
+      "label": "security",
+      "event_slug": "nginx2root-nginx-vulns"
+    },
+    {
+      "id": 409410,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 410751,
+      "label": "security",
+      "event_slug": "nginx2root-nginx-vulns"
+    },
+    {
+      "id": 410721,
+      "label": "security",
+      "event_slug": "cryptominer-botnet-return"
+    },
+    {
+      "id": 409635,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 409540,
+      "label": "security",
+      "event_slug": "ms-agent-framework-pypi-compromise"
+    },
+    {
+      "id": 410712,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409539,
+      "label": "security",
+      "event_slug": "apache-httpd-cve-2026-119618"
+    },
+    {
+      "id": 410704,
+      "label": "security",
+      "event_slug": "pipc-japan-ppc-moc"
+    },
+    {
+      "id": 410689,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 409634,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 410378,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410221,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 410255,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410218,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410213,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410375,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409538,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 410211,
+      "label": "security",
+      "event_slug": "pipc-japan-ppc-moc"
+    },
+    {
+      "id": 409633,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410210,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410438,
+      "label": "security",
+      "event_slug": "binance-hack"
+    },
+    {
+      "id": 410430,
+      "label": "security",
+      "event_slug": "meta-muse-agent-privacy"
+    },
+    {
+      "id": 409537,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410432,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410699,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409536,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 410203,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410197,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410424,
+      "label": "security",
+      "event_slug": "deepfake-celebrity-invest-ads"
+    },
+    {
+      "id": 410698,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409535,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 410744,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410743,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 410333,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 410742,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 410740,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410414,
+      "label": "security",
+      "event_slug": "coinone-metam-breach"
+    },
+    {
+      "id": 410679,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 409534,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 410173,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 409533,
+      "label": "security",
+      "event_slug": "pipc-japan-ppc-moc"
+    }
+  ]
+}
