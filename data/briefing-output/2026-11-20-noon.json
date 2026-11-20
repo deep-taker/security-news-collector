@@ -1,0 +1,371 @@
+{
+ "date": "2026-11-20",
+ "edition": "noon",
+ "briefing_path": "briefings/2026-11-20-noon.md",
+ "stats": {
+  "candidates": 48,
+  "security": 19,
+  "trend": 4,
+  "pr": 15,
+  "column": 2,
+  "not_security": 8,
+  "events": 14
+ },
+ "events": [
+  {
+   "slug": "postech-portal-breach",
+   "title": "포항공대 연구장비지원포털·IT서비스포털 해킹, 개인정보 1만9천978건 유출",
+   "category": "개인정보",
+   "summary": "유출 항목 공개: 연구장비지원포털 통합 계정·암호화 비밀번호 1만9500건, IT서비스포털 계정·이메일·소속 478건",
+   "cves": []
+  },
+  {
+   "slug": "jamake-voiceru-breach",
+   "title": "보이스루 자막·번역 플랫폼 자메이크 비인가 접근, 회원 개인정보 유출",
+   "category": "개인정보",
+   "summary": "3일부터 관리자 기능 등 비인가 접근, 경로 차단·관계기관 신고·계정별 통지 진행, 보상 방안 마련 중",
+   "cves": []
+  },
+  {
+   "slug": "savings-bank-edu-site-breach",
+   "title": "저축은행 직원 교육관리 사이트 해킹, 직원 개인정보 유출",
+   "category": "개인정보",
+   "summary": "운영사는 KG에듀원, 저축은행명·직원 직위·성명 유출…저축은행들 고객 대상 금융사기 주의 안내문 게시",
+   "cves": []
+  },
+  {
+   "slug": "jbe-data-leak-claim",
+   "title": "해커, 전북교육청 학생·학부모 개인정보 유출 주장",
+   "category": "침해사고",
+   "summary": "전북교총, 통학차량 관리시스템 유출 규모·경위 공개와 학생 안전대책 촉구…집 주소·통학버스 노선 포함",
+   "cves": []
+  },
+  {
+   "slug": "visa-mastercard-jpmorgan-vendor-breach",
+   "title": "비자·마스터카드·JP모건 외부 협력업체 해킹, 고객 수천 명 정보 유출",
+   "category": "개인정보",
+   "summary": "랜섬웨어 조직이 외부 서비스 업체 침해, 이름·이메일 등 포함 가능성…결제망 등 핵심 시스템은 영향 없음",
+   "cves": []
+  },
+  {
+   "slug": "binance-hack",
+   "title": "바이낸스 7.6조원 해킹 의혹, 테더·서클 23억달러 동결",
+   "category": "침해사고",
+   "summary": "아부다비 글로벌 마켓 법원에서 탈취 자산 회수 지원 명령 확보, 피해 약 63억4000만달러 회수 절차 착수",
+   "cves": []
+  },
+  {
+   "slug": "php-nov-2026-security-update",
+   "title": "PHP 보안 업데이트, 치명적 7건 포함 취약점 17건 수정",
+   "category": "취약점",
+   "summary": "8.5.13·8.4.28·8.3.37·8.2.36 배포, 특정 웹서버 설정에서 로그인 없이 PHP 코드 실행 가능한 결함 포함",
+   "cves": []
+  },
+  {
+   "slug": "nvidia-gentlemen-ransomware-claim",
+   "title": "랜섬웨어 조직 더 젠틀맨, 엔비디아 내부 자료 확보 주장",
+   "category": "악성코드·랜섬웨어",
+   "summary": "18일 다크웹 유출 사이트에 등록하고 28일 공개 위협, 엔비디아 조사 착수…실제 유출 여부 미확인",
+   "cves": []
+  },
+  {
+   "slug": "eu-commission-ai-cyberattack",
+   "title": "EU 집행위원회, AI 도구 쓰인 사이버 공격 피해 공식 확인",
+   "category": "AI 보안",
+   "summary": "지난달 공격 탐지 뒤 약 한 달째 일부 내부 시스템 미복구, 원인과 피해 범위 조사 중",
+   "cves": []
+  },
+  {
+   "slug": "meta-muse-agent-privacy",
+   "title": "메타 AI 비서 뮤즈, 사적 대화 열람하고 무단 예약",
+   "category": "AI 보안",
+   "summary": "사내 게시물에서 계정 간 대화 혼선과 타인 은행 계좌 잔액·주문 내역 노출 우려 제기",
+   "cves": []
+  },
+  {
+   "slug": "california-ai-safety-report",
+   "title": "캘리포니아주, 통제 불능 AI 강제 중단 등 규제 추진",
+   "category": "AI 보안",
+   "summary": "뉴섬 주지사 'AI 안전 2026과 그 이후' 보고서 공개, AI의 후속 모델 자체 개발 과정도 규제 대상",
+   "cves": []
+  },
+  {
+   "slug": "mpm-discipline-rule-data-leak",
+   "title": "인사혁신처, 비밀·개인정보 유출 징계 강화 입법예고",
+   "category": "정책·제도",
+   "summary": "공무원 징계령 시행규칙 개정안, 최소 징계 견책에서 감봉으로 상향하고 감독 소홀 상급자·기관장도 문책",
+   "cves": []
+  },
+  {
+   "slug": "vasp-security-rules-strengthen",
+   "title": "금융당국, 가상자산 거래소 보안 규율 강화",
+   "category": "정책·제도",
+   "summary": "금감원, 20일 가상자산사업자 28곳 CISO 간담회에서 외부 접점 재점검 주문…취약점 방치 사고 시 엄정 대응",
+   "cves": []
+  },
+  {
+   "slug": "kisa-digital-law-contest-2026",
+   "title": "KISA 제1회 디지털 시대의 법 학술 경연대회",
+   "category": "기타",
+   "summary": "19일 고려대 법학전문대학원에서 본선 개최, 22개 법전원 등 45개 팀 참가",
+   "cves": []
+  }
+ ],
+ "labels": [
+  {
+   "id": 426046,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 426158,
+   "label": "security",
+   "event_slug": "binance-hack"
+  },
+  {
+   "id": 423586,
+   "label": "security",
+   "event_slug": "visa-mastercard-jpmorgan-vendor-breach"
+  },
+  {
+   "id": 423211,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 422998,
+   "label": "security",
+   "event_slug": "meta-muse-agent-privacy"
+  },
+  {
+   "id": 423523,
+   "label": "column",
+   "event_slug": null
+  },
+  {
+   "id": 423520,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 423160,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 422994,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 423111,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 423110,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 422992,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 424304,
+   "label": "security",
+   "event_slug": "visa-mastercard-jpmorgan-vendor-breach"
+  },
+  {
+   "id": 424303,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 424853,
+   "label": "security",
+   "event_slug": "visa-mastercard-jpmorgan-vendor-breach"
+  },
+  {
+   "id": 424432,
+   "label": "trend",
+   "event_slug": null
+  },
+  {
+   "id": 423693,
+   "label": "security",
+   "event_slug": "savings-bank-edu-site-breach"
+  },
+  {
+   "id": 424301,
+   "label": "security",
+   "event_slug": "nvidia-gentlemen-ransomware-claim"
+  },
+  {
+   "id": 424292,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 423743,
+   "label": "security",
+   "event_slug": "visa-mastercard-jpmorgan-vendor-breach"
+  },
+  {
+   "id": 424285,
+   "label": "security",
+   "event_slug": "eu-commission-ai-cyberattack"
+  },
+  {
+   "id": 426143,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 426048,
+   "label": "security",
+   "event_slug": "php-nov-2026-security-update"
+  },
+  {
+   "id": 426142,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 426141,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424963,
+   "label": "security",
+   "event_slug": "mpm-discipline-rule-data-leak"
+  },
+  {
+   "id": 426045,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424962,
+   "label": "security",
+   "event_slug": "jbe-data-leak-claim"
+  },
+  {
+   "id": 425562,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 425730,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424919,
+   "label": "security",
+   "event_slug": "jamake-voiceru-breach"
+  },
+  {
+   "id": 426140,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 426035,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424918,
+   "label": "security",
+   "event_slug": "php-nov-2026-security-update"
+  },
+  {
+   "id": 424917,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424916,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 426139,
+   "label": "security",
+   "event_slug": "kisa-digital-law-contest-2026"
+  },
+  {
+   "id": 426088,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 424915,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 425551,
+   "label": "security",
+   "event_slug": "california-ai-safety-report"
+  },
+  {
+   "id": 424914,
+   "label": "security",
+   "event_slug": "postech-portal-breach"
+  },
+  {
+   "id": 424913,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 425530,
+   "label": "security",
+   "event_slug": "vasp-security-rules-strengthen"
+  },
+  {
+   "id": 426079,
+   "label": "security",
+   "event_slug": "vasp-security-rules-strengthen"
+  },
+  {
+   "id": 424912,
+   "label": "pr",
+   "event_slug": null
+  },
+  {
+   "id": 425529,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 425527,
+   "label": "not_security",
+   "event_slug": null
+  },
+  {
+   "id": 425520,
+   "label": "not_security",
+   "event_slug": null
+  }
+ ],
+ "security_events": [
+  {
+   "name": "제1회 디지털 시대의 법 학술 경연대회 본선",
+   "start_date": "2026-11-19",
+   "end_date": null,
+   "place": "고려대 법학전문대학원",
+   "organizer": "한국인터넷진흥원(KISA)·과학기술정보통신부",
+   "url": "https://www.etnews.com/20261120000076",
+   "major": true,
+   "note": "AI·디지털 전환의 법적 쟁점을 다루는 학술 경연대회, 22개 법학전문대학원 등 45개 팀 참가",
+   "article_ids": [
+    426139
+   ]
+  }
+ ]
+}
