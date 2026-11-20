@@ -1,0 +1,404 @@
+{
+  "date": "2026-11-20",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-20-pm.md",
+  "stats": {
+    "candidates": 46,
+    "security": 23,
+    "trend": 3,
+    "pr": 12,
+    "column": 1,
+    "not_security": 7,
+    "events": 17
+  },
+  "events": [
+    {
+      "slug": "caring-data-breach",
+      "title": "시니어 돌봄 기업 케어링 해킹, 이용자 건강정보·주민등록번호 유출",
+      "category": "개인정보",
+      "summary": "이름·연락처와 건강 상태·질병·장기요양등급 유출, 일부는 주민등록번호·계좌번호·비밀번호 포함",
+      "cves": []
+    },
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "침해사고",
+      "summary": "19일 다크포럼스 게시, 전자조달시스템 SRM 관련 가능성 제기되나 확보 경로·침해 여부 미확인",
+      "cves": []
+    },
+    {
+      "slug": "visa-mastercard-jpmorgan-vendor-breach",
+      "title": "비자·마스터카드·JP모건 외부 협력업체 해킹, 고객 수천 명 정보 유출",
+      "category": "개인정보",
+      "summary": "JP모건·체이스 X 성명: 협력업체 마케팅 데이터에 접근 추정, 고객 이름·이메일 포함 가능성, 은행 서비스 차질 없음",
+      "cves": []
+    },
+    {
+      "slug": "vcenter-cve-2026-123890",
+      "title": "VM웨어 v센터 최고 등급 인증 우회 결함, 브로드컴 긴급 업데이트",
+      "category": "취약점",
+      "summary": "디렉터리 서비스 결함으로 인증 없이 무단 접근 가능, 19일 업데이트 배포, 임시 우회책 없음",
+      "cves": [
+        "CVE-2026-123890"
+      ]
+    },
+    {
+      "slug": "php-nov-2026-security-update",
+      "title": "PHP 보안 업데이트, 치명적 7건 포함 취약점 17건 수정",
+      "category": "취약점",
+      "summary": "'PHP애프터셸'로 명명, PHP2셸 패치 적용 시스템도 8.5.13·8.4.28·8.3.37·8.2.36으로 재패치 필요",
+      "cves": []
+    },
+    {
+      "slug": "java4shell-cve-2026-114938",
+      "title": "자바 자바4셸 원격 코드 실행 취약점",
+      "category": "취약점",
+      "summary": "엔키화이트햇, 점검 스크립트와 분석 보고서 18일 배포…CVSS v4.0 9.2점 치명적 등급",
+      "cves": [
+        "CVE-2026-114938"
+      ]
+    },
+    {
+      "slug": "nvidia-huang-intel-probe",
+      "title": "엔비디아, 젠슨 황 중국 정보기관 연루 의혹 조사",
+      "category": "기타",
+      "summary": "캘리포니아주 법무부, 엔비디아에 소환장 발부…중국 AI 칩·기밀정보 유출과 투자자 위험 고지 여부 조사",
+      "cves": []
+    },
+    {
+      "slug": "amadeus-breach",
+      "title": "항공 예약시스템 아마데우스 해킹, 일본항공 9만2천 명 정보 노출·대한항공·아시아나 통보",
+      "category": "개인정보",
+      "summary": "실제 항공편·예약번호 악용한 항공사 사칭 결항·변경 스미싱 주의 당부",
+      "cves": []
+    },
+    {
+      "slug": "gta6-scam-sites",
+      "title": "GTA 6 미끼 가짜 무료 배포 사이트, 구글 계정 정보 탈취",
+      "category": "기타",
+      "summary": "맬웨어바이트 분석: 가짜 무료 배포 사이트가 구글 비밀번호 요구, 코인 지갑 노린 결제 페이지도 확인",
+      "cves": []
+    },
+    {
+      "slug": "ai-toy-safety-us-retail",
+      "title": "미국 유통업체들, 안전성 논란 AI 장난감 판매 중단",
+      "category": "AI 보안",
+      "summary": "타깃·월마트·메이시스·아마존이 콘틱소 AI 픽시포 판매 목록 삭제, 부적절 답변과 아동 개인정보 보호 우려",
+      "cves": []
+    },
+    {
+      "slug": "vasp-security-rules-strengthen",
+      "title": "금융당국, 가상자산 거래소 보안 규율 강화",
+      "category": "정책·제도",
+      "summary": "금감원, 20일 가상자산사업자 28곳 보안책임자 소집해 전면 보안 점검 주문…취약점 방치 사고 시 엄정 책임",
+      "cves": []
+    },
+    {
+      "slug": "uk-fca-cyber-resilience-guidance",
+      "title": "영국 금융당국, 사이버 위험 경영진 책임 명확화 지침안 공개",
+      "category": "정책·제도",
+      "summary": "FCA·PRA·영란은행 공동 의견수렴 문서 발표, 2027년 2월 26일까지 의견수렴 후 상반기 최종 지침",
+      "cves": []
+    },
+    {
+      "slug": "uk-apple-tcn-ipt-ruling",
+      "title": "영국 수사권한재판소, 애플 대상 비밀 명령 함구 원칙에 제동",
+      "category": "정책·제도",
+      "summary": "애플의 명령 수령 인정이 국가안보를 위협한다는 내무부 주장 기각, 대상은 암호화 해제 등을 의무화하는 기술역량통지",
+      "cves": []
+    },
+    {
+      "slug": "defense-industry-genai-ban",
+      "title": "방산업계, 외부 생성형 AI 사용 전면 금지 확산",
+      "category": "방산보안",
+      "summary": "LIG디펜스앤에어로스페이스 19일 챗GPT·제미나이 등 사용 금지 공지, AI 안경 등 착용형 기기 반입도 통제",
+      "cves": []
+    },
+    {
+      "slug": "kisa-spam-data-open-2026",
+      "title": "KISA·방미통위 2026 스팸 데이터 개방 성과 공유회",
+      "category": "기타",
+      "summary": "20일 서울 피스앤파크 컨벤션 개최, 민간 협력으로 악성 문자 약 5억건·스팸 전화 약 1200만건 수신 전 차단",
+      "cves": []
+    },
+    {
+      "slug": "medical-infosec-conference-2026",
+      "title": "사회보장정보원·대한병원협회·디지털헬스보안협회 의료정보보호 컨퍼런스",
+      "category": "기타",
+      "summary": "의료계·정보보호 관계자 1200여명 참석, 23개 의료기관 보안 담당자가 보안관제 환경에서 공격 분석·방어 역량 겨뤄",
+      "cves": []
+    },
+    {
+      "slug": "kisa-digital-law-contest-2026",
+      "title": "KISA 제1회 디지털 시대의 법 학술 경연대회",
+      "category": "기타",
+      "summary": "19일 고려대 법학전문대학원 본선에 8개 팀 진출",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 428207,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 427024,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 426176,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 426175,
+      "label": "security",
+      "event_slug": "vcenter-cve-2026-123890"
+    },
+    {
+      "id": 427446,
+      "label": "security",
+      "event_slug": "amadeus-breach"
+    },
+    {
+      "id": 426226,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 428610,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428616,
+      "label": "security",
+      "event_slug": "medical-infosec-conference-2026"
+    },
+    {
+      "id": 426225,
+      "label": "security",
+      "event_slug": "uk-fca-cyber-resilience-guidance"
+    },
+    {
+      "id": 428605,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 428618,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 427494,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428201,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 427445,
+      "label": "security",
+      "event_slug": "visa-mastercard-jpmorgan-vendor-breach"
+    },
+    {
+      "id": 428105,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 427493,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428247,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 428348,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 427492,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 427543,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 427443,
+      "label": "security",
+      "event_slug": "kisa-spam-data-open-2026"
+    },
+    {
+      "id": 427444,
+      "label": "security",
+      "event_slug": "uk-apple-tcn-ipt-ruling"
+    },
+    {
+      "id": 427542,
+      "label": "security",
+      "event_slug": "kisa-spam-data-open-2026"
+    },
+    {
+      "id": 428339,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428196,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428660,
+      "label": "security",
+      "event_slug": "defense-industry-genai-ban"
+    },
+    {
+      "id": 427442,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 428337,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 428078,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 428721,
+      "label": "security",
+      "event_slug": "php-nov-2026-security-update"
+    },
+    {
+      "id": 428719,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 428720,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 429399,
+      "label": "trend",
+      "event_slug": null,
+      "line": "벨로크, 대신증권과 5억원 자사주 신탁계약 결정…주가안정·임직원 보상 목적, 내년 5월까지"
+    },
+    {
+      "id": 429584,
+      "label": "security",
+      "event_slug": "kisa-spam-data-open-2026"
+    },
+    {
+      "id": 428718,
+      "label": "security",
+      "event_slug": "gta6-scam-sites"
+    },
+    {
+      "id": 429387,
+      "label": "security",
+      "event_slug": "ai-toy-safety-us-retail"
+    },
+    {
+      "id": 429481,
+      "label": "security",
+      "event_slug": "kisa-spam-data-open-2026"
+    },
+    {
+      "id": 429908,
+      "label": "security",
+      "event_slug": "vasp-security-rules-strengthen"
+    },
+    {
+      "id": 429946,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 429575,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 429945,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 429377,
+      "label": "security",
+      "event_slug": "kisa-spam-data-open-2026"
+    },
+    {
+      "id": 429613,
+      "label": "security",
+      "event_slug": "caring-data-breach"
+    },
+    {
+      "id": 429610,
+      "label": "security",
+      "event_slug": "kisa-digital-law-contest-2026"
+    },
+    {
+      "id": 429475,
+      "label": "security",
+      "event_slug": "nvidia-huang-intel-probe"
+    },
+    {
+      "id": 429355,
+      "label": "pr",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 스팸 데이터 개방 성과 공유회",
+      "start_date": "2026-11-20",
+      "end_date": null,
+      "place": "서울 피스앤파크 컨벤션",
+      "organizer": "한국인터넷진흥원(KISA)·방송미디어통신위원회",
+      "url": "https://www.boannews.com/news/articleView.html?idxno=147411",
+      "major": true,
+      "note": "스팸 데이터 개방 협력 기관·기업과 성과 공유, 악성 문자 약 5억건·스팸 전화 약 1200만건 수신 전 차단",
+      "article_ids": [
+        427443,
+        427542,
+        429584,
+        429481,
+        429377
+      ]
+    },
+    {
+      "name": "제1회 디지털 시대의 법 학술 경연대회 본선",
+      "start_date": "2026-11-19",
+      "end_date": null,
+      "place": "고려대 법학전문대학원",
+      "organizer": "한국인터넷진흥원(KISA)·과학기술정보통신부",
+      "url": "https://zdnet.co.kr/view/?no=20261120170420",
+      "major": true,
+      "note": "AI·디지털 전환의 법적 쟁점을 다루는 학술 경연대회, 본선 8개 팀 진출",
+      "article_ids": [
+        429610
+      ]
+    }
+  ]
+}
