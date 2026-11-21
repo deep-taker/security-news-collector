@@ -1,0 +1,329 @@
+{
+  "date": "2026-11-22",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-22-am.md",
+  "stats": {
+    "candidates": 32,
+    "security": 22,
+    "trend": 4,
+    "pr": 1,
+    "column": 1,
+    "not_security": 4,
+    "events": 21
+  },
+  "events": [
+    {
+      "slug": "kurly-curator-breach",
+      "title": "컬리 해킹, 큐레이터 1만699명·고객 2명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "공식 발표 기준 전체 피해 대상 1만701명, 큐레이터 일부는 주민등록번호·계좌번호 유출, 20일 대표 사과문 발표",
+      "cves": []
+    },
+    {
+      "slug": "wink-hapakristin-breach",
+      "title": "렌즈 플랫폼 윙크·하파크리스틴 고객정보 유출",
+      "category": "개인정보",
+      "summary": "윙크컴퍼니가 21일 문자로 고객 리뷰·예약정보 일부 유출 고지, 시력 정보 포함 보도",
+      "cves": []
+    },
+    {
+      "slug": "goe-teacher-data-leak",
+      "title": "경기도교육청 교원 158명 개인정보 외부 전달",
+      "category": "개인정보",
+      "summary": "교원소청심사위 제출 서증자료 2건에서 비식별 처리 없이 사건 관계인에게 전달, 20일 홈페이지 고지",
+      "cves": []
+    },
+    {
+      "slug": "blackdiamond-korea-erp-breach",
+      "title": "블랙다이아몬드 코리아 외주 ERP 서버 침해 정황, 개인정보 유출 가능성",
+      "category": "침해사고",
+      "summary": "주문·배송용 외부 통합 ERP 서비스사 서버에 제3자 비정상 접근 기록, 20일 홈페이지 공지, 실제 유출 여부 미확인",
+      "cves": []
+    },
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "침해사고",
+      "summary": "게시자 주장 규모 외부 이용자 59만2585건·내부 이용자 4만8697건·공급업체 자료 95만여 건·입찰 가격 자료 40만1951건, 유출 여부 미확인",
+      "cves": []
+    },
+    {
+      "slug": "java4shell-cve-2026-114938",
+      "title": "자바 자바4셸 원격 코드 실행 취약점",
+      "category": "취약점",
+      "summary": "SK쉴더스 분석 보고서, 특정 자바 실행환경과 특정 연산 기능 지원 CPU 조합에서 작동해 버전만으로 판단 곤란",
+      "cves": [
+        "CVE-2026-114938"
+      ]
+    },
+    {
+      "slug": "vcenter-cve-2026-123890",
+      "title": "VM웨어 v센터 최고 등급 인증 우회 결함, 브로드컴 긴급 업데이트",
+      "category": "취약점",
+      "summary": "브로드컴 보안 업데이트 배포, CVSS 9.8점 인증 우회 취약점",
+      "cves": [
+        "CVE-2026-123890"
+      ]
+    },
+    {
+      "slug": "fbi-ncic-intrusion",
+      "title": "미 FBI 전국 범죄정보 데이터베이스 NCIC 침입 정황, 조사 착수",
+      "category": "침해사고",
+      "summary": "CNN 20일 보도, 기록 접근·유출 여부와 공격 주체·침입 경로 미확인, 수배·영장 정보 변조 우려",
+      "cves": []
+    },
+    {
+      "slug": "japan-digital-agency-gss-breach",
+      "title": "일본 디지털청 정부 파일 공유 서비스 불법 접속, 파일 유출 가능성",
+      "category": "침해사고",
+      "summary": "정부 기반 시스템 GSS 파일 공유 서비스에 약 3개월 반 불법 접속, 감지 당일 서비스 중단, 개인정보 포함 가능성",
+      "cves": []
+    },
+    {
+      "slug": "everest-accuver-claim",
+      "title": "랜섬웨어 조직 에베레스트, LIG아큐버 글로벌 브랜드 아큐버 피해 명단 게시",
+      "category": "악성코드·랜섬웨어",
+      "summary": "20일 Accuver를 피해 대상으로 게시, 국내 본사 직접 침해인지 해외 법인·별도 시스템인지 미확인",
+      "cves": []
+    },
+    {
+      "slug": "everest-ablbio-claim",
+      "title": "랜섬웨어 조직 에베레스트, 에이비엘바이오 해킹 주장",
+      "category": "악성코드·랜섬웨어",
+      "summary": "다크웹에 회사명·도메인 게시하고 데이터베이스·파일 공개 예고, 회사 공식 입장과 실제 침입·반출 여부 미확인",
+      "cves": []
+    },
+    {
+      "slug": "chile-solar-plant-cyberattack",
+      "title": "칠레 103MW 태양광발전소, 사이버공격 신고 뒤 80일 넘게 가동 중단",
+      "category": "침해사고",
+      "summary": "후아타콘도 발전소와 98MW 배터리저장장치 8월 27일부터 전력망 분리, 가동 가능 비율 0%",
+      "cves": []
+    },
+    {
+      "slug": "france-cold-storage-attacks",
+      "title": "유럽 냉장설비 겨냥 사이버 공격, 의료용 보관시설로 확산 우려",
+      "category": "침해사고",
+      "summary": "11월 프랑스 냉장설비 공급업체 공격으로 혈장 보관실 온도 기준값 조작, 경보로 피해 차단",
+      "cves": []
+    },
+    {
+      "slug": "india-certin-payment-fraud-warning",
+      "title": "인도 CERT-In, 결제 서비스 협력업체 무단 거래 경고",
+      "category": "침해사고",
+      "summary": "거래 기록·승인 관계를 바꾼 뒤 정상 결제 절차로 자금 유출, 피해액과 공격 주체 비공개",
+      "cves": []
+    },
+    {
+      "slug": "deutsche-bank-apt10",
+      "title": "도이체뱅크, 2017년 APT10 공격으로 IT 인프라 정보 유출 의심",
+      "category": "침해사고",
+      "summary": "교도통신 참여 국제 탐사 보도, 기밀문서·이메일 1500만건 이상 분석, 내부 감시 체계 부실 정황",
+      "cves": []
+    },
+    {
+      "slug": "whitehouse-ip-residential-proxy",
+      "title": "백악관 소유 IP, 주거용 프록시 서비스에 노출",
+      "category": "기타",
+      "summary": "보안 업체 레이어3 인텔 분석을 뉴스위크가 보도, 외부인이 백악관 인터넷 연결로 활동을 숨길 수 있어 공격 위장 우려",
+      "cves": []
+    },
+    {
+      "slug": "google-mirror-dimension-agent-test",
+      "title": "구글, 시뮬레이션 인터넷 미러 디멘션으로 크롬 AI 에이전트 보안 테스트",
+      "category": "AI 보안",
+      "summary": "가짜 웹사이트 수천 개로 구성, 실제 사이트·계정 위험 없이 크롬 자동 브라우징 기능 점검",
+      "cves": []
+    },
+    {
+      "slug": "japan-npa-fff",
+      "title": "일본 경찰청, 사이버 증거보전 부대 FFF 발족",
+      "category": "정책·제도",
+      "summary": "피해 기업 현장에서 통신 기록 보전, 경찰청 약 30명·관구경찰국 등 9개 조직 약 120명 배치",
+      "cves": []
+    },
+    {
+      "slug": "fsc-efin-supervision-rule-amendment",
+      "title": "금융위, 전자금융감독규정 일부개정안 예고…취약점 점검 반기 1회",
+      "category": "정책·제도",
+      "summary": "대형 금융회사·전자금융업자 6개월 1회 이상 점검, 중계 서버로 연결된 업무지원 시스템도 평가 대상, 18일 예고",
+      "cves": []
+    },
+    {
+      "slug": "france-cyber-plan",
+      "title": "프랑스 정부 사이버보안 강화 계획 발표, 총리 \"전례 없는 위협\"",
+      "category": "정책·제도",
+      "summary": "르코르뉘 총리 19일 기자회견, ANSSI 사무총장도 전례 없는 위협 수준 언급",
+      "cves": []
+    },
+    {
+      "slug": "us-national-cyber-director-nominee",
+      "title": "트럼프, 커스틴 데이비스 국가사이버국장 지명",
+      "category": "정책·제도",
+      "summary": "전쟁부 최고정보책임자 출신, 19일 지명, 상원 인준 필요",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 437748,
+      "label": "security",
+      "event_slug": "kurly-curator-breach"
+    },
+    {
+      "id": 443928,
+      "label": "security",
+      "event_slug": "wink-hapakristin-breach"
+    },
+    {
+      "id": 449137,
+      "label": "security",
+      "event_slug": "goe-teacher-data-leak"
+    },
+    {
+      "id": 442831,
+      "label": "security",
+      "event_slug": "blackdiamond-korea-erp-breach"
+    },
+    {
+      "id": 443628,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 444837,
+      "label": "security",
+      "event_slug": "java4shell-cve-2026-114938"
+    },
+    {
+      "id": 440126,
+      "label": "security",
+      "event_slug": "vcenter-cve-2026-123890"
+    },
+    {
+      "id": 442781,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 443625,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 443627,
+      "label": "security",
+      "event_slug": "japan-digital-agency-gss-breach"
+    },
+    {
+      "id": 440298,
+      "label": "security",
+      "event_slug": "everest-accuver-claim"
+    },
+    {
+      "id": 441564,
+      "label": "security",
+      "event_slug": "everest-ablbio-claim"
+    },
+    {
+      "id": 439720,
+      "label": "security",
+      "event_slug": "chile-solar-plant-cyberattack"
+    },
+    {
+      "id": 439619,
+      "label": "security",
+      "event_slug": "france-cold-storage-attacks"
+    },
+    {
+      "id": 439618,
+      "label": "security",
+      "event_slug": "india-certin-payment-fraud-warning"
+    },
+    {
+      "id": 443623,
+      "label": "security",
+      "event_slug": "deutsche-bank-apt10"
+    },
+    {
+      "id": 444684,
+      "label": "security",
+      "event_slug": "whitehouse-ip-residential-proxy"
+    },
+    {
+      "id": 438334,
+      "label": "security",
+      "event_slug": "google-mirror-dimension-agent-test"
+    },
+    {
+      "id": 443624,
+      "label": "security",
+      "event_slug": "japan-npa-fff"
+    },
+    {
+      "id": 445359,
+      "label": "security",
+      "event_slug": "fsc-efin-supervision-rule-amendment"
+    },
+    {
+      "id": 443626,
+      "label": "security",
+      "event_slug": "france-cyber-plan"
+    },
+    {
+      "id": 443622,
+      "label": "security",
+      "event_slug": "us-national-cyber-director-nominee"
+    },
+    {
+      "id": 442881,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 438335,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 447210,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 442663,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 441614,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 439077,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 438336,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 442783,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 442782,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 446048,
+      "label": "not_security",
+      "event_slug": null
+    }
+  ]
+}
