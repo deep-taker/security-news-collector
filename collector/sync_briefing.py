@@ -1,4 +1,4 @@
-"""Claude가 저장소에 올린 브리핑 결과를 Supabase에 반영.
+"""저장소에 올라온 브리핑 결과를 Supabase에 반영.
 
 python -m collector.sync_briefing data/briefing-output/2026-10-27-am.json [...]
 
