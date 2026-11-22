@@ -967,21 +967,61 @@ def test_llm_rate_limit_retries_and_fallback(monkeypatch, tmp_path):
     out = llm.complete("s", "u", 500, state_path=qpath, sleep_fn=sleeps.append, now_fn=lambda: 2000.0)
     assert out["text"] == "[]" and len(calls) == 2 and calls[0] == calls[1] and sleeps == [47.0]
 
-    # 2) 일일 한도(RPD) 429 -> 예비 모델(gemini-3.1-flash-lite)로 즉시 전환
+    # 2) 기본 설정은 3.5 단일 모델(예비 모델 전환 없음) -> RPD 429 시 즉시 QuotaExhaustedError
     calls.clear()
     sleeps.clear()
 
     def post_rpd(url, timeout, headers, json):
         calls.append(url)
-        if "gemini-3.5-flash-lite" in url:
-            return Resp(429, {"error": {"message": "Quota exceeded for free_tier_requests per day."}})
-        return Resp(200, {"candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "[1]"}]}}]})
+        return Resp(429, {"error": {"message": "Quota exceeded for free_tier_requests per day."}})
 
     monkeypatch.setattr(llm.requests, "post", post_rpd)
-    out2 = llm.complete("s", "u", 500, state_path=tmp_path / "q2.json", sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
-    assert out2["text"] == "[1]" and "gemini-3.1-flash-lite:generateContent" in calls[1] and sleeps == []
+    with pytest.raises(llm.QuotaExhaustedError):
+        llm.complete("s", "u", 500, state_path=tmp_path / "q2.json", sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
+    assert len(calls) == 1 and "gemini-3.5-flash-lite:generateContent" in calls[0] and sleeps == []
 
-    # 3) 결제 오류(402) -> 재시도·전환 없이 즉시 PaymentError
+    # 3) 503 과부하 -> 1분(60s)->3분(180s)->6분(360s)->10분(600s) 대기 후 5회차 3.5 단일 모델 성공, 503은 RPD 미차감
+    calls.clear()
+    sleeps.clear()
+    q503 = tmp_path / "q503.json"
+
+    def post_503_then_ok(url, timeout, headers, json):
+        calls.append(url)
+        if len(calls) <= 4:
+            return Resp(503, {"error": {"message": "This model is currently experiencing high demand."}})
+        return Resp(200, {"candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "[503-ok]"}]}}],
+                         "usageMetadata": {"promptTokenCount": 30, "candidatesTokenCount": 5}})
+
+    monkeypatch.setattr(llm.requests, "post", post_503_then_ok)
+    out2 = llm.complete("s", "u", 500, state_path=q503, sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
+    assert out2["text"] == "[503-ok]"
+    assert len(calls) == 5 and all("gemini-3.5-flash-lite:generateContent" in c for c in calls)
+    assert sleeps == [60.0, 180.0, 360.0, 600.0]
+    assert llm.load_quota_state(q503, 3000.0)["rpd"].get("gemini-3.5-flash-lite") == 1
+
+    # 4) 503 연속 실패 시 모든 대기 소진 후 QuotaExhaustedError, RPD 0 유지
+    calls.clear()
+    sleeps.clear()
+    q503_fail = tmp_path / "q503_fail.json"
+    monkeypatch.setattr(
+        llm.requests,
+        "post",
+        lambda *a, **k: Resp(503, {"error": {"message": "This model is currently experiencing high demand."}}),
+    )
+    with pytest.raises(llm.QuotaExhaustedError):
+        llm.complete("s", "u", 500, state_path=q503_fail, sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
+    assert sleeps == [60.0, 180.0, 360.0, 600.0]
+    assert llm.load_quota_state(q503_fail, 3000.0)["rpd"].get("gemini-3.5-flash-lite", 0) == 0
+
+    # LLM_503_WAITS 환경 변수로 짧은 대기(예: sync-briefing.yml) 재정의 확인
+    sleeps.clear()
+    monkeypatch.setenv("LLM_503_WAITS", "30,60")
+    with pytest.raises(llm.QuotaExhaustedError):
+        llm.complete("s", "u", 500, state_path=tmp_path / "q503_env.json", sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
+    assert sleeps == [30.0, 60.0]
+    monkeypatch.delenv("LLM_503_WAITS", raising=False)
+
+    # 5) 결제 오류(402) -> 재시도·전환 없이 즉시 PaymentError
     monkeypatch.setattr(llm.requests, "post", lambda *a, **k: Resp(402, {"error": {"message": "prepayment credits exhausted"}}))
     with pytest.raises(llm.PaymentError):
         llm.complete("s", "u", 500, state_path=tmp_path / "q3.json", sleep_fn=sleeps.append)

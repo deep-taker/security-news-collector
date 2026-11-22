@@ -33,6 +33,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # 판 공개 직전 칼럼 필자 채우기 (없으면 건너뜀)
+          LLM_503_WAITS: "30,60"                          # DB 반영 지연 방지
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             files=$(ls data/briefing-output/*.json 2>/dev/null | tail -n 3)
@@ -59,6 +60,7 @@ jobs:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_503_WAITS: "30,60"
         run: python -m collector.authors 10
       - name: 반영 검증 (누락·사건 연결·DB·대시보드) — 실패 시 대시보드 '수집 상태'에 표시
         if: always()

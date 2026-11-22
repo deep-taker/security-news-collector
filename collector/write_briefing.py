@@ -1,7 +1,7 @@
 """Gemini API 기반 일간/주간 정보보안 브리핑 자동 작성 스크립트 (2단계).
 
 실행: python -m collector.write_briefing <날짜> <판> [--out-dir <폴더>] [--shadow]
-- 모델: gemini-3.5-flash-lite (예비 gemini-3.1-flash-lite, 작업 강도 MEDIUM)
+- 모델: gemini-3.5-flash-lite (단일 모델, 작업 강도 MEDIUM)
 - 외부 기사 자료 지시문 주입 방지: 도구·검색 비활성, 링크는 기사 id 기준 코드 조립
 - verify_briefing.check_files() ⛔ 오류 시 최대 2회 재시도 후 통과분만 저장
 """
