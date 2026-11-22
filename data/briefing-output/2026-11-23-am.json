@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-23",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-23-am.md",
+  "stats": {
+    "candidates": 24,
+    "security": 12,
+    "trend": 5,
+    "pr": 4,
+    "column": 0,
+    "not_security": 3,
+    "events": 5
+  },
+  "events": [
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "침해사고",
+      "summary": "한전ON 및 전자조달시스템 해킹으로 주민등록번호와 계좌·카드번호 등 152만여 건 유출",
+      "cves": []
+    },
+    {
+      "slug": "fbi-ncic-intrusion",
+      "title": "미 FBI 전국 범죄정보 데이터베이스 NCIC 침입 정황, 조사 착수",
+      "category": "침해사고",
+      "summary": "국가범죄정보센터 DB에 외부 침입 정황이 포착되어 당국이 수사에 착수함",
+      "cves": []
+    },
+    {
+      "slug": "postech-portal-breach",
+      "title": "포항공대 연구장비지원포털·IT서비스포털 해킹, 개인정보 1만9천978건 유출",
+      "category": "개인정보",
+      "summary": "2차 공지를 통해 추가 유출이 확인되면서 총 4만 5,529건의 개인정보가 유출됨",
+      "cves": []
+    },
+    {
+      "slug": "blackdiamond-korea-erp-breach",
+      "title": "블랙다이아몬드 코리아 외주 ERP 서버 침해 정황, 개인정보 유출 가능성",
+      "category": "침해사고",
+      "summary": "외주 주문 시스템 서버에 비정상 접근 정황이 발견되어 개인정보 유출 가능성 공지",
+      "cves": []
+    },
+    {
+      "slug": "cj-logistics-one-chatbot-breach",
+      "title": "CJ대한통운 오네 챗봇 서비스 해킹 의심, 개인정보 유출 가능성",
+      "category": "개인정보",
+      "summary": "챗봇 서버 로그 분석 중 비정상 대량 접근이 확인되어 택배 인수인 정보 노출 조사 중",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 454006,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 454005,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 455271,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 456582,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 456218,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 456526,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 456023,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 457832,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 456739,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 456740,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 458670,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 457944,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 458721,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 457943,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 457942,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 457941,
+      "label": "security",
+      "event_slug": "postech-portal-breach"
+    },
+    {
+      "id": 459188,
+      "label": "security",
+      "event_slug": "cj-logistics-one-chatbot-breach"
+    },
+    {
+      "id": 459138,
+      "label": "security",
+      "event_slug": "blackdiamond-korea-erp-breach"
+    },
+    {
+      "id": 461021,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 461019,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 463602,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 463732,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 464122,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 465418,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    }
+  ]
+}
