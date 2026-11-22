@@ -16,7 +16,8 @@ import requests
 
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 DEFAULT_MODEL = "gemini-3.5-flash-lite"
-FALLBACK_MODEL = "gemini-3.1-flash-lite"
+FALLBACK_MODEL = ""
+DEFAULT_503_WAITS = (60.0, 180.0, 360.0, 600.0)   # 1분 -> 3분 -> 6분 -> 10분
 SINGLE_MAX_TOKENS = int(os.environ.get("LLM_SINGLE_TPM_LIMIT", "170000"))
 COUNT_TOKENS_MIN_CHARS = 30000
 
@@ -29,11 +30,11 @@ except Exception:
 # 무료 등급 공식 한도의 약 80% 안전선 (환경 변수로 상한 조정 가능)
 MODEL_LIMITS = {
     "gemini-3.5-flash-lite": {"rpm": 12, "tpm": 200000, "rpd": 460},
-    "gemini-3.1-flash-lite": {"rpm": 12, "tpm": 200000, "rpd": 460},
 }
 DEFAULT_LIMIT = {"rpm": 12, "tpm": 200000, "rpd": 460}
 
-_QUOTA_RE = re.compile(r"429|RESOURCE_EXHAUSTED|quota exceeded|rate limit|503|UNAVAILABLE|high demand", re.I)
+_UNAVAILABLE_RE = re.compile(r"503|UNAVAILABLE|high demand", re.I)
+_RATE_QUOTA_RE = re.compile(r"429|RESOURCE_EXHAUSTED|quota exceeded|rate limit", re.I)
 _PAYMENT_RE = re.compile(r'prepayment credits|payment_required|"code":\s*402|status:\s*402', re.I)
 _RETRY_SEC_RE = re.compile(r"retry\s+(?:in|after)\s+(\d+(?:\.\d+)?)s", re.I)
 _DAILY_QUOTA_RE = re.compile(r"free_tier_requests|per day|daily", re.I)
@@ -226,6 +227,24 @@ def extract_retry_wait_sec(msg: str, cap_s: float | None = None) -> float:
     return min(cap_s, clamped) if cap_s is not None else clamped
 
 
+def unavailable_waits(waits: tuple[float, ...] | list[float] | None = None) -> tuple[float, ...]:
+    """503 서버 과부하 시 재시도 대기 시간(초) 목록. 기본값 1분 -> 3분 -> 6분 -> 10분."""
+    if waits is not None:
+        return tuple(float(w) for w in waits)
+    raw = (os.environ.get("LLM_503_WAITS") or "").strip()
+    if not raw:
+        return DEFAULT_503_WAITS
+    out = []
+    for part in raw.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        val = float(part)
+        if val >= 0:
+            out.append(val)
+    return tuple(out)
+
+
 def _sanitize_err(err: Exception | str) -> str:
     msg = str(err or "")
     key = os.environ.get("GEMINI_API_KEY", "")
@@ -307,10 +326,11 @@ def complete(
     thinking_level: str | None = None,
     use_count_tokens: bool | None = None,
     state_path: Path | str | None = None,
+    retry_503_waits: tuple[float, ...] | list[float] | None = None,
     sleep_fn=None,
     now_fn=None,
 ) -> dict:
-    """Gemini generateContent 호출 (한도 조절 · 429 대기 재시도 · 예비 모델 전환 포함).
+    """Gemini generateContent 호출 (한도 조절 · 503/429 대기 재시도 포함).
 
     반환: {"text": str, "in_tok": int, "out_tok": int, "truncated": bool, "finish_reason": str}
     - 도구·검색·코드 실행은 넣지 않는다(외부 기사 지시문 주입 방지).
@@ -326,18 +346,24 @@ def complete(
     do_sleep = sleep_fn or time.sleep
     now = now_fn or time.time
     use_exact = use_count_tokens if use_count_tokens is not None else (len(system or "") + len(user or "") >= COUNT_TOKENS_MIN_CHARS)
+    waits_503 = unavailable_waits(retry_503_waits)
 
     last_err: Exception | None = None
     quota_exhausted = False
     for m_idx, m in enumerate(models):
         est_tok = count_tokens(system, user, model=m)[0] if use_exact else estimate_tokens(system, user)
         tpm_retried = False
-        for attempt in range(1, 4):
+        unavailable_idx = 0
+        transient_retried = False
+        while True:
             budget = wait_for_budget(m, est_tok, state_path=p, sleep_fn=do_sleep, now_fn=now)
             if not budget.get("ok"):
                 quota_exhausted = True
                 last_err = QuotaExhaustedError(f"{m} KST 일일 안전 예산({budget['used_rpd']}/{budget['limit_rpd']}) 도달")
-                print(f"[quota-pacer] {last_err} - 다음 예비 모델 확인")
+                if m_idx + 1 < len(models):
+                    print(f"[quota-pacer] {last_err} - 다음 예비 모델 확인")
+                else:
+                    print(f"[quota-pacer] {last_err}")
                 break
             try:
                 res = _post_generate(
@@ -359,30 +385,51 @@ def complete(
                 status = getattr(getattr(e, "response", None), "status_code", None)
                 if status == 402 or _PAYMENT_RE.search(msg):
                     raise PaymentError(f"결제 오류(402): {msg[:250]}") from e
-                if status in (429, 503) or _QUOTA_RE.search(msg):
+                is_503 = status == 503 or bool(_UNAVAILABLE_RE.search(msg))
+                if is_503:
+                    if unavailable_idx < len(waits_503):
+                        wait_s = waits_503[unavailable_idx]
+                        unavailable_idx += 1
+                        print(
+                            f"[llm] {m} 서버 일시 과부하(503) - "
+                            f"{wait_s:.0f}초 대기 후 재시도 ({unavailable_idx}/{len(waits_503)}): {msg[:120]}"
+                        )
+                        do_sleep(wait_s)
+                        continue
+                    quota_exhausted = True
+                    if m_idx + 1 < len(models):
+                        print(f"[llm] {m} 서버 일시 과부하(503) 재시도 소진 - 예비 모델 전환 확인")
+                    else:
+                        print(f"[llm] {m} 서버 일시 과부하(503) {len(waits_503)}회 재시도 후에도 응답 불가")
+                    break
+                if status == 429 or _RATE_QUOTA_RE.search(msg):
                     record_call_usage(p, m, est_tok, now())
-                    if not tpm_retried and status != 503 and is_tpm_limit(msg):
+                    if not tpm_retried and is_tpm_limit(msg):
                         tpm_retried = True
                         wait_s = extract_retry_wait_sec(msg)
                         print(f"[llm] {m} 분당 한도(TPM) 감지 - {wait_s:.0f}초 대기 후 같은 모델 재시도")
                         do_sleep(wait_s)
                         continue
                     quota_exhausted = True
-                    print(f"[llm] {m} 일일 한도/과부하 감지({msg[:140]}) - 예비 모델 전환 확인")
+                    if m_idx + 1 < len(models):
+                        print(f"[llm] {m} 일일 한도(429) 감지({msg[:140]}) - 예비 모델 전환 확인")
+                    else:
+                        print(f"[llm] {m} 일일 한도(429) 도달({msg[:140]})")
                     break
                 is_transient = (
                     isinstance(e, (requests.Timeout, requests.ConnectionError))
                     or (isinstance(status, int) and status >= 500)
                     or bool(_TRANSIENT_RE.search(msg))
                 )
-                if attempt == 1 and is_transient:
+                if not transient_retried and is_transient:
+                    transient_retried = True
                     print(f"[llm] {m} 일시 오류로 3초 후 1회 재시도: {msg[:140]}")
                     do_sleep(3.0)
                     continue
                 raise
 
     if quota_exhausted:
-        raise QuotaExhaustedError(_sanitize_err(last_err or "무료 Gemini API 한도 초과"))
+        raise QuotaExhaustedError(_sanitize_err(last_err or "무료 Gemini API 한도 초과 또는 일시 과부하"))
     if last_err:
         raise last_err
-    raise QuotaExhaustedError("무료 Gemini API 한도 초과")
+    raise QuotaExhaustedError("무료 Gemini API 한도 초과 또는 일시 과부하")
