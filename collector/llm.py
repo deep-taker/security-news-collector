@@ -17,7 +17,7 @@ import requests
 API_BASE = "https://generativelanguage.googleapis.com/v1beta/models"
 DEFAULT_MODEL = "gemini-3.5-flash-lite"
 FALLBACK_MODEL = ""
-DEFAULT_503_WAITS = (60.0, 180.0, 360.0, 600.0)   # 1분 -> 3분 -> 6분 -> 10분
+DEFAULT_503_WAITS = (90.0, 90.0, 90.0, 90.0, 90.0)   # 90초 간격 5회 (최대 7분 30초)
 SINGLE_MAX_TOKENS = int(os.environ.get("LLM_SINGLE_TPM_LIMIT", "170000"))
 COUNT_TOKENS_MIN_CHARS = 30000
 
@@ -228,7 +228,7 @@ def extract_retry_wait_sec(msg: str, cap_s: float | None = None) -> float:
 
 
 def unavailable_waits(waits: tuple[float, ...] | list[float] | None = None) -> tuple[float, ...]:
-    """503 서버 과부하 시 재시도 대기 시간(초) 목록. 기본값 1분 -> 3분 -> 6분 -> 10분."""
+    """503 서버 과부하 시 재시도 대기 시간(초) 목록. 기본값 90초 간격 5회."""
     if waits is not None:
         return tuple(float(w) for w in waits)
     raw = (os.environ.get("LLM_503_WAITS") or "").strip()

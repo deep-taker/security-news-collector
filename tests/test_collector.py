@@ -980,14 +980,14 @@ def test_llm_rate_limit_retries_and_fallback(monkeypatch, tmp_path):
         llm.complete("s", "u", 500, state_path=tmp_path / "q2.json", sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
     assert len(calls) == 1 and "gemini-3.5-flash-lite:generateContent" in calls[0] and sleeps == []
 
-    # 3) 503 과부하 -> 1분(60s)->3분(180s)->6분(360s)->10분(600s) 대기 후 5회차 3.5 단일 모델 성공, 503은 RPD 미차감
+    # 3) 503 과부하 -> 90초 간격 5회 대기 후 6회차 3.5 단일 모델 성공, 503은 RPD 미차감
     calls.clear()
     sleeps.clear()
     q503 = tmp_path / "q503.json"
 
     def post_503_then_ok(url, timeout, headers, json):
         calls.append(url)
-        if len(calls) <= 4:
+        if len(calls) <= 5:
             return Resp(503, {"error": {"message": "This model is currently experiencing high demand."}})
         return Resp(200, {"candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "[503-ok]"}]}}],
                          "usageMetadata": {"promptTokenCount": 30, "candidatesTokenCount": 5}})
@@ -995,11 +995,11 @@ def test_llm_rate_limit_retries_and_fallback(monkeypatch, tmp_path):
     monkeypatch.setattr(llm.requests, "post", post_503_then_ok)
     out2 = llm.complete("s", "u", 500, state_path=q503, sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
     assert out2["text"] == "[503-ok]"
-    assert len(calls) == 5 and all("gemini-3.5-flash-lite:generateContent" in c for c in calls)
-    assert sleeps == [60.0, 180.0, 360.0, 600.0]
+    assert len(calls) == 6 and all("gemini-3.5-flash-lite:generateContent" in c for c in calls)
+    assert sleeps == [90.0, 90.0, 90.0, 90.0, 90.0]
     assert llm.load_quota_state(q503, 3000.0)["rpd"].get("gemini-3.5-flash-lite") == 1
 
-    # 4) 503 연속 실패 시 모든 대기 소진 후 QuotaExhaustedError, RPD 0 유지
+    # 4) 503 연속 실패 시 5회 대기 소진 후 QuotaExhaustedError, RPD 0 유지
     calls.clear()
     sleeps.clear()
     q503_fail = tmp_path / "q503_fail.json"
@@ -1010,7 +1010,7 @@ def test_llm_rate_limit_retries_and_fallback(monkeypatch, tmp_path):
     )
     with pytest.raises(llm.QuotaExhaustedError):
         llm.complete("s", "u", 500, state_path=q503_fail, sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
-    assert sleeps == [60.0, 180.0, 360.0, 600.0]
+    assert sleeps == [90.0, 90.0, 90.0, 90.0, 90.0]
     assert llm.load_quota_state(q503_fail, 3000.0)["rpd"].get("gemini-3.5-flash-lite", 0) == 0
 
     # LLM_503_WAITS 환경 변수로 짧은 대기(예: sync-briefing.yml) 재정의 확인
