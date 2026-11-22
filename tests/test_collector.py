@@ -1279,4 +1279,36 @@ def test_write_briefing_weekend_skip_and_weekly_and_abort(monkeypatch, tmp_path)
     assert not (fail_dir / "briefings" / "2026-11-24-am.md").exists()
 
 
+def test_daily_shadow_and_write_briefing_in_dir(monkeypatch, tmp_path):
+    import json as _json, sys
+    from collector import daily, llm, store, write_briefing
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(store, "enabled", lambda: True)
+    monkeypatch.setattr(store, "select", lambda *a, **k: [])
+    maint_called = []
+    monkeypatch.setattr(daily, "maintenance", lambda d: maint_called.append(d))
+
+    # 월요일 06시판 --shadow 실행: data/shadow/briefing-input 에 저장하고 maintenance 는 건너뜀
+    monkeypatch.setattr(sys, "argv", ["daily", "--date", "2026-11-23", "--edition", "am", "--shadow"])
+    daily.main()
+    assert maint_called == []
+    assert (tmp_path / "data" / "shadow" / "briefing-input" / "2026-11-23-am.json").exists()
+    assert (tmp_path / "data" / "shadow" / "briefing-input" / "2026-11-23-week.json").exists()
+    assert not (tmp_path / "data" / "briefing-input").exists()
+
+    # write_briefing.run 은 out_dir/briefing-input 에 파일이 있으면 자동으로 우선 참조
+    monkeypatch.setenv("GEMINI_API_KEY", "gk-test")
+    monkeypatch.setattr(write_briefing, "INPUT_DIR", tmp_path / "data" / "briefing-input")
+    monkeypatch.setattr(llm, "complete", lambda *a, **k: {
+        "text": _json.dumps({"sections": {}, "industry_flow": [], "watch_next": []}, ensure_ascii=False),
+        "in_tok": 10, "out_tok": 10, "truncated": False, "finish_reason": "STOP",
+    })
+    res = write_briefing.run("2026-11-23", "am", out_dir=tmp_path / "data" / "shadow", include_weekly=True)
+    assert "daily" in res and "weekly" in res
+    assert (tmp_path / "data" / "shadow" / "briefings" / "2026-11-23-am.md").exists()
+    assert (tmp_path / "data" / "shadow" / "briefings" / "2026-11-23-week.md").exists()
+
+
+
 

@@ -8,6 +8,10 @@ on:
       only:
         description: "특정 매체만 (예: boannews,dt_ict)"
         required: false
+      shadow_test:
+        description: "통합 테스트(true면 수집 완료 후 다음 06시판 shadow 브리핑까지 연쇄 실행)"
+        type: boolean
+        default: false
 
 concurrency:
   group: collect
@@ -15,6 +19,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   collect:
@@ -111,3 +116,16 @@ jobs:
             ok=""; for i in 1 2 3; do if git pull --rebase && git push; then ok=1; break; fi; git rebase --abort 2>/dev/null || true; sleep $((i * 10)); done
             [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 커밋이 올라가지 않았습니다"; exit 1; }
           fi
+
+  chain-shadow-test:
+    needs: [collect, retry-403]
+    if: ${{ always() && github.event_name == 'workflow_dispatch' && inputs.shadow_test == true && needs.collect.result == 'success' && (needs.retry-403.result == 'success' || needs.retry-403.result == 'skipped') }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: 다음 06시판 브리핑 준비·작성(shadow) 자동 연쇄 실행
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          D=$(python3 -c 'from datetime import datetime, timedelta, timezone; print((datetime.now(timezone(timedelta(hours=9))) + timedelta(hours=18)).strftime("%Y-%m-%d"))')
+          gh workflow run daily.yml --repo "${{ github.repository }}" --ref main -f date="$D" -f edition=am -f shadow=true

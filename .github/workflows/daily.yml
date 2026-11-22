@@ -1,7 +1,7 @@
 name: 브리핑 준비 (하루 3회)
 
 on:
-  # 05:35·11:35·17:35 KST 실행 신호는 Supabase pg_cron(prepare-am/noon/pm)이 보냄. 누락 시 Claude 브리핑 작업이 직접 실행.
+  # 05:35·11:35·17:35 KST 실행 신호는 Supabase pg_cron(prepare-am/noon/pm)이 보냄. 누락 시 4단계 자동 조치가 재실행.
   # GitHub 자체 예약은 꺼 둠 (2026-10-26). 06시판 때 보관 정책·용량 점검 수행 (백업은 backup.yml).
   workflow_dispatch:
     inputs:
@@ -11,6 +11,10 @@ on:
       edition:
         description: "am(06시판)·noon(12시판)·pm(18시판)·week(주간 요약 입력만), 비우면 현재 시각 기준"
         required: false
+      shadow:
+        description: "그림자 테스트 (true면 data/shadow에 저장하고 DB 반영 생략)"
+        type: boolean
+        default: false
 
 concurrency:
   group: repo-write
@@ -18,6 +22,7 @@ concurrency:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   daily:
@@ -31,24 +36,46 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - name: 브리핑 입력·백업·정리
+        id: prep
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           TARGET_DATE: ${{ inputs.date }}
           TARGET_EDITION: ${{ inputs.edition }}
+          IN_SHADOW: ${{ inputs.shadow }}
         run: |
-          args=""
-          [ -n "$TARGET_DATE" ] && args="$args --date $TARGET_DATE"
-          [ -n "$TARGET_EDITION" ] && args="$args --edition $TARGET_EDITION"
-          python -m collector.daily $args
+          read -r D E < <(python -c "import os; from datetime import datetime; from collector.daily import edition_of; from collector.parsers import KST; now = datetime.now(KST); print(os.environ.get('TARGET_DATE') or now.date().isoformat(), os.environ.get('TARGET_EDITION') or edition_of(now))")
+          S=false
+          FLAG=""
+          if [ "$IN_SHADOW" = "true" ]; then
+            S=true
+            FLAG="--shadow"
+          fi
+          echo "date=$D" >> "$GITHUB_OUTPUT"
+          echo "edition=$E" >> "$GITHUB_OUTPUT"
+          echo "shadow=$S" >> "$GITHUB_OUTPUT"
+          python -m collector.daily --date "$D" --edition "$E" $FLAG
       - name: 저장소에 반영
         if: always()   # 06시판 정비 단계가 실패해도 이미 만든 브리핑 입력은 올린다 (작업은 실패로 남음)
+        env:
+          S: ${{ steps.prep.outputs.shadow }}
         run: |
           git config user.name "collector-bot"
           git config user.email "collector-bot@users.noreply.github.com"
           git add data/
           if ! git diff --cached --quiet; then
-            git commit -m "브리핑 입력 $(TZ=Asia/Seoul date +%F-%H%M)"
+            PREFIX="브리핑 입력"
+            [ "$S" = "true" ] && PREFIX="그림자 브리핑 입력"
+            git commit -m "$PREFIX $(TZ=Asia/Seoul date +%F-%H%M)"
             ok=""; for i in 1 2 3; do if git pull --rebase && git push; then ok=1; break; fi; git rebase --abort 2>/dev/null || true; sleep $((i * 10)); done
             [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 커밋이 올라가지 않았습니다"; exit 1; }
           fi
+      - name: 브리핑 작성 워크플로우 실행
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          D: ${{ steps.prep.outputs.date }}
+          E: ${{ steps.prep.outputs.edition }}
+          S: ${{ steps.prep.outputs.shadow }}
+        run: |
+          gh workflow run write-briefing.yml --repo "${{ github.repository }}" --ref main -f date="$D" -f edition="$E" -f shadow="$S"
