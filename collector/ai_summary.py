@@ -18,7 +18,7 @@ from . import llm, store
 from .parsers import KST, clean_text, scan_injection
 
 MODEL = os.environ.get("SUMMARY_MODEL", llm.DEFAULT_MODEL)
-BATCH = 15                 # 요청 한 번에 보낼 기사 수
+BATCH = 25                 # 요청 한 번에 보낼 기사 수
 MAX_TOKENS = 8000
 MAX_PER_RUN = 150          # 실행 한 번 최대 기사 수
 GIVEUP_HOURS = 48
@@ -71,7 +71,7 @@ def valid_line(line, title: str) -> str:
 def _call(items: list) -> dict:
     payload = {"articles": [{"id": a["id"], "title": clean_text(a.get("title")),
                              "description": clean_text(a.get("summary") or "", 500)} for a in items]}
-    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), MAX_TOKENS, model=MODEL)
+    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), MAX_TOKENS, model=MODEL, thinking_level="MINIMAL")
     USAGE["in"] += res["in_tok"]
     USAGE["out"] += res["out_tok"]
     text = res["text"]
@@ -120,10 +120,26 @@ def run(limit: int = MAX_PER_RUN) -> dict:
     USAGE.update(**{"in": 0, "out": 0, "truncated": 0})
     pending = []
     if enabled():
-        for i in range(0, len(uniq), BATCH):
-            chunk = uniq[i:i + BATCH]
+        chunks = [uniq[i:i + BATCH] for i in range(0, len(uniq), BATCH)]
+        ci = 0
+        while ci < len(chunks):
+            chunk = chunks[ci]
+            ci += 1
+            if len(chunk) > 1 and llm.estimate_tokens(SYSTEM, json.dumps(
+                [{"id": a["id"], "title": clean_text(a.get("title")), "description": clean_text(a.get("summary") or "", 500)} for a in chunk],
+                ensure_ascii=False,
+            )) > llm.SINGLE_MAX_TOKENS:
+                mid = len(chunk) // 2
+                chunks[ci:ci] = [chunk[:mid], chunk[mid:]]
+                continue
             try:
                 got = _call(chunk)
+            except (llm.QuotaExhaustedError, llm.PaymentError) as e:
+                res["failed_batches"] += 1
+                res["errors"].append(f"{type(e).__name__}: {str(e)[:180]}"[:400])
+                print(f"::warning title=AI 요약 한도 중단::{type(e).__name__}: {str(e)[:200]}".replace("\n", " "))
+                pending += chunk + [a for rest in chunks[ci:] for a in rest]
+                break
             except (requests.RequestException, ValueError) as e:
                 res["failed_batches"] += 1
                 body = getattr(getattr(e, "response", None), "text", "")[:300]

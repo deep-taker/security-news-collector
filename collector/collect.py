@@ -293,7 +293,12 @@ def run(only=None, fixtures=None, retry_mode=False):
         for r in all_rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
 
-    if store.enabled() and not fixtures:
+    new_saved = sum(e.get("new") or 0 for e in report["sources"])
+    if store.enabled() and not fixtures and retry_mode and new_saved == 0:
+        print("::notice title=AI 단계 건너뜀::재수집 신규 기사 0건으로 AI 요약·필자 탐색 생략")
+        report["ai_summary"] = {"enabled": ai_summary.enabled(), "done": 0, "skipped": "retry_no_new"}
+        report["authors"] = {"enabled": ai_summary.enabled(), "target": 0, "skipped": "retry_no_new"}
+    elif store.enabled() and not fixtures:
         try:
             report["descriptions"] = fill_descriptions()
         except requests.RequestException as e:   # 보완 실패는 수집 결과에 영향 없음

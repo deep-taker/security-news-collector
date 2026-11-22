@@ -849,7 +849,7 @@ def test_verify_warns_column_without_author(monkeypatch):
     assert verify_briefing.check_authors({"labels": [{"id": 2, "label": "security"}]}) == []
 
 
-def test_llm_complete_and_safety_empty_response(monkeypatch):
+def test_llm_complete_and_safety_empty_response(monkeypatch, tmp_path):
     from collector import llm
     seen = {}
 
@@ -880,7 +880,7 @@ def test_llm_complete_and_safety_empty_response(monkeypatch):
     monkeypatch.setenv("GEMINI_API_KEY", "gk-test")
     assert llm.enabled()
     monkeypatch.setattr(llm.requests, "post", fake_post)
-    out = llm.complete("sys", "usr", 1024, model="gemini-3.5-flash-lite", thinking_level="minimal")
+    out = llm.complete("sys", "usr", 1024, model="gemini-3.5-flash-lite", thinking_level="minimal", state_path=tmp_path / "q.json")
     assert seen["url"] == "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent"
     assert seen["headers"]["x-goog-api-key"] == "gk-test"
     assert seen["json"]["system_instruction"] == {"parts": [{"text": "sys"}]}
@@ -890,6 +890,174 @@ def test_llm_complete_and_safety_empty_response(monkeypatch):
 
     # 안전 필터 등으로 candidates가 비어도 예외 없이 빈 문자열 반환 (묶음 실패 처리)
     monkeypatch.setattr(llm.requests, "post", lambda *a, **k: R({"promptFeedback": {"blockReason": "SAFETY"}}))
-    blocked = llm.complete("sys", "usr", 1024)
+    blocked = llm.complete("sys", "usr", 1024, state_path=tmp_path / "q.json")
     assert blocked == {"text": "", "in_tok": 0, "out_tok": 0, "truncated": False, "finish_reason": "SAFETY"}
+
+
+def test_llm_complete_uses_isolated_state(monkeypatch, tmp_path):
+    from collector import llm
+    # 기존 test_llm_complete_and_safety_empty_response와 별개로 KST 일자 전환·RPM/TPM·429/402 분기 검증
+    monkeypatch.setattr(llm, "default_state_path", lambda: tmp_path / "quota.json")
+    from datetime import datetime
+    # KST 자정 전후로 일자가 바뀌는지 확인 (UTC 14:59 = KST 23:59 vs UTC 15:00 = KST 00:00)
+    t_before = datetime(2026, 11, 22, 23, 59, tzinfo=llm.KST).timestamp()
+    t_after = datetime(2026, 11, 23, 0, 0, tzinfo=llm.KST).timestamp()
+    assert llm.kst_day(t_before) == "2026-11-22"
+    assert llm.kst_day(t_after) == "2026-11-23"
+
+    # 60초 슬라이딩 윈도우 RPM·TPM 대기 계산
+    qpath = tmp_path / "pacer.json"
+    llm.record_call_usage(qpath, "gemini-3.5-flash-lite", 150000, now_ts=1000.0)
+    slept = []
+    clock = [1010.0]
+
+    def fake_sleep(sec):
+        slept.append(sec)
+        clock[0] += sec
+
+    res = llm.wait_for_budget(
+        "gemini-3.5-flash-lite",
+        60000,
+        state_path=qpath,
+        sleep_fn=fake_sleep,
+        now_fn=lambda: clock[0],
+    )
+    assert res["ok"] and slept and slept[0] == 51.0
+
+    # KST 일일 RPD 상한 도달 시 ok=False 반환, 다음 날 KST 00:00에 초기화
+    for _ in range(2):
+        llm.record_call_usage(qpath, "gemini-3.5-flash-lite", 100, now_ts=t_before)
+    over = llm.wait_for_budget("gemini-3.5-flash-lite", 100, state_path=qpath, limits={"rpd": 2}, now_fn=lambda: t_before)
+    assert over == {"ok": False, "reason": "RPD", "used_rpd": 2, "limit_rpd": 2}
+    next_day = llm.wait_for_budget("gemini-3.5-flash-lite", 100, state_path=qpath, limits={"rpd": 2}, now_fn=lambda: t_after)
+    assert next_day["ok"] and next_day["used_rpd"] == 0
+
+
+def test_llm_rate_limit_retries_and_fallback(monkeypatch, tmp_path):
+    import json as _json
+    import pytest
+    from collector import llm
+    monkeypatch.setenv("GEMINI_API_KEY", "gk-test")
+    qpath = tmp_path / "quota.json"
+
+    class Resp:
+        def __init__(self, status_code, body):
+            self.status_code = status_code
+            self._body = body
+            self.text = _json.dumps(body, ensure_ascii=False)
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return self._body
+
+    # 1) 분당 한도(TPM) 429 -> 대기 후 같은 모델 재시도 성공
+    calls = []
+    sleeps = []
+
+    def post_tpm(url, timeout, headers, json):
+        calls.append(url)
+        if len(calls) == 1:
+            return Resp(429, {"error": {"message": "Quota exceeded for tokens per minute. Please retry in 42s."}})
+        return Resp(200, {"candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "[]"}]}}],
+                         "usageMetadata": {"promptTokenCount": 50, "candidatesTokenCount": 10}})
+
+    monkeypatch.setattr(llm.requests, "post", post_tpm)
+    out = llm.complete("s", "u", 500, state_path=qpath, sleep_fn=sleeps.append, now_fn=lambda: 2000.0)
+    assert out["text"] == "[]" and len(calls) == 2 and calls[0] == calls[1] and sleeps == [47.0]
+
+    # 2) 일일 한도(RPD) 429 -> 예비 모델(gemini-3.1-flash-lite)로 즉시 전환
+    calls.clear()
+    sleeps.clear()
+
+    def post_rpd(url, timeout, headers, json):
+        calls.append(url)
+        if "gemini-3.5-flash-lite" in url:
+            return Resp(429, {"error": {"message": "Quota exceeded for free_tier_requests per day."}})
+        return Resp(200, {"candidates": [{"finishReason": "STOP", "content": {"parts": [{"text": "[1]"}]}}]})
+
+    monkeypatch.setattr(llm.requests, "post", post_rpd)
+    out2 = llm.complete("s", "u", 500, state_path=tmp_path / "q2.json", sleep_fn=sleeps.append, now_fn=lambda: 3000.0)
+    assert out2["text"] == "[1]" and "gemini-3.1-flash-lite:generateContent" in calls[1] and sleeps == []
+
+    # 3) 결제 오류(402) -> 재시도·전환 없이 즉시 PaymentError
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: Resp(402, {"error": {"message": "prepayment credits exhausted"}}))
+    with pytest.raises(llm.PaymentError):
+        llm.complete("s", "u", 500, state_path=tmp_path / "q3.json", sleep_fn=sleeps.append)
+
+
+def test_llm_count_tokens_and_ai_quota_stop(monkeypatch, tmp_path):
+    from collector import ai_summary, authors, collect, llm, store
+
+    # countTokens 성공 및 실패 시 추정 폴백
+    monkeypatch.setenv("GEMINI_API_KEY", "gk-test")
+
+    class TokR:
+        status_code = 200
+
+        def json(self):
+            return {"totalTokens": 12345}
+
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: TokR())
+    assert llm.count_tokens("sys", "한글 테스트") == (12345, True)
+
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: (_ for _ in ()).throw(llm.requests.Timeout("t")))
+    est, exact = llm.count_tokens("sys", "한글 테스트")
+    assert not exact and est > 400
+
+    # ai_summary BATCH=25 및 QuotaExhaustedError 시 남은 묶음 즉시 중단
+    assert ai_summary.BATCH == 25
+    monkeypatch.setattr(store, "select", lambda *a, **k: [
+        {"id": i, "title": f"기사 {i}", "summary": "설명", "label": "security", "collected_at": "2026-11-22T09:00:00+09:00"}
+        for i in range(1, 31)
+    ])
+    monkeypatch.setattr(store, "patch", lambda *a, **k: None)
+    called_chunks = []
+
+    def fail_quota(chunk):
+        called_chunks.append(len(chunk))
+        raise llm.QuotaExhaustedError("RPD exhausted")
+
+    monkeypatch.setattr(ai_summary, "_call", fail_quota)
+    r = ai_summary.run()
+    assert called_chunks == [25] and r["failed_batches"] == 1
+
+    # authors QuotaExhaustedError 시 남은 묶음 중단
+    monkeypatch.setattr(store, "select", lambda *a, **k: [
+        {"id": i, "title": f"[칼럼] {i}", "url": f"https://ex/{i}", "source_id": "boannews", "label": "column",
+         "collected_at": "2026-11-22T09:00:00+09:00"}
+        for i in range(1, 15)
+    ])
+    monkeypatch.setattr(authors, "candidates", lambda h, t: ["후보"])
+    monkeypatch.setattr(authors, "reporters", lambda h: set())
+    monkeypatch.setattr(authors, "editorial", lambda h, t: False)
+    auth_calls = []
+
+    def auth_quota(chunk):
+        auth_calls.append(len(chunk))
+        raise llm.QuotaExhaustedError("RPD exhausted")
+
+    monkeypatch.setattr(authors, "_call", auth_quota)
+    ar = authors.run(fetch=lambda u: b"<html/>")
+    assert auth_calls == [10] and ar["failed"] == 14
+
+    # collect retry_mode=True 에서 신규 0건이면 AI 단계 건너뜀
+    monkeypatch.setattr(collect, "OUT", tmp_path)
+    monkeypatch.setattr(collect, "RETRY_FILE", tmp_path / "retry_sources.txt")
+    monkeypatch.setattr(store, "enabled", lambda: True)
+    monkeypatch.setattr(store, "insert_ignore", lambda *a, **k: [])
+    monkeypatch.setattr(store, "insert", lambda *a, **k: [])
+    monkeypatch.setattr(collect, "last_ok_times", lambda: {})
+    monkeypatch.setattr(collect, "active_sources", lambda: None)
+    monkeypatch.setattr(collect, "SOURCES", [{"id": "s1", "name": "S1", "kind": "rss", "url": "https://ex/rss"}])
+    monkeypatch.setattr(collect, "page_urls", lambda s: ["https://ex/rss"])
+    monkeypatch.setattr(collect, "fetch", lambda u: b"<rss/>")
+    monkeypatch.setattr(collect, "PARSERS", {"rss": lambda raw, url: [{"title": "t", "url": "https://ex/1", "summary": ""}]})
+    monkeypatch.setattr(collect, "scan_injection", lambda t: [])
+    monkeypatch.setattr(ai_summary, "run", lambda: (_ for _ in ()).throw(AssertionError("should skip")))
+    monkeypatch.setattr(authors, "run", lambda: (_ for _ in ()).throw(AssertionError("should skip")))
+    rep = collect.run(only={"s1"}, retry_mode=True)
+    assert rep["ai_summary"]["skipped"] == "retry_no_new" and rep["authors"]["skipped"] == "retry_no_new"
+
 

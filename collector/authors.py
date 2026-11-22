@@ -205,7 +205,7 @@ def label(info) -> str:
 
 def _call(items: list) -> dict:
     payload = {"articles": [{"id": a["id"], "title": clean_text(a.get("title")), "candidates": a["cands"]} for a in items]}
-    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), 2000, model=ai_summary.MODEL)
+    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), 2000, model=ai_summary.MODEL, thinking_level="MINIMAL")
     text = res["text"]
     m = re.search(r"\[.*\]", text, re.S)
     try:
@@ -286,6 +286,10 @@ def run(limit: int = MAX_PER_RUN, fetch=None, ids=None) -> dict:
         chunk = asked[i:i + 10]
         try:
             got = _call(chunk)
+        except (llm.QuotaExhaustedError, llm.PaymentError) as e:
+            res["failed"] += len(asked) - i
+            res["errors"].append(f"{type(e).__name__}: {str(e)[:150]}")
+            break
         except (requests.RequestException, ValueError) as e:
             res["failed"] += len(chunk)
             res["errors"].append(f"{type(e).__name__}: {str(e)[:150]}")
