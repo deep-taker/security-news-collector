@@ -1,0 +1,91 @@
+name: 브리핑 작성 (Gemini)
+
+# 수동 실행 및(3단계 이후) daily.yml에서 호출.
+# 그림자(shadow=false)가 아니면 briefings/와 data/briefing-output/ 푸시 후 sync-briefing.yml을 명시 실행한다.
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "날짜 (YYYY-MM-DD, 비우면 오늘 한국 시각)"
+        required: false
+        default: ""
+      edition:
+        description: "판 (am=06시, noon=12시, pm=18시, week=주간)"
+        type: choice
+        options: [am, noon, pm, week]
+        default: am
+      shadow:
+        description: "그림자 모드 (true면 data/shadow에 저장하고 DB 반영 안 함)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: repo-write
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: 브리핑 작성 및 검증
+        id: write
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          IN_DATE: ${{ inputs.date }}
+          IN_EDITION: ${{ inputs.edition }}
+          IN_SHADOW: ${{ inputs.shadow }}
+        run: |
+          D="$IN_DATE"
+          [ -n "$D" ] || D=$(TZ=Asia/Seoul date +%F)
+          echo "date=$D" >> "$GITHUB_OUTPUT"
+          FLAG=""
+          [ "$IN_SHADOW" = "true" ] && FLAG="--shadow"
+          python -m collector.write_briefing "$D" "$IN_EDITION" $FLAG
+      - name: 저장소 푸시 및 DB 반영 실행
+        env:
+          GH_TOKEN: ${{ github.token }}
+          D: ${{ steps.write.outputs.date }}
+          IN_EDITION: ${{ inputs.edition }}
+          IN_SHADOW: ${{ inputs.shadow }}
+        run: |
+          git config user.name "collector-bot"
+          git config user.email "collector-bot@users.noreply.github.com"
+          if [ "$IN_SHADOW" = "true" ]; then
+            [ -d data/shadow ] && git add data/shadow || true
+            MSG="그림자 브리핑 $D-$IN_EDITION"
+          else
+            git add briefings data/briefing-output
+            MSG="브리핑 $D-$IN_EDITION"
+          fi
+          if ! git diff --cached --quiet; then
+            git commit -m "$MSG"
+            ok=""
+            for i in 1 2 3; do
+              if git pull --rebase && git push; then
+                ok=1
+                break
+              fi
+              git rebase --abort 2>/dev/null || true
+              sleep $((i * 10))
+            done
+            [ -n "$ok" ] || { echo "::error::저장소 푸시 3회 실패 — 브리핑이 올라가지 않았습니다"; exit 1; }
+            if [ "$IN_SHADOW" != "true" ]; then
+              # GITHUB_TOKEN 푸시는 on: push 워크플로를 깨우지 않으므로 직접 실행
+              gh workflow run sync-briefing.yml --ref main
+            fi
+          else
+            echo "변경된 브리핑 파일이 없습니다 (주말 12·18시판 등)"
+          fi
