@@ -365,9 +365,9 @@ def test_ai_summary(monkeypatch):
     monkeypatch.setattr(store, "select", lambda t, p, page_size=1000: rows)
     monkeypatch.setattr(store, "patch", lambda t, m, v: patched.append((m["id"], v)))
     # 키 없음: 아무것도 하지 않음 (오래된 기사도 포기 표시 안 함 — 키 등록 뒤 요약)
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     assert ai_summary.run()["done"] == 0 and patched == []
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
     def fake(items):
         sent.extend(a["id"] for a in items)
         return {"1": "KB국민은행 해킹 유출 2,210명으로 확대…금감원 현장점검 착수",
@@ -488,24 +488,25 @@ def test_store_select_limit_and_416(monkeypatch):
 
 
 def test_ai_summary_ids_as_string(monkeypatch):
-    from collector import ai_summary
+    from collector import ai_summary, llm
     class R:
         def raise_for_status(self): pass
-        def json(self): return {"content": [{"type": "text", "text": '설명 [{"id": "7", "line": "가나다라마바사아자차카타파하 요약"}, {"id": 8, "line": "두번째 요약 문장입니다 충분히 길게"}]'}]}
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "t")
-    monkeypatch.setattr(ai_summary.requests, "post", lambda *a, **k: R())
+        def json(self): return {"candidates": [{"finishReason": "STOP", "content": {"parts": [
+            {"text": '설명 [{"id": "7", "line": "가나다라마바사아자차카타파하 요약"}, {"id": 8, "line": "두번째 요약 문장입니다 충분히 길게"}]'}]}}]}
+    monkeypatch.setenv("GEMINI_API_KEY", "t")
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: R())
     got = ai_summary._call([{"id": 7, "title": "t"}, {"id": 8, "title": "u"}])
     assert set(got) == {"7", "8"}
 
 
 def test_ai_summary_salvages_truncated(monkeypatch):
-    from collector import ai_summary
+    from collector import ai_summary, llm
     txt = '[{"id":5821,"line":"PHP 치명적 취약점에 공공사이트 잠정 폐쇄…사이버위기 주의 발령"},{"id":"4990","line":"Node.js 런타임 치명적 취약점 \\"긴급\\" 패치"},{"id":12,"line":"잘린 문'
     class R:
         def raise_for_status(self): pass
-        def json(self): return {"stop_reason": "max_tokens", "content": [{"type": "text", "text": txt}]}
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "t")
-    monkeypatch.setattr(ai_summary.requests, "post", lambda *a, **k: R())
+        def json(self): return {"candidates": [{"finishReason": "MAX_TOKENS", "content": {"parts": [{"text": txt}]}}]}
+    monkeypatch.setenv("GEMINI_API_KEY", "t")
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: R())
     got = ai_summary._call([{"id": 5821, "title": "a"}, {"id": 4990, "title": "b"}, {"id": 12, "title": "c"}])
     assert set(got) == {"5821", "4990"} and got["4990"].endswith('"긴급" 패치')
 
@@ -705,9 +706,9 @@ def test_author_run(monkeypatch):
     patched, sent = [], []
     monkeypatch.setattr(store, "select", lambda t, p, page_size=1000: rows)
     monkeypatch.setattr(store, "patch", lambda t, m, v: patched.append((m["id"], v)))
-    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
     assert authors.run(fetch=lambda u: b"")["target"] == 0 and patched == []      # 키 없음: 아무것도 안 함
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
 
     def fetch(u):
         if u.endswith("a4"):
@@ -830,7 +831,7 @@ def test_author_run_with_ids_ignores_title_form(monkeypatch):
     patched = []
     monkeypatch.setattr(store, "select", select)
     monkeypatch.setattr(store, "patch", lambda t, m, v: patched.append((m["id"], v)))
-    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
     page = '<html><head><meta property="dable:author" content="황치규 기자"></head><body><div class="view_cont"><p>본문</p></div></body></html>'
     monkeypatch.setattr(authors, "_call", lambda items: {"9": {"id": 9, "org": "", "position": "", "name": ""}})   # AI: 외부 필자 없음
     r = authors.run(ids=[9], fetch=lambda u: page.encode())
@@ -846,3 +847,49 @@ def test_verify_warns_column_without_author(monkeypatch):
     w = verify_briefing.check_authors({"labels": [{"id": 1, "label": "column"}, {"id": 3, "label": "column"}, {"id": 2, "label": "security"}]})
     assert len(w) == 1 and "1건" in w[0] and "ET톡" in w[0]
     assert verify_briefing.check_authors({"labels": [{"id": 2, "label": "security"}]}) == []
+
+
+def test_llm_complete_and_safety_empty_response(monkeypatch):
+    from collector import llm
+    seen = {}
+
+    class R:
+        def __init__(self, body):
+            self._body = body
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return self._body
+
+    def fake_post(url, timeout, headers, json):
+        seen["url"] = url
+        seen["headers"] = headers
+        seen["json"] = json
+        return R({
+            "candidates": [{
+                "finishReason": "STOP",
+                "content": {"parts": [{"text": "생각 요약", "thought": True}, {"text": "[{\"id\": 1}]"}]},
+            }],
+            "usageMetadata": {"promptTokenCount": 120, "candidatesTokenCount": 30, "thoughtsTokenCount": 15},
+        })
+
+    monkeypatch.delenv("GEMINI_API_KEY", raising=False)
+    assert not llm.enabled()
+    monkeypatch.setenv("GEMINI_API_KEY", "gk-test")
+    assert llm.enabled()
+    monkeypatch.setattr(llm.requests, "post", fake_post)
+    out = llm.complete("sys", "usr", 1024, model="gemini-3.5-flash-lite", thinking_level="minimal")
+    assert seen["url"] == "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent"
+    assert seen["headers"]["x-goog-api-key"] == "gk-test"
+    assert seen["json"]["system_instruction"] == {"parts": [{"text": "sys"}]}
+    assert seen["json"]["generationConfig"]["thinkingConfig"] == {"thinkingLevel": "minimal"}
+    assert "tools" not in seen["json"]
+    assert out == {"text": "[{\"id\": 1}]", "in_tok": 120, "out_tok": 45, "truncated": False, "finish_reason": "STOP"}
+
+    # 안전 필터 등으로 candidates가 비어도 예외 없이 빈 문자열 반환 (묶음 실패 처리)
+    monkeypatch.setattr(llm.requests, "post", lambda *a, **k: R({"promptFeedback": {"blockReason": "SAFETY"}}))
+    blocked = llm.complete("sys", "usr", 1024)
+    assert blocked == {"text": "", "in_tok": 0, "out_tok": 0, "truncated": False, "finish_reason": "SAFETY"}
+

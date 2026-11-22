@@ -72,17 +72,24 @@ function BackupTable({ b }) {
 
 const WHY = { missing: "응답 누락", short: "너무 짧음", long: "80자 초과", chars: "링크·기호 포함", inject: "지시문 의심", title: "제목 반복" };
 
+const MODEL_LABEL = {
+  "claude-haiku-5-5": "Haiku 5.5",
+  "gemini-3.5-flash-lite": "Gemini 3.5 Flash-Lite",
+  "gemini-3.8-flash": "Gemini 3.8 Flash",
+};
+
 function AiTable({ ai }) {
   if (!ai) return <p className="muted">기록 없음</p>;
   const l = ai.last || {};
   const cov = ai.coverage_n ? Math.round((100 * ai.coverage_filled) / ai.coverage_n) : null;
   const why = (l.why || []).map((w) => { const [k, v] = String(w).split("="); return `${WHY[k] || k} ${v}`; }).join(", ");
   const usd = Number(ai.month_cost_usd || 0);
+  const modelLabel = MODEL_LABEL[ai.model] || ai.model || "AI";
   const rows = [
     ["마지막 실행", l.run_at ? <><span className={`dot ${l.ok ? "ok" : "warn"}`} />{fmt(l.run_at)} ({ago(l.run_at)}) · 대상 {l.target}건 → 완료 {l.done}건{l.rejected ? ` · 다음 실행 재시도 ${l.rejected}건${why ? ` (${why})` : ""}` : ""}{l.error && <div className="muted detail">{l.error}</div>}</> : "기록 없음"],
     ["24시간", `실행 ${ai.runs_24h}회 · 요약 ${ai.done_24h}건 · 재시도 ${ai.rejected_24h}건 · 실패한 실행 ${ai.failed_runs_24h}회`],
     ["채움률 (3~27시간 전 수집분)", cov == null ? "-" : <><span className={`dot ${cov >= 90 ? "ok" : cov >= 50 ? "warn" : "error"}`} />{cov}% ({ai.coverage_filled}/{ai.coverage_n}건)</>],
-    ["이번 달 사용량", `입력 ${Number(ai.month_in_tok).toLocaleString("ko-KR")} · 출력 ${Number(ai.month_out_tok).toLocaleString("ko-KR")} 토큰 → 예상 $${usd.toFixed(usd < 1 ? 3 : 2)} (Haiku 5.5: 입력 $${ai.price_in_per_mtok}·출력 $${ai.price_out_per_mtok} / 100만 토큰)`],
+    ["이번 달 사용량", `입력 ${Number(ai.month_in_tok).toLocaleString("ko-KR")} · 출력 ${Number(ai.month_out_tok).toLocaleString("ko-KR")} 토큰 → 예상 $${usd.toFixed(usd < 1 ? 3 : 2)} (${modelLabel}: 입력 $${ai.price_in_per_mtok}·출력 $${ai.price_out_per_mtok} / 100만 토큰)`],
   ];
   return (
     <div className="scroll">

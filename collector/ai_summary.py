@@ -1,4 +1,4 @@
-"""매시간 수집 직후 AI(Claude Haiku) 한 줄 핵심 요약.
+"""매시간 수집 직후 AI(Gemini) 한 줄 핵심 요약.
 
 - 대상: 공개 대상 기사(후보·보안·업계 동향) 중 summary_source가 비어 있는 것 (= 아직 요약 전)
 - 입력: 제목 + 기사 설명(앞 500자). 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
@@ -14,15 +14,13 @@ from datetime import datetime
 
 import requests
 
-from . import store
+from . import llm, store
 from .parsers import KST, clean_text, scan_injection
 
-API_URL = "https://api.anthropic.com/v1/messages"
-MODEL = os.environ.get("SUMMARY_MODEL", "claude-haiku-5-5")   # 사용자 결정(2026-10-26): Haiku로 요약
-API_VERSION = "2026-10-21"   # 최신 API 버전 (temperature 등 제거된 매개변수는 쓰지 않음)
-BATCH = 15                 # 요청 한 번에 보낼 기사 수 (25건은 응답 상한에 걸려 잘린 적 있음 — 2026-10-26)
+MODEL = os.environ.get("SUMMARY_MODEL", llm.DEFAULT_MODEL)
+BATCH = 15                 # 요청 한 번에 보낼 기사 수
 MAX_TOKENS = 8000
-MAX_PER_RUN = 150          # 실행 한 번 최대 기사 수 (비용 상한: Haiku 5.5 기준 1회 약 0.01달러 미만)
+MAX_PER_RUN = 150          # 실행 한 번 최대 기사 수
 GIVEUP_HOURS = 48
 
 SYSTEM = """너는 한국어 정보보안 뉴스의 '한 줄 핵심 요약'을 쓰는 편집자다.
@@ -45,7 +43,7 @@ _BAD = re.compile(r"https?://|www\.|\]\(|[<>`#*|]|\n")
 
 
 def enabled() -> bool:
-    return bool(os.environ.get("ANTHROPIC_API_KEY"))
+    return llm.enabled()
 
 
 def check_line(line, title: str) -> tuple[str, str]:
@@ -73,18 +71,10 @@ def valid_line(line, title: str) -> str:
 def _call(items: list) -> dict:
     payload = {"articles": [{"id": a["id"], "title": clean_text(a.get("title")),
                              "description": clean_text(a.get("summary") or "", 500)} for a in items]}
-    r = requests.post(API_URL, timeout=(10, 90), headers={
-        "x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": API_VERSION, "content-type": "application/json",
-    }, json={
-        "model": MODEL, "max_tokens": MAX_TOKENS, "system": SYSTEM,
-        "messages": [{"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
-    })
-    r.raise_for_status()
-    body = r.json()
-    u = body.get("usage") or {}
-    USAGE["in"] += int(u.get("input_tokens") or 0) + int(u.get("cache_read_input_tokens") or 0) + int(u.get("cache_creation_input_tokens") or 0)
-    USAGE["out"] += int(u.get("output_tokens") or 0)
-    text = "".join(b.get("text", "") for b in body.get("content", []) if b.get("type") == "text")
+    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), MAX_TOKENS, model=MODEL)
+    USAGE["in"] += res["in_tok"]
+    USAGE["out"] += res["out_tok"]
+    text = res["text"]
     got = {}
     m = re.search(r"\[.*\]", text, re.S)
     try:
@@ -99,10 +89,10 @@ def _call(items: list) -> dict:
                 got[mm.group(1)] = json.loads(f'"{mm.group(2)}"')
             except ValueError:
                 continue
-    if body.get("stop_reason") == "max_tokens":
+    if res["truncated"]:
         USAGE["truncated"] = USAGE.get("truncated", 0) + 1
     if not got:   # 진단용: 묶음 전체가 비면 종료 사유와 응답 앞부분 (외부 기사 내용이 섞일 수 있어 120자만)
-        got["_diag"] = f"stop={body.get('stop_reason')} text={clean_text(text, 120)!r}"
+        got["_diag"] = f"stop={res.get('finish_reason')} text={clean_text(text, 120)!r}"
     return got
 
 

@@ -34,7 +34,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # AI 한 줄 요약 (없으면 요약 단계만 건너뜀)
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # AI 한 줄 요약 (없으면 요약 단계만 건너뜀)
           ONLY: ${{ inputs.only }}
         run: |
           if [ -n "$ONLY" ]; then
@@ -85,7 +85,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RETRY: ${{ needs.collect.outputs.retry }}
         run: |
           case "$RETRY" in *[!a-z0-9_,]*) echo "잘못된 매체 목록"; exit 1;; esac
