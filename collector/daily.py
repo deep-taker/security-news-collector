@@ -187,6 +187,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date")
     ap.add_argument("--edition", choices=list(EDITIONS) + ["week"])
+    ap.add_argument("--shadow", action="store_true", help="data/shadow/briefing-input에 저장하고 DB 정비는 건너뜀")
     a = ap.parse_args()
     now = datetime.now(KST)
     day = datetime.fromisoformat(a.date).date() if a.date else now.date()
@@ -194,17 +195,19 @@ def main():
     if not store.enabled():
         print("Supabase 환경변수가 없어 건너뜁니다 (시험 모드).")
         return
+    in_dir = Path("data/shadow/briefing-input") if a.shadow else Path("data/briefing-input")
     if edition == "week":
-        p, n = export_weekly(day, Path("data/briefing-input"))
+        p, n = export_weekly(day, in_dir)
         print(f"주간 요약 입력: {p} (사건 {n}건)")
         return
-    p, n = export_input(day, edition, Path("data/briefing-input"))
+    p, n = export_input(day, edition, in_dir)
     print(f"브리핑 입력: {p} ({n}건)")
     if edition == "am":
         if day.weekday() == 0:   # 월요일 06시판 준비 때 주간 요약 입력도 함께
-            wp, wn = export_weekly(day, Path("data/briefing-input"))
+            wp, wn = export_weekly(day, in_dir)
             print(f"주간 요약 입력: {wp} (사건 {wn}건)")
-        maintenance(day)
+        if not a.shadow:
+            maintenance(day)
 
 
 if __name__ == "__main__":

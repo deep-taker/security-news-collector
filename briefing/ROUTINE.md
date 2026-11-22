@@ -1,4 +1,6 @@
-# 브리핑 예약 작업 실행 절차 (ROUTINE.md)
+# 브리핑 작성 실행 절차 (ROUTINE.md)
+
+> **안내 (3단계 전환 이후)**: 정기 브리핑(06·12·18시판 및 월요일 주간 요약)은 [`daily.yml`](../.github/workflows/daily.yml)이 [`write-briefing.yml`](../.github/workflows/write-briefing.yml)(`collector/write_briefing.py`, Gemini API)을 자동 실행해 작성한다. 아래 절차는 동일 규칙 기준 및 수동/보완 참고용으로 유지한다.
 
 예약 작업 "정보보안 브리핑 (06·12·18시)"이 실행될 때마다 이 파일을 읽어 그대로 따른다.
 예약 작업 화면의 지시문은 '이 파일을 읽어 따르라'는 고정 문구만 둔다(2026-10-27 사용자 결정) — 절차를 바꿀 때는 이 파일만 고친다.

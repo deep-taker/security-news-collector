@@ -566,8 +566,8 @@ def _render_daily_markdown(inp: dict, out: dict, pass2_data: dict) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def _write_daily(date_str: str, edition: str, md_dir: Path, json_dir: Path) -> dict:
-    inp_path = INPUT_DIR / f"{date_str}-{edition}.json"
+def _write_daily(date_str: str, edition: str, md_dir: Path, json_dir: Path, in_dir: Path | None = None) -> dict:
+    inp_path = (in_dir or INPUT_DIR) / f"{date_str}-{edition}.json"
     if not inp_path.exists():
         raise BriefingError(f"입력 파일이 없습니다: {inp_path}")
     inp = json.loads(inp_path.read_text(encoding="utf-8"))
@@ -746,8 +746,8 @@ def _render_weekly_markdown(inp: dict, data: dict) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def _write_weekly(date_str: str, md_dir: Path, json_dir: Path) -> dict:
-    inp_path = INPUT_DIR / f"{date_str}-week.json"
+def _write_weekly(date_str: str, md_dir: Path, json_dir: Path, in_dir: Path | None = None) -> dict:
+    inp_path = (in_dir or INPUT_DIR) / f"{date_str}-week.json"
     if not inp_path.exists():
         raise BriefingError(f"주간 입력 파일이 없습니다: {inp_path}")
     inp = json.loads(inp_path.read_text(encoding="utf-8"))
@@ -810,7 +810,13 @@ def _write_weekly(date_str: str, md_dir: Path, json_dir: Path) -> dict:
     return {"md": md_path, "json": json_path, "stats": out["stats"], "warns": warns, "summary": summary}
 
 
-def run(date_str: str, edition: str, out_dir: Path | None = None, include_weekly: bool = True) -> dict:
+def run(
+    date_str: str,
+    edition: str,
+    out_dir: Path | None = None,
+    include_weekly: bool = True,
+    in_dir: Path | None = None,
+) -> dict:
     if edition not in ("am", "noon", "pm", "week"):
         raise ValueError(f"지원하지 않는 판: {edition}")
     if edition in ("noon", "pm") and _is_weekend(date_str):
@@ -821,15 +827,22 @@ def run(date_str: str, edition: str, out_dir: Path | None = None, include_weekly
 
     md_dir = (out_dir / "briefings") if out_dir else DEFAULT_OUT_MD_DIR
     json_dir = (out_dir / "briefing-output") if out_dir else DEFAULT_OUT_JSON_DIR
+    resolved_in = in_dir
+    if resolved_in is None and out_dir is not None:
+        cand = out_dir / "briefing-input"
+        target_name = f"{date_str}-{'week' if edition == 'week' else edition}.json"
+        if (cand / target_name).exists():
+            resolved_in = cand
+    eff_in = resolved_in or INPUT_DIR
 
     if edition == "week":
-        return {"weekly": _write_weekly(date_str, md_dir, json_dir)}
+        return {"weekly": _write_weekly(date_str, md_dir, json_dir, in_dir=eff_in)}
 
-    res = {"daily": _write_daily(date_str, edition, md_dir, json_dir)}
+    res = {"daily": _write_daily(date_str, edition, md_dir, json_dir, in_dir=eff_in)}
     if include_weekly and edition == "am" and _is_monday(date_str):
-        week_inp = INPUT_DIR / f"{date_str}-week.json"
+        week_inp = eff_in / f"{date_str}-week.json"
         if week_inp.exists():
-            res["weekly"] = _write_weekly(date_str, md_dir, json_dir)
+            res["weekly"] = _write_weekly(date_str, md_dir, json_dir, in_dir=eff_in)
     return res
 
 
@@ -837,14 +850,16 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Gemini API 기반 정보보안 브리핑 작성")
     ap.add_argument("date", help="브리핑 날짜 (YYYY-MM-DD)")
     ap.add_argument("edition", choices=("am", "noon", "pm", "week"), help="판 구분")
+    ap.add_argument("--in-dir", help="입력 JSON 폴더(기본 data/briefing-input, --shadow 시 data/shadow/briefing-input 우선)")
     ap.add_argument("--out-dir", help="그림자·시험 출력 폴더(지정 시 briefings/ 와 briefing-output/ 하위에 저장)")
     ap.add_argument("--shadow", action="store_true", help="data/shadow 폴더에 비공개 그림자 출력")
     ap.add_argument("--no-weekly", action="store_true", help="월요일 06시판 이어서 주간 요약 작성 건너뛰기")
     args = ap.parse_args(argv)
 
     out_dir = Path(args.out_dir) if args.out_dir else (ROOT / "data" / "shadow" if args.shadow else None)
+    in_dir = Path(args.in_dir) if args.in_dir else None
     try:
-        res = run(args.date, args.edition, out_dir=out_dir, include_weekly=not args.no_weekly)
+        res = run(args.date, args.edition, out_dir=out_dir, include_weekly=not args.no_weekly, in_dir=in_dir)
     except Exception as e:
         print(f"::error title=브리핑 작성 실패::{type(e).__name__}: {e}", file=sys.stderr)
         return 1
