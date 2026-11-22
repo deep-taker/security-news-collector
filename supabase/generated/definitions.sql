@@ -586,7 +586,7 @@ begin
   if not cov_all_ok then
     alerts := alerts || jsonb_build_object('level','warn','code','ai_summary_low',
       'title', 'AI 한 줄 요약 채움률 ' || round(100.0 * cov.filled / cov.n) || '% (24시간 ' || cov.n || '건)',
-      'detail', 'GitHub Secrets의 ANTHROPIC_API_KEY 등록·만료, API 사용 한도·결제 상태 확인 (수집 작업 로그의 AI 요약 결과 참고)');
+      'detail', 'GitHub Secrets의 GEMINI_API_KEY 등록·만료, 무료 등급 일일 호출 한도 확인 (수집 작업 로그의 AI 요약 결과 참고)');
   end if;
 
   for r in select * from jsonb_to_recordset(srcs) as x(id text, name text, fail_alert_after int, consecutive_fails int,
@@ -753,17 +753,17 @@ begin
     'coverage_n', cov_total.n, 'coverage_filled', cov_total.filled,
     'month_in_tok', (select coalesce(sum(tin), 0) from runs where run_at >= date_trunc('month', kst)::timestamp at time zone 'Asia/Seoul'),
     'month_out_tok', (select coalesce(sum(tout), 0) from runs where run_at >= date_trunc('month', kst)::timestamp at time zone 'Asia/Seoul'),
-    'price_in_per_mtok', 0.10, 'price_out_per_mtok', 0.50, 'model', 'claude-haiku-5-5'
+    'price_in_per_mtok', 0.30, 'price_out_per_mtok', 2.50, 'model', 'gemini-3.5-flash-lite'
   ) into ai
   from (select count(*) n, count(a.summary_line) filled from public.articles a
          where (a.candidate or a.label in ('security', 'trend', 'pr', 'column')) and coalesce(a.label, '') <> 'not_security'
            and a.collected_at between now() - interval '27 hours' and now() - interval '3 hours') cov_total;
   ai := ai || jsonb_build_object('month_cost_usd',
-          round(((ai->>'month_in_tok')::numeric * 0.10 + (ai->>'month_out_tok')::numeric * 0.50) / 1e6, 4));
+          round(((ai->>'month_in_tok')::numeric * 0.30 + (ai->>'month_out_tok')::numeric * 2.50) / 1e6, 4));
   if (ai->>'month_cost_usd')::numeric > 20 then
     alerts := alerts || jsonb_build_object('level','warn','code','ai_cost_high',
       'title', '이번 달 AI 요약 예상 비용 $' || (ai->>'month_cost_usd') || ' (기준 $20)',
-      'detail', '평소 월 1달러 미만(Haiku 5.5) — 반복 실행·요약 대상 급증 여부 확인 (수집 상태의 AI 요약 표)');
+      'detail', '무료 등급 사용 중(유료 환산 기준 Gemini 3.5 Flash-Lite: 입력 $0.30·출력 $2.50) — 반복 실행·요약 대상 급증 여부 확인 (수집 상태의 AI 요약 표)');
   end if;
 
   if dbsize > 400 * 1024 * 1024 then
