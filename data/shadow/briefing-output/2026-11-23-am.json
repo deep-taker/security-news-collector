@@ -1,0 +1,208 @@
+{
+  "date": "2026-11-23",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-23-am.md",
+  "stats": {
+    "candidates": 24,
+    "security": 15,
+    "trend": 1,
+    "pr": 0,
+    "column": 2,
+    "not_security": 6,
+    "events": 10
+  },
+  "events": [
+    {
+      "slug": "k-ai-cyber-shield-dome",
+      "title": "정부, AI 에이전트 활용 2968억원 규모 통합보안관제 체계 개발 추진",
+      "category": "AI보안",
+      "summary": "AI 기반 위협 탐지부터 대응까지 맡는 국산 보안관제 체계 구축에 5년간 2968억 원 투입",
+      "cves": []
+    },
+    {
+      "slug": "fbi-ncic-intrusion",
+      "title": "미 FBI 전국 범죄정보 데이터베이스 NCIC 침입 정황, 조사 착수",
+      "category": "침해사고",
+      "summary": "국가범죄정보센터 DB 외부 침입 정황으로 당국 수사 착수, 트럼프 대통령 우려 표명",
+      "cves": []
+    },
+    {
+      "slug": "artex-ai-pentest-abuse",
+      "title": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+      "category": "AI보안",
+      "summary": "자동 침투 프레임워크 아르텍스가 자연어 명령으로 스마트폰에서도 구동되어 우려 증대",
+      "cves": []
+    },
+    {
+      "slug": "hyundai-mobis-lamp-leak",
+      "title": "현대모비스 램프사업 매각에 국가핵심기술 해당 여부 심사 변수 부상",
+      "category": "국방·방산",
+      "summary": "프랑스 기업에 매각 중인 자산 중 ADAS 연계 특허 등 국가핵심기술 포함 여부 검토",
+      "cves": []
+    },
+    {
+      "slug": "postech-portal-breach",
+      "title": "포항공대 연구장비지원포털·IT서비스포털 해킹, 개인정보 1만9천978건 유출",
+      "category": "침해사고",
+      "summary": "2차 공지를 통해 대학통합포털 등에서 추가 유출 확인, 계정 및 이메일 등 포함",
+      "cves": []
+    },
+    {
+      "slug": "cj-logistics-one-chatbot-breach",
+      "title": "CJ대한통운 오네 챗봇 서비스 해킹 의심, 개인정보 유출 가능성",
+      "category": "침해사고",
+      "summary": "택배 인수인 이름과 동 단위 주소 노출 가능성 조사 중, 주민번호 등은 미포함",
+      "cves": []
+    },
+    {
+      "slug": "blackdiamond-korea-erp-breach",
+      "title": "블랙다이아몬드 코리아 외주 ERP 서버 침해 정황, 개인정보 유출 가능성",
+      "category": "침해사고",
+      "summary": "외주 주문 시스템 비정상 접근 정황 확인, 고객 이름과 연락처 등 노출 우려",
+      "cves": []
+    },
+    {
+      "slug": "writer-dex-usdc-breach",
+      "title": "탈중앙화 거래소 라이터 API 키 유출로 1039만 USDC 탈취",
+      "category": "침해사고",
+      "summary": "프로토콜 취약점이 아닌 외부 API 키 유출로 인해 대규모 자산 유출 사고 발생",
+      "cves": []
+    },
+    {
+      "slug": "deepfake-celebrity-invest-ads",
+      "title": "AI로 만든 유명인 사칭 투자 광고 피해",
+      "category": "AI보안",
+      "summary": "오픈AI CEO를 합성한 딥페이크로 AI 에이전트 홍보, 자사 정책 위반 아님 주장",
+      "cves": []
+    },
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "침해사고",
+      "summary": "한전ON 및 전자조달시스템에서 주민등록번호와 계좌·카드번호 등 대량 유출 확인",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 454006,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 454005,
+      "label": "security",
+      "event_slug": "k-ai-cyber-shield-dome"
+    },
+    {
+      "id": 455271,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 456582,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 456218,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 456526,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 456023,
+      "label": "security",
+      "event_slug": "artex-ai-pentest-abuse"
+    },
+    {
+      "id": 457832,
+      "label": "security",
+      "event_slug": "fbi-ncic-intrusion"
+    },
+    {
+      "id": 456739,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 456740,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 458670,
+      "label": "security",
+      "event_slug": "hyundai-mobis-lamp-leak"
+    },
+    {
+      "id": 457944,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 458721,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 457943,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 457942,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 457941,
+      "label": "security",
+      "event_slug": "postech-portal-breach"
+    },
+    {
+      "id": 459188,
+      "label": "security",
+      "event_slug": "cj-logistics-one-chatbot-breach"
+    },
+    {
+      "id": 459138,
+      "label": "security",
+      "event_slug": "blackdiamond-korea-erp-breach"
+    },
+    {
+      "id": 461021,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 461019,
+      "label": "security",
+      "event_slug": "writer-dex-usdc-breach"
+    },
+    {
+      "id": 463602,
+      "label": "security",
+      "event_slug": "deepfake-celebrity-invest-ads"
+    },
+    {
+      "id": 463732,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 464122,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 465418,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    }
+  ]
+}
