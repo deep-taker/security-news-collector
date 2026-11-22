@@ -177,15 +177,31 @@ begin
     begin
       if kst >= due and kst < due + interval '2 hours'
          and not exists (select 1 from public.briefings b where b.date = today and b.edition = e)
-         and public.remediation_count('briefing_refire', tgt, interval '1 day') = 0 then
-        rid := public.fire_routine('briefing', '자동 조치: ' || tgt || ' 브리핑이 예정 시각에 생성되지 않아 다시 실행합니다. 평소 절차대로 이 판을 작성하세요.');
-        perform public.log_remediation('briefing_refire', tgt, rid is not null, rid, case when rid is null then 'API 실행 주소 미설정' else '브리핑 작업 재실행' end);
+         and public.remediation_count('briefing_refire', tgt, interval '35 minutes') = 0
+         and public.remediation_count('briefing_refire', tgt, interval '1 day') < 3 then
+        rid := public.dispatch_github_workflow('write-briefing.yml', jsonb_build_object('date', today::text, 'edition', e));
+        perform public.log_remediation('briefing_refire', tgt, true, rid, 'Gemini 브리핑 재실행');
         done := done || jsonb_build_array('briefing_refire:' || tgt);
       end if;
     exception when others then
       perform public.log_remediation('briefing_refire', tgt, false, null, sqlerrm);
     end;
   end loop;
+
+  if extract(isodow from today) = 1 and kst >= today + time '08:00' and kst < today + time '10:00' then
+    tgt := today || '-week';
+    begin
+      if not exists (select 1 from public.briefings b where b.date = today and b.edition = 'week')
+         and public.remediation_count('briefing_refire', tgt, interval '35 minutes') = 0
+         and public.remediation_count('briefing_refire', tgt, interval '1 day') < 2 then
+        rid := public.dispatch_github_workflow('write-briefing.yml', jsonb_build_object('date', today::text, 'edition', 'week'));
+        perform public.log_remediation('briefing_refire', tgt, true, rid, 'Gemini 주간 요약 재실행');
+        done := done || jsonb_build_array('briefing_refire:' || tgt);
+      end if;
+    exception when others then
+      perform public.log_remediation('briefing_refire', tgt, false, null, sqlerrm);
+    end;
+  end if;
 
   for r in select distinct on (c.date, c.edition) c.date, c.edition, c.ok, c.problems, c.checked_at
              from public.briefing_checks c where c.checked_at > now() - interval '3 hours'
@@ -203,8 +219,8 @@ begin
     end;
     begin
       if r.problems::text ~ '(라벨|사건|본문|slug|링크)' and public.remediation_count('briefing_fix', tgt, interval '1 day') = 0 then
-        rid := public.fire_routine('briefing', '보완 요청: ' || tgt || ' 브리핑 출력 검증 실패 — ' || left(r.problems::text, 1500));
-        perform public.log_remediation('briefing_fix', tgt, rid is not null, rid, case when rid is null then 'API 실행 주소 미설정' else left(r.problems::text, 300) end);
+        rid := public.dispatch_github_workflow('write-briefing.yml', jsonb_build_object('date', r.date::text, 'edition', r.edition));
+        perform public.log_remediation('briefing_fix', tgt, true, rid, left(r.problems::text, 300));
         done := done || jsonb_build_array('briefing_fix:' || tgt);
       end if;
     exception when others then
@@ -250,11 +266,7 @@ begin
       n_pending := n_pending + 1;
     end loop;
     if n_pending > 0 then
-      rid := public.fire_routine('alert', '알림: 확인 필요 — 해결되지 않은 오류 ' || n_pending || '건 (사용자 조치 필요할 수 있음)' || E'\n' || pending
-                                          || '최근 자동 조치: ' || coalesce((select string_agg(kind || '(' || target || ')', ', ')
-                                               from (select kind, target from public.remediation_runs where run_at > now() - interval '6 hours'
-                                                     order by run_at desc limit 8) z), '없음'));
-      perform public.log_remediation('notify', '', rid is not null, rid, case when rid is null then 'API 실행 주소 미설정: ' else '' end || left(pending, 300));
+      perform public.log_remediation('notify', '', true, null, '대시보드 /status 확인 (외부 알림 미사용): ' || left(pending, 260));
       update public.alert_state set last_notified = now()
        where first_seen <= now() - interval '20 minutes' and (last_notified is null or last_notified < now() - interval '6 hours');
       done := done || jsonb_build_array('notify');
@@ -269,8 +281,7 @@ begin
                join public.alert_state s on s.key = (a->>'code') || ':' || coalesce(a->>'source_id', a->>'title')
               where a->>'code' = 'source_failing' and a->>'detail' like '수집 0건%' and s.first_seen <= now() - interval '3 hours' loop
       if public.remediation_count('repair_request', r.sid, interval '1 day') = 0 then
-        rid := public.fire_routine('alert', '수리 요청: ' || r.sid || ' — ' || r.title || ' (수집 0건, 사이트 구조 변경 추정)');
-        perform public.log_remediation('repair_request', r.sid, rid is not null, rid, case when rid is null then 'API 실행 주소 미설정' else r.title end);
+        perform public.log_remediation('repair_request', r.sid, true, null, '자동 수리 미사용(파서 수동 점검 필요): ' || r.title);
         done := done || jsonb_build_array('repair_request:' || r.sid);
       end if;
     end loop;
@@ -307,7 +318,7 @@ declare
   tok text;
   rid bigint;
 begin
-  if p_workflow not in ('collect.yml', 'daily.yml', 'restore-test.yml', 'schema-sync.yml', 'backup.yml', 'sync-briefing.yml') then
+  if p_workflow not in ('collect.yml', 'daily.yml', 'write-briefing.yml', 'restore-test.yml', 'schema-sync.yml', 'backup.yml', 'sync-briefing.yml') then
     raise exception 'unsupported workflow %', p_workflow;
   end if;
   select decrypted_secret into tok from vault.decrypted_secrets where name = 'github_dispatch_token' limit 1;
@@ -609,7 +620,7 @@ begin
     if cov_all_ok and cov.n >= 5 and cov.filled < cov.n * 0.5 then
       alerts := alerts || jsonb_build_object('level','warn','code','source_summary_low','source_id',r.id,
         'title', r.name || ' 한 줄 요약 채움률 ' || round(100.0 * cov.filled / cov.n) || '% (24시간 ' || cov.n || '건)',
-        'detail', '기사 설명(요약 재료)을 못 읽고 있을 가능성 — Claude 세션에서 매체 목록 페이지를 열어 구조 확인');
+        'detail', '기사 설명(요약 재료)을 못 읽고 있을 가능성 — 안티그래비티에서 매체 목록 페이지를 열어 구조 확인');
     end if;
     if r.gap is not null then
       alerts := alerts || jsonb_build_object('level','warn','code','source_gap','source_id',r.id,
@@ -628,7 +639,7 @@ begin
          and not exists (select 1 from public.briefings b where b.date = d and b.edition = e) then
         alerts := alerts || jsonb_build_object('level','error','code','briefing_missing',
           'title', to_char(d,'MM-DD') || ' ' || case e when 'am' then '06시판' when 'noon' then '12시판' else '18시판' end || ' 브리핑 누락',
-          'detail', 'Claude 예약 작업 실행 기록과 GitHub Actions(브리핑 준비·반영)를 확인하세요');
+          'detail', 'GitHub Actions(브리핑 준비·브리핑 작성·반영) 실행 기록을 확인하세요');
       end if;
     end loop;
   end loop;
@@ -637,7 +648,7 @@ begin
      and not exists (select 1 from public.briefings b where b.date = kst::date and b.edition = 'week') then
     alerts := alerts || jsonb_build_object('level','warn','code','weekly_missing',
       'title', to_char(kst::date,'MM-DD') || ' 주간 요약 누락',
-      'detail', '월요일 06시판 브리핑 작업이 주간 요약도 작성함 — 브리핑 작업 실행 기록과 data/briefing-input/<날짜>-week.json 확인');
+      'detail', '월요일 06시판 브리핑 작성(Gemini)이 주간 요약도 작성함 — GitHub Actions 브리핑 작성 기록과 data/briefing-input/<날짜>-week.json 확인');
   end if;
 
   -- 수집 원문의 숨은 지시문 의심 (브리핑 본문 '수집 상태' 절을 없애며 대시보드로 이전, 2026-10-27)
