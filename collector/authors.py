@@ -9,7 +9,7 @@
   감시: 반영 검증(verify_briefing.check_authors) 경고, 대시보드 '수집 상태'의 필자 누락 목록
 - 1단계(규칙): 기사 페이지에서 필자 줄 후보만 뽑는다 — 제목 머리말([이혁중 CISO 칼럼]), 기자가 아닌 작성자 메타 정보,
   본문의 '[글. …]'·'[글_…]' 줄, 본문 처음·끝의 짧은 줄
-- 2단계(AI, Claude Haiku): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
+- 2단계(AI, Gemini): 후보에서 소속·직책·성명을 고른다. 외부 자료이므로 '자료'로만 전달하고 그 안의 지시는 따르지 않게 한다.
 - 출력 검증: 각 값은 후보 글에 글자 그대로 있어야 하고(지어낸 값 금지), 40자 이하, 링크·꺾쇠·지시문 의심 금지, '기자'는 필자가 아님
 - 기자가 직접 쓴 칼럼(필자 이름이 그 매체 기자)은 {"org": 매체 이름, "position": "기자", "name": 성명} (2026-11-03)
 - 사설(머리말 [사설]·작성자 '논설위원실')은 {"org": 매체 이름, "position": "논설위원실", "name": ""} (2026-11-05)
@@ -18,13 +18,12 @@
 - 키가 없으면 아무것도 하지 않음.
 """
 import json
-import os
 import re
 from datetime import datetime, timedelta
 
 import requests
 
-from . import ai_summary, store
+from . import ai_summary, llm, store
 from .daily import is_opinion
 from .parsers import KST, clean_text, scan_injection
 from .sources import SOURCE_BY_ID
@@ -206,15 +205,8 @@ def label(info) -> str:
 
 def _call(items: list) -> dict:
     payload = {"articles": [{"id": a["id"], "title": clean_text(a.get("title")), "candidates": a["cands"]} for a in items]}
-    r = requests.post(ai_summary.API_URL, timeout=(10, 90), headers={
-        "x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": ai_summary.API_VERSION, "content-type": "application/json",
-    }, json={
-        "model": ai_summary.MODEL, "max_tokens": 2000, "system": SYSTEM,
-        "messages": [{"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
-    })
-    r.raise_for_status()
-    body = r.json()
-    text = "".join(b.get("text", "") for b in body.get("content", []) if b.get("type") == "text")
+    res = llm.complete(SYSTEM, json.dumps(payload, ensure_ascii=False), 2000, model=ai_summary.MODEL)
+    text = res["text"]
     m = re.search(r"\[.*\]", text, re.S)
     try:
         out = json.loads(m.group(0)) if m else []

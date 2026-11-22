@@ -32,7 +32,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # 판 공개 직전 칼럼 필자 채우기 (없으면 건너뜀)
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}   # 판 공개 직전 칼럼 필자 채우기 (없으면 건너뜀)
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             files=$(ls data/briefing-output/*.json 2>/dev/null | tail -n 3)
@@ -58,7 +58,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python -m collector.authors 10
       - name: 반영 검증 (누락·사건 연결·DB·대시보드) — 실패 시 대시보드 '수집 상태'에 표시
         if: always()
