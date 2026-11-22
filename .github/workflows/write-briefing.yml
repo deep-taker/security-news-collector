@@ -44,6 +44,8 @@ jobs:
         id: write
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           IN_DATE: ${{ inputs.date }}
           IN_EDITION: ${{ inputs.edition }}
           IN_SHADOW: ${{ inputs.shadow }}
@@ -52,7 +54,20 @@ jobs:
           [ -n "$D" ] || D=$(TZ=Asia/Seoul date +%F)
           echo "date=$D" >> "$GITHUB_OUTPUT"
           FLAG=""
-          [ "$IN_SHADOW" = "true" ] && FLAG="--shadow"
+          DAILY_FLAG=""
+          INP_DIR="data/briefing-input"
+          if [ "$IN_SHADOW" = "true" ]; then
+            FLAG="--shadow"
+            DAILY_FLAG="--shadow"
+            INP_DIR="data/shadow/briefing-input"
+          fi
+          DOW=$(date -d "$D" +%u)
+          if [ "$IN_EDITION" = "am" ] || [ "$IN_EDITION" = "week" ] || [ "$DOW" -lt 6 ]; then
+            if [ ! -f "$INP_DIR/$D-$IN_EDITION.json" ] && [ ! -f "data/briefing-input/$D-$IN_EDITION.json" ]; then
+              echo "입력 파일 없음 — 브리핑 입력($D-$IN_EDITION) 즉석 보충"
+              python -m collector.daily --date "$D" --edition "$IN_EDITION" $DAILY_FLAG
+            fi
+          fi
           python -m collector.write_briefing "$D" "$IN_EDITION" $FLAG
       - name: 저장소 푸시 및 DB 반영 실행
         env:
@@ -67,7 +82,8 @@ jobs:
             [ -d data/shadow ] && git add data/shadow || true
             MSG="그림자 브리핑 $D-$IN_EDITION"
           else
-            git add briefings data/briefing-output
+            git add briefings data/briefing-output data/briefing-input
+            [ -f data/db-status.json ] && git add data/db-status.json || true
             MSG="브리핑 $D-$IN_EDITION"
           fi
           if ! git diff --cached --quiet; then
