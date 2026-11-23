@@ -1,0 +1,162 @@
+{
+  "date": "2026-11-24",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-24-am.md",
+  "stats": {
+    "candidates": 23,
+    "security": 13,
+    "trend": 4,
+    "pr": 2,
+    "column": 0,
+    "not_security": 4,
+    "events": 2
+  },
+  "events": [
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "개인정보",
+      "summary": "한전이 해커의 협박 이메일과 다크웹 정보 게시를 확인하고 정부에 신고함에 따라 개인정보보호위원회가 현장 조사에 착수했다.",
+      "cves": []
+    },
+    {
+      "slug": "ota-security-alliance-launch",
+      "title": "보안 협력체계 한국트러스트연합(KOTA) 공식 출범",
+      "category": "기타",
+      "summary": "금융·통신 수요기관과 보안기업, 전문가가 공동으로 보안 문제를 해결하고 신뢰를 높이기 위한 협력체가 출범했다.",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 479945,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 479275,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 480412,
+      "label": "security",
+      "event_slug": "ota-security-alliance-launch"
+    },
+    {
+      "id": 479175,
+      "label": "security",
+      "event_slug": "ota-security-alliance-launch"
+    },
+    {
+      "id": 480042,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 480407,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479223,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 479274,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479317,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479822,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 479821,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 479174,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479818,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 479273,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479173,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 481618,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 481100,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 481324,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 481097,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 481319,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 482604,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 482631,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 483075,
+      "label": "security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "제30회 해킹방지워크샵",
+      "start_date": "2026-12-03",
+      "end_date": null,
+      "place": "서울 여의도 FKI 타워 컨퍼런스센터",
+      "organizer": "한국침해사고대응팀협의회(CONCERT)",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        481324
+      ]
+    }
+  ]
+}
