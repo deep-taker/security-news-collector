@@ -1,0 +1,495 @@
+{
+  "date": "2026-11-23",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-23-pm.md",
+  "stats": {
+    "candidates": 82,
+    "security": 62,
+    "trend": 3,
+    "pr": 12,
+    "column": 1,
+    "not_security": 4,
+    "events": 7
+  },
+  "events": [
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "개인정보",
+      "summary": "개인정보보호위원회는 한전의 152만 명 규모 개인정보 유출 신고를 접수하고 초동대응반을 구성해 현장점검을 실시함",
+      "cves": []
+    },
+    {
+      "slug": "kurly-curator-breach",
+      "title": "컬리 해킹, 큐레이터 1만699명·고객 2명 개인정보 유출",
+      "category": "개인정보",
+      "summary": "정밀 전수 조사 결과 큐레이터 외에 퇴사자를 포함한 임직원 199명과 일반 고객의 정보가 추가로 노출된 것으로 확인됨",
+      "cves": []
+    },
+    {
+      "slug": "vcenter-cve-2026-123890",
+      "title": "VM웨어 v센터 최고 등급 인증 우회 결함, 브로드컴 긴급 업데이트",
+      "category": "취약점",
+      "summary": "중국 연계 해커 조직이 보안 패치 공개 전부터 v센터 서버의 치명적 결함을 실제 공격에 악용한 사실이 확인됨",
+      "cves": [
+        "CVE-2026-123890"
+      ]
+    },
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "더존비즈온 해킹으로 제네시스랩과 인천공항시설관리 등 2곳이 추가되어 총 48개 기관 및 기업에서 유출 가능성 발생",
+      "cves": []
+    },
+    {
+      "slug": "samsung-sec-customer-breach",
+      "title": "삼성증권 고객의소리 서비스 해킹으로 개인정보 8241건 유출",
+      "category": "개인정보",
+      "summary": "홈페이지 민원 접수 창구에 외부 비인가자가 비정상 접근하여 첨부파일에 포함된 고객 개인정보가 유출됨",
+      "cves": []
+    },
+    {
+      "slug": "pipc-ai-personal-data-decree",
+      "title": "개인정보위, AI 개발 목적 개인정보 처리 특례 시행령 개정안 입법예고",
+      "category": "정책·제도",
+      "summary": "개인정보보호위원회는 인공지능 기술 개발을 위한 개인정보 활용 특례의 안전조치와 위험요인평가 기준을 마련해 입법예고함",
+      "cves": []
+    },
+    {
+      "slug": "smart-glasses-illegal-filming-bill",
+      "title": "AI 안경 불법촬영 방지 위해 촬영 표시 및 고지 의무화 법안 발의",
+      "category": "정책·제도",
+      "summary": "국회는 스마트글래스 제조 시 촬영 표시 기능을 의무화하고 사적 촬영 고지를 명시하는 법안을 대표발의함",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 475355,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 475354,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 476503,
+      "label": "security",
+      "event_slug": "kurly-curator-breach"
+    },
+    {
+      "id": 475353,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475352,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476099,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475351,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475994,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475350,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476097,
+      "label": "security",
+      "event_slug": "smart-glasses-illegal-filming-bill"
+    },
+    {
+      "id": 476096,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475402,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476094,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 475401,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 475400,
+      "label": "security",
+      "event_slug": "vcenter-cve-2026-123890"
+    },
+    {
+      "id": 476672,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477284,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 476671,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477282,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477277,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476618,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476723,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476722,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 476617,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 477424,
+      "label": "security",
+      "event_slug": "samsung-sec-customer-breach"
+    },
+    {
+      "id": 476670,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 477791,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 476669,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477267,
+      "label": "security",
+      "event_slug": "smart-glasses-illegal-filming-bill"
+    },
+    {
+      "id": 476721,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 477788,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476668,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476616,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476719,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476720,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476718,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476717,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476667,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477469,
+      "label": "security",
+      "event_slug": "kurly-curator-breach"
+    },
+    {
+      "id": 477897,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476716,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 476666,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477946,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 478656,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477896,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478610,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478035,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 478709,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479077,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 479073,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478652,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478708,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 479074,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478763,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 477945,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478761,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 477944,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 479071,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 479120,
+      "label": "security",
+      "event_slug": "kurly-curator-breach"
+    },
+    {
+      "id": 477943,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478569,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 477942,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 479061,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 477895,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478756,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 477894,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 477893,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 477941,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 479054,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478755,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 478556,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 478752,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477892,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477891,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 477940,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478554,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 478698,
+      "label": "trend",
+      "event_slug": null,
+      "line": "아우토크립트는 로열티 및 차량용 통신 매출 증가로 올해 3분기 연결 기준 영업손실을 줄이며 수익성 개선에 속도를 내고 있다"
+    },
+    {
+      "id": 478542,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 477890,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 478027,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 477990,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 478026,
+      "label": "security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "제30회 해킹방지워크샵",
+      "start_date": "2026-12-03",
+      "end_date": null,
+      "place": "서울 여의도 전경련회관 컨퍼런스센터",
+      "organizer": "한국침해사고대응팀협의회(CONCERT)",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        475401
+      ]
+    }
+  ]
+}
