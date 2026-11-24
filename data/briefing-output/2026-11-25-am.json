@@ -1,0 +1,210 @@
+{
+  "date": "2026-11-25",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-25-am.md",
+  "stats": {
+    "candidates": 23,
+    "security": 14,
+    "trend": 3,
+    "pr": 3,
+    "column": 1,
+    "not_security": 2,
+    "events": 7
+  },
+  "events": [
+    {
+      "slug": "pg-companies-data-leak",
+      "title": "국내 전자지급결제대행사 연쇄 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "NHN KCP, 웰컴페이먼츠, KIS정보통신 등 PG사 3곳에서 잇따라 개인정보 유출 사고가 발생해 금융당국이 긴급 점검에 나섰다.",
+      "cves": []
+    },
+    {
+      "slug": "kepco-darkweb-data-claim",
+      "title": "다크웹에 한전 개인정보·입찰자료 확보 주장 게시",
+      "category": "개인정보",
+      "summary": "한전 개인정보 유출 사고와 관련해 정부 취약점 시범사업 당시 발견된 취약점이 방치되었다는 제보가 제기되어 논란이 일고 있다.",
+      "cves": []
+    },
+    {
+      "slug": "rerp-university-hack",
+      "title": "연구행정통합시스템 해킹으로 대학 개인정보 유출",
+      "category": "개인정보",
+      "summary": "국립순천대학교 구 향림통시스템에 외부 비정상 접근이 발생해 일부 이용자의 개인정보가 유출된 정황이 확인됐다.",
+      "cves": []
+    },
+    {
+      "slug": "savings-bank-edu-site-breach",
+      "title": "저축은행 직원 교육관리 사이트 해킹, 직원 개인정보 유출",
+      "category": "개인정보",
+      "summary": "하나저축은행이 해킹 공격을 받아 고객 552명의 주민등록번호 등 민감한 개인신용정보가 유출된 것이 확인됐다.",
+      "cves": []
+    },
+    {
+      "slug": "keio-group-ransomware",
+      "title": "일본 게이오그룹 랜섬웨어 공격 피해 및 대규모 정보 유출 우려",
+      "category": "악성코드·랜섬웨어",
+      "summary": "일본 게이오그룹이 랜섬웨어 공격을 받아 고객과 임직원 등 최대 1100만 명분의 개인정보가 유출됐을 가능성이 제기됐다.",
+      "cves": []
+    },
+    {
+      "slug": "weleda-japan-breach",
+      "title": "벨레다 일본 쇼핑몰 해킹으로 고객 및 신용카드 정보 유출 우려",
+      "category": "개인정보",
+      "summary": "스위스 스킨케어 브랜드 벨레다의 일본 공식 온라인숍이 해킹되어 고객 정보 및 신용카드 정보가 유출되었을 가능성이 제기됐다.",
+      "cves": []
+    },
+    {
+      "slug": "nis-cyber-security-regulation",
+      "title": "국정원, 국가배후 해킹조직 의심 활동 사이버안보 정보 수집 범위 확대",
+      "category": "정책·제도",
+      "summary": "국정원은 국가배후 해킹조직의 활동으로 의심되는 경우를 사이버안보 정보 수집 범위에 포함하는 '사이버안보 업무규정' 개정안을 입법예고했다.",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 495296,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 495599,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494434,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 494433,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 495328,
+      "label": "security",
+      "event_slug": "weleda-japan-breach"
+    },
+    {
+      "id": 495079,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494432,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 495327,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494431,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 495325,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 494568,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 495719,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 495819,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 497873,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 497648,
+      "label": "security",
+      "event_slug": "pg-companies-data-leak"
+    },
+    {
+      "id": 497145,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 497900,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 499163,
+      "label": "security",
+      "event_slug": "keio-group-ransomware"
+    },
+    {
+      "id": 499162,
+      "label": "security",
+      "event_slug": "nis-cyber-security-regulation"
+    },
+    {
+      "id": 499613,
+      "label": "security",
+      "event_slug": "kepco-darkweb-data-claim"
+    },
+    {
+      "id": 499612,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 499611,
+      "label": "security",
+      "event_slug": "rerp-university-hack"
+    },
+    {
+      "id": 499610,
+      "label": "security",
+      "event_slug": "savings-bank-edu-site-breach"
+    }
+  ],
+  "security_events": [
+    {
+      "name": "미래 국방을 여는 차세대 사이버·네트워크 보안 세미나",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "place": "서울 군인공제회 C&C",
+      "organizer": "국방정보통신협회",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        495819
+      ]
+    },
+    {
+      "name": "포티넷 AI 사이버보안 서밋 APAC 2026",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "place": "서울 강남구 그랜드 인터컨티넨탈 서울 파르나스",
+      "organizer": "포티넷",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        494433
+      ]
+    }
+  ]
+}
