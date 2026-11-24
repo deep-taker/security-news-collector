@@ -1,0 +1,532 @@
+{
+  "date": "2026-11-24",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-24-pm.md",
+  "stats": {
+    "candidates": 89,
+    "security": 38,
+    "trend": 7,
+    "pr": 35,
+    "column": 1,
+    "not_security": 8,
+    "events": 2
+  },
+  "events": [
+    {
+      "slug": "korea-univ-28-data-leak",
+      "title": "국내 28개 대학 시스템 데이터 해킹 포럼 유포",
+      "category": "침해사고",
+      "summary": "해킹 조직의 연쇄 공격으로 국내 대학과 기관들의 내부 데이터와 학생 개인정보가 유출되어 논란이 확산하고 있습니다.",
+      "cves": []
+    },
+    {
+      "slug": "pg-companies-data-leak",
+      "title": "국내 전자지급결제대행사 연쇄 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "웰컴페이먼츠, NHN KCP, KIS정보통신 등 PG사 서버가 해킹되어 고객 결제 내역과 개인정보가 유출되었습니다.",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 493024,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 490612,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491260,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491821,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 491356,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 490611,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490660,
+      "label": "security",
+      "event_slug": "pg-companies-data-leak"
+    },
+    {
+      "id": 490610,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490746,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 491758,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491818,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490659,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 490707,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 490609,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490658,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491352,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491753,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 491351,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491456,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 491246,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491754,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 490608,
+      "label": "security",
+      "event_slug": "pg-companies-data-leak"
+    },
+    {
+      "id": 490657,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490607,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 491451,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491878,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 492744,
+      "label": "security",
+      "event_slug": "pg-companies-data-leak"
+    },
+    {
+      "id": 491932,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491877,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492557,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492556,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 492739,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491931,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492681,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491930,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 492732,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491876,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 492537,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491929,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492726,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492534,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493029,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 492676,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 492533,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493088,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491977,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491928,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 491927,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491976,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492018,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 491926,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493152,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492523,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 492516,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493151,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 492672,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 493205,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 494382,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493204,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 494035,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493203,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 494030,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 494028,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493971,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 493150,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493202,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493252,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493253,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493254,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493822,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493967,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494016,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 493251,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493250,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493249,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493289,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 493201,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493149,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493200,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493248,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493199,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493959,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493198,
+      "label": "security",
+      "event_slug": "korea-univ-28-data-leak"
+    },
+    {
+      "id": 494311,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 493957,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494042,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494307,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 493148,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 494037,
+      "label": "pr",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "포티넷 AI 사이버보안 서밋 APAC 2026",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "place": "그랜드 인터컨티넨탈 서울 파르나스",
+      "organizer": "포티넷코리아",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        493151,
+        493148
+      ]
+    },
+    {
+      "name": "2026 산업보안 컨퍼런스",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "place": "서울 파르나스 호텔",
+      "organizer": "국가정보원·산업통상부",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        494035
+      ]
+    },
+    {
+      "name": "제11차 양자보안포럼",
+      "start_date": "2026-11-24",
+      "end_date": null,
+      "place": "서울 시청 인근",
+      "organizer": null,
+      "url": null,
+      "major": false,
+      "note": null,
+      "article_ids": [
+        493150
+      ]
+    },
+    {
+      "name": "AI 보안 위험 대응을 위한 과제 세미나",
+      "start_date": "2026-11-26",
+      "end_date": null,
+      "place": null,
+      "organizer": "국회입법조사처",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        492533
+      ]
+    }
+  ]
+}
