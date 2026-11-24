@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-24",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-24-noon.md",
+  "stats": {
+    "candidates": 28,
+    "security": 7,
+    "trend": 8,
+    "pr": 10,
+    "column": 0,
+    "not_security": 3,
+    "events": 3
+  },
+  "events": [
+    {
+      "slug": "hd-hyundai-robotics-breach",
+      "title": "HD현대로보틱스 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "산업용 로봇 기업 HD현대로보틱스가 외부 해킹으로 이름과 기업 소속 등 10개 개인정보 항목이 유출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "microsoft-entra-health-flaw",
+      "title": "마이크로소프트 엔트라 모니터링 도구 결함 악용",
+      "category": "취약점",
+      "summary": "엔트라 커넥트 헬스 도구의 결함이 악용되어 공격자가 고객사의 조직 기록 정보를 읽어 갔다.",
+      "cves": []
+    },
+    {
+      "slug": "rerp-university-hack",
+      "title": "연구행정통합시스템 해킹으로 대학 개인정보 유출",
+      "category": "개인정보",
+      "summary": "국내 대학의 연구행정통합시스템을 겨냥한 연쇄 해킹으로 다크웹에 28개 대학의 개인정보가 유출됐다.",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 487971,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 487449,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 486875,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 488737,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 488141,
+      "label": "security",
+      "event_slug": "hd-hyundai-robotics-breach"
+    },
+    {
+      "id": 489351,
+      "label": "security",
+      "event_slug": "microsoft-entra-health-flaw"
+    },
+    {
+      "id": 488954,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 490030,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 490036,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 490029,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490028,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 489447,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 489350,
+      "label": "security",
+      "event_slug": "rerp-university-hack"
+    },
+    {
+      "id": 490142,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 489349,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490513,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 489446,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 489348,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490516,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 490001,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 489999,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 489998,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 489997,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 489996,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 490554,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 489347,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 490225,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 489346,
+      "label": "pr",
+      "event_slug": null
+    }
+  ]
+}
