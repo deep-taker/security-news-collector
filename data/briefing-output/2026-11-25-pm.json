@@ -1,0 +1,546 @@
+{
+  "date": "2026-11-25",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-25-pm.md",
+  "stats": {
+    "candidates": 88,
+    "security": 51,
+    "trend": 9,
+    "pr": 19,
+    "column": 1,
+    "not_security": 8,
+    "events": 8
+  },
+  "events": [
+    {
+      "slug": "us-cia-odni-osint-breach",
+      "title": "미국 CIA 및 국가정보장실 공개출처정보 시스템 해킹",
+      "category": "침해사고",
+      "summary": "미국 중앙정보국과 국가정보장실의 공개출처정보 분석 시스템이 해킹을 당해 일부 정보가 노출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "baejai-univ-repeat-breach",
+      "title": "배재대 잇단 해킹으로 개인정보 추가 유출",
+      "category": "개인정보",
+      "summary": "배재대학교가 같은 공격자로부터 두 차례 해킹을 당해 메일 계정 신청 정보 등 1만2000여 건의 개인정보가 추가 유출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "korea-investment-savings-bank-leak",
+      "title": "한국투자저축은행 모바일 홈페이지 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "한국투자저축은행 모바일 홈페이지에서 외부 비정상거래가 발생해 고객 8만6000여 명의 개인정보가 유출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "checkpoint-security-management-server-breach",
+      "title": "체크포인트 보안 관리 서버 해킹으로 국내 장비 포함 피해",
+      "category": "침해사고",
+      "summary": "체크포인트 보안 관리 서버를 겨냥한 사이버 공격으로 한국을 포함한 전 세계 최소 22개 조직이 영향을 받았다.",
+      "cves": []
+    },
+    {
+      "slug": "vmware-vcenter-cve-2026-123903",
+      "title": "브로드컴 VM웨어 v센터 인증 우회 취약점 긴급 패치",
+      "category": "취약점",
+      "summary": "브로드컴이 v센터 인증 우회 취약점 CVE-2026-123903 등 23건의 보안 업데이트를 발표했다.",
+      "cves": [
+        "CVE-2026-123903"
+      ]
+    },
+    {
+      "slug": "kpc-online-edu-breach",
+      "title": "한국생산성본부 온라인 교육사이트 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "한국생산성본부 온라인 교육사이트가 첨부파일 보안 취약점을 악용한 해킹을 당해 개인정보가 유출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "jeonju-univ-aha-breach",
+      "title": "전주대 온라인 교양교육 서비스 해킹, 개인정보 약 18만 건 유출",
+      "category": "개인정보",
+      "summary": "전주대학교는 온라인 교육서버 해킹으로 학생 주민번호와 성적 등 추가 개인정보 유출을 확인했다.",
+      "cves": []
+    },
+    {
+      "slug": "lguplus-ixi-o-family-alert",
+      "title": "LG유플러스, 익시오 앱에 보이스피싱 가족 알림 기능 출시",
+      "category": "기타",
+      "summary": "LG유플러스가 AI 통화 앱 익시오에 보이스피싱 위험 감지 시 최대 10명의 가족에게 문자 알림을 보내는 기능을 추가했다.",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 508267,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505843,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505940,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 507035,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505842,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505841,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507033,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 506980,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 506619,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 505839,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505840,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505939,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 506464,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 506668,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 508298,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 506461,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 506700,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507146,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507195,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507754,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 507098,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507194,
+      "label": "security",
+      "event_slug": "us-cia-odni-osint-breach"
+    },
+    {
+      "id": 507751,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507231,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507229,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507930,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507193,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 507097,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507145,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507192,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 507096,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507095,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507094,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507882,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 507144,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507983,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 507093,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507143,
+      "label": "security",
+      "event_slug": "lguplus-ixi-o-family-alert"
+    },
+    {
+      "id": 507731,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507092,
+      "label": "security",
+      "event_slug": "baejai-univ-repeat-breach"
+    },
+    {
+      "id": 507730,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 508227,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507142,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 507718,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509602,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 507715,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 507960,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508425,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509598,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 508424,
+      "label": "security",
+      "event_slug": "jeonju-univ-aha-breach"
+    },
+    {
+      "id": 509597,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508423,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508422,
+      "label": "security",
+      "event_slug": "checkpoint-security-management-server-breach"
+    },
+    {
+      "id": 509074,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508357,
+      "label": "pr",
+      "event_slug": null,
+      "line": "인트브릿지가 AI 에이전트가 연결하는 MCP 서버의 개인정보 유출을 사전에 점검하는 기능을 추가했다."
+    },
+    {
+      "id": 508421,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508420,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508419,
+      "label": "security",
+      "event_slug": "vmware-vcenter-cve-2026-123903"
+    },
+    {
+      "id": 508418,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508417,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508416,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508415,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509029,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 508414,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508413,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508452,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508412,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509525,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509237,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 509592,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 508411,
+      "label": "pr",
+      "event_slug": null,
+      "line": "테이텀시큐리티가 12월 4일 AI 코딩 에이전트를 대상으로 진행한 실행 권한 통제 실험 결과를 공개하는 웨비나를 개최한다."
+    },
+    {
+      "id": 508410,
+      "label": "security",
+      "event_slug": "kpc-online-edu-breach"
+    },
+    {
+      "id": 509231,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 508409,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 509114,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 508356,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508408,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 508407,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508406,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 508405,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508355,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 508354,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 509215,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508404,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508353,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 508403,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 508402,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 508352,
+      "label": "security",
+      "event_slug": "korea-investment-savings-bank-leak"
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 사이버보안 정책 포럼 워크숍",
+      "start_date": "2026-12-04",
+      "end_date": null,
+      "place": "서울 섬유센터 3층 텍스파홀",
+      "organizer": "한국인터넷진흥원·한국정보보호학회",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        505840
+      ]
+    },
+    {
+      "name": "충남 정보보호 혁신 컨퍼런스 2026",
+      "start_date": "2026-12-04",
+      "end_date": null,
+      "place": "충남 아산시 모나밸리 골드홀",
+      "organizer": "한국인터넷진흥원·충청남도·충남테크노파크",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        508420
+      ]
+    }
+  ]
+}
