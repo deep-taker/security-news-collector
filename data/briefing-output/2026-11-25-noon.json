@@ -1,0 +1,388 @@
+{
+  "date": "2026-11-25",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-25-noon.md",
+  "stats": {
+    "candidates": 60,
+    "security": 30,
+    "trend": 15,
+    "pr": 14,
+    "column": 0,
+    "not_security": 1,
+    "events": 6
+  },
+  "events": [
+    {
+      "slug": "cia-odni-cyberattack-leak",
+      "title": "미국 CIA 및 국가정보장실 공개 정보 네트워크 해킹",
+      "category": "침해사고",
+      "summary": "미국 중앙정보국과 국가정보장실의 공개 출처 정보 분석 시스템이 해킹을 당해 일부 비기밀 데이터가 유출됐다.",
+      "cves": []
+    },
+    {
+      "slug": "lguplus-ixi-o-family-alert",
+      "title": "LG유플러스, 익시오 앱에 보이스피싱 가족 알림 기능 출시",
+      "category": "기타",
+      "summary": "LG유플러스가 AI 통화 앱 익시오에 보이스피싱 위험 감지 시 최대 10명의 가족에게 문자 알림을 보내는 기능을 추가했다.",
+      "cves": []
+    },
+    {
+      "slug": "php-nov-2026-security-update",
+      "title": "PHP 보안 업데이트, 치명적 7건 포함 취약점 17건 수정",
+      "category": "취약점",
+      "summary": "세션 처리 취약점 3건 모두 치명적 분류, 취약점마다 영향 버전·공격 조건이 달라 계열별 업데이트 필요",
+      "cves": []
+    },
+    {
+      "slug": "artex-ai-pentest-abuse",
+      "title": "오픈소스 AI 모의해킹 툴 아르텍스 악용 확산",
+      "category": "AI 보안",
+      "summary": "FBI, 아르텍스 이용한 전 세계 조직 공격 경고…일부는 관리자 권한 획득까지 3시간 미만",
+      "cves": []
+    },
+    {
+      "slug": "us-it-outages-ai-vuln-patch",
+      "title": "미국 대규모 IT 장애, AI가 찾은 취약점 긴급 패치 과정서 발생",
+      "category": "기타",
+      "summary": "미 NSA 내부망 17일 장애, PHP2Shell 취약점 긴급 패치 작업과 관련 있다고 CBS뉴스 보도",
+      "cves": []
+    },
+    {
+      "slug": "gemini-activity-retention-change",
+      "title": "구글 제미나이, 대화 기록 꺼도 데이터 약 2개월 보관으로 정책 변경",
+      "category": "AI 보안",
+      "summary": "기록 보관과 AI 학습 동의 분리, 비활성화 시 보관 기간 72시간에서 약 2개월로",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 503307,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 503306,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 503303,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503230,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503231,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 503295,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503226,
+      "label": "security",
+      "event_slug": "php-nov-2026-security-update"
+    },
+    {
+      "id": 502222,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 502700,
+      "label": "security",
+      "event_slug": "artex-ai-pentest-abuse"
+    },
+    {
+      "id": 502698,
+      "label": "security",
+      "event_slug": "us-it-outages-ai-vuln-patch"
+    },
+    {
+      "id": 502819,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503997,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 503993,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503994,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503996,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 504165,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 503981,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503349,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 503979,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503977,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503973,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 503486,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505280,
+      "label": "security",
+      "event_slug": "lguplus-ixi-o-family-alert"
+    },
+    {
+      "id": 505792,
+      "label": "security",
+      "event_slug": "lguplus-ixi-o-family-alert"
+    },
+    {
+      "id": 504470,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 504197,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 504195,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505261,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504604,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504603,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504701,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505260,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504700,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505750,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504699,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504602,
+      "label": "security",
+      "event_slug": "php-nov-2026-security-update"
+    },
+    {
+      "id": 505415,
+      "label": "security",
+      "event_slug": "lguplus-ixi-o-family-alert"
+    },
+    {
+      "id": 504601,
+      "label": "security",
+      "event_slug": "lguplus-ixi-o-family-alert"
+    },
+    {
+      "id": 505726,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504698,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504600,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504697,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505246,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 505372,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504696,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505464,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 505735,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504695,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505370,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 504599,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504694,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504598,
+      "label": "security",
+      "event_slug": "cia-odni-cyberattack-leak"
+    },
+    {
+      "id": 504597,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 504596,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 504644,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 505234,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505228,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 504595,
+      "label": "security",
+      "event_slug": "php-nov-2026-security-update"
+    },
+    {
+      "id": 504594,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 505216,
+      "label": "security",
+      "event_slug": "gemini-activity-retention-change"
+    }
+  ],
+  "security_events": [
+    {
+      "name": "한국정보보호학회 양자보안연구회 하반기 워크숍",
+      "start_date": "2026-12-03",
+      "end_date": "2026-12-04",
+      "place": "강릉 스카이베이호텔",
+      "organizer": "한국정보보호학회",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        503349
+      ]
+    },
+    {
+      "name": "마이크로소프트 365 월간 웨비나",
+      "start_date": "2026-12-02",
+      "end_date": null,
+      "place": null,
+      "organizer": "한국후지필름비즈니스이노베이션",
+      "url": null,
+      "major": false,
+      "note": null,
+      "article_ids": [
+        504603
+      ]
+    }
+  ]
+}
