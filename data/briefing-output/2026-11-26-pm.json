@@ -1,0 +1,527 @@
+{
+  "date": "2026-11-26",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-26-pm.md",
+  "stats": {
+    "candidates": 85,
+    "security": 52,
+    "trend": 7,
+    "pr": 13,
+    "column": 5,
+    "not_security": 8,
+    "events": 9
+  },
+  "events": [
+    {
+      "slug": "danawa-external-breach-service-down",
+      "title": "가격비교 플랫폼 다나와, 외부 침해 추정 사고로 서비스 중단",
+      "category": "침해사고",
+      "summary": "다나와가 외부 침해로 추정되는 보안 사고로 서비스를 중단하고 개인정보 유출 여부를 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "korea-investment-savings-bank-leak",
+      "title": "한국투자저축은행 모바일 홈페이지 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "모바일 홈페이지에 대한 비정상 접근으로 성명과 생년월일 등 8만6611건의 개인정보가 유출",
+      "cves": []
+    },
+    {
+      "slug": "onepass-backend-breach",
+      "title": "원패스워드 백엔드 침해 및 정보 유출",
+      "category": "침해사고",
+      "summary": "원패스워드가 직원 깃허브 계정 침해로 일부 고객 정보와 비공개 소스코드가 유출",
+      "cves": []
+    },
+    {
+      "slug": "pamtech-ransomware-leak",
+      "title": "반도체 장비 업체 팸텍 랜섬웨어 공격 및 개인정보 유출",
+      "category": "악성코드·랜섬웨어",
+      "summary": "팸텍이 랜섬웨어 공격으로 업무 시스템에 대한 불법 접근이 발생해 주주 및 임직원 개인정보 유출 가능성 제기",
+      "cves": []
+    },
+    {
+      "slug": "space-info-industry-breach",
+      "title": "공간정보산업진흥원 비인가 접근으로 개인정보 유출 가능성",
+      "category": "개인정보",
+      "summary": "공공기관 공간정보산업진흥원이 비인가 접근으로 교육신청 등 접수된 개인정보가 유출됐을 가능성 공지",
+      "cves": []
+    },
+    {
+      "slug": "danfoss-refrigerator-cve-2026-129713",
+      "title": "댄포스 냉장 제어기 치명적 보안 결함 발견",
+      "category": "취약점",
+      "summary": "미국 CISA가 슈퍼마켓 제어기로 쓰이는 댄포스 제품에서 원격 공격이 가능한 치명적 결함 경고",
+      "cves": [
+        "CVE-2026-129713"
+      ]
+    },
+    {
+      "slug": "linux-nfs2root-cve-2026-99362",
+      "title": "리눅스 NFS 서버 인증 없는 루트 권한 취약점 공개",
+      "category": "취약점",
+      "summary": "리눅스 커널 내장 NFS 서버에서 인증 없이 최고 관리자 권한을 탈취하는 제로클릭 취약점 공개",
+      "cves": [
+        "CVE-2026-99362"
+      ]
+    },
+    {
+      "slug": "pipc-scraping-to-api-transition",
+      "title": "정부, 공공기관 스크래핑 관행 금지하고 API 전송체계로 전환",
+      "category": "정책·제도",
+      "summary": "개인정보위가 공공기관 홈페이지의 스크래핑 방식을 내년부터 안전한 API 전송체계로 단계적 전환",
+      "cves": []
+    },
+    {
+      "slug": "ai-hacking-defense-contest-2026",
+      "title": "과기정통부, 국산 AI 모델 활용 2026 AI 해킹방어대회 개최",
+      "category": "AI 보안",
+      "summary": "과기정통부가 KISA 등과 함께 독자 AI 모델을 활용해 사이버위협 대응 역량을 강화하는 해킹방어대회 개최",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 522029,
+      "label": "security",
+      "event_slug": "pipc-scraping-to-api-transition"
+    },
+    {
+      "id": 522028,
+      "label": "security",
+      "event_slug": "ai-hacking-defense-contest-2026"
+    },
+    {
+      "id": 521732,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 521540,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 521537,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 521530,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 520915,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522093,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520914,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 520913,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 521628,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520912,
+      "label": "security",
+      "event_slug": "linux-nfs2root-cve-2026-99362"
+    },
+    {
+      "id": 520911,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 520910,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 521525,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 520909,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 521007,
+      "label": "security",
+      "event_slug": "pipc-scraping-to-api-transition"
+    },
+    {
+      "id": 521522,
+      "label": "security",
+      "event_slug": "ai-hacking-defense-contest-2026"
+    },
+    {
+      "id": 521727,
+      "label": "security",
+      "event_slug": "pipc-scraping-to-api-transition"
+    },
+    {
+      "id": 523275,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523352,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520908,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 520907,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 522155,
+      "label": "security",
+      "event_slug": "danfoss-refrigerator-cve-2026-129713"
+    },
+    {
+      "id": 521754,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522253,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 522252,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 522795,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522251,
+      "label": "security",
+      "event_slug": "ai-hacking-defense-contest-2026"
+    },
+    {
+      "id": 522250,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 522249,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 522248,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 522932,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 522154,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 522153,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522994,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522247,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522875,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 522152,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522777,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 522771,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522201,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 522770,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 522200,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 523277,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523276,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 522199,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 522151,
+      "label": "security",
+      "event_slug": "space-info-industry-breach"
+    },
+    {
+      "id": 522150,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522927,
+      "label": "security",
+      "event_slug": "korea-investment-savings-bank-leak"
+    },
+    {
+      "id": 522975,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522198,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 522246,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522149,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522148,
+      "label": "security",
+      "event_slug": "pamtech-ransomware-leak"
+    },
+    {
+      "id": 522197,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522147,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 522196,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 522146,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 524565,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 524063,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 524061,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523456,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 523455,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 524051,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 523403,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 524241,
+      "label": "security",
+      "event_slug": "danawa-external-breach-service-down"
+    },
+    {
+      "id": 523402,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 523454,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523453,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 523452,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523451,
+      "label": "security",
+      "event_slug": "onepass-backend-breach"
+    },
+    {
+      "id": 523450,
+      "label": "security",
+      "event_slug": "danawa-external-breach-service-down"
+    },
+    {
+      "id": 523401,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 523449,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523400,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 524042,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523448,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523447,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 524136,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 524030,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 524027,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523399,
+      "label": "security",
+      "event_slug": "ai-hacking-defense-contest-2026"
+    },
+    {
+      "id": 523398,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 523397,
+      "label": "security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "2026 AI 해킹방어대회",
+      "start_date": "2026-12-01",
+      "end_date": "2026-12-02",
+      "place": "서울 삼성동 그랜드 인터컨티넨탈 서울 파르나스",
+      "organizer": "과학기술정보통신부·한국인터넷진흥원·한국정보보호산업협회",
+      "url": null,
+      "major": true,
+      "note": null,
+      "article_ids": [
+        521522,
+        522251,
+        523399
+      ]
+    }
+  ]
+}
