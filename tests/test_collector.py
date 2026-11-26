@@ -807,10 +807,10 @@ def test_sync_fills_column_authors_before_publishing(monkeypatch, tmp_path):
     out.write_text(_json.dumps({"date": "2026-11-15", "edition": "am", "labels": [
         {"id": 1, "label": "column"}, {"id": 2, "label": "security"}, {"id": 3, "label": "column"}]}), encoding="utf-8")
     order = []
-    monkeypatch.setattr(authors, "run", lambda limit=20, fetch=None, ids=None: order.append(("authors", ids)) or {"found": 2})
+    monkeypatch.setattr(authors, "run", lambda limit=20, fetch=None, ids=None, retry_empty=False: order.append(("authors", ids, retry_empty)) or {"found": 2})
     monkeypatch.setattr(store, "rpc", lambda name, args: order.append((name, None)) or "ok")
     sync_briefing.sync(out)
-    assert order[0] == ("authors", [1, 3]) and order[1][0] == "apply_briefing"
+    assert order[0] == ("authors", [1, 3], True) and order[1][0] == "apply_briefing"
     # 필자 채우기가 실패해도 판은 공개
     order.clear()
     monkeypatch.setattr(authors, "run", lambda **k: (_ for _ in ()).throw(RuntimeError("x")))
@@ -838,6 +838,78 @@ def test_author_run_with_ids_ignores_title_form(monkeypatch):
     assert calls[0]["id"] == "in.(9)" and r["target"] == 1
     assert ("eq.9", {"author_info": {"org": "디지털투데이", "position": "기자", "name": "황치규"}}) in patched
     assert authors.run(ids=[], fetch=lambda u: b"")["target"] == 0
+
+
+def test_author_geul_middle_dot_and_outlet_meta():
+    """본문 속 '구글·엑스(X)'·'한글.' 오탐과 매체명 작성자 메타(<meta name="author" content="보안뉴스">)로 기자 필자가 막히지 않는다."""
+    from collector.authors import candidates, reporters, primary_reporters, as_reporter
+    page = (
+        '<html><head><meta name="author" content="보안뉴스"><meta property="dable:author" content="조재호 기자"></head>'
+        '<body><div id="article-view-content-div">'
+        '<p>메타·구글·엑스(X)·앱스토어와 연동한 삭제 속도가 핵심이다.</p>'
+        '<p>한글. 영어 문장도 섞여 있다.</p>'
+        '<p>조재호 기자 zephyr@boannews.com</p>'
+        '</div></body></html>'
+    ).encode()
+    cands = candidates(page, "개인정보 유출 뒤 번지는 2차 피싱 위협... ‘디지털 보호’ 필요한 이유")
+    assert not any(c.startswith("글. ") for c in cands)
+    reps = reporters(page)
+    preps = primary_reporters(page)
+    assert reps == {"조재호"} and preps == {"조재호"}
+    assert as_reporter({}, reps, "개인정보 유출 뒤 번지는 2차 피싱 위협", "boannews", cands, preps) == {
+        "org": "보안뉴스", "position": "기자", "name": "조재호"
+    }
+
+
+def test_author_graphic_credit_and_primary_reporter():
+    """블로터 '/그래팩=박진화 기자'·'/그래픽=...' 크레딧과 본문 내 다른 기자 언급이 있어도 주 집필 기자(메타/이메일)를 추출한다."""
+    from collector.authors import candidates, reporters, primary_reporters, as_reporter
+    page = (
+        '<html><head><meta property="dable:author" content="김수민 기자"></head>'
+        '<body><div id="article-view-content-div">'
+        '<p>/그래팩=박진화 기자</p>'
+        '<p>손영우 SK하이닉스 담당은 반도체 보안을 총괄한다.</p>'
+        '<p>김수민 기자 k8silverxyz@bloter.net</p>'
+        '</div></body></html>'
+    ).encode()
+    t = "[한국의 CISO-권력지도] 손영우 SK하이닉스 담당, 반도체 기술 방패 쥐었지만 '거버넌스'는 숙제"
+    cands = candidates(page, t)
+    reps = reporters(page)
+    preps = primary_reporters(page)
+    assert "박진화" not in reps and preps == {"김수민"}
+    assert as_reporter({}, reps | {"다른사람"}, t, "bloter", cands, preps) == {
+        "org": "블로터", "position": "기자", "name": "김수민"
+    }
+    # 외부 기고문은 담당 기자가 메타·이메일에 1명 있더라도 '[글. ...]' 흔적이 있으면 기자로 덮어쓰지 않음
+    ext_page = (
+        '<html><head><meta property="dable:author" content="길민권 기자"></head>'
+        '<body><div id="article-view-content-div"><p>본문이다.</p><p>[글. 대기업 보안팀장 우비소녀]</p>'
+        '<p>길민권 기자 mkgil@dailysecu.com</p></div></body></html>'
+    ).encode()
+    ext_cands = candidates(ext_page, "[전문가 칼럼] 제목")
+    ext_reps = reporters(ext_page)
+    ext_preps = primary_reporters(ext_page)
+    assert as_reporter({}, ext_reps, "[전문가 칼럼] 제목", "dailysecu", ext_cands, ext_preps) == {}
+
+
+def test_author_run_retry_empty_with_ids(monkeypatch):
+    """retry_empty=True이면 이미 {}로 저장된 칼럼도 재시도해 채운다."""
+    from collector import authors, store
+    from datetime import timedelta, timezone
+    recent = (datetime.now(timezone.utc) - timedelta(hours=1)).isoformat()
+    rows = [
+        {"id": 11, "title": "제목1", "url": "https://www.boannews.com/11", "source_id": "boannews", "label": "column", "collected_at": recent, "author_info": {}},
+        {"id": 12, "title": "제목2", "url": "https://www.boannews.com/12", "source_id": "boannews", "label": "column", "collected_at": recent, "author_info": {"org": "보안뉴스", "position": "기자", "name": "강현주"}},
+    ]
+    patched = []
+    monkeypatch.setattr(store, "select", lambda t, p, page_size=1000: rows)
+    monkeypatch.setattr(store, "patch", lambda t, m, v: patched.append((m, v)))
+    monkeypatch.setenv("GEMINI_API_KEY", "test")
+    page = '<html><head><meta property="dable:author" content="조재호 기자"></head><body><div id="article-view-content-div"><p>메타·구글·엑스(X)</p><p>조재호 기자 zephyr@boannews.com</p></div></body></html>'
+    monkeypatch.setattr(authors, "_call", lambda items: {"11": {"id": 11, "org": "", "position": "", "name": ""}})
+    r = authors.run(ids=[11, 12], fetch=lambda u: page.encode(), retry_empty=True)
+    assert r["target"] == 1 and r["found"] == 1
+    assert patched == [({"id": "eq.11"}, {"author_info": {"org": "보안뉴스", "position": "기자", "name": "조재호"}})]
 
 
 def test_verify_warns_column_without_author(monkeypatch):
