@@ -51,7 +51,7 @@ def fill_column_authors(ids, path) -> None:
         return
     try:
         from . import authors
-        r = authors.run(limit=20, ids=ids)
+        r = authors.run(limit=20, ids=ids, retry_empty=True)
         print(f"{path}: 칼럼 필자 {json.dumps(r, ensure_ascii=False)}")
         for t in r.get("unknown_titles", []):
             print(f"::warning title=칼럼 필자를 찾지 못함::{t}")
