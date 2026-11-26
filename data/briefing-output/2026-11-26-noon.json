@@ -1,0 +1,294 @@
+{
+  "date": "2026-11-26",
+  "edition": "noon",
+  "briefing_path": "briefings/2026-11-26-noon.md",
+  "stats": {
+    "candidates": 44,
+    "security": 23,
+    "trend": 4,
+    "pr": 10,
+    "column": 1,
+    "not_security": 6,
+    "events": 8
+  },
+  "events": [
+    {
+      "slug": "douzone-bizon-breach",
+      "title": "과기정통부, 더존비즈온 침해사고 민관합동조사단 조사 착수",
+      "category": "침해사고",
+      "summary": "더존비즈온 백업서버 해킹 여파로 피해 우려 기업 및 기관이 53곳으로 확산",
+      "cves": []
+    },
+    {
+      "slug": "korea-investment-savings-bank-leak",
+      "title": "한국투자저축은행 모바일 홈페이지 해킹으로 개인정보 유출",
+      "category": "개인정보",
+      "summary": "긴급 보안조치에도 추가 유출이 발생해 고객 8만6611명의 정보가 유출되며 저축은행 업권 최대 피해 기록",
+      "cves": []
+    },
+    {
+      "slug": "bithumb-daouoffice-leak-expansion",
+      "title": "빗썸, 다우오피스 해킹에 따른 개인정보 유출 피해 규모 추가 확인",
+      "category": "개인정보",
+      "summary": "가상자산 거래소 빗썸의 개인정보 유출 사고 지속 기간이 보름 넘은 것으로 확인되며 피해 대상 추가",
+      "cves": []
+    },
+    {
+      "slug": "us-cia-odni-osint-breach",
+      "title": "미국 CIA 및 국가정보장실 공개출처정보 시스템 해킹",
+      "category": "침해사고",
+      "summary": "미국 CIA, FBI에 이어 재무부 산하 금융범죄단속네트워크(FinCEN)도 사이버 공격으로 일부 시스템 가동 중단",
+      "cves": []
+    },
+    {
+      "slug": "ai-api-router-abuse",
+      "title": "AI 에이전트용 API 중계 서비스, 악성코드 유포·인증정보 탈취에 악용",
+      "category": "AI 보안",
+      "summary": "이탈리아와 스위스 보안 당국이 인공지능 에이전트를 악용한 사이버 공격으로 다수 시스템이 침해됐다고 발표",
+      "cves": []
+    },
+    {
+      "slug": "us-national-cyber-director-nominee",
+      "title": "트럼프, 커스틴 데이비스 국가사이버국장 지명",
+      "category": "정책·제도",
+      "summary": "도널드 트럼프 미국 대통령이 연방 정부 차원의 사이버 및 핵심 인프라 보호 계획 발표",
+      "cves": []
+    },
+    {
+      "slug": "pipc-ai-personal-data-decree",
+      "title": "개인정보위, AI 개발 목적 개인정보 처리 특례 시행령 개정안 입법예고",
+      "category": "정책·제도",
+      "summary": "개인정보위가 인수합병 과정의 개인정보 침해 예방을 권고하고 사전적정성 검토 서비스 이행 점검 결과 발표",
+      "cves": []
+    },
+    {
+      "slug": "onepass-backend-breach",
+      "title": "원패스워드 백엔드 침해 및 정보 유출",
+      "category": "침해사고",
+      "summary": "캐나다 애자일비츠 1패스워드 내부 시스템 침해로 일부 고객 정보와 소스코드 유출",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 518321,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 518390,
+      "label": "security",
+      "event_slug": "us-cia-odni-osint-breach"
+    },
+    {
+      "id": 518386,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 517799,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519251,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 520811,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 518493,
+      "label": "security",
+      "event_slug": "korea-investment-savings-bank-leak"
+    },
+    {
+      "id": 518544,
+      "label": "security",
+      "event_slug": "us-cia-odni-osint-breach"
+    },
+    {
+      "id": 519199,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 518543,
+      "label": "security",
+      "event_slug": "ai-api-router-abuse"
+    },
+    {
+      "id": 519249,
+      "label": "security",
+      "event_slug": "douzone-bizon-breach"
+    },
+    {
+      "id": 519051,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 519047,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 520823,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519806,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 519775,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 520824,
+      "label": "security",
+      "event_slug": "korea-investment-savings-bank-leak"
+    },
+    {
+      "id": 519673,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 519672,
+      "label": "security",
+      "event_slug": "us-cia-odni-osint-breach"
+    },
+    {
+      "id": 519774,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 520539,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 519773,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 519772,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519771,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519671,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520491,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 519670,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519770,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 520439,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 520791,
+      "label": "security",
+      "event_slug": "bithumb-daouoffice-leak-expansion"
+    },
+    {
+      "id": 520437,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 520280,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 519669,
+      "label": "security",
+      "event_slug": "onepass-backend-breach"
+    },
+    {
+      "id": 520850,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 519668,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519805,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520278,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 520848,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 519769,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 520847,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 520273,
+      "label": "security",
+      "event_slug": "pipc-ai-personal-data-decree"
+    },
+    {
+      "id": 519768,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 520527,
+      "label": "security",
+      "event_slug": "us-national-cyber-director-nominee"
+    },
+    {
+      "id": 520532,
+      "label": "security",
+      "event_slug": "onepass-backend-breach"
+    }
+  ]
+}
