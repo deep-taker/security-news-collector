@@ -1,0 +1,211 @@
+{
+  "date": "2026-11-28",
+  "edition": "am",
+  "briefing_path": "briefings/2026-11-28-am.md",
+  "stats": {
+    "candidates": 26,
+    "security": 12,
+    "trend": 6,
+    "pr": 8,
+    "column": 0,
+    "not_security": 0,
+    "events": 9
+  },
+  "events": [
+    {
+      "slug": "cisa-kev-mitel-nov-2026",
+      "title": "미국 CISA, 미텔 마이콜랩 등 취약점 10건 악용 경고",
+      "category": "취약점",
+      "summary": "CISA가 미텔 마이콜랩 취약점 5건을 포함해 실제 공격에 악용된 10건을 KEV 목록에 추가",
+      "cves": []
+    },
+    {
+      "slug": "jangboljido-ai-service-breach",
+      "title": "정부 AI 민생 프로젝트 '장볼지도' 서비스 보안 사고 발생",
+      "category": "침해사고",
+      "summary": "시범 출시된 AI 기반 농산물 가격 비교 서비스에 외부 공격자의 서버 침입 발생",
+      "cves": []
+    },
+    {
+      "slug": "ocam-silver-fox-malware",
+      "title": "'오캠' 설치 파일 위장 원격 조종 악성코드 유포 시도",
+      "category": "악성코드·랜섬웨어",
+      "summary": "화면 녹화 프로그램 오캠 설치 파일로 위장해 원격 조종 악성코드를 심으려 한 공격 포착",
+      "cves": []
+    },
+    {
+      "slug": "samsung-sec-customer-breach",
+      "title": "삼성증권 고객의소리 서비스 해킹으로 개인정보 8241건 유출",
+      "category": "개인정보",
+      "summary": "기존 유출 파일 정밀 검증 과정에서 추가 개인·신용정보가 확인되어 전체 피해 규모 증가",
+      "cves": []
+    },
+    {
+      "slug": "sap-cyberattack",
+      "title": "글로벌 ERP 기업 SAP 사이버 공격 발생…고객 데이터 피해 조사 중",
+      "category": "침해사고",
+      "summary": "SAP가 개발 환경에서 해킹 정황을 포착하고 소스코드 유출 및 변조 우려에 대응",
+      "cves": []
+    },
+    {
+      "slug": "danawa-external-breach-service-down",
+      "title": "가격비교 플랫폼 다나와, 외부 침해 추정 사고로 서비스 중단",
+      "category": "침해사고",
+      "summary": "외부 침해 사고 확인 후 이용자 정보 보호를 위해 서비스 중단 및 조사 중",
+      "cves": []
+    },
+    {
+      "slug": "us-air-force-cloud-one-breach",
+      "title": "미 공군 핵심 클라우드 '클라우드 원' 해킹 피해 발생",
+      "category": "침해사고",
+      "summary": "민감한 전술 및 군수 데이터를 다루는 미 공군 핵심 클라우드 플랫폼이 해커에게 침해됨",
+      "cves": []
+    },
+    {
+      "slug": "uk-dwp-cyberattack",
+      "title": "영국 노동연금부, 사이버 공격 감지 후 일부 서비스 중단",
+      "category": "침해사고",
+      "summary": "영국 노동연금부가 사이버 공격을 감지하고 예방 차원에서 온라인 서비스 운영을 중단",
+      "cves": []
+    },
+    {
+      "slug": "internet-post-office-leak",
+      "title": "인터넷우체국 해킹으로 등기우편물 수취인 개인정보 유출",
+      "category": "침해사고",
+      "summary": "해외 IP를 이용한 해킹으로 우체국 등기우편물 수취인 개인정보가 대량 유출됨",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 539463,
+      "label": "security",
+      "event_slug": "cisa-kev-mitel-nov-2026"
+    },
+    {
+      "id": 539462,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 540562,
+      "label": "security",
+      "event_slug": "jangboljido-ai-service-breach"
+    },
+    {
+      "id": 539510,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 540299,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 539461,
+      "label": "security",
+      "event_slug": "ocam-silver-fox-malware"
+    },
+    {
+      "id": 541866,
+      "label": "security",
+      "event_slug": "samsung-sec-customer-breach"
+    },
+    {
+      "id": 540298,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 540560,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 541864,
+      "label": "security",
+      "event_slug": "sap-cyberattack"
+    },
+    {
+      "id": 539460,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 540290,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 540291,
+      "label": "security",
+      "event_slug": "danawa-external-breach-service-down"
+    },
+    {
+      "id": 541862,
+      "label": "security",
+      "event_slug": "danawa-external-breach-service-down"
+    },
+    {
+      "id": 541297,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 541296,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 541295,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 541277,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 541268,
+      "label": "security",
+      "event_slug": "samsung-sec-customer-breach"
+    },
+    {
+      "id": 542514,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 542734,
+      "label": "security",
+      "event_slug": "us-air-force-cloud-one-breach"
+    },
+    {
+      "id": 542764,
+      "label": "security",
+      "event_slug": "uk-dwp-cyberattack"
+    },
+    {
+      "id": 542505,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 543733,
+      "label": "security",
+      "event_slug": "internet-post-office-leak"
+    },
+    {
+      "id": 546401,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 546430,
+      "label": "security",
+      "event_slug": "danawa-external-breach-service-down"
+    }
+  ]
+}
