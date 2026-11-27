@@ -1,0 +1,355 @@
+{
+  "date": "2026-11-27",
+  "edition": "pm",
+  "briefing_path": "briefings/2026-11-27-pm.md",
+  "stats": {
+    "candidates": 52,
+    "security": 29,
+    "trend": 6,
+    "pr": 11,
+    "column": 3,
+    "not_security": 3,
+    "events": 7
+  },
+  "events": [
+    {
+      "slug": "sci-tech-mutual-aid-breach",
+      "title": "과학기술인공제회 해킹으로 암호화된 주민번호 등 16종 개인정보 유출",
+      "category": "침해사고",
+      "summary": "외부 공격자가 서버 보안 취약점을 악용해 비인가 접근을 시도해 주민등록번호와 비밀번호 등 회원정보 21만 건이 유출됨",
+      "cves": []
+    },
+    {
+      "slug": "sh-suhyup-bank-breach",
+      "title": "Sh수협은행 해킹 사고로 고객 54명 개인정보 유출",
+      "category": "침해사고",
+      "summary": "외부 해킹으로 수협은행 외부 시스템에 비인가 접근이 발생해 고객 54명의 개인정보가 유출됨",
+      "cves": []
+    },
+    {
+      "slug": "samsung-sec-customer-breach",
+      "title": "삼성증권 고객의소리 서비스 해킹으로 개인정보 8241건 유출",
+      "category": "개인정보",
+      "summary": "기존 유출 파일 정밀 검증 과정에서 3927명의 개인·신용정보가 추가로 확인되어 전체 피해 규모가 늘어남",
+      "cves": []
+    },
+    {
+      "slug": "sap-cyberattack",
+      "title": "글로벌 ERP 기업 SAP 사이버 공격 발생…고객 데이터 피해 조사 중",
+      "category": "침해사고",
+      "summary": "SAP가 의심스러운 활동을 확인하고 대응에 나섰으며 현재까지 고객 비즈니스 데이터 무단 접근 증거는 찾지 못함",
+      "cves": []
+    },
+    {
+      "slug": "pipc-security-enhancement-plan-december",
+      "title": "개인정보위, 다음 달 정보보호 강화 대책 발표 및 노후시스템 정비",
+      "category": "정책·제도",
+      "summary": "개인정보보호위원회가 정보보호 강화 대책을 발표하고 노후 시스템 정비를 추진함",
+      "cves": []
+    },
+    {
+      "slug": "swiss-infrastructure-ai-agent-hack",
+      "title": "스위스 전력·수도·통신 핵심 기반시설, AI 에이전트 해킹 피해",
+      "category": "침해사고",
+      "summary": "연방사이버보안청이 AI 에이전트를 이용한 사이버 공격으로 다수 기반시설 침해 확인",
+      "cves": []
+    },
+    {
+      "slug": "pipc-emergency-inspection-ai-hack",
+      "title": "개인정보위, AI 기반 사이버 공격 확산에 따라 3개월 집중점검 돌입",
+      "category": "정책·제도",
+      "summary": "유출 사고 급증에 대응해 관계부처와 긴급 대응체계를 가동하고 관리체계 재검토",
+      "cves": []
+    }
+  ],
+  "labels": [
+    {
+      "id": 535926,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538357,
+      "label": "security",
+      "event_slug": "samsung-sec-customer-breach"
+    },
+    {
+      "id": 536918,
+      "label": "security",
+      "event_slug": "pipc-security-enhancement-plan-december"
+    },
+    {
+      "id": 536919,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 536920,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 536510,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 535858,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 536409,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 536912,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 536408,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 535808,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 536601,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 535907,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 536502,
+      "label": "security",
+      "event_slug": "swiss-infrastructure-ai-agent-hack"
+    },
+    {
+      "id": 536501,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 535807,
+      "label": "security",
+      "event_slug": "sci-tech-mutual-aid-breach"
+    },
+    {
+      "id": 538136,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 535857,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 537075,
+      "label": "security",
+      "event_slug": "sci-tech-mutual-aid-breach"
+    },
+    {
+      "id": 537074,
+      "label": "security",
+      "event_slug": "sh-suhyup-bank-breach"
+    },
+    {
+      "id": 537719,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538124,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 537022,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 537625,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 537621,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 537073,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 537021,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 537768,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 538241,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 537605,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 537072,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 537765,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 537071,
+      "label": "security",
+      "event_slug": "pipc-emergency-inspection-ai-hack"
+    },
+    {
+      "id": 538938,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 539409,
+      "label": "security",
+      "event_slug": "sci-tech-mutual-aid-breach"
+    },
+    {
+      "id": 538240,
+      "label": "security",
+      "event_slug": "pipc-emergency-inspection-ai-hack"
+    },
+    {
+      "id": 538239,
+      "label": "security",
+      "event_slug": "sh-suhyup-bank-breach"
+    },
+    {
+      "id": 538864,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 538238,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 538934,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538862,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 539402,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538853,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538851,
+      "label": "trend",
+      "event_slug": null
+    },
+    {
+      "id": 538843,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 539337,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 538838,
+      "label": "security",
+      "event_slug": null
+    },
+    {
+      "id": 538836,
+      "label": "column",
+      "event_slug": null
+    },
+    {
+      "id": 538373,
+      "label": "pr",
+      "event_slug": null
+    },
+    {
+      "id": 538835,
+      "label": "not_security",
+      "event_slug": null
+    },
+    {
+      "id": 538820,
+      "label": "security",
+      "event_slug": "sap-cyberattack"
+    },
+    {
+      "id": 539064,
+      "label": "security",
+      "event_slug": null
+    }
+  ],
+  "security_events": [
+    {
+      "name": "제15회 정보보호&데이터 보안 컨퍼런스(ISDP 2027)",
+      "start_date": "2027-02-26",
+      "end_date": null,
+      "place": "서울 삼성동 코엑스",
+      "organizer": "데일리시큐",
+      "url": null,
+      "major": true,
+      "note": "공공기관과 기업 보안책임자 대상 데이터 보호 기술 및 현장 적용 사례 소개",
+      "article_ids": [
+        537073
+      ]
+    },
+    {
+      "name": "제14회 대한민국 사이버위협·침해사고대응 인텔리전스 컨퍼런스(K-CTI 2027)",
+      "start_date": "2027-04-28",
+      "end_date": null,
+      "place": "서울 삼성동 코엑스",
+      "organizer": "데일리시큐",
+      "url": null,
+      "major": true,
+      "note": "CISO 및 보안 실무자 대상 위협 분석부터 피해 복구까지 다루는 컨퍼런스",
+      "article_ids": [
+        537072
+      ]
+    }
+  ]
+}
